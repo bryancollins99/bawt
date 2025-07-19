@@ -1,0 +1,45 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirects for clean embed URLs
+[[redirects]]
+  from = "/embed/tone-checker"
+  to = "/?embed=true&tool=tone"
+  status = 200
+
+[[redirects]]
+  from = "/embed/palindrome"
+  to = "/?embed=true&tool=palindrome"  
+  status = 200
+
+[[redirects]]
+  from = "/embed/rhyming"
+  to = "/?embed=true&tool=rhyming"
+  status = 200
+
+[[redirects]]
+  from = "/embed/essay-hooks"
+  to = "/?embed=true&tool=essay-hook"
+  status = 200
+
+[[redirects]]
+  from = "/embed/royalty-calculator"
+  to = "/?embed=true&tool=royalty"
+  status = 200
+
+# Handle client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for iframe embedding
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "ALLOWALL"
+    Content-Security-Policy = "frame-ancestors https://becomeawritertoday.com https://*.becomeawritertoday.com" 
