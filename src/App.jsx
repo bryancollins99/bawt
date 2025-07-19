@@ -4,7 +4,8 @@ import Results from './components/Results';
 import PalindromeChecker from './components/PalindromeChecker';
 import RhymingAssistant from './components/RhymingAssistant';
 import EssayHookGenerator from './components/EssayHookGenerator';
-import ReportTopicsGenerator from './components/ReportTopicsGenerator';import ActionGenerator from './components/ActionGenerator';
+import ReportTopicsGenerator from './components/ReportTopicsGenerator';
+import ActionGenerator from './components/ActionGenerator';
 import DescriptiveGenerator from './components/DescriptiveGenerator';
 import BlendedWords from './components/BlendedWords';
 import { 
@@ -21,19 +22,20 @@ function App() {
   const isEmbedMode = urlParams.get('embed') === 'true';
   const toolFromUrl = urlParams.get('tool');
   
-     // Map URL tool parameter to internal tool ID
-   const getInitialTool = () => {
-     switch(toolFromUrl) {
-       case 'palindrome': return 'palindrome';
-       case 'tone': return 'tone';
-       case 'rhyming': return 'rhyming';
-       case 'essay-hook': return 'essay-hook';
-       case 'report-topics': return 'report-topics';       case 'action-generator': return 'action-generator';
-       case 'descriptive-generator': return 'descriptive-generator';
-       case 'blended-words': return 'blended-words';
-       default: return 'descriptive-generator'; // Default to descriptive generator
-     }
-   };
+  // Map URL tool parameter to internal tool ID
+  const getInitialTool = () => {
+    switch(toolFromUrl) {
+      case 'palindrome': return 'palindrome';
+      case 'tone': return 'tone';
+      case 'rhyming': return 'rhyming';
+      case 'essay-hook': return 'essay-hook';
+      case 'report-topics': return 'report-topics';
+      case 'action-generator': return 'action-generator';
+      case 'descriptive-generator': return 'descriptive-generator';
+      case 'blended-words': return 'blended-words';
+      default: return 'tone'; // Default to tone checker
+    }
+  };
 
   const [currentTool, setCurrentTool] = useState(getInitialTool());
   const [text, setText] = useState('');
@@ -99,18 +101,17 @@ function App() {
     { id: 'tone', name: 'Tone Checker', icon: '📝' },
     { id: 'rhyming', name: 'Rhyming Assistant', icon: '🎵' },
     { id: 'essay-hook', name: 'Essay Hook Generator', icon: '🪝' },
-    { id: 'report-topics', name: 'Report Topics', icon: '📝' },    { id: 'action-generator', name: 'Action Generator', icon: '⚡' },
+    { id: 'report-topics', name: 'Report Topics', icon: '📋' },
+    { id: 'action-generator', name: 'Action Generator', icon: '⚡' },
     { id: 'descriptive-generator', name: 'Descriptive Generator', icon: '🎨' },
-    { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
-    { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' }
+    { id: 'blended-words', name: 'Blended Words', icon: '🔀' }
   ];
 
-     // Generate embed iframe code for current tool
-   const getEmbedCode = (toolId) => {
-     const baseUrl = window.location.origin;
-     const embedUrl = `${baseUrl}/?embed=true&tool=${toolId}`;
-     return `<iframe src="${embedUrl}" width="100%" height="600" frameborder="0" scrolling="auto" title="${tools.find(t => t.id === toolId)?.name} - BAWT Writing Tools"></iframe>`;
-   };
+  // Generate embed URL for current tool
+  const getEmbedUrl = (toolId) => {
+    const baseUrl = window.location.origin;
+    return `${baseUrl}/?embed=true&tool=${toolId}`;
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
@@ -154,38 +155,29 @@ function App() {
           </div>
         )}
 
-                 {/* Embed Code Helper - Only show in non-embed mode */}
-         {!isEmbedMode && (
-           <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-             <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-2">
-               🖼️ Embed Code for {tools.find(t => t.id === currentTool)?.name}:
-             </h3>
-             <div className="space-y-3">
-               <div className="flex items-start space-x-2">
-                 <code className="flex-1 px-3 py-3 bg-white dark:bg-gray-800 rounded border text-xs font-mono text-gray-800 dark:text-gray-200 whitespace-pre-wrap break-all">
-                   {getEmbedCode(currentTool)}
-                 </code>
-                 <button
-                   onClick={() => navigator.clipboard.writeText(getEmbedCode(currentTool))}
-                   className="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm font-medium whitespace-nowrap"
-                   title="Copy iframe code to clipboard"
-                 >
-                   📋 Copy Code
-                 </button>
-               </div>
-               <div className="text-xs text-blue-600 dark:text-blue-400 space-y-1">
-                 <p>💡 <strong>Copy & paste this iframe code directly into:</strong></p>
-                 <ul className="ml-4 list-disc space-y-1">
-                   <li>WordPress posts/pages (HTML/Code block)</li>
-                   <li>Website HTML files</li>
-                   <li>Blog platforms (Ghost, Medium with HTML)</li>
-                   <li>Custom CMS or static sites</li>
-                 </ul>
-                 <p className="pt-2"><strong>Note:</strong> Adjust height="600" if you need more/less space</p>
-               </div>
-             </div>
-           </div>
-         )}
+        {/* Embed URL Helper - Only show in non-embed mode */}
+        {!isEmbedMode && (
+          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-2">
+              📋 Embed URL for {tools.find(t => t.id === currentTool)?.name}:
+            </h3>
+            <div className="flex items-center space-x-2">
+              <code className="flex-1 px-3 py-2 bg-white dark:bg-gray-800 rounded border text-sm font-mono text-gray-800 dark:text-gray-200">
+                {getEmbedUrl(currentTool)}
+              </code>
+              <button
+                onClick={() => navigator.clipboard.writeText(getEmbedUrl(currentTool))}
+                className="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm font-medium"
+                title="Copy to clipboard"
+              >
+                📋 Copy
+              </button>
+            </div>
+            <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
+              Use this URL in your WordPress iframe or shortcode
+            </p>
+          </div>
+        )}
 
         {/* Main Content */}
         {currentTool === 'palindrome' && <PalindromeChecker />}
@@ -205,13 +197,12 @@ function App() {
         {currentTool === 'essay-hook' && <EssayHookGenerator />}
 
         {currentTool === 'report-topics' && <ReportTopicsGenerator />}
+
         {currentTool === 'action-generator' && <ActionGenerator />}
 
         {currentTool === 'descriptive-generator' && <DescriptiveGenerator />}
 
-        {currentTool === 'filler-words' && <FillerWordsProcessor />}
-
-        {currentTool === 'conjunction-tool' && <ConjunctionTool />}
+        {currentTool === 'blended-words' && <BlendedWords />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
