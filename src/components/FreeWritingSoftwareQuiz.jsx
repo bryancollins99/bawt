@@ -2,148 +2,308 @@ import React, { useState } from 'react';
 
 const FreeWritingSoftwareQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
-  const [score, setScore] = useState(0);
+  const [recommendedTools, setRecommendedTools] = useState([]);
 
   const questions = [
     {
       id: 1,
-      question: "Which free writing software is described as 'the Swiss Army Knife of ebook formatting tools'?",
-      options: ["Calibre", "Scrivener", "Google Docs", "LibreOffice"],
-      correct: 0,
-      explanation: "Calibre is often called the Swiss Army Knife of ebook formatting tools because of its versatility in converting and editing ebook formats."
+      question: "What type of writing do you primarily do?",
+      options: [
+        { text: "Novels and creative fiction", value: "fiction" },
+        { text: "Blog posts and articles", value: "blogging" },
+        { text: "Academic papers and research", value: "academic" },
+        { text: "Screenplays and scripts", value: "scripts" },
+        { text: "Poetry and short stories", value: "poetry" },
+        { text: "Business and professional documents", value: "business" }
+      ]
     },
     {
       id: 2,
-      question: "What is the main advantage of using Hemingway Editor?",
-      options: ["Grammar checking", "Readability improvement", "Citation management", "Voice recording"],
-      correct: 1,
-      explanation: "Hemingway Editor focuses on improving readability by highlighting complex sentences, passive voice, and suggesting simpler alternatives."
+      question: "How important are advanced formatting and styling features to you?",
+      options: [
+        { text: "Very important - I need professional formatting", value: "high" },
+        { text: "Somewhat important - basic formatting is enough", value: "medium" },
+        { text: "Not important - I prefer plain text", value: "low" },
+        { text: "I just want to focus on writing without distractions", value: "minimal" }
+      ]
     },
     {
       id: 3,
-      question: "Which writing software offers a generous 30-day trial that only counts days you actually use it?",
-      options: ["Ulysses", "Scrivener", "Final Draft", "WriterDuet"],
-      correct: 1,
-      explanation: "Scrivener offers a 30-day trial that counts only the days you actually open and use the software, potentially lasting months for weekend writers."
+      question: "Do you need to collaborate with others on your writing?",
+      options: [
+        { text: "Yes, real-time collaboration is essential", value: "realtime" },
+        { text: "Occasionally, but not in real-time", value: "occasional" },
+        { text: "Rarely, mostly solo work", value: "solo" },
+        { text: "Never, I always write alone", value: "never" }
+      ]
     },
     {
       id: 4,
-      question: "What makes FocusWriter particularly useful for distracted writers?",
-      options: ["Advanced grammar checking", "Cloud synchronization", "Full-screen hide-away interface", "Collaboration features"],
-      correct: 2,
-      explanation: "FocusWriter uses a full-screen hide-away interface that removes all distractions, letting you focus entirely on your writing."
+      question: "How do you prefer to organize your writing projects?",
+      options: [
+        { text: "Chapters and scenes with detailed organization", value: "structured" },
+        { text: "Simple folders and documents", value: "simple" },
+        { text: "Character profiles and plot tracking", value: "detailed" },
+        { text: "I don't need much organization", value: "minimal" }
+      ]
     },
     {
       id: 5,
-      question: "Which free app is specifically designed to help overcome writer's block by providing related words?",
-      options: ["OneLook", "Grammarly", "ProWritingAid", "Evernote"],
-      correct: 0,
-      explanation: "OneLook lets you describe a concept and get back related words and phrases, making it perfect for overcoming writer's block."
+      question: "What's your experience level with writing software?",
+      options: [
+        { text: "Beginner - I want something simple to start", value: "beginner" },
+        { text: "Intermediate - I can learn new features", value: "intermediate" },
+        { text: "Advanced - I want powerful features", value: "advanced" },
+        { text: "Expert - I need professional-grade tools", value: "expert" }
+      ]
     },
     {
       id: 6,
-      question: "What unique feature does yWriter offer for organizing novels?",
-      options: ["Voice dictation", "Breaking novels into chapters and scenes", "Real-time collaboration", "Automatic backup"],
-      correct: 1,
-      explanation: "yWriter breaks your novel into chapters and scenes, helping you keep track of your work while leaving your mind free to create."
+      question: "Do you get easily distracted while writing?",
+      options: [
+        { text: "Yes, I need a distraction-free environment", value: "high" },
+        { text: "Sometimes, minimal distractions help", value: "medium" },
+        { text: "Not really, I can focus with normal interfaces", value: "low" },
+        { text: "I like having multiple tools and features visible", value: "none" }
+      ]
     },
     {
       id: 7,
-      question: "Which Google tool offers voice typing dictation for hands-free writing?",
-      options: ["Google Keep", "Google Docs", "Google Drive", "Google Slides"],
-      correct: 1,
-      explanation: "Google Docs includes Google Voice Typing, allowing you to dictate your writing hands-free with impressive accuracy."
+      question: "How important is it to access your writing from anywhere?",
+      options: [
+        { text: "Critical - I write on multiple devices", value: "critical" },
+        { text: "Important - cloud sync is helpful", value: "important" },
+        { text: "Nice to have - but not essential", value: "nice" },
+        { text: "Not important - I use one computer", value: "local" }
+      ]
     },
     {
       id: 8,
-      question: "What is the main purpose of The Most Dangerous Writing App?",
-      options: ["Grammar correction", "Overcome writer's block", "Format manuscripts", "Track word count"],
-      correct: 1,
-      explanation: "The Most Dangerous Writing App forces you to keep writing continuously - if you stop for more than 5 seconds, you lose everything, helping overcome writer's block."
-    },
-    {
-      id: 9,
-      question: "Which writing software is specifically designed for screenwriters and offers free basic features?",
-      options: ["WriterDuet", "Arc Studio Pro", "Celtx", "Highland"],
-      correct: 1,
-      explanation: "Arc Studio Pro offers basic screenplay formatting features for free, making it accessible for new screenwriters."
-    },
-    {
-      id: 10,
-      question: "What makes Notion particularly versatile for writers?",
-      options: ["Only for note-taking", "Workspace management with templates", "Grammar checking only", "PDF export only"],
-      correct: 1,
-      explanation: "Notion is a cross-platform workspace that can manage projects, notes, goals, and writing with numerous templates available."
-    },
-    {
-      id: 11,
-      question: "Which free office suite is particularly popular with government offices and businesses?",
-      options: ["OpenOffice", "LibreOffice", "WPS Office", "SoftMaker"],
-      correct: 1,
-      explanation: "LibreOffice has become very popular with government offices, businesses, and corporate organizations as a free Microsoft Office alternative."
-    },
-    {
-      id: 12,
-      question: "What is Bibisco particularly well-suited for?",
-      options: ["Blog writing", "Academic papers", "Novel planning and world building", "Poetry"],
-      correct: 2,
-      explanation: "Bibisco is novel writing software that excels at planning and world building, with a unique approach for authors who spend time developing their stories."
-    },
-    {
-      id: 13,
-      question: "Which tool helps writers identify and remove clichéd phrases from their writing?",
-      options: ["Cliché Finder", "Grammarly", "ProWritingAid", "Hemingway"],
-      correct: 0,
-      explanation: "Cliché Finder is specifically designed to highlight clichéd phrases in your text so you can replace them with more original language."
-    },
-    {
-      id: 14,
-      question: "What makes WriteMonkey appealing to minimalist writers?",
-      options: ["Complex interface", "Stripped-down, distraction-free design", "Advanced formatting", "Multiple windows"],
-      correct: 1,
-      explanation: "WriteMonkey offers a stripped-down, distraction-free writing environment perfect for minimalist writers who want to focus on content."
-    },
-    {
-      id: 15,
-      question: "Which free tool can transcribe audio files into written text?",
-      options: ["oTranscribe", "Otter", "Dragon", "Speechmatics"],
-      correct: 0,
-      explanation: "oTranscribe is a simple, free tool that transcribes audio files or YouTube videos into written text, perfect for interviews and research."
+      question: "Do you need grammar and spell checking built-in?",
+      options: [
+        { text: "Yes, comprehensive grammar checking is essential", value: "comprehensive" },
+        { text: "Basic spell check is enough", value: "basic" },
+        { text: "I use separate tools for editing", value: "external" },
+        { text: "I don't worry about this during writing", value: "none" }
+      ]
     }
   ];
 
-  const handleAnswerSelect = (questionIndex, answerIndex) => {
-    setSelectedAnswers({
-      ...selectedAnswers,
-      [questionIndex]: answerIndex
-    });
+  const writingTools = {
+    "Google Docs": {
+      description: "Free cloud-based word processor with excellent collaboration features",
+      strengths: ["Real-time collaboration", "Cloud sync", "Voice typing", "Easy sharing", "Works everywhere"],
+      ideal_for: ["Blogging", "Business writing", "Collaborative projects"],
+      url: "https://docs.google.com",
+      score: { collaboration: 10, cloud: 10, simplicity: 8, formatting: 7 }
+    },
+    "LibreOffice Writer": {
+      description: "Full-featured office suite alternative to Microsoft Word",
+      strengths: ["Professional formatting", "All document types", "Offline work", "Export to EPUB"],
+      ideal_for: ["Business documents", "Academic papers", "Professional writing"],
+      url: "https://libreoffice.org",
+      score: { formatting: 10, professional: 10, offline: 10, collaboration: 3 }
+    },
+    "Scrivener (30-day trial)": {
+      description: "Professional novel writing software with advanced organization",
+      strengths: ["Chapter/scene organization", "Character profiles", "Research tools", "Manuscript formatting"],
+      ideal_for: ["Novel writing", "Academic research", "Complex projects"],
+      url: "https://scrivener.app",
+      score: { organization: 10, fiction: 10, research: 10, simplicity: 4 }
+    },
+    "FocusWriter": {
+      description: "Distraction-free writing environment with customizable themes",
+      strengths: ["Full-screen mode", "Customizable themes", "Daily goals", "Typewriter sounds"],
+      ideal_for: ["Distracted writers", "Poetry", "Creative writing"],
+      url: "https://focuswriter.en.softonic.com",
+      score: { distraction_free: 10, simplicity: 9, customization: 8, collaboration: 1 }
+    },
+    "yWriter": {
+      description: "Free novel writing software that organizes your story by chapters and scenes",
+      strengths: ["Chapter/scene breakdown", "Character tracking", "Story organization", "Writing goals"],
+      ideal_for: ["Novel writing", "Story planning", "Character development"],
+      url: "http://spacejock.com/yWriter7.html",
+      score: { fiction: 9, organization: 9, simplicity: 7, cloud: 2 }
+    },
+    "Hemingway Editor": {
+      description: "Writing app that makes your writing bold and clear",
+      strengths: ["Readability analysis", "Highlights complex sentences", "Writing improvement", "Simple interface"],
+      ideal_for: ["Blog writing", "Clear communication", "Editing assistance"],
+      url: "https://hemingwayapp.com",
+      score: { editing: 10, simplicity: 9, clarity: 10, organization: 3 }
+    },
+    "Notion": {
+      description: "All-in-one workspace for notes, tasks, wikis, and databases",
+      strengths: ["Flexible organization", "Templates", "Note-taking", "Project management"],
+      ideal_for: ["Organized writers", "Project planning", "Research notes"],
+      url: "https://notion.so",
+      score: { organization: 9, flexibility: 10, collaboration: 8, simplicity: 5 }
+    },
+    "WriteMonkey": {
+      description: "Distraction-free text editor with markdown support",
+      strengths: ["Minimalist interface", "Markdown support", "Plugins", "Typewriter mode"],
+      ideal_for: ["Minimalist writers", "Markdown users", "Distraction-free writing"],
+      url: "https://writemonkey.com",
+      score: { distraction_free: 9, simplicity: 8, markdown: 9, collaboration: 1 }
+    },
+    "Dropbox Paper": {
+      description: "Simple writing tool with multimedia support and collaboration",
+      strengths: ["Clean interface", "Multimedia support", "Team collaboration", "Cloud sync"],
+      ideal_for: ["Team projects", "Multimedia documents", "Simple collaboration"],
+      url: "https://dropbox.com/paper",
+      score: { collaboration: 8, simplicity: 8, multimedia: 9, formatting: 6 }
+    },
+    "Arc Studio Pro": {
+      description: "Screenplay writing software with industry-standard formatting",
+      strengths: ["Screenplay formatting", "Industry standards", "Collaboration", "Cloud sync"],
+      ideal_for: ["Screenwriters", "Script writing", "Film industry"],
+      url: "https://arcstudiopro.com",
+      score: { scripts: 10, formatting: 9, collaboration: 8, simplicity: 7 }
+    }
   };
 
-  const calculateScore = () => {
-    let correctAnswers = 0;
-    questions.forEach((question, index) => {
-      if (selectedAnswers[index] === question.correct) {
-        correctAnswers++;
+  const calculateRecommendations = () => {
+    const userProfile = {
+      writingType: answers[1],
+      formatting: answers[2],
+      collaboration: answers[3],
+      organization: answers[4],
+      experience: answers[5],
+      distraction: answers[6],
+      mobility: answers[7],
+      grammar: answers[8]
+    };
+
+    const recommendations = [];
+
+    Object.entries(writingTools).forEach(([name, tool]) => {
+      let score = 0;
+      let reasons = [];
+
+      // Writing type matching
+      if (userProfile.writingType === 'fiction' && (name.includes('Scrivener') || name.includes('yWriter'))) {
+        score += 25;
+        reasons.push("Excellent for novel organization");
+      }
+      if (userProfile.writingType === 'blogging' && (name === 'Google Docs' || name === 'Hemingway Editor')) {
+        score += 25;
+        reasons.push("Perfect for blog writing");
+      }
+      if (userProfile.writingType === 'scripts' && name === 'Arc Studio Pro') {
+        score += 30;
+        reasons.push("Industry standard for screenwriting");
+      }
+      if (userProfile.writingType === 'academic' && name === 'LibreOffice Writer') {
+        score += 25;
+        reasons.push("Professional formatting for academic work");
+      }
+      if (userProfile.writingType === 'business' && (name === 'Google Docs' || name === 'LibreOffice Writer')) {
+        score += 20;
+        reasons.push("Great for business documents");
+      }
+
+      // Collaboration needs
+      if (userProfile.collaboration === 'realtime' && name === 'Google Docs') {
+        score += 20;
+        reasons.push("Best real-time collaboration");
+      }
+      if (userProfile.collaboration === 'solo' && (name === 'FocusWriter' || name === 'WriteMonkey')) {
+        score += 15;
+        reasons.push("Perfect for solo writing");
+      }
+
+      // Distraction level
+      if (userProfile.distraction === 'high' && (name === 'FocusWriter' || name === 'WriteMonkey')) {
+        score += 20;
+        reasons.push("Distraction-free environment");
+      }
+      if (userProfile.distraction === 'none' && (name === 'Notion' || name === 'LibreOffice Writer')) {
+        score += 15;
+        reasons.push("Feature-rich interface");
+      }
+
+      // Cloud/mobility needs
+      if (userProfile.mobility === 'critical' && (name === 'Google Docs' || name === 'Notion')) {
+        score += 15;
+        reasons.push("Excellent cloud sync");
+      }
+      if (userProfile.mobility === 'local' && (name === 'LibreOffice Writer' || name === 'FocusWriter')) {
+        score += 10;
+        reasons.push("Great offline capabilities");
+      }
+
+      // Experience level
+      if (userProfile.experience === 'beginner' && (name === 'Google Docs' || name === 'FocusWriter')) {
+        score += 15;
+        reasons.push("Easy to learn");
+      }
+      if (userProfile.experience === 'advanced' && (name.includes('Scrivener') || name === 'Notion')) {
+        score += 15;
+        reasons.push("Powerful advanced features");
+      }
+
+      // Organization needs
+      if (userProfile.organization === 'structured' && (name.includes('Scrivener') || name === 'yWriter')) {
+        score += 20;
+        reasons.push("Excellent project organization");
+      }
+      if (userProfile.organization === 'minimal' && (name === 'FocusWriter' || name === 'WriteMonkey')) {
+        score += 15;
+        reasons.push("Simple, uncluttered approach");
+      }
+
+      // Grammar checking
+      if (userProfile.grammar === 'comprehensive' && name === 'Hemingway Editor') {
+        score += 15;
+        reasons.push("Built-in writing improvement");
+      }
+      if (userProfile.grammar === 'none' && (name === 'FocusWriter' || name === 'WriteMonkey')) {
+        score += 10;
+        reasons.push("Focus on writing, not editing");
+      }
+
+      // Add base score for popular tools
+      if (name === 'Google Docs') score += 10;
+      if (name === 'LibreOffice Writer') score += 8;
+      if (name.includes('Scrivener')) score += 5;
+
+      if (score > 0) {
+        recommendations.push({
+          name,
+          tool,
+          score,
+          reasons: reasons.slice(0, 3) // Top 3 reasons
+        });
       }
     });
-    setScore(correctAnswers);
+
+    // Sort by score and take top 4
+    recommendations.sort((a, b) => b.score - a.score);
+    setRecommendedTools(recommendations.slice(0, 4));
     setShowResults(true);
+  };
+
+  const handleAnswerSelect = (questionIndex, answerValue) => {
+    setAnswers({
+      ...answers,
+      [questionIndex]: answerValue
+    });
   };
 
   const resetQuiz = () => {
     setCurrentQuestion(0);
-    setSelectedAnswers({});
+    setAnswers({});
     setShowResults(false);
-    setScore(0);
+    setRecommendedTools([]);
   };
 
   const nextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      calculateScore();
+      calculateRecommendations();
     }
   };
 
@@ -153,89 +313,108 @@ const FreeWritingSoftwareQuiz = () => {
     }
   };
 
-  const getScoreMessage = () => {
-    const percentage = (score / questions.length) * 100;
-    if (percentage >= 90) return "🎉 Excellent! You're a free writing software expert!";
-    if (percentage >= 80) return "🌟 Great job! You know your free writing tools well!";
-    if (percentage >= 70) return "👍 Good work! You have solid knowledge of writing software.";
-    if (percentage >= 60) return "📝 Not bad! Consider exploring more free writing tools.";
-    return "📚 Time to discover the amazing world of free writing software!";
-  };
-
   if (showResults) {
     return (
       <div className="max-w-4xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-            Quiz Results
+            🎯 Your Personalized Recommendations
           </h2>
-          <div className="text-6xl mb-4">
-            {score >= questions.length * 0.8 ? '🎉' : score >= questions.length * 0.6 ? '👍' : '📚'}
-          </div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-2">
-            You scored {score} out of {questions.length}
-          </p>
-          <p className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-6">
-            {getScoreMessage()}
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            Based on your answers, here are the best free writing tools for your needs:
           </p>
         </div>
 
         <div className="space-y-6 mb-8">
-          {questions.map((question, index) => (
-            <div key={question.id} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
-              <h3 className="font-semibold text-gray-800 dark:text-white mb-2">
-                Question {index + 1}: {question.question}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
-                {question.options.map((option, optionIndex) => (
-                  <div
-                    key={optionIndex}
-                    className={`p-2 rounded border ${
-                      optionIndex === question.correct
-                        ? 'bg-green-100 border-green-500 text-green-800 dark:bg-green-900 dark:text-green-200'
-                        : selectedAnswers[index] === optionIndex
-                        ? 'bg-red-100 border-red-500 text-red-800 dark:bg-red-900 dark:text-red-200'
-                        : 'bg-gray-50 border-gray-200 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300'
-                    }`}
-                  >
-                    {optionIndex === question.correct && '✓ '}
-                    {selectedAnswers[index] === optionIndex && optionIndex !== question.correct && '✗ '}
-                    {option}
+          {recommendedTools.map((rec, index) => (
+            <div key={rec.name} className="border border-gray-200 dark:border-gray-600 rounded-lg p-6 bg-gradient-to-r from-blue-50 to-white dark:from-blue-900/20 dark:to-gray-800">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    #{index + 1}
                   </div>
-                ))}
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                      {rec.name}
+                    </h3>
+                    <div className="flex items-center space-x-2 mt-1">
+                      <div className="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded text-sm font-medium text-blue-800 dark:text-blue-200">
+                        {rec.score}% match
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href={rec.tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+                >
+                  Try It Free
+                </a>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 p-3 rounded">
-                <strong>Explanation:</strong> {question.explanation}
+              
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                {rec.tool.description}
               </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">
+                    ✨ Key Strengths:
+                  </h4>
+                  <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                    {rec.tool.strengths.map((strength, i) => (
+                      <li key={i}>• {strength}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-2">
+                    🎯 Why It's Perfect for You:
+                  </h4>
+                  <ul className="text-sm text-green-600 dark:text-green-400 space-y-1">
+                    {rec.reasons.map((reason, i) => (
+                      <li key={i}>• {reason}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-4 p-3 bg-gray-50 dark:bg-gray-700 rounded">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <strong>Best for:</strong> {rec.tool.ideal_for.join(", ")}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <button
             onClick={resetQuiz}
             className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
           >
             Take Quiz Again
           </button>
-        </div>
-
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-          <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">
-            💡 Want to Learn More?
-          </h3>
-          <p className="text-sm text-blue-700 dark:text-blue-400">
-            Check out the comprehensive guide at{' '}
-            <a 
-              href="https://becomeawritertoday.com/best-free-writing-software/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:no-underline"
-            >
-              BecomeAWriterToday.com
-            </a>
-            {' '}to discover even more free writing tools and detailed reviews!
-          </p>
+          
+          <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+            <h3 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">
+              💡 Want to Learn More?
+            </h3>
+            <p className="text-sm text-blue-700 dark:text-blue-400">
+              Check out the comprehensive guide at{' '}
+              <a 
+                href="https://becomeawritertoday.com/best-free-writing-software/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="underline hover:no-underline"
+              >
+                BecomeAWriterToday.com
+              </a>
+              {' '}for detailed reviews and more free writing tools!
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -245,10 +424,10 @@ const FreeWritingSoftwareQuiz = () => {
     <div className="max-w-4xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
-          Free Writing Software Quiz
+          🔍 Find Your Perfect Writing Tool
         </h1>
         <p className="text-gray-600 dark:text-gray-300 mb-4">
-          Test your knowledge of the best free writing tools available today!
+          Answer a few questions to discover the best free writing software for your specific needs
         </p>
         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
           <div
@@ -270,9 +449,9 @@ const FreeWritingSoftwareQuiz = () => {
           {questions[currentQuestion].options.map((option, index) => (
             <button
               key={index}
-              onClick={() => handleAnswerSelect(currentQuestion, index)}
+              onClick={() => handleAnswerSelect(currentQuestion + 1, option.value)}
               className={`w-full p-4 text-left rounded-lg border-2 transition-all ${
-                selectedAnswers[currentQuestion] === index
+                answers[currentQuestion + 1] === option.value
                   ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
                   : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300'
               }`}
@@ -280,7 +459,7 @@ const FreeWritingSoftwareQuiz = () => {
               <span className="font-medium mr-3">
                 {String.fromCharCode(65 + index)}.
               </span>
-              {option}
+              {option.text}
             </button>
           ))}
         </div>
@@ -301,23 +480,23 @@ const FreeWritingSoftwareQuiz = () => {
 
         <button
           onClick={nextQuestion}
-          disabled={selectedAnswers[currentQuestion] === undefined}
+          disabled={answers[currentQuestion + 1] === undefined}
           className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-            selectedAnswers[currentQuestion] === undefined
+            answers[currentQuestion + 1] === undefined
               ? 'bg-gray-300 text-gray-500 cursor-not-allowed dark:bg-gray-600 dark:text-gray-400'
               : currentQuestion === questions.length - 1
               ? 'bg-green-600 text-white hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800'
               : 'bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800'
           }`}
         >
-          {currentQuestion === questions.length - 1 ? 'Finish Quiz' : 'Next'}
+          {currentQuestion === questions.length - 1 ? 'Get My Recommendations' : 'Next'}
         </button>
       </div>
 
       <div className="mt-8 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          💡 <strong>Tip:</strong> This quiz covers free writing software from sources including 
-          BecomeAWriterToday.com, JustPublishingAdvice.com, and other expert writing resources.
+          🎯 <strong>Goal:</strong> This quiz analyzes your writing style, preferences, and needs to recommend 
+          the perfect free writing software from expert-curated sources.
         </p>
       </div>
     </div>

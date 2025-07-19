@@ -9,6 +9,7 @@ import DescriptiveGenerator from './components/DescriptiveGenerator';
 import FillerWordsProcessor from './components/FillerWordsProcessor';
 import ConjunctionTool from './components/ConjunctionTool';
 import FreeWritingSoftwareQuiz from './components/FreeWritingSoftwareQuiz';
+import FemaleAuthorsTimeline from './components/FemaleAuthorsTimeline';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -34,8 +35,9 @@ function App() {
       case 'descriptive-generator': return 'descriptive-generator';
       case 'filler-words': return 'filler-words';
       case 'conjunction-tool': return 'conjunction-tool';
+      case 'female-authors': return 'female-authors';
       case 'writing-software-quiz': return 'writing-software-quiz';
-      default: return 'filler-words'; // Default to filler words processor
+      default: return 'female-authors'; // Default to female authors timeline
     }
   };
 
@@ -107,6 +109,7 @@ function App() {
     { id: 'descriptive-generator', name: 'Descriptive Generator', icon: '🎨' },
     { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
     { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' },
+    { id: 'female-authors', name: 'Female Authors Timeline', icon: '👩‍💼' },
     { id: 'writing-software-quiz', name: 'Writing Software Quiz', icon: '🧠' }
   ];
 
@@ -232,6 +235,8 @@ function App() {
         {currentTool === 'filler-words' && <FillerWordsProcessor />}
 
         {currentTool === 'conjunction-tool' && <ConjunctionTool />}
+
+        {currentTool === 'female-authors' && <FemaleAuthorsTimeline />}
 
         {currentTool === 'writing-software-quiz' && <FreeWritingSoftwareQuiz />}
 
