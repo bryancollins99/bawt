@@ -101,16 +101,33 @@ function App() {
     { id: 'tone', name: 'Tone Checker', icon: '📝' },
     { id: 'rhyming', name: 'Rhyming Assistant', icon: '🎵' },
     { id: 'essay-hook', name: 'Essay Hook Generator', icon: '🪝' },
-    { id: 'report-topics', name: 'Report Topics', icon: '📋' },
     { id: 'action-generator', name: 'Action Generator', icon: '⚡' },
     { id: 'descriptive-generator', name: 'Descriptive Generator', icon: '🎨' },
-    { id: 'blended-words', name: 'Blended Words', icon: '🔀' }
+    { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
+    { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' }
   ];
 
-  // Generate embed URL for current tool
-  const getEmbedUrl = (toolId) => {
+  // Generate complete embed HTML code for current tool
+  const getEmbedCode = (toolId) => {
+    const tool = tools.find(t => t.id === toolId);
     const baseUrl = window.location.origin;
-    return `${baseUrl}/?embed=true&tool=${toolId}`;
+    const embedUrl = `${baseUrl}/?embed=true&tool=${toolId}`;
+    
+         return `<!-- ${tool?.name} - BAWT Writing Tools -->
+<div class="bawt-embed-container" style="width: 100%; max-width: 800px; margin: 20px auto;">
+  <iframe 
+    src="${embedUrl}" 
+    width="100%" 
+    height="600" 
+    frameborder="0" 
+    scrolling="auto" 
+    title="${tool?.name} - BAWT Writing Tools"
+    style="border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </iframe>
+  <p style="text-align: center; margin-top: 10px; font-size: 12px; color: #6b7280;">
+    Powered by <a href="${baseUrl}" target="_blank" style="color: #d60000; text-decoration: none;">BAWT Writing Tools</a>
+  </p>
+</div>`;
   };
 
   return (
@@ -155,27 +172,36 @@ function App() {
           </div>
         )}
 
-        {/* Embed URL Helper - Only show in non-embed mode */}
+        {/* Embed HTML Helper - Only show in non-embed mode */}
         {!isEmbedMode && (
           <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
             <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-2">
-              📋 Embed URL for {tools.find(t => t.id === currentTool)?.name}:
+              🖼️ Complete Embed HTML for {tools.find(t => t.id === currentTool)?.name}:
             </h3>
-            <div className="flex items-center space-x-2">
-              <code className="flex-1 px-3 py-2 bg-white dark:bg-gray-800 rounded border text-sm font-mono text-gray-800 dark:text-gray-200">
-                {getEmbedUrl(currentTool)}
-              </code>
-              <button
-                onClick={() => navigator.clipboard.writeText(getEmbedUrl(currentTool))}
-                className="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm font-medium"
-                title="Copy to clipboard"
-              >
-                📋 Copy
-              </button>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-2">
+                <code className="flex-1 px-3 py-3 bg-white dark:bg-gray-800 rounded border text-xs font-mono text-gray-800 dark:text-gray-200 whitespace-pre-wrap break-all max-h-32 overflow-y-auto">
+                  {getEmbedCode(currentTool)}
+                </code>
+                <button
+                  onClick={() => navigator.clipboard.writeText(getEmbedCode(currentTool))}
+                  className="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm font-medium whitespace-nowrap"
+                  title="Copy complete HTML code to clipboard"
+                >
+                  📋 Copy HTML
+                </button>
+              </div>
+              <div className="text-xs text-blue-600 dark:text-blue-400 space-y-1">
+                <p>✨ <strong>Ready to paste! This complete HTML includes:</strong></p>
+                <ul className="ml-4 list-disc space-y-1">
+                  <li>Professional iframe with styling and borders</li>
+                  <li>Responsive container that adapts to your site</li>
+                  <li>Powered by BAWT attribution link</li>
+                  <li>Works in WordPress, HTML pages, and any CMS</li>
+                </ul>
+                <p className="pt-2"><strong>💡 Usage:</strong> Copy the HTML above and paste directly into your WordPress HTML block, page editor, or website code!</p>
+              </div>
             </div>
-            <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
-              Use this URL in your WordPress iframe or shortcode
-            </p>
           </div>
         )}
 
