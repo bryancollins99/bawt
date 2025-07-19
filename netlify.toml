@@ -51,6 +51,11 @@
   to = "/?embed=true&tool=writing-software-quiz"
   status = 200
 
+[[redirects]]
+  from = "/embed/strong-female-character"
+  to = "/?embed=true&tool=strong-female-character"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"
