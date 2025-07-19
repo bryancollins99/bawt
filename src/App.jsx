@@ -4,8 +4,9 @@ import Results from './components/Results';
 import PalindromeChecker from './components/PalindromeChecker';
 import RhymingAssistant from './components/RhymingAssistant';
 import EssayHookGenerator from './components/EssayHookGenerator';
-import ActionGenerator from './components/ActionGenerator';
+import ReportTopicsGenerator from './components/ReportTopicsGenerator';import ActionGenerator from './components/ActionGenerator';
 import DescriptiveGenerator from './components/DescriptiveGenerator';
+import BlendedWords from './components/BlendedWords';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -27,8 +28,9 @@ function App() {
        case 'tone': return 'tone';
        case 'rhyming': return 'rhyming';
        case 'essay-hook': return 'essay-hook';
-       case 'action-generator': return 'action-generator';
+       case 'report-topics': return 'report-topics';       case 'action-generator': return 'action-generator';
        case 'descriptive-generator': return 'descriptive-generator';
+       case 'blended-words': return 'blended-words';
        default: return 'descriptive-generator'; // Default to descriptive generator
      }
    };
@@ -97,8 +99,10 @@ function App() {
     { id: 'tone', name: 'Tone Checker', icon: '📝' },
     { id: 'rhyming', name: 'Rhyming Assistant', icon: '🎵' },
     { id: 'essay-hook', name: 'Essay Hook Generator', icon: '🪝' },
-    { id: 'action-generator', name: 'Action Generator', icon: '⚡' },
-    { id: 'descriptive-generator', name: 'Descriptive Generator', icon: '🎨' }
+    { id: 'report-topics', name: 'Report Topics', icon: '📝' },    { id: 'action-generator', name: 'Action Generator', icon: '⚡' },
+    { id: 'descriptive-generator', name: 'Descriptive Generator', icon: '🎨' },
+    { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
+    { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' }
   ];
 
      // Generate embed iframe code for current tool
@@ -200,9 +204,14 @@ function App() {
 
         {currentTool === 'essay-hook' && <EssayHookGenerator />}
 
+        {currentTool === 'report-topics' && <ReportTopicsGenerator />}
         {currentTool === 'action-generator' && <ActionGenerator />}
 
         {currentTool === 'descriptive-generator' && <DescriptiveGenerator />}
+
+        {currentTool === 'filler-words' && <FillerWordsProcessor />}
+
+        {currentTool === 'conjunction-tool' && <ConjunctionTool />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (

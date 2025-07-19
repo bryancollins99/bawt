@@ -23,7 +23,11 @@
 
 [[redirects]]
   from = "/embed/essay-hooks"
-  to = "/?embed=true&tool=essay-hook"
+
+[[redirects]]
+  from = "/embed/report-topics"
+  to = "/?embed=true&tool=report-topics"
+  status = 200  to = "/?embed=true&tool=essay-hook"
   status = 200
 
 [[redirects]]
