@@ -23,16 +23,27 @@
 
 [[redirects]]
   from = "/embed/essay-hooks"
-
-[[redirects]]
-  from = "/embed/report-topics"
-  to = "/?embed=true&tool=report-topics"
-  status = 200  to = "/?embed=true&tool=essay-hook"
+  to = "/?embed=true&tool=essay-hook"
   status = 200
 
 [[redirects]]
-  from = "/embed/royalty-calculator"
-  to = "/?embed=true&tool=royalty"
+  from = "/embed/action-generator"
+  to = "/?embed=true&tool=action-generator"
+  status = 200
+
+[[redirects]]
+  from = "/embed/descriptive-generator"
+  to = "/?embed=true&tool=descriptive-generator"
+  status = 200
+
+[[redirects]]
+  from = "/embed/filler-words"
+  to = "/?embed=true&tool=filler-words"
+  status = 200
+
+[[redirects]]
+  from = "/embed/conjunction-tool"
+  to = "/?embed=true&tool=conjunction-tool"
   status = 200
 
 # Handle client-side routing

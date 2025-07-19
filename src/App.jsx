@@ -4,10 +4,10 @@ import Results from './components/Results';
 import PalindromeChecker from './components/PalindromeChecker';
 import RhymingAssistant from './components/RhymingAssistant';
 import EssayHookGenerator from './components/EssayHookGenerator';
-import ReportTopicsGenerator from './components/ReportTopicsGenerator';
 import ActionGenerator from './components/ActionGenerator';
 import DescriptiveGenerator from './components/DescriptiveGenerator';
-import BlendedWords from './components/BlendedWords';
+import FillerWordsProcessor from './components/FillerWordsProcessor';
+import ConjunctionTool from './components/ConjunctionTool';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -29,11 +29,11 @@ function App() {
       case 'tone': return 'tone';
       case 'rhyming': return 'rhyming';
       case 'essay-hook': return 'essay-hook';
-      case 'report-topics': return 'report-topics';
       case 'action-generator': return 'action-generator';
       case 'descriptive-generator': return 'descriptive-generator';
-      case 'blended-words': return 'blended-words';
-      default: return 'tone'; // Default to tone checker
+      case 'filler-words': return 'filler-words';
+      case 'conjunction-tool': return 'conjunction-tool';
+      default: return 'filler-words'; // Default to filler words processor
     }
   };
 
@@ -196,13 +196,13 @@ function App() {
 
         {currentTool === 'essay-hook' && <EssayHookGenerator />}
 
-        {currentTool === 'report-topics' && <ReportTopicsGenerator />}
-
         {currentTool === 'action-generator' && <ActionGenerator />}
 
         {currentTool === 'descriptive-generator' && <DescriptiveGenerator />}
 
-        {currentTool === 'blended-words' && <BlendedWords />}
+        {currentTool === 'filler-words' && <FillerWordsProcessor />}
+
+        {currentTool === 'conjunction-tool' && <ConjunctionTool />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
