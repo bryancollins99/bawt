@@ -32,6 +32,30 @@ const FemaleAuthorsTimeline = () => {
       significance: "One of few recorded female voices from medieval period",
       color: "#8B4513"
     },
+    { 
+      id: 28, name: "Enheduanna", years: "c. 2285-2250 BCE", era: "ancient", 
+      culture: "Sumerian", genre: "Poetry/Religious", 
+      achievement: "World's first known author by name",
+      works: ["The Exaltation of Inanna", "Temple Hymns"], 
+      significance: "First known female writer in history, high priestess and poet",
+      color: "#8B4513"
+    },
+    { 
+      id: 29, name: "Christine de Pizan", years: "1364-1430", era: "ancient", 
+      culture: "French", genre: "Poetry/Philosophy", 
+      achievement: "First professional female writer in Europe",
+      works: ["The Book of the City of Ladies"], 
+      significance: "Challenged misogyny and advocated for women's education",
+      color: "#8B4513"
+    },
+    { 
+      id: 30, name: "Julian of Norwich", years: "1342-1416", era: "ancient", 
+      culture: "English", genre: "Religious/Mystical", 
+      achievement: "First woman to write a book in English",
+      works: ["Revelations of Divine Love"], 
+      significance: "Pioneered vernacular theological writing by women",
+      color: "#8B4513"
+    },
 
     // Renaissance & Early Modern (1500-1700)
     { 
@@ -50,6 +74,22 @@ const FemaleAuthorsTimeline = () => {
       significance: "Pioneered the novel and professional authorship for women",
       color: "#CD853F"
     },
+    { 
+      id: 31, name: "Margaret Cavendish", years: "1623-1673", era: "renaissance", 
+      culture: "English", genre: "Science Fiction/Philosophy", 
+      achievement: "Wrote first science fiction by a woman",
+      works: ["The Blazing World", "Observations upon Experimental Philosophy"], 
+      significance: "Pioneer of science fiction and natural philosophy",
+      color: "#CD853F"
+    },
+    { 
+      id: 32, name: "Katherine Phillips", years: "1632-1664", era: "renaissance", 
+      culture: "Welsh", genre: "Poetry", 
+      achievement: "First woman to achieve recognition as a poet",
+      works: ["Poems", "Friendship's Mystery"], 
+      significance: "Established women's place in English literary culture",
+      color: "#CD853F"
+    },
 
     // 18th Century Enlightenment
     { 
@@ -66,6 +106,30 @@ const FemaleAuthorsTimeline = () => {
       achievement: "First published African American poet",
       works: ["Poems on Various Subjects"], 
       significance: "Broke barriers of race and gender in colonial America",
+      color: "#DEB887"
+    },
+    { 
+      id: 33, name: "Fanny Burney", years: "1752-1840", era: "enlightenment", 
+      culture: "English", genre: "Fiction", 
+      achievement: "Pioneer of the novel of manners",
+      works: ["Evelina", "Camilla"], 
+      significance: "Influenced Jane Austen and shaped the domestic novel",
+      color: "#DEB887"
+    },
+    { 
+      id: 34, name: "Olympe de Gouges", years: "1748-1793", era: "enlightenment", 
+      culture: "French", genre: "Political Writing", 
+      achievement: "Revolutionary feminist and abolitionist",
+      works: ["Declaration of the Rights of Woman"], 
+      significance: "Advocated for women's rights during French Revolution",
+      color: "#DEB887"
+    },
+    { 
+      id: 35, name: "Maria Edgeworth", years: "1768-1849", era: "enlightenment", 
+      culture: "Irish", genre: "Fiction", 
+      achievement: "Pioneer of the regional novel",
+      works: ["Castle Rackrent", "Belinda"], 
+      significance: "Influenced Walter Scott and shaped Irish literature",
       color: "#DEB887"
     },
 
@@ -102,6 +166,71 @@ const FemaleAuthorsTimeline = () => {
       significance: "Elevated the novel to high art with complex character studies",
       color: "#F4A460"
     },
+    { 
+      id: 36, name: "Charlotte Brontë", years: "1816-1855", era: "romantic", 
+      culture: "English", genre: "Fiction", 
+      achievement: "Gothic romance pioneer",
+      works: ["Jane Eyre", "Villette"], 
+      significance: "Created the modern passionate heroine in literature",
+      color: "#F4A460"
+    },
+    { 
+      id: 37, name: "Emily Brontë", years: "1818-1848", era: "romantic", 
+      culture: "English", genre: "Fiction", 
+      achievement: "Romantic intensity master",
+      works: ["Wuthering Heights"], 
+      significance: "Created one of literature's most powerful love stories",
+      color: "#F4A460"
+    },
+    { 
+      id: 38, name: "Anne Brontë", years: "1820-1849", era: "romantic", 
+      culture: "English", genre: "Fiction", 
+      achievement: "Social realist and feminist",
+      works: ["The Tenant of Wildfell Hall"], 
+      significance: "Boldly addressed alcoholism and women's rights",
+      color: "#F4A460"
+    },
+    { 
+      id: 39, name: "Elizabeth Gaskell", years: "1810-1865", era: "romantic", 
+      culture: "English", genre: "Fiction", 
+      achievement: "Industrial novel pioneer",
+      works: ["North and South", "Mary Barton"], 
+      significance: "Exposed social conditions of working class",
+      color: "#F4A460"
+    },
+    { 
+      id: 40, name: "Louisa May Alcott", years: "1832-1888", era: "romantic", 
+      culture: "American", genre: "Fiction", 
+      achievement: "Children's literature master",
+      works: ["Little Women", "Little Men"], 
+      significance: "Created enduring coming-of-age stories for young women",
+      color: "#F4A460"
+    },
+    { 
+      id: 41, name: "Christina Rossetti", years: "1830-1894", era: "romantic", 
+      culture: "English", genre: "Poetry", 
+      achievement: "Victorian poetry luminary",
+      works: ["Goblin Market", "Remember"], 
+      significance: "Master of lyrical and narrative poetry",
+      color: "#F4A460"
+    },
+    { 
+      id: 42, name: "Kate Chopin", years: "1850-1904", era: "romantic", 
+      culture: "American", genre: "Fiction", 
+      achievement: "Early feminist fiction pioneer",
+      works: ["The Awakening", "Bayou Folk"], 
+      significance: "Explored women's sexuality and independence",
+      color: "#F4A460"
+    },
+    { 
+      id: 43, name: "Edith Wharton", years: "1862-1937", era: "romantic", 
+      culture: "American", genre: "Fiction", 
+      achievement: "First woman to win Pulitzer Prize",
+      works: ["The Age of Innocence", "Ethan Frome"], 
+      significance: "Master of social satire and psychological realism",
+      color: "#F4A460"
+    },
+
 
     // Early 20th Century
     { 
@@ -136,6 +265,46 @@ const FemaleAuthorsTimeline = () => {
       significance: "Gave voice to Latin American women and indigenous culture",
       color: "#98FB98"
     },
+    { 
+      id: 45, name: "Gertrude Stein", years: "1874-1946", era: "modern", 
+      culture: "American", genre: "Experimental Fiction", 
+      achievement: "Modernist experimental writer",
+      works: ["The Autobiography of Alice B. Toklas", "Three Lives"], 
+      significance: "Pioneer of experimental narrative and literary salon hostess",
+      color: "#98FB98"
+    },
+    { 
+      id: 46, name: "Willa Cather", years: "1873-1947", era: "modern", 
+      culture: "American", genre: "Fiction", 
+      achievement: "American frontier novelist",
+      works: ["My Ántonia", "O Pioneers!"], 
+      significance: "Captured the American pioneer experience with lyrical prose",
+      color: "#98FB98"
+    },
+    { 
+      id: 47, name: "Edna St. Vincent Millay", years: "1892-1950", era: "modern", 
+      culture: "American", genre: "Poetry", 
+      achievement: "Jazz Age poetic voice",
+      works: ["Renascence", "The Harp-Weaver"], 
+      significance: "Embodied modern woman's liberation and won Pulitzer Prize",
+      color: "#98FB98"
+    },
+    { 
+      id: 48, name: "Katherine Mansfield", years: "1888-1923", era: "modern", 
+      culture: "New Zealand", genre: "Short Stories", 
+      achievement: "Modernist short story master",
+      works: ["The Garden Party", "Bliss"], 
+      significance: "Revolutionized the short story form with psychological insight",
+      color: "#98FB98"
+    },
+    { 
+      id: 49, name: "Dorothy Parker", years: "1893-1967", era: "modern", 
+      culture: "American", genre: "Humor/Poetry", 
+      achievement: "Wit and social critic",
+      works: ["Enough Rope", "Men I'm Not Married To"], 
+      significance: "Sharp social satirist and founding member of Algonquin Round Table",
+      color: "#98FB98"
+    },
 
     // Mid-20th Century
     { 
@@ -162,14 +331,7 @@ const FemaleAuthorsTimeline = () => {
       significance: "Combined religious themes with dark humor and social criticism",
       color: "#87CEEB"
     },
-    { 
-      id: 19, name: "Chinua Achebe", years: "1930-2013", era: "contemporary", 
-      culture: "Nigerian", genre: "Fiction", 
-      achievement: "Postcolonial literature pioneer",
-      works: ["Things Fall Apart"], 
-      significance: "Wait, this is a male author - removing",
-      color: "#87CEEB"
-    },
+
     { 
       id: 19, name: "Toni Morrison", years: "1931-2019", era: "contemporary", 
       culture: "African American", genre: "Fiction", 
@@ -212,6 +374,46 @@ const FemaleAuthorsTimeline = () => {
       significance: "Developed influential philosophy of rational self-interest",
       color: "#DDA0DD"
     },
+    { 
+      id: 50, name: "Ursula K. Le Guin", years: "1929-2018", era: "contemporary", 
+      culture: "American", genre: "Science Fiction/Fantasy", 
+      achievement: "Science fiction and fantasy master",
+      works: ["The Left Hand of Darkness", "A Wizard of Earthsea"], 
+      significance: "Explored gender, politics, and anthropology through speculative fiction",
+      color: "#DDA0DD"
+    },
+    { 
+      id: 51, name: "Harper Lee", years: "1926-2016", era: "contemporary", 
+      culture: "American", genre: "Fiction", 
+      achievement: "Civil rights literature icon",
+      works: ["To Kill a Mockingbird"], 
+      significance: "Powerful exploration of racial injustice in American South",
+      color: "#DDA0DD"
+    },
+    { 
+      id: 52, name: "Octavia Butler", years: "1947-2006", era: "contemporary", 
+      culture: "African American", genre: "Science Fiction", 
+      achievement: "Afrofuturism pioneer",
+      works: ["Kindred", "Parable of the Sower"], 
+      significance: "First major Black female science fiction writer",
+      color: "#DDA0DD"
+    },
+    { 
+      id: 53, name: "Anne Rice", years: "1941-2021", era: "contemporary", 
+      culture: "American", genre: "Gothic Fiction", 
+      achievement: "Modern gothic master",
+      works: ["Interview with the Vampire", "The Witching Hour"], 
+      significance: "Revitalized vampire fiction and gothic romance",
+      color: "#DDA0DD"
+    },
+    { 
+      id: 54, name: "Joyce Carol Oates", years: "1938-present", era: "contemporary", 
+      culture: "American", genre: "Fiction", 
+      achievement: "Prolific literary voice",
+      works: ["We Were the Mulvaneys", "Blonde"], 
+      significance: "Explored American violence and family dynamics",
+      color: "#DDA0DD"
+    },
 
     // Contemporary (21st Century)
     { 
@@ -244,6 +446,88 @@ const FemaleAuthorsTimeline = () => {
       achievement: "Anonymous literary sensation",
       works: ["Neapolitan Novels"], 
       significance: "Raw exploration of female friendship and Italian society",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 55, name: "Donna Tartt", years: "1963-present", era: "current", 
+      culture: "American", genre: "Literary Fiction", 
+      achievement: "Pulitzer Prize winner",
+      works: ["The Secret History", "The Goldfinch"], 
+      significance: "Master of literary suspense and psychological depth",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 56, name: "Gillian Flynn", years: "1971-present", era: "current", 
+      culture: "American", genre: "Psychological Thriller", 
+      achievement: "Dark psychological thriller pioneer",
+      works: ["Gone Girl", "Sharp Objects"], 
+      significance: "Redefined domestic thriller with unreliable female narrators",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 57, name: "Suzanne Collins", years: "1962-present", era: "current", 
+      culture: "American", genre: "Young Adult Fiction", 
+      achievement: "Dystopian YA phenomenon",
+      works: ["The Hunger Games trilogy"], 
+      significance: "Created global YA dystopian craze with strong female protagonist",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 58, name: "Ayana Mathis", years: "1973-present", era: "current", 
+      culture: "African American", genre: "Fiction", 
+      achievement: "Contemporary literary voice",
+      works: ["The Twelve Tribes of Hattie"], 
+      significance: "Powerful storytelling about African American family experience",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 59, name: "Jhumpa Lahiri", years: "1967-present", era: "current", 
+      culture: "Indian American", genre: "Fiction", 
+      achievement: "Immigrant experience chronicler",
+      works: ["Interpreter of Maladies", "The Namesake"], 
+      significance: "Pulitzer Prize winner exploring immigrant identity",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 60, name: "Elizabeth Strout", years: "1956-present", era: "current", 
+      culture: "American", genre: "Fiction", 
+      achievement: "Pulitzer Prize winner",
+      works: ["Olive Kitteridge", "My Name is Lucy Barton"], 
+      significance: "Master of interconnected short fiction and character studies",
+      color: "#FFB6C1"
+    },
+
+    { 
+      id: 61, name: "Celeste Ng", years: "1980-present", era: "current", 
+      culture: "Chinese American", genre: "Fiction", 
+      achievement: "Contemporary literary sensation",
+      works: ["Everything I Never Told You", "Little Fires Everywhere"], 
+      significance: "Explores race, identity, and family secrets in modern America",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 62, name: "Roxane Gay", years: "1974-present", era: "current", 
+      culture: "Haitian American", genre: "Essays/Fiction", 
+      achievement: "Feminist cultural critic",
+      works: ["Bad Feminist", "Hunger"], 
+      significance: "Powerful voice on feminism, race, and body politics",
+      color: "#FFB6C1"
+    },
+
+    { 
+      id: 63, name: "Naomi Alderman", years: "1974-present", era: "current", 
+      culture: "British", genre: "Speculative Fiction", 
+      achievement: "Feminist dystopian novelist",
+      works: ["The Power"], 
+      significance: "Explores gender dynamics through speculative fiction",
+      color: "#FFB6C1"
+    },
+    { 
+      id: 64, name: "Brit Bennett", years: "1990-present", era: "current", 
+      culture: "African American", genre: "Fiction", 
+      achievement: "Young literary sensation",
+      works: ["The Vanishing Half"], 
+      significance: "Explores race, identity, and family across generations",
       color: "#FFB6C1"
     }
   ];

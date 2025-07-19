@@ -10,6 +10,7 @@ import FillerWordsProcessor from './components/FillerWordsProcessor';
 import ConjunctionTool from './components/ConjunctionTool';
 import FreeWritingSoftwareQuiz from './components/FreeWritingSoftwareQuiz';
 import FemaleAuthorsTimeline from './components/FemaleAuthorsTimeline';
+import CrimeThrillerQuiz from './components/CrimeThrillerQuiz';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -37,6 +38,7 @@ function App() {
       case 'conjunction-tool': return 'conjunction-tool';
       case 'female-authors': return 'female-authors';
       case 'writing-software-quiz': return 'writing-software-quiz';
+      case 'crime-thriller-quiz': return 'crime-thriller-quiz';
       default: return 'female-authors'; // Default to female authors timeline
     }
   };
@@ -110,7 +112,8 @@ function App() {
     { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
     { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' },
     { id: 'female-authors', name: 'Female Authors Timeline', icon: '👩‍💼' },
-    { id: 'writing-software-quiz', name: 'Writing Software Quiz', icon: '🧠' }
+    { id: 'writing-software-quiz', name: 'Writing Software Quiz', icon: '🧠' },
+    { id: 'crime-thriller-quiz', name: 'Crime Thriller Book Finder', icon: '🔍' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -141,40 +144,43 @@ function App() {
       <div className="container mx-auto px-4 py-8">
         {/* Header with Navigation and Dark Mode Toggle - Hidden in embed mode */}
         {!isEmbedMode && (
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-            {/* Tool Navigation */}
-            <div className="flex bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+          <div className="flex flex-col gap-4 mb-6">
+            {/* Dark Mode Toggle - Top Right */}
+            <div className="flex justify-end">
+              <button
+                onClick={toggleDarkMode}
+                className="flex items-center space-x-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
+                         bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 
+                         hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle dark mode"
+              >
+                <span className="text-lg">
+                  {isDarkMode ? '☀️' : '🌙'}
+                </span>
+                <span className="text-sm font-medium">
+                  {isDarkMode ? 'Light' : 'Dark'} Mode
+                </span>
+              </button>
+            </div>
+
+            {/* Tool Navigation - Responsive Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-10 gap-2">
               {tools.map((tool) => (
                 <button
                   key={tool.id}
                   onClick={() => handleToolChange(tool.id)}
-                  className={`flex items-center space-x-2 px-4 py-3 font-medium transition-colors ${
+                  className={`flex flex-col items-center justify-center p-3 rounded-lg font-medium transition-all duration-200 text-center min-h-[80px] ${
                     currentTool === tool.id
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                      ? 'bg-blue-600 text-white shadow-lg scale-105'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-md border border-gray-200 dark:border-gray-700'
                   }`}
+                  title={tool.name}
                 >
-                  <span className="text-lg">{tool.icon}</span>
-                  <span className="hidden sm:inline">{tool.name}</span>
+                  <span className="text-xl mb-1">{tool.icon}</span>
+                  <span className="text-xs leading-tight">{tool.name}</span>
                 </button>
               ))}
             </div>
-
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="flex items-center space-x-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
-                       bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 
-                       hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              <span className="text-lg">
-                {isDarkMode ? '☀️' : '🌙'}
-              </span>
-              <span className="text-sm font-medium">
-                {isDarkMode ? 'Light' : 'Dark'} Mode
-              </span>
-            </button>
           </div>
         )}
 
@@ -213,10 +219,10 @@ function App() {
 
         {/* Main Content */}
         {currentTool === 'palindrome' && <PalindromeChecker />}
-        
+
         {currentTool === 'tone' && (
           <>
-            <TextInput 
+            <TextInput
               onTextChange={handleTextChange}
               onAnalyze={handleAnalyze}
             />
@@ -239,6 +245,8 @@ function App() {
         {currentTool === 'female-authors' && <FemaleAuthorsTimeline />}
 
         {currentTool === 'writing-software-quiz' && <FreeWritingSoftwareQuiz />}
+
+        {currentTool === 'crime-thriller-quiz' && <CrimeThrillerQuiz />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
