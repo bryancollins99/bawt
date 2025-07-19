@@ -20,6 +20,7 @@ import GrammarlyPlanQuiz from './components/GrammarlyPlanQuiz';
 import GrammarlyComparisonMatrix from './components/GrammarlyComparisonMatrix';
 import ReportTopicsGenerator from './components/ReportTopicsGenerator';
 import GrammarExamplesGenerator from './components/GrammarExamplesGenerator';
+import PoetryWordsGenerator from './components/PoetryWordsGenerator';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -57,6 +58,7 @@ function App() {
       case 'grammarly-comparison': return 'grammarly-comparison';
       case 'report-topics': return 'report-topics';
       case 'grammar-examples': return 'grammar-examples';
+      case 'poetry-words': return 'poetry-words';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -140,7 +142,8 @@ function App() {
     { id: 'grammarly-plan-quiz', name: 'Grammarly Plan Finder', icon: '🎯' },
     { id: 'grammarly-comparison', name: 'Writing Tools Comparison', icon: '🔄' },
     { id: 'report-topics', name: 'Report Topics Generator', icon: '📋' },
-    { id: 'grammar-examples', name: 'Grammar Examples Generator', icon: '📝' }
+    { id: 'grammar-examples', name: 'Grammar Examples Generator', icon: '📝' },
+    { id: 'poetry-words', name: 'Poetry Words Generator', icon: '🌟' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -292,6 +295,8 @@ function App() {
         {currentTool === 'report-topics' && <ReportTopicsGenerator />}
 
         {currentTool === 'grammar-examples' && <GrammarExamplesGenerator />}
+
+        {currentTool === 'poetry-words' && <PoetryWordsGenerator />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (

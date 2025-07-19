@@ -66,6 +66,11 @@
   to = "/?embed=true&tool=grammar-examples"
   status = 200
 
+[[redirects]]
+  from = "/embed/poetry-words"
+  to = "/?embed=true&tool=poetry-words"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"
