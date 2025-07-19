@@ -13,9 +13,9 @@ const GrammarlyComparisonMatrix = () => {
       id: 'grammarly',
       name: 'Grammarly Pro',
       logo: '📝',
-      price: 12,
-      originalPrice: 30,
-      discount: 60,
+      price: 18,
+      originalPrice: 24,
+      discount: 25,
       rating: 4.6,
       userTypes: ['student', 'professional', 'author', 'business'],
       features: {
@@ -699,7 +699,7 @@ const GrammarlyComparisonMatrix = () => {
           rel="noopener noreferrer"
           className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
         >
-          Get 60% Off Grammarly Pro →
+                            Get 25% Off Grammarly Pro (40% Annual) →
         </a>
       </div>
     </div>

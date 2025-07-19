@@ -96,9 +96,9 @@ const GrammarlyPlanQuiz = () => {
     },
     pro: {
       name: 'Grammarly Pro',
-      price: 12,
-      discount: 30,
-      originalPrice: 29.95,
+      price: 18,
+      discount: 25,
+      originalPrice: 24,
       features: [
         'Everything in Free',
         'Advanced grammar and punctuation',
@@ -111,7 +111,7 @@ const GrammarlyPlanQuiz = () => {
       ],
       limitations: [],
       bestFor: 'Serious writers who want comprehensive assistance',
-      cta: 'Get 30% Off Pro'
+      cta: 'Get 25% Off Pro (40% Annual)'
     },
     business: {
       name: 'Grammarly Business',

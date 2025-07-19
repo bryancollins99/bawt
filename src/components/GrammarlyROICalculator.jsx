@@ -10,8 +10,8 @@ const GrammarlyROICalculator = () => {
   // Grammarly pricing data (updated with current 2025 pricing)
   const grammarlyPlans = {
     monthly: { price: 30, discount: 0, name: 'Monthly' },
-    quarterly: { price: 20, discount: 33, name: 'Quarterly' },
-    annual: { price: 12, discount: 60, name: 'Annual (Best Value)' }
+    quarterly: { price: 22.50, discount: 25, name: 'Quarterly (25% Off)' },
+    annual: { price: 18, discount: 40, name: 'Annual (40% Off - Best Value)' }
   };
 
   // Competitor pricing for comparison
@@ -336,9 +336,9 @@ const GrammarlyROICalculator = () => {
         <h3 className="text-2xl font-bold mb-2">Ready to Save Time and Money?</h3>
         <p className="mb-4">
           {paybackPeriodMonths <= 12 && paybackPeriodMonths > 0 ? (
-            `Get Grammarly Pro with up to 60% off and start seeing ROI in ${paybackPeriodMonths.toFixed(1)} months!`
+            `Get Grammarly Pro with 25% off (40% annual) and start seeing ROI in ${paybackPeriodMonths.toFixed(1)} months!`
           ) : paybackPeriodMonths < 999 ? (
-            `Get Grammarly Pro with up to 60% off and improve your writing efficiency!`
+            `Get Grammarly Pro with 25% off (40% annual) and improve your writing efficiency!`
           ) : (
             `Try Grammarly Free first, or consider Pro if you write more frequently!`
           )}
