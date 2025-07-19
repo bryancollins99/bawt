@@ -14,8 +14,8 @@ const GrammarlyComparisonMatrix = () => {
       name: 'Grammarly Pro',
       logo: '📝',
       price: 12,
-      originalPrice: 29.95,
-      discount: 30,
+      originalPrice: 30,
+      discount: 60,
       rating: 4.6,
       userTypes: ['student', 'professional', 'author', 'business'],
       features: {
@@ -210,44 +210,44 @@ const GrammarlyComparisonMatrix = () => {
       freeVersion: true
     },
     {
-      id: 'whitesmoke',
-      name: 'WhiteSmoke',
-      logo: '💨',
-      price: 8.33,
-      originalPrice: 11.50,
-      discount: 28,
-      rating: 3.5,
-      userTypes: ['student', 'professional'],
+      id: 'quillbot',
+      name: 'QuillBot Premium',
+      logo: '🪶',
+      price: 9.95,
+      originalPrice: 19.95,
+      discount: 50,
+      rating: 4.2,
+      userTypes: ['student', 'professional', 'author'],
       features: {
         grammarCheck: 3,
         spellCheck: 3,
         punctuation: 3,
-        styleCheck: 3,
+        styleCheck: 4,
         toneDetection: 2,
-        plagiarismCheck: 3,
-        aiWriting: 2,
-        citations: 1,
-        teamFeatures: 1,
-        customDictionary: 2,
-        offlineMode: 2,
-        languageSupport: 3
+        plagiarismCheck: 4,
+        aiWriting: 5,
+        citations: 3,
+        teamFeatures: 2,
+        customDictionary: 3,
+        offlineMode: 1,
+        languageSupport: 2
       },
       pros: [
-        'All-in-one writing solution',
-        'Translation features',
-        'Templates included',
-        'Mobile app',
-        'Plagiarism checker included'
+        'Excellent paraphrasing tool',
+        'Strong AI writing features',
+        'Good plagiarism checker',
+        'Affordable pricing',
+        'Great for content creation'
       ],
       cons: [
-        'Outdated interface',
-        'Less accurate checking',
-        'Limited browser support',
-        'Expensive for quality'
+        'Weaker grammar checking than Grammarly',
+        'Limited tone detection',
+        'Requires internet connection',
+        'Less comprehensive than Grammarly'
       ],
-      bestFor: 'Users who want templates and translation in one package',
-      platforms: ['Web', 'Desktop', 'Mobile'],
-      freeVersion: false
+      bestFor: 'Content creators who need paraphrasing and AI writing tools',
+      platforms: ['Web', 'Browser Extension'],
+      freeVersion: true
     }
   ];
 

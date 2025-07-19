@@ -7,11 +7,11 @@ const GrammarlyROICalculator = () => {
   const [selectedPlan, setSelectedPlan] = useState('annual');
   const [userType, setUserType] = useState('professional');
   
-  // Grammarly pricing data
+  // Grammarly pricing data (updated with current 2025 pricing)
   const grammarlyPlans = {
-    monthly: { price: 29.95, discount: 0, name: 'Monthly' },
-    quarterly: { price: 19.98, discount: 20, name: 'Quarterly' },
-    annual: { price: 12, discount: 30, name: 'Annual (Best Value)' }
+    monthly: { price: 30, discount: 0, name: 'Monthly' },
+    quarterly: { price: 20, discount: 33, name: 'Quarterly' },
+    annual: { price: 12, discount: 60, name: 'Annual (Best Value)' }
   };
 
   // Competitor pricing for comparison
@@ -20,7 +20,7 @@ const GrammarlyROICalculator = () => {
     prowritingaid: { name: 'ProWritingAid', price: 10, features: 8 },
     hemingway: { name: 'Hemingway Plus', price: 19.99, features: 5 },
     ginger: { name: 'Ginger Premium', price: 13.99, features: 6 },
-    whitesmoke: { name: 'WhiteSmoke', price: 8.33, features: 7 }
+    quillbot: { name: 'QuillBot Premium', price: 9.95, features: 7 }
   };
 
   // User type presets
