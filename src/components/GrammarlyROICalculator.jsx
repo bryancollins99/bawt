@@ -302,9 +302,14 @@ const GrammarlyROICalculator = () => {
         <p className="mb-4">
           Get Grammarly Pro with up to 30% off and start seeing ROI in {paybackPeriodMonths.toFixed(1)} months!
         </p>
-        <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+        <a 
+          href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+        >
           Get {grammarlyPlans[selectedPlan].discount}% Off Grammarly Pro →
-        </button>
+        </a>
       </div>
     </div>
   );

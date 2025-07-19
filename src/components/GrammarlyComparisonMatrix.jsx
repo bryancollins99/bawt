@@ -574,13 +574,20 @@ const GrammarlyComparisonMatrix = () => {
                 {showDetails[tool.id] ? '📄 Hide Details' : '📋 Show Pros & Cons'}
               </button>
               
-              <button className={`w-full px-4 py-2 rounded-lg font-semibold transition-colors ${
-                tool.id === 'grammarly'
-                  ? 'bg-green-600 text-white hover:bg-green-700'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}>
-                {tool.discount > 0 ? `Get ${tool.discount}% Off` : 'Try Free'} →
-              </button>
+              {tool.id === 'grammarly' ? (
+                <a 
+                  href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full px-4 py-2 rounded-lg font-semibold transition-colors bg-green-600 text-white hover:bg-green-700 inline-block text-center"
+                >
+                  {tool.discount > 0 ? `Get ${tool.discount}% Off` : 'Try Free'} →
+                </a>
+              ) : (
+                <button className="w-full px-4 py-2 rounded-lg font-semibold transition-colors bg-blue-600 text-white hover:bg-blue-700">
+                  {tool.discount > 0 ? `Get ${tool.discount}% Off` : 'Try Free'} →
+                </button>
+              )}
             </div>
 
             {/* Detailed Pros & Cons */}
@@ -686,9 +693,14 @@ const GrammarlyComparisonMatrix = () => {
         <p className="mb-4">
           Based on our comprehensive comparison, Grammarly Pro offers the best balance of features, accuracy, and usability for most writers.
         </p>
-        <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
-          Get 30% Off Grammarly Pro →
-        </button>
+        <a 
+          href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+        >
+          Get 60% Off Grammarly Pro →
+        </a>
       </div>
     </div>
   );

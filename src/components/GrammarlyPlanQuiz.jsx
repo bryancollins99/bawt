@@ -313,9 +313,14 @@ const GrammarlyPlanQuiz = () => {
           </div>
 
           <div className="text-center">
-            <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:shadow-lg transition-all mb-4">
+            <a 
+              href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:shadow-lg transition-all mb-4"
+            >
               {plan.cta} →
-            </button>
+            </a>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               {plan.discount > 0 && `Save ${plan.discount}% • `}
               30-day money-back guarantee
@@ -376,9 +381,14 @@ const GrammarlyPlanQuiz = () => {
           >
             Take Quiz Again
           </button>
-          <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-            Compare All Plans
-          </button>
+          <a 
+            href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-block"
+          >
+            Get Grammarly Discount
+          </a>
         </div>
       </div>
     );
