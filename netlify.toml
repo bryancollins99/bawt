@@ -46,6 +46,11 @@
   to = "/?embed=true&tool=conjunction-tool"
   status = 200
 
+[[redirects]]
+  from = "/embed/writing-software-quiz"
+  to = "/?embed=true&tool=writing-software-quiz"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"

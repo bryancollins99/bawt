@@ -8,6 +8,7 @@ import ActionGenerator from './components/ActionGenerator';
 import DescriptiveGenerator from './components/DescriptiveGenerator';
 import FillerWordsProcessor from './components/FillerWordsProcessor';
 import ConjunctionTool from './components/ConjunctionTool';
+import FreeWritingSoftwareQuiz from './components/FreeWritingSoftwareQuiz';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -33,6 +34,7 @@ function App() {
       case 'descriptive-generator': return 'descriptive-generator';
       case 'filler-words': return 'filler-words';
       case 'conjunction-tool': return 'conjunction-tool';
+      case 'writing-software-quiz': return 'writing-software-quiz';
       default: return 'filler-words'; // Default to filler words processor
     }
   };
@@ -104,7 +106,8 @@ function App() {
     { id: 'action-generator', name: 'Action Generator', icon: '⚡' },
     { id: 'descriptive-generator', name: 'Descriptive Generator', icon: '🎨' },
     { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
-    { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' }
+    { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' },
+    { id: 'writing-software-quiz', name: 'Writing Software Quiz', icon: '🧠' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -229,6 +232,8 @@ function App() {
         {currentTool === 'filler-words' && <FillerWordsProcessor />}
 
         {currentTool === 'conjunction-tool' && <ConjunctionTool />}
+
+        {currentTool === 'writing-software-quiz' && <FreeWritingSoftwareQuiz />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
