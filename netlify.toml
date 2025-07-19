@@ -56,6 +56,16 @@
   to = "/?embed=true&tool=strong-female-character"
   status = 200
 
+[[redirects]]
+  from = "/embed/report-topics"
+  to = "/?embed=true&tool=report-topics"
+  status = 200
+
+[[redirects]]
+  from = "/embed/grammar-examples"
+  to = "/?embed=true&tool=grammar-examples"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"

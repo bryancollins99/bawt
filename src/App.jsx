@@ -18,6 +18,8 @@ import FamousPoemsTimeline from './components/FamousPoemsTimeline';
 import GrammarlyROICalculator from './components/GrammarlyROICalculator';
 import GrammarlyPlanQuiz from './components/GrammarlyPlanQuiz';
 import GrammarlyComparisonMatrix from './components/GrammarlyComparisonMatrix';
+import ReportTopicsGenerator from './components/ReportTopicsGenerator';
+import GrammarExamplesGenerator from './components/GrammarExamplesGenerator';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -53,6 +55,8 @@ function App() {
       case 'grammarly-roi-calculator': return 'grammarly-roi-calculator';
       case 'grammarly-plan-quiz': return 'grammarly-plan-quiz';
       case 'grammarly-comparison': return 'grammarly-comparison';
+      case 'report-topics': return 'report-topics';
+      case 'grammar-examples': return 'grammar-examples';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -134,7 +138,9 @@ function App() {
     { id: 'strong-female-character', name: 'Strong Female Characters', icon: '💪' },
     { id: 'grammarly-roi-calculator', name: 'Grammarly ROI Calculator', icon: '🧮' },
     { id: 'grammarly-plan-quiz', name: 'Grammarly Plan Finder', icon: '🎯' },
-    { id: 'grammarly-comparison', name: 'Writing Tools Comparison', icon: '🔄' }
+    { id: 'grammarly-comparison', name: 'Writing Tools Comparison', icon: '🔄' },
+    { id: 'report-topics', name: 'Report Topics Generator', icon: '📋' },
+    { id: 'grammar-examples', name: 'Grammar Examples Generator', icon: '📝' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -282,6 +288,10 @@ function App() {
         {currentTool === 'grammarly-plan-quiz' && <GrammarlyPlanQuiz />}
 
         {currentTool === 'grammarly-comparison' && <GrammarlyComparisonMatrix />}
+
+        {currentTool === 'report-topics' && <ReportTopicsGenerator />}
+
+        {currentTool === 'grammar-examples' && <GrammarExamplesGenerator />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
