@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20+ Free Writing Tools | Become a Writer Today</title>
+    <meta name="description" content="Professional writing tools for grammar checking, poetry writing, text analysis, and more. Free interactive tools to improve your writing craft.">
+    <meta name="keywords" content="writing tools, grammar checker, poetry generator, writing software, free writing tools, text analysis">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Free Writing Tools | Become a Writer Today">
+    <meta property="og:description" content="20+ professional writing tools to improve your craft. Grammar checkers, poetry generators, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://becomeawritertoday.com/tools/">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Free Writing Tools",
+        "description": "Comprehensive collection of writing tools for grammar, poetry, analysis and more",
+        "provider": {
+            "@type": "Organization",
+            "name": "Become a Writer Today",
+            "url": "https://becomeawritertoday.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .tool-nav {
+            background: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #f1f3f4;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #d60000;
+            color: white;
+        }
+
+        /* Tools Grid */
+        .tools-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e1e5e9;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .tool-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .tool-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .tool-category {
+            font-size: 0.85rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .tool-content {
+            padding: 1.5rem;
+        }
+
+        .tool-description {
+            color: #495057;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .tool-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-features li {
+            padding: 0.25rem 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .tool-features li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .tool-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #d60000;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background: #b50000;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        /* Category Sections */
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .category-description {
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #2c3e50;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .email-signup {
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .email-btn {
+            background: #d60000;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-signup {
+                flex-direction: column;
+            }
+
+            .nav-filters {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Tool Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 95%;
+            max-width: 1000px;
+            height: 90vh;
+            position: relative;
+        }
+
+        .modal-header {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .modal-iframe {
+            width: 100%;
+            height: calc(90vh - 80px);
+            border: none;
+            border-radius: 0 0 12px 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Free Writing Tools</h1>
+            <p>Professional-grade writing tools to improve your craft, check grammar, generate ideas, and boost productivity</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Writing Tools</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Free Forever</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Writers Helped</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="tool-nav">
+        <div class="container">
+            <div class="nav-filters">
+                <button class="filter-btn active" data-category="all">All Tools</button>
+                <button class="filter-btn" data-category="grammar">Grammar & Style</button>
+                <button class="filter-btn" data-category="poetry">Poetry & Creative</button>
+                <button class="filter-btn" data-category="analysis">Text Analysis</button>
+                <button class="filter-btn" data-category="generators">Word Generators</button>
+                <button class="filter-btn" data-category="quizzes">Quizzes & Learning</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <!-- Grammar & Style Tools -->
+            <div class="category-section" data-category="grammar">
+                <div class="category-header">
+                    <div class="category-icon">📝</div>
+                    <h2 class="category-title">Grammar & Style Tools</h2>
+                    <p class="category-description">Perfect your writing with advanced grammar checking, style analysis, and error correction tools.</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">📝</span>
+                            <h3 class="tool-title">Grammar Examples Generator</h3>
+                            <span class="tool-category">Grammar & Style</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Learn from common grammar mistakes with interactive examples, corrections, and detailed explanations. Covers dangling participles, misplaced modifiers, and more.</p>
+                            <ul class="tool-features">
+                                <li>6 grammar categories</li>
+                                <li>Interactive examples</li>
+                                <li>Detailed explanations</li>
+                                <li>3 difficulty levels</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Grammar Examples Generator', 'grammar-examples')">Try Free</a>
+                                <a href="/dangling-participle-examples/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🧹</span>
+                            <h3 class="tool-title">Filler Words Processor</h3>
+                            <span class="tool-category">Grammar & Style</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Identify and eliminate filler words that weaken your writing. Get clarity scores and improvement suggestions.</p>
+                            <ul class="tool-features">
+                                <li>Real-time filler detection</li>
+                                <li>Writing clarity score</li>
+                                <li>Improvement suggestions</li>
+                                <li>Word count tracking</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Filler Words Processor', 'filler-words')">Try Free</a>
+                                <a href="/filler-words/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🔗</span>
+                            <h3 class="tool-title">Conjunction Tool</h3>
+                            <span class="tool-category">Grammar & Style</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Master conjunctions to improve sentence flow and variety. Generate examples and learn proper usage.</p>
+                            <ul class="tool-features">
+                                <li>3 conjunction types</li>
+                                <li>Usage examples</li>
+                                <li>Sentence variety tips</li>
+                                <li>Copy-to-clipboard</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Conjunction Tool', 'conjunction-tool')">Try Free</a>
+                                <a href="/writing-advice/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poetry & Creative Tools -->
+            <div class="category-section" data-category="poetry">
+                <div class="category-header">
+                    <div class="category-icon">🌟</div>
+                    <h2 class="category-title">Poetry & Creative Writing</h2>
+                    <p class="category-description">Discover beautiful words, generate rhymes, and craft compelling poetry with tools inspired by masters like Mary Oliver and Rumi.</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🌟</span>
+                            <h3 class="tool-title">Poetry Words Generator</h3>
+                            <span class="tool-category">Poetry & Creative</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Discover beautiful words and poetic phrases for nature, emotion, and mystical poetry. Inspired by Mary Oliver and Rumi.</p>
+                            <ul class="tool-features">
+                                <li>4 word categories</li>
+                                <li>40+ curated words</li>
+                                <li>Mood-based filtering</li>
+                                <li>Poetry master references</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Poetry Words Generator', 'poetry-words')">Try Free</a>
+                                <a href="/words-for-poets/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🎵</span>
+                            <h3 class="tool-title">Rhyming Assistant</h3>
+                            <span class="tool-category">Poetry & Creative</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Find perfect rhymes and near-rhymes for your poetry. Includes advanced rhyming patterns and syllable matching.</p>
+                            <ul class="tool-features">
+                                <li>Perfect & near rhymes</li>
+                                <li>Syllable patterns</li>
+                                <li>Word suggestions</li>
+                                <li>Poetry forms guide</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Rhyming Assistant', 'rhyming')">Try Free</a>
+                                <a href="/good-words-to-rhyme-with/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🪝</span>
+                            <h3 class="tool-title">Essay Hook Generator</h3>
+                            <span class="tool-category">Poetry & Creative</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Create compelling opening lines and hooks for essays, stories, and articles that grab readers' attention.</p>
+                            <ul class="tool-features">
+                                <li>Multiple hook types</li>
+                                <li>Genre-specific options</li>
+                                <li>Instant generation</li>
+                                <li>Copy & customize</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Essay Hook Generator', 'essay-hook')">Try Free</a>
+                                <a href="/essay-writing-topics/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Analysis Tools -->
+            <div class="category-section" data-category="analysis">
+                <div class="category-header">
+                    <div class="category-icon">📊</div>
+                    <h2 class="category-title">Text Analysis Tools</h2>
+                    <p class="category-description">Analyze your writing for tone, emotion, clarity, and readability with professional-grade text analysis tools.</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">📝</span>
+                            <h3 class="tool-title">Emotional Tone Checker</h3>
+                            <span class="tool-category">Text Analysis</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Analyze the emotional tone of your writing with detailed breakdowns of joy, sadness, fear, anger, and confidence levels.</p>
+                            <ul class="tool-features">
+                                <li>5 emotion categories</li>
+                                <li>Real-time analysis</li>
+                                <li>Clarity scoring</li>
+                                <li>Word count tracking</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Emotional Tone Checker', 'tone')">Try Free</a>
+                                <a href="/writing-advice/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🔄</span>
+                            <h3 class="tool-title">Palindrome Checker</h3>
+                            <span class="tool-category">Text Analysis</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Check if your text reads the same forwards and backwards. Perfect for word games and creative writing exercises.</p>
+                            <ul class="tool-features">
+                                <li>Text normalization</li>
+                                <li>Example generator</li>
+                                <li>Interactive testing</li>
+                                <li>Educational examples</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Palindrome Checker', 'palindrome')">Try Free</a>
+                                <a href="/palindrome-words/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Word Generators -->
+            <div class="category-section" data-category="generators">
+                <div class="category-header">
+                    <div class="category-icon">⚡</div>
+                    <h2 class="category-title">Word Generators</h2>
+                    <p class="category-description">Generate powerful words and phrases for any writing situation. Perfect for overcoming writer's block.</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">⚡</span>
+                            <h3 class="tool-title">Action Generator</h3>
+                            <span class="tool-category">Word Generators</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Generate powerful action words and verbs organized by category and intensity to energize your writing.</p>
+                            <ul class="tool-features">
+                                <li>6 action categories</li>
+                                <li>Intensity levels</li>
+                                <li>Example sentences</li>
+                                <li>Copy-friendly format</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Action Generator', 'action-generator')">Try Free</a>
+                                <a href="/list-of-action-words/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🎨</span>
+                            <h3 class="tool-title">Descriptive Generator</h3>
+                            <span class="tool-category">Word Generators</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Create vivid descriptions with carefully curated adjectives and descriptive phrases for any writing project.</p>
+                            <ul class="tool-features">
+                                <li>6 descriptive categories</li>
+                                <li>Tone variations</li>
+                                <li>Sensory descriptions</li>
+                                <li>Context examples</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Descriptive Generator', 'descriptive-generator')">Try Free</a>
+                                <a href="/descriptive-words-list/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">💪</span>
+                            <h3 class="tool-title">Strong Female Character Generator</h3>
+                            <span class="tool-category">Word Generators</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Generate names, traits, and characteristics for strong female characters in your stories and novels.</p>
+                            <ul class="tool-features">
+                                <li>Character traits</li>
+                                <li>Name suggestions</li>
+                                <li>Personality types</li>
+                                <li>Story integration tips</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Strong Female Character Generator', 'strong-female-character')">Try Free</a>
+                                <a href="/adjectives-for-strong-women/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">📋</span>
+                            <h3 class="tool-title">Report Topics Generator</h3>
+                            <span class="tool-category">Word Generators</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Generate engaging report topics for students and teachers with smart filtering by subject and grade level.</p>
+                            <ul class="tool-features">
+                                <li>20+ curated topics</li>
+                                <li>Grade level filtering</li>
+                                <li>Subject categories</li>
+                                <li>Research questions</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Report Topics Generator', 'report-topics')">Try Free</a>
+                                <a href="/report-writing-topics/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quizzes & Learning -->
+            <div class="category-section" data-category="quizzes">
+                <div class="category-header">
+                    <div class="category-icon">🧠</div>
+                    <h2 class="category-title">Quizzes & Learning Tools</h2>
+                    <p class="category-description">Test your knowledge and improve your skills with interactive quizzes and educational tools.</p>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">📝</span>
+                            <h3 class="tool-title">Hard Words Spelling Quiz</h3>
+                            <span class="tool-category">Quizzes & Learning</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Master the 50 trickiest words that trip up writers regularly. Multiple difficulty levels and study modes.</p>
+                            <ul class="tool-features">
+                                <li>50+ challenging words</li>
+                                <li>4 quiz modes</li>
+                                <li>Progress tracking</li>
+                                <li>Definitions included</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Hard Words Spelling Quiz', 'hard-words-quiz')">Try Free</a>
+                                <a href="/list-of-hard-words-to-spell/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🧠</span>
+                            <h3 class="tool-title">Writing Software Quiz</h3>
+                            <span class="tool-category">Quizzes & Learning</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Discover the best writing software for your needs with our comprehensive quiz and recommendations.</p>
+                            <ul class="tool-features">
+                                <li>Personalized recommendations</li>
+                                <li>Software comparisons</li>
+                                <li>Feature matching</li>
+                                <li>Budget considerations</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Writing Software Quiz', 'writing-software-quiz')">Try Free</a>
+                                <a href="/best-free-writing-software/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🔍</span>
+                            <h3 class="tool-title">Crime Thriller Book Finder</h3>
+                            <span class="tool-category">Quizzes & Learning</span>
+                        </div>
+                        <div class="tool-content">
+                            <p class="tool-description">Find your next favorite crime thriller with our interactive quiz that matches books to your preferences.</p>
+                            <ul class="tool-features">
+                                <li>Personalized book matching</li>
+                                <li>Genre preferences</li>
+                                <li>Author recommendations</li>
+                                <li>Reading level options</li>
+                            </ul>
+                            <div class="tool-actions">
+                                <a href="#" class="btn btn-primary" onclick="openTool('Crime Thriller Book Finder', 'crime-thriller-quiz')">Try Free</a>
+                                <a href="/crime-thriller-authors/" class="btn btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Improve Your Writing?</h2>
+            <p>Join thousands of writers who use our free tools daily. Get tips, updates, and new tools delivered to your inbox.</p>
+            
+            <form class="email-signup" action="#" method="post">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="email-btn">Get Free Updates</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Tool Modal -->
+    <div id="toolModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Tool</h3>
+                <span class="close">&times;</span>
+            </div>
+            <iframe id="modalIframe" class="modal-iframe" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const categories = document.querySelectorAll('.category-section');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                // Show/hide categories
+                categories.forEach(cat => {
+                    if (category === 'all' || cat.dataset.category === category) {
+                        cat.style.display = 'block';
+                    } else {
+                        cat.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('toolModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalIframe = document.getElementById('modalIframe');
+        const closeBtn = document.querySelector('.close');
+
+        function openTool(title, toolId) {
+            modalTitle.textContent = title;
+            modalIframe.src = `https://bawt.netlify.app/?embed=true&tool=${toolId}`;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            modalIframe.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Escape key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Analytics tracking (replace with your tracking code)
+        function trackToolUsage(toolName) {
+            // Google Analytics 4 event tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'tool_opened', {
+                    'tool_name': toolName,
+                    'page_location': window.location.href
+                });
+            }
+        }
+
+        // Add tracking to tool opens
+        const originalOpenTool = openTool;
+        openTool = function(title, toolId) {
+            trackToolUsage(title);
+            originalOpenTool(title, toolId);
+        };
+    </script>
+</body>
+</html> 
