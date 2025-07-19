@@ -15,6 +15,8 @@ import CrimeThrillerQuiz from './components/CrimeThrillerQuiz';
 import HardWordsSpellingQuiz from './components/HardWordsSpellingQuiz';
 import StephenKingTimeline from './components/StephenKingTimeline';
 import FamousPoemsTimeline from './components/FamousPoemsTimeline';
+import GrammarlyROICalculator from './components/GrammarlyROICalculator';
+import GrammarlyPlanQuiz from './components/GrammarlyPlanQuiz';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -47,6 +49,8 @@ function App() {
       case 'stephen-king-timeline': return 'stephen-king-timeline';
       case 'famous-poems-timeline': return 'famous-poems-timeline';
       case 'strong-female-character': return 'strong-female-character';
+      case 'grammarly-roi-calculator': return 'grammarly-roi-calculator';
+      case 'grammarly-plan-quiz': return 'grammarly-plan-quiz';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -125,7 +129,9 @@ function App() {
     { id: 'crime-thriller-quiz', name: 'Crime Thriller Book Finder', icon: '🔍' },
     { id: 'stephen-king-timeline', name: 'Stephen King Complete Timeline', icon: '📚' },
     { id: 'famous-poems-timeline', name: 'Most Famous Poems Timeline', icon: '📜' },
-    { id: 'strong-female-character', name: 'Strong Female Characters', icon: '💪' }
+    { id: 'strong-female-character', name: 'Strong Female Characters', icon: '💪' },
+    { id: 'grammarly-roi-calculator', name: 'Grammarly ROI Calculator', icon: '🧮' },
+    { id: 'grammarly-plan-quiz', name: 'Grammarly Plan Finder', icon: '🎯' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -267,6 +273,10 @@ function App() {
         {currentTool === 'famous-poems-timeline' && <FamousPoemsTimeline />}
 
         {currentTool === 'strong-female-character' && <StrongFemaleCharacterGenerator />}
+
+        {currentTool === 'grammarly-roi-calculator' && <GrammarlyROICalculator />}
+
+        {currentTool === 'grammarly-plan-quiz' && <GrammarlyPlanQuiz />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
