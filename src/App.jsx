@@ -13,7 +13,23 @@ import {
 } from './utils/textAnalysis';
 
 function App() {
-  const [currentTool, setCurrentTool] = useState('essay-hook'); // Default to essay hook generator
+  // Check URL parameters for embed mode and tool selection
+  const urlParams = new URLSearchParams(window.location.search);
+  const isEmbedMode = urlParams.get('embed') === 'true';
+  const toolFromUrl = urlParams.get('tool');
+  
+  // Map URL tool parameter to internal tool ID
+  const getInitialTool = () => {
+    switch(toolFromUrl) {
+      case 'palindrome': return 'palindrome';
+      case 'tone': return 'tone';
+      case 'rhyming': return 'rhyming';
+      case 'essay-hook': return 'essay-hook';
+      default: return 'tone'; // Default to tone checker
+    }
+  };
+
+  const [currentTool, setCurrentTool] = useState(getInitialTool());
   const [text, setText] = useState('');
   const [analysis, setAnalysis] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -72,42 +88,44 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
       <div className="container mx-auto px-4 py-8">
-        {/* Header with Navigation and Dark Mode Toggle */}
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-          {/* Tool Navigation */}
-          <div className="flex bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            {tools.map((tool) => (
-              <button
-                key={tool.id}
-                onClick={() => setCurrentTool(tool.id)}
-                className={`flex items-center space-x-2 px-4 py-3 font-medium transition-colors ${
-                  currentTool === tool.id
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
-              >
-                <span className="text-lg">{tool.icon}</span>
-                <span className="hidden sm:inline">{tool.name}</span>
-              </button>
-            ))}
-          </div>
+        {/* Header with Navigation and Dark Mode Toggle - Hidden in embed mode */}
+        {!isEmbedMode && (
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+            {/* Tool Navigation */}
+            <div className="flex bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+              {tools.map((tool) => (
+                <button
+                  key={tool.id}
+                  onClick={() => setCurrentTool(tool.id)}
+                  className={`flex items-center space-x-2 px-4 py-3 font-medium transition-colors ${
+                    currentTool === tool.id
+                      ? 'bg-blue-600 text-white'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  }`}
+                >
+                  <span className="text-lg">{tool.icon}</span>
+                  <span className="hidden sm:inline">{tool.name}</span>
+                </button>
+              ))}
+            </div>
 
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={toggleDarkMode}
-            className="flex items-center space-x-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
-                     bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 
-                     hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            <span className="text-lg">
-              {isDarkMode ? '☀️' : '🌙'}
-            </span>
-            <span className="text-sm font-medium">
-              {isDarkMode ? 'Light' : 'Dark'} Mode
-            </span>
-          </button>
-        </div>
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={toggleDarkMode}
+              className="flex items-center space-x-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
+                       bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 
+                       hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              <span className="text-lg">
+                {isDarkMode ? '☀️' : '🌙'}
+              </span>
+              <span className="text-sm font-medium">
+                {isDarkMode ? 'Light' : 'Dark'} Mode
+              </span>
+            </button>
+          </div>
+        )}
 
         {/* Main Content */}
         {currentTool === 'palindrome' && <PalindromeChecker />}
@@ -126,15 +144,17 @@ function App() {
 
         {currentTool === 'essay-hook' && <EssayHookGenerator />}
 
-        {/* Footer */}
-        <footer className="mt-16 text-center text-gray-500 dark:text-gray-400">
-          <p className="text-sm">
-            Built with React and TailwindCSS • Writing Tools for BecomeAWriterToday.com
-          </p>
-        </footer>
+        {/* Footer - Hidden in embed mode */}
+        {!isEmbedMode && (
+          <footer className="mt-16 text-center text-gray-500 dark:text-gray-400">
+            <p className="text-sm">
+              Built with React and TailwindCSS • Writing Tools for BecomeAWriterToday.com
+            </p>
+          </footer>
+        )}
       </div>
     </div>
   );
 }
 
-export default App; 
+export default App;
