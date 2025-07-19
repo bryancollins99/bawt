@@ -29,9 +29,9 @@ const TextInput = ({ onTextChange, onAnalyze, showDarkToggle = true }) => {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-4">
-        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
           Emotional Tone + Filler Checker
-        </h1>
+        </h2>
         <p className="text-gray-600 dark:text-gray-300">
           Analyze your writing for filler words and emotional tone
         </p>

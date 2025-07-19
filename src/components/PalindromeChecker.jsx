@@ -72,9 +72,9 @@ const PalindromeChecker = () => {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
           Palindrome Checker & Generator
-        </h1>
+        </h2>
         <p className="text-gray-600 dark:text-gray-300">
           Check if your text is a palindrome or generate fun palindromes
         </p>
