@@ -38,6 +38,16 @@ function App() {
     return saved ? JSON.parse(saved) : false;
   });
 
+  // Update URL when tool changes (only in non-embed mode)
+  const handleToolChange = (toolId) => {
+    setCurrentTool(toolId);
+    if (!isEmbedMode) {
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set('tool', toolId);
+      window.history.pushState({}, '', newUrl);
+    }
+  };
+
   // Apply dark mode class to document
   useEffect(() => {
     if (isDarkMode) {
@@ -85,6 +95,12 @@ function App() {
     { id: 'essay-hook', name: 'Essay Hook Generator', icon: '🪝' }
   ];
 
+  // Generate embed URL for current tool
+  const getEmbedUrl = (toolId) => {
+    const baseUrl = window.location.origin;
+    return `${baseUrl}/?embed=true&tool=${toolId}`;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
       <div className="container mx-auto px-4 py-8">
@@ -96,7 +112,7 @@ function App() {
               {tools.map((tool) => (
                 <button
                   key={tool.id}
-                  onClick={() => setCurrentTool(tool.id)}
+                  onClick={() => handleToolChange(tool.id)}
                   className={`flex items-center space-x-2 px-4 py-3 font-medium transition-colors ${
                     currentTool === tool.id
                       ? 'bg-blue-600 text-white'
@@ -124,6 +140,30 @@ function App() {
                 {isDarkMode ? 'Light' : 'Dark'} Mode
               </span>
             </button>
+          </div>
+        )}
+
+        {/* Embed URL Helper - Only show in non-embed mode */}
+        {!isEmbedMode && (
+          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-2">
+              📋 Embed URL for {tools.find(t => t.id === currentTool)?.name}:
+            </h3>
+            <div className="flex items-center space-x-2">
+              <code className="flex-1 px-3 py-2 bg-white dark:bg-gray-800 rounded border text-sm font-mono text-gray-800 dark:text-gray-200">
+                {getEmbedUrl(currentTool)}
+              </code>
+              <button
+                onClick={() => navigator.clipboard.writeText(getEmbedUrl(currentTool))}
+                className="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm font-medium"
+                title="Copy to clipboard"
+              >
+                📋 Copy
+              </button>
+            </div>
+            <p className="text-xs text-blue-600 dark:text-blue-400 mt-2">
+              Use this URL in your WordPress iframe or shortcode
+            </p>
           </div>
         )}
 
