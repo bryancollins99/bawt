@@ -17,6 +17,7 @@ import StephenKingTimeline from './components/StephenKingTimeline';
 import FamousPoemsTimeline from './components/FamousPoemsTimeline';
 import GrammarlyROICalculator from './components/GrammarlyROICalculator';
 import GrammarlyPlanQuiz from './components/GrammarlyPlanQuiz';
+import GrammarlyComparisonMatrix from './components/GrammarlyComparisonMatrix';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -51,6 +52,7 @@ function App() {
       case 'strong-female-character': return 'strong-female-character';
       case 'grammarly-roi-calculator': return 'grammarly-roi-calculator';
       case 'grammarly-plan-quiz': return 'grammarly-plan-quiz';
+      case 'grammarly-comparison': return 'grammarly-comparison';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -131,7 +133,8 @@ function App() {
     { id: 'famous-poems-timeline', name: 'Most Famous Poems Timeline', icon: '📜' },
     { id: 'strong-female-character', name: 'Strong Female Characters', icon: '💪' },
     { id: 'grammarly-roi-calculator', name: 'Grammarly ROI Calculator', icon: '🧮' },
-    { id: 'grammarly-plan-quiz', name: 'Grammarly Plan Finder', icon: '🎯' }
+    { id: 'grammarly-plan-quiz', name: 'Grammarly Plan Finder', icon: '🎯' },
+    { id: 'grammarly-comparison', name: 'Writing Tools Comparison', icon: '🔄' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -277,6 +280,8 @@ function App() {
         {currentTool === 'grammarly-roi-calculator' && <GrammarlyROICalculator />}
 
         {currentTool === 'grammarly-plan-quiz' && <GrammarlyPlanQuiz />}
+
+        {currentTool === 'grammarly-comparison' && <GrammarlyComparisonMatrix />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
