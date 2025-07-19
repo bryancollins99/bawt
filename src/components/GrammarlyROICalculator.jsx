@@ -32,29 +32,42 @@ const GrammarlyROICalculator = () => {
     freelancer: { wordsPerDay: 1200, hourlyRate: 35, correctionTime: 25 }
   };
 
-  // Calculations
+  // More realistic calculations
   const wordsPerMonth = wordsPerDay * 22; // ~22 working days
   const wordsPerYear = wordsPerMonth * 12;
-  const timePerCorrectionMinutes = correctionTime / 60; // Convert to hours
-  const correctionsPerMonth = wordsPerMonth / 100; // Assume 1 correction per 100 words
-  const timeSpentCorrectingPerMonth = correctionsPerMonth * timePerCorrectionMinutes;
-  const timeCostPerMonth = timeSpentCorrectingPerMonth * hourlyRate;
-  const timeCostPerYear = timeCostPerMonth * 12;
+  
+  // More realistic assumptions
+  const errorsPerThousandWords = 8; // Average 8 errors per 1000 words for typical writers
+  const timePerErrorSeconds = correctionTime; // Time to find and fix each error
+  
+  const totalErrorsPerMonth = (wordsPerMonth / 1000) * errorsPerThousandWords;
+  const timeSpentCorrectingPerMonth = (totalErrorsPerMonth * timePerErrorSeconds) / 3600; // Convert to hours
   
   const grammarlyPrice = grammarlyPlans[selectedPlan].price;
   const grammarlyAnnualCost = selectedPlan === 'annual' ? grammarlyPrice * 12 : 
-                              selectedPlan === 'quarterly' ? grammarlyPrice * 12 : 
+                              selectedPlan === 'quarterly' ? grammarlyPrice * 4 : 
                               grammarlyPrice * 12;
   
-  const timeSavingsPercent = 70; // Grammarly saves ~70% of correction time
+  // Grammarly reduces editing time by 50% (more conservative estimate)
+  const timeSavingsPercent = 50;
   const timeSavedPerMonth = timeSpentCorrectingPerMonth * (timeSavingsPercent / 100);
-  const moneySavedPerMonth = timeSavedPerMonth * hourlyRate;
+  const moneySavedPerMonth = Math.max(0, timeSavedPerMonth * hourlyRate);
   const moneySavedPerYear = moneySavedPerMonth * 12;
   
   const netSavingsPerYear = moneySavedPerYear - grammarlyAnnualCost;
-  const roiPercent = ((netSavingsPerYear / grammarlyAnnualCost) * 100);
+  
+  // Cap ROI at reasonable levels and handle edge cases
+  let roiPercent;
+  if (grammarlyAnnualCost === 0) {
+    roiPercent = 0;
+  } else if (netSavingsPerYear <= 0) {
+    roiPercent = Math.round((netSavingsPerYear / grammarlyAnnualCost) * 100);
+  } else {
+    roiPercent = Math.min(500, Math.round((netSavingsPerYear / grammarlyAnnualCost) * 100)); // Cap at 500%
+  }
+  
   const costPerWordChecked = grammarlyAnnualCost / wordsPerYear;
-  const paybackPeriodMonths = grammarlyAnnualCost / moneySavedPerMonth;
+  const paybackPeriodMonths = moneySavedPerMonth > 0 ? grammarlyAnnualCost / moneySavedPerMonth : 999;
 
   const handleUserTypeChange = (type) => {
     setUserType(type);
@@ -227,10 +240,26 @@ const GrammarlyROICalculator = () => {
               </div>
             </div>
             
-            {paybackPeriodMonths <= 12 && (
+            {paybackPeriodMonths <= 12 && paybackPeriodMonths > 0 && (
               <div className="mt-4 p-3 bg-green-100 dark:bg-green-800/30 rounded-lg">
                 <p className="text-sm text-green-800 dark:text-green-200 text-center">
                   ⚡ <strong>Pays for itself in {paybackPeriodMonths.toFixed(1)} months!</strong>
+                </p>
+              </div>
+            )}
+            
+            {paybackPeriodMonths > 12 && paybackPeriodMonths < 999 && (
+              <div className="mt-4 p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
+                <p className="text-sm text-yellow-800 dark:text-yellow-200 text-center">
+                  📊 <strong>Payback period: {paybackPeriodMonths.toFixed(1)} months</strong>
+                </p>
+              </div>
+            )}
+            
+            {(moneySavedPerMonth <= 0 || paybackPeriodMonths >= 999) && (
+              <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/30 rounded-lg">
+                <p className="text-sm text-red-800 dark:text-red-200 text-center">
+                  💡 <strong>Consider the free version or increase your writing volume</strong>
                 </p>
               </div>
             )}
@@ -245,8 +274,8 @@ const GrammarlyROICalculator = () => {
                 <span className="font-semibold">{formatNumber(wordsPerYear)}</span>
               </div>
               <div className="flex justify-between">
-                <span>Cost per word checked:</span>
-                <span className="font-semibold">{formatCurrency(costPerWordChecked)}</span>
+                <span>Estimated errors per year:</span>
+                <span className="font-semibold">{formatNumber(Math.round((wordsPerYear / 1000) * errorsPerThousandWords))}</span>
               </div>
               <div className="flex justify-between">
                 <span>Time spent correcting (monthly):</span>
@@ -265,11 +294,17 @@ const GrammarlyROICalculator = () => {
                 <span className="font-semibold">{formatCurrency(grammarlyAnnualCost)}</span>
               </div>
               <div className="flex justify-between font-bold text-lg">
-                <span>Net savings:</span>
+                <span>Net {netSavingsPerYear >= 0 ? 'savings' : 'cost'}:</span>
                 <span className={netSavingsPerYear >= 0 ? 'text-green-600' : 'text-red-600'}>
                   {formatCurrency(Math.abs(netSavingsPerYear))}
                 </span>
               </div>
+            </div>
+            
+            <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <p className="text-xs text-blue-800 dark:text-blue-200">
+                <strong>Calculation Method:</strong> Based on 8 errors per 1,000 words (industry average) and 50% time savings with Grammarly's automated suggestions.
+              </p>
             </div>
           </div>
 
@@ -300,7 +335,13 @@ const GrammarlyROICalculator = () => {
       <div className="mt-8 text-center bg-gradient-to-r from-green-600 to-blue-600 rounded-xl p-6 text-white">
         <h3 className="text-2xl font-bold mb-2">Ready to Save Time and Money?</h3>
         <p className="mb-4">
-          Get Grammarly Pro with up to 30% off and start seeing ROI in {paybackPeriodMonths.toFixed(1)} months!
+          {paybackPeriodMonths <= 12 && paybackPeriodMonths > 0 ? (
+            `Get Grammarly Pro with up to 60% off and start seeing ROI in ${paybackPeriodMonths.toFixed(1)} months!`
+          ) : paybackPeriodMonths < 999 ? (
+            `Get Grammarly Pro with up to 60% off and improve your writing efficiency!`
+          ) : (
+            `Try Grammarly Free first, or consider Pro if you write more frequently!`
+          )}
         </p>
         <a 
           href="https://discount.grammarly.com/api/discounts/HOjwmv" 
