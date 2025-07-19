@@ -11,6 +11,8 @@ import ConjunctionTool from './components/ConjunctionTool';
 import FreeWritingSoftwareQuiz from './components/FreeWritingSoftwareQuiz';
 import FemaleAuthorsTimeline from './components/FemaleAuthorsTimeline';
 import CrimeThrillerQuiz from './components/CrimeThrillerQuiz';
+import HardWordsSpellingQuiz from './components/HardWordsSpellingQuiz';
+import StephenKingTimeline from './components/StephenKingTimeline';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -37,9 +39,11 @@ function App() {
       case 'filler-words': return 'filler-words';
       case 'conjunction-tool': return 'conjunction-tool';
       case 'female-authors': return 'female-authors';
+      case 'hard-words-quiz': return 'hard-words-quiz';
       case 'writing-software-quiz': return 'writing-software-quiz';
       case 'crime-thriller-quiz': return 'crime-thriller-quiz';
-      default: return 'female-authors'; // Default to female authors timeline
+      case 'stephen-king-timeline': return 'stephen-king-timeline';
+      default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
 
@@ -112,8 +116,10 @@ function App() {
     { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
     { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' },
     { id: 'female-authors', name: 'Female Authors Timeline', icon: '👩‍💼' },
+    { id: 'hard-words-quiz', name: 'Hard Words Spelling Quiz', icon: '📝' },
     { id: 'writing-software-quiz', name: 'Writing Software Quiz', icon: '🧠' },
-    { id: 'crime-thriller-quiz', name: 'Crime Thriller Book Finder', icon: '🔍' }
+    { id: 'crime-thriller-quiz', name: 'Crime Thriller Book Finder', icon: '🔍' },
+    { id: 'stephen-king-timeline', name: 'Stephen King Complete Timeline', icon: '📚' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -244,9 +250,13 @@ function App() {
 
         {currentTool === 'female-authors' && <FemaleAuthorsTimeline />}
 
+        {currentTool === 'hard-words-quiz' && <HardWordsSpellingQuiz />}
+
         {currentTool === 'writing-software-quiz' && <FreeWritingSoftwareQuiz />}
 
         {currentTool === 'crime-thriller-quiz' && <CrimeThrillerQuiz />}
+
+        {currentTool === 'stephen-king-timeline' && <StephenKingTimeline />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
