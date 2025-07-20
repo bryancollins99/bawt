@@ -293,14 +293,14 @@ const DisneyHeroJourneyExplorer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white p-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-800 p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
             🎬 Disney Hero's Journey Explorer
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover how 12 beloved Disney movies follow Joseph Campbell's timeless Hero's Journey structure. 
             Explore each stage, compare different films, and understand the magic behind great storytelling.
           </p>
@@ -310,8 +310,8 @@ const DisneyHeroJourneyExplorer = () => {
               onClick={toggleCompareMode}
               className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                 compareMode 
-                  ? 'bg-yellow-500 text-black hover:bg-yellow-400' 
-                  : 'bg-white/20 hover:bg-white/30'
+                  ? 'bg-yellow-500 text-white hover:bg-yellow-400' 
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
               }`}
             >
               {compareMode ? '📊 Exit Compare Mode' : '🔄 Compare Movies'}
@@ -323,7 +323,7 @@ const DisneyHeroJourneyExplorer = () => {
                 setCompareMovies([]);
                 setCompareMode(false);
               }}
-              className="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg font-semibold transition-all"
+              className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-semibold transition-all"
             >
               🔄 Reset
             </button>
@@ -332,9 +332,9 @@ const DisneyHeroJourneyExplorer = () => {
 
         {/* Compare Mode */}
         {compareMode && (
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8">
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 mb-8 shadow-lg border border-gray-200">
             <h3 className="text-2xl font-bold mb-4">🔍 Compare Movies</h3>
-            <p className="text-gray-300 mb-4">Select up to 3 movies to compare their hero's journey stages:</p>
+            <p className="text-gray-600 mb-4">Select up to 3 movies to compare their hero's journey stages:</p>
             
             {compareMovies.length > 0 && (
               <div className="mb-6">
@@ -343,7 +343,7 @@ const DisneyHeroJourneyExplorer = () => {
                   {compareMovies.map(movie => (
                     <div 
                       key={movie.id}
-                      className="flex items-center gap-2 bg-white/20 rounded-lg px-4 py-2"
+                      className="flex items-center gap-2 bg-gray-100 rounded-lg px-4 py-2 border border-gray-300"
                     >
                       <span style={{ color: movie.color }}>{movie.title}</span>
                       <button
@@ -366,22 +366,22 @@ const DisneyHeroJourneyExplorer = () => {
             {disneyMovies.map((movie) => (
               <div
                 key={movie.id}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all cursor-pointer transform hover:scale-105"
+                className="bg-white/90 backdrop-blur-sm rounded-xl p-6 hover:bg-white transition-all cursor-pointer transform hover:scale-105 shadow-lg border border-gray-200 hover:shadow-xl"
                 onClick={() => compareMode ? addToCompare(movie) : setSelectedMovie(movie)}
               >
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xl font-bold" style={{ color: movie.color }}>
                     {movie.title}
                   </h3>
-                  <span className="text-sm text-gray-400">({movie.year})</span>
+                  <span className="text-sm text-gray-500">({movie.year})</span>
                 </div>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-600 mb-4">
                   <strong>Hero:</strong> {movie.hero}
                 </p>
                 
                 {compareMode ? (
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-400">
+                    <span className="text-sm text-gray-500">
                       {compareMovies.find(m => m.id === movie.id) ? '✅ Selected' : 'Click to add'}
                     </span>
                     {compareMovies.find(m => m.id === movie.id) && (
@@ -408,15 +408,15 @@ const DisneyHeroJourneyExplorer = () => {
 
         {/* Compare View */}
         {compareMode && compareMovies.length > 0 && (
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200">
             <h3 className="text-2xl font-bold mb-6">Journey Comparison</h3>
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="text-left p-3 border-b border-white/20">Stage</th>
+                    <th className="text-left p-3 border-b border-gray-300">Stage</th>
                     {compareMovies.map(movie => (
-                      <th key={movie.id} className="text-left p-3 border-b border-white/20" style={{ color: movie.color }}>
+                                              <th key={movie.id} className="text-left p-3 border-b border-gray-300" style={{ color: movie.color }}>
                         {movie.title}
                       </th>
                     ))}
@@ -424,18 +424,18 @@ const DisneyHeroJourneyExplorer = () => {
                 </thead>
                 <tbody>
                   {heroJourneyStages.map(stage => (
-                    <tr key={stage.id} className="border-b border-white/10">
+                    <tr key={stage.id} className="border-b border-gray-200">
                       <td className="p-3 font-semibold">
                         <div>
                           <div className="text-yellow-400">{stage.name}</div>
-                          <div className="text-sm text-gray-400">{stage.description}</div>
+                                                      <div className="text-sm text-gray-600">{stage.description}</div>
                         </div>
                       </td>
                       {compareMovies.map(movie => (
                         <td key={movie.id} className="p-3">
                           <div className="text-sm">
                             <div className="font-medium mb-1">{movie.stages[stage.id]?.scene}</div>
-                            <div className="text-gray-400 italic">"{movie.stages[stage.id]?.quote}"</div>
+                            <div className="text-gray-600 italic">"{movie.stages[stage.id]?.quote}"</div>
                           </div>
                         </td>
                       ))}
@@ -451,16 +451,16 @@ const DisneyHeroJourneyExplorer = () => {
         {selectedMovie && !compareMode && (
           <div className="space-y-8">
             {/* Movie Header */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 text-center shadow-lg border border-gray-200">
               <h2 className="text-4xl font-bold mb-4" style={{ color: selectedMovie.color }}>
                 {selectedMovie.title} ({selectedMovie.year})
               </h2>
-              <p className="text-xl text-gray-300">
+              <p className="text-xl text-gray-600">
                 Follow <strong>{selectedMovie.hero}</strong>'s journey through all 12 stages
               </p>
               <button
                 onClick={() => setSelectedMovie(null)}
-                className="mt-4 px-6 py-3 bg-white/20 hover:bg-white/30 rounded-lg transition-all"
+                                  className="mt-4 px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-all"
               >
                 ← Back to Movies
               </button>
@@ -471,8 +471,8 @@ const DisneyHeroJourneyExplorer = () => {
               {heroJourneyStages.map((stage) => (
                 <div
                   key={stage.id}
-                  className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 cursor-pointer transition-all ${
-                    selectedStage === stage.id ? 'ring-2 ring-yellow-400 bg-white/20' : 'hover:bg-white/15'
+                  className={`bg-white/90 backdrop-blur-sm rounded-xl p-6 cursor-pointer transition-all shadow-lg border border-gray-200 hover:shadow-xl ${
+                    selectedStage === stage.id ? 'ring-2 ring-yellow-400 bg-white' : 'hover:bg-white'
                   }`}
                   onClick={() => setSelectedStage(selectedStage === stage.id ? null : stage.id)}
                 >
@@ -483,18 +483,18 @@ const DisneyHeroJourneyExplorer = () => {
                     <h3 className="text-lg font-bold text-yellow-400">{stage.name}</h3>
                   </div>
                   
-                  <p className="text-sm text-gray-400 mb-4">{stage.description}</p>
+                  <p className="text-sm text-gray-600 mb-4">{stage.description}</p>
                   
                   <div className="space-y-3">
                     <div>
-                      <h4 className="font-semibold text-white mb-1">Scene:</h4>
-                      <p className="text-gray-300 text-sm">{selectedMovie.stages[stage.id]?.scene}</p>
+                                              <h4 className="font-semibold text-gray-800 mb-1">Scene:</h4>
+                        <p className="text-gray-600 text-sm">{selectedMovie.stages[stage.id]?.scene}</p>
                     </div>
                     
                     {selectedStage === stage.id && (
-                      <div className="border-t border-white/20 pt-3">
-                        <h4 className="font-semibold text-white mb-1">Quote:</h4>
-                        <p className="text-gray-300 text-sm italic">
+                                              <div className="border-t border-gray-200 pt-3">
+                          <h4 className="font-semibold text-gray-800 mb-1">Quote:</h4>
+                          <p className="text-gray-600 text-sm italic">
                           "{selectedMovie.stages[stage.id]?.quote}"
                         </p>
                       </div>
@@ -509,12 +509,12 @@ const DisneyHeroJourneyExplorer = () => {
             </div>
 
             {/* Learning Section */}
-            <div className="bg-gradient-to-r from-yellow-400/20 to-red-500/20 rounded-xl p-8">
+            <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl p-8 border border-gray-200 shadow-lg">
               <h3 className="text-2xl font-bold mb-4">✨ Writing Insights</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Story Structure Lessons:</h4>
-                  <ul className="space-y-2 text-gray-300">
+                  <ul className="space-y-2 text-gray-700">
                     <li>• Every great story needs a relatable "ordinary world"</li>
                     <li>• The mentor figure provides wisdom and tools</li>
                     <li>• Multiple tests build character development</li>
@@ -524,7 +524,7 @@ const DisneyHeroJourneyExplorer = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold mb-2">Why This Works:</h4>
-                  <ul className="space-y-2 text-gray-300">
+                  <ul className="space-y-2 text-gray-700">
                     <li>• Universal human experience of growth</li>
                     <li>• Clear emotional arc audiences connect with</li>
                     <li>• Satisfying resolution and transformation</li>
@@ -538,7 +538,7 @@ const DisneyHeroJourneyExplorer = () => {
         )}
 
         {/* Footer */}
-        <div className="text-center mt-12 text-gray-400">
+        <div className="text-center mt-12 text-gray-600">
           <p>Based on Joseph Campbell's "The Hero with a Thousand Faces" • Created for Become a Writer Today</p>
         </div>
       </div>
