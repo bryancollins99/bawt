@@ -314,7 +314,7 @@ const GrammarlyPlanQuiz = () => {
 
           <div className="text-center">
             <a 
-              href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+              href="https://grammarly.pxf.io/c/1131357/3023347/31551" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:shadow-lg transition-all mb-4"
@@ -382,10 +382,10 @@ const GrammarlyPlanQuiz = () => {
             Take Quiz Again
           </button>
           <a 
-            href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+            href="https://grammarly.pxf.io/c/1131357/3023347/31551" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-block"
+            className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
           >
             Get Grammarly Discount
           </a>

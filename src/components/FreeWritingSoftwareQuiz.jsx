@@ -246,11 +246,11 @@ const FreeWritingSoftwareQuiz = () => {
             <p className="text-sm text-green-700 dark:text-green-400 mb-3">
               Ready to level up your writing? Get an exclusive discount on Grammarly Premium for advanced grammar checking.
             </p>
-            <a 
-              href="https://discount.grammarly.com/api/discounts/HOjwmv" 
-              target="_blank" 
+            <a
+              href="https://grammarly.pxf.io/c/1131357/3023347/31551"
+              target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-3 py-2 bg-green-600 text-white rounded text-sm font-medium hover:bg-green-700 transition-colors"
+              className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
             >
               🎯 Get Grammarly Discount
             </a>
@@ -343,4 +343,4 @@ const FreeWritingSoftwareQuiz = () => {
   );
 };
 
-export default FreeWritingSoftwareQuiz; 
+export default FreeWritingSoftwareQuiz;

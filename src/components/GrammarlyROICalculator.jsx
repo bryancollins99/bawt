@@ -343,11 +343,11 @@ const GrammarlyROICalculator = () => {
             `Try Grammarly Free first, or consider Pro if you write more frequently!`
           )}
         </p>
-        <a 
-          href="https://discount.grammarly.com/api/discounts/HOjwmv" 
-          target="_blank" 
+        <a
+          href="https://grammarly.pxf.io/c/1131357/3023347/31551"
+          target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+          className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center"
         >
           Get {grammarlyPlans[selectedPlan].discount}% Off Grammarly Pro →
         </a>

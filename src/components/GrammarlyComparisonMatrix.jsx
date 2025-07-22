@@ -576,7 +576,7 @@ const GrammarlyComparisonMatrix = () => {
               
               {tool.id === 'grammarly' ? (
                 <a 
-                  href="https://discount.grammarly.com/api/discounts/HOjwmv" 
+                  href="https://grammarly.pxf.io/c/1131357/3023347/31551" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full px-4 py-2 rounded-lg font-semibold transition-colors bg-green-600 text-white hover:bg-green-700 inline-block text-center"
@@ -693,13 +693,13 @@ const GrammarlyComparisonMatrix = () => {
         <p className="mb-4">
           Based on our comprehensive comparison, Grammarly Pro offers the best balance of features, accuracy, and usability for most writers.
         </p>
-        <a 
-          href="https://discount.grammarly.com/api/discounts/HOjwmv" 
-          target="_blank" 
+        <a
+          href="https://grammarly.pxf.io/c/1131357/3023347/31551"
+          target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+          className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-center mt-4"
         >
-                            Get 25% Off Grammarly Pro (40% Annual) →
+          Get 25% Off Grammarly Pro (40% Annual) →
         </a>
       </div>
     </div>
