@@ -629,7 +629,7 @@ const WritingQualityScorer = () => {
                   <a
                     href={grammarlyAffiliateLink}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium text-lg shadow-lg"
                   >
                     Try Grammarly Free
@@ -907,7 +907,7 @@ const WritingQualityScorer = () => {
               <a
                 href={grammarlyAffiliateLink}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all font-semibold text-lg shadow-lg transform hover:scale-105"
               >
                 Start Free Grammarly Trial
