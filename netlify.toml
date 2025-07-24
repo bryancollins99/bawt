@@ -71,6 +71,11 @@
   to = "/?embed=true&tool=poetry-words"
   status = 200
 
+[[redirects]]
+  from = "/embed/writing-quality-scorer"
+  to = "/?embed=true&tool=writing-quality-scorer"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"
