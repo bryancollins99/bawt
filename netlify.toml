@@ -81,6 +81,11 @@
   to = "/?embed=true&tool=random-words"
   status = 200
 
+[[redirects]]
+  from = "/embed/romantic-words"
+  to = "/?embed=true&tool=romantic-words"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"
