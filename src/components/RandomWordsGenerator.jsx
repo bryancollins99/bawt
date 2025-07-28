@@ -669,15 +669,89 @@ const RandomWordsGenerator = () => {
   };
 
   const generatePhrases = () => {
+    // Generate phrases that incorporate the generated words
+    const phrases = [];
     const availablePhrases = getFilteredPhrases();
-    const shuffled = [...availablePhrases].sort(() => Math.random() - 0.5);
-    setGeneratedPhrases(shuffled.slice(0, Math.min(wordCount, availablePhrases.length)));
+    
+    // First, add some template phrases that can incorporate the generated words
+    const templatePhrases = [
+      'The {word} moment when',
+      'She felt {word} as',
+      'His {word} approach to',
+      'The {word} atmosphere of',
+      'They discovered the {word} nature of',
+      'In the {word} silence of',
+      'The {word} quality of',
+      'Her {word} response to',
+      'The {word} beauty of',
+      'His {word} determination to',
+      'The {word} essence of',
+      'She showed {word} courage in',
+      'The {word} mystery of',
+      'His {word} understanding of',
+      'The {word} power of',
+      'They experienced {word} joy when',
+      'The {word} depth of',
+      'Her {word} wisdom about',
+      'The {word} strength of',
+      'His {word} vision for',
+      'The {word} landscape before',
+      'Her {word} voice echoed',
+      'His {word} eyes reflected',
+      'The {word} energy of',
+      'They found {word} comfort in',
+      'The {word} rhythm of',
+      'Her {word} spirit shone',
+      'His {word} presence filled',
+      'The {word} melody of',
+      'They embraced the {word} truth',
+      'The {word} harmony of',
+      'Her {word} grace moved',
+      'His {word} passion ignited',
+      'The {word} wonder of',
+      'They celebrated the {word} victory',
+      'The {word} peace of',
+      'Her {word} kindness touched',
+      'His {word} wisdom guided',
+      'The {word} magic of',
+      'They discovered {word} freedom in'
+    ];
+    
+    // Create phrases using the generated words
+    generatedWords.forEach((wordObj, index) => {
+      if (index < wordCount) {
+        const template = templatePhrases[index % templatePhrases.length];
+        const phrase = template.replace('{word}', wordObj.word);
+        phrases.push({
+          phrase: phrase,
+          word: wordObj.word,
+          category: wordObj.category
+        });
+      }
+    });
+    
+    // Add some of the original themed phrases if we have room
+    const remainingSlots = wordCount - phrases.length;
+    if (remainingSlots > 0 && availablePhrases.length > 0) {
+      const shuffled = [...availablePhrases].sort(() => Math.random() - 0.5);
+      const additionalPhrases = shuffled.slice(0, remainingSlots).map(phrase => ({
+        phrase: phrase,
+        word: null,
+        category: 'themed'
+      }));
+      phrases.push(...additionalPhrases);
+    }
+    
+    setGeneratedPhrases(phrases);
   };
 
   const generateBoth = () => {
     generateWords();
     if (includePhrases) {
-      generatePhrases();
+      // Wait a moment for words to be set, then generate phrases
+      setTimeout(() => {
+        generatePhrases();
+      }, 100);
     }
   };
 
@@ -748,7 +822,8 @@ const RandomWordsGenerator = () => {
       depth: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
       closeness: 'bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200',
       positive: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-      negative: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
+      negative: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
+      themed: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
     };
     return colors[category] || 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
   };
@@ -918,18 +993,30 @@ const RandomWordsGenerator = () => {
                   💭 Generated Phrases
                 </h3>
                 <button
-                  onClick={() => copyToClipboard(generatedPhrases.join('\n'))}
+                  onClick={() => copyToClipboard(generatedPhrases.map(p => p.phrase).join('\n'))}
                   className="px-3 py-1 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded text-sm hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors"
                 >
                   📋 Copy Phrases
                 </button>
               </div>
               <div className="space-y-3">
-                {generatedPhrases.map((phrase, index) => (
+                {generatedPhrases.map((phraseObj, index) => (
                   <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-600 shadow-sm">
-                    <p className="text-gray-900 dark:text-white italic">
-                      "{phrase}"
-                    </p>
+                    <div className="flex items-start justify-between mb-2">
+                      <p className="text-gray-900 dark:text-white italic flex-1">
+                        "{phraseObj.phrase}"
+                      </p>
+                      {phraseObj.word && (
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ml-3 ${getCategoryColor(phraseObj.category)}`}>
+                          Uses: {phraseObj.word}
+                        </span>
+                      )}
+                    </div>
+                    {phraseObj.word && (
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                        ✨ This phrase incorporates the word "<strong>{phraseObj.word}</strong>" from your generated words
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
