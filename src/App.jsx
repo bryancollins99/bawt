@@ -25,6 +25,7 @@ import DisneyHeroJourneyExplorer from './components/DisneyHeroJourneyExplorer';
 import WritingQualityScorer from './components/WritingQualityScorer';
 import RandomWordsGenerator from './components/RandomWordsGenerator';
 import RomanticWordsGenerator from './components/RomanticWordsGenerator';
+import SadWordsGenerator from './components/SadWordsGenerator';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -67,6 +68,7 @@ function App() {
       case 'writing-quality-scorer': return 'writing-quality-scorer';
       case 'random-words': return 'random-words';
       case 'romantic-words': return 'romantic-words';
+      case 'sad-words': return 'sad-words';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -155,7 +157,8 @@ function App() {
     { id: 'disney-hero-journey', name: 'Disney Hero\'s Journey Explorer', icon: '🎬' },
     { id: 'writing-quality-scorer', name: 'Writing Quality Scorer', icon: '📊' },
     { id: 'random-words', name: 'Random Words Generator', icon: '🎲' },
-    { id: 'romantic-words', name: 'Romantic Words Generator', icon: '💕' }
+    { id: 'romantic-words', name: 'Romantic Words Generator', icon: '💕' },
+    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -317,6 +320,8 @@ function App() {
         {currentTool === 'random-words' && <RandomWordsGenerator />}
 
         {currentTool === 'romantic-words' && <RomanticWordsGenerator />}
+
+        {currentTool === 'sad-words' && <SadWordsGenerator />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
