@@ -76,6 +76,11 @@
   to = "/?embed=true&tool=writing-quality-scorer"
   status = 200
 
+[[redirects]]
+  from = "/embed/random-words"
+  to = "/?embed=true&tool=random-words"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"

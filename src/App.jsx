@@ -23,6 +23,7 @@ import GrammarExamplesGenerator from './components/GrammarExamplesGenerator';
 import PoetryWordsGenerator from './components/PoetryWordsGenerator';
 import DisneyHeroJourneyExplorer from './components/DisneyHeroJourneyExplorer';
 import WritingQualityScorer from './components/WritingQualityScorer';
+import RandomWordsGenerator from './components/RandomWordsGenerator';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -63,6 +64,7 @@ function App() {
       case 'poetry-words': return 'poetry-words';
       case 'disney-hero-journey': return 'disney-hero-journey';
       case 'writing-quality-scorer': return 'writing-quality-scorer';
+      case 'random-words': return 'random-words';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -149,7 +151,8 @@ function App() {
     { id: 'grammar-examples', name: 'Grammar Examples Generator', icon: '📝' },
     { id: 'poetry-words', name: 'Poetry Words Generator', icon: '🌟' },
     { id: 'disney-hero-journey', name: 'Disney Hero\'s Journey Explorer', icon: '🎬' },
-    { id: 'writing-quality-scorer', name: 'Writing Quality Scorer', icon: '📊' }
+    { id: 'writing-quality-scorer', name: 'Writing Quality Scorer', icon: '📊' },
+    { id: 'random-words', name: 'Random Words Generator', icon: '🎲' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -307,6 +310,8 @@ function App() {
         {currentTool === 'disney-hero-journey' && <DisneyHeroJourneyExplorer />}
 
         {currentTool === 'writing-quality-scorer' && <WritingQualityScorer />}
+
+        {currentTool === 'random-words' && <RandomWordsGenerator />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
