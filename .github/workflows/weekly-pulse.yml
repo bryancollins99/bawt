@@ -1,0 +1,36 @@
+name: Weekly Writing Pulse
+
+# Regenerates src/data/weeklyPulse.json every Monday so the "This Week in
+# Writing & AI" page (WeeklyWriting.jsx) auto-updates. Committing the refreshed
+# JSON to main triggers a Netlify redeploy — that commit IS the dynamic-content
+# mechanism. No LLM in the data path; the script pulls straight from the HN API.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rebuild weekly pulse data
+        run: node scripts/build-weekly-pulse.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/weeklyPulse.json
+          git diff --quiet --cached || (git commit -m "chore: refresh weekly writing pulse [skip ci]" && git push)

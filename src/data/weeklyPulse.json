@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-07-01T18:07:37.502Z",
+  "weekOf": "2026-07-01",
+  "items": [
+    {
+      "title": "Blogging can just be stating the obvious",
+      "url": "https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/",
+      "points": 466,
+      "comments": 133,
+      "domain": "blog.jim-nielsen.com",
+      "createdAt": "2026-06-24T23:46:37.000Z"
+    },
+    {
+      "title": "'Careless People' author claims Meta surveilled her for 12mos to enforce silence",
+      "url": "https://fortune.com/2026/06/26/meta-wynn-williams-surveillance-gag-order-lawsuit-2026/",
+      "points": 224,
+      "comments": 87,
+      "domain": "fortune.com",
+      "createdAt": "2026-06-27T21:14:19.000Z"
+    },
+    {
+      "title": "Memoirs of Extraordinary Popular Delusions and the Madness of Crowds (1852)",
+      "url": "https://www.gutenberg.org/ebooks/24518",
+      "points": 184,
+      "comments": 64,
+      "domain": "gutenberg.org",
+      "createdAt": "2026-06-30T12:47:51.000Z"
+    },
+    {
+      "title": "Show HN: DRM-Free Books",
+      "url": "https://frequal.com/Perspectives/DrmFreeAuthors.html",
+      "points": 118,
+      "comments": 46,
+      "domain": "frequal.com",
+      "createdAt": "2026-06-28T16:58:56.000Z"
+    },
+    {
+      "title": "Claude's writing style has me on edge",
+      "url": "https://jerodsanto.net/2026/06/claudes-writing-style-has-me-on-edge/",
+      "points": 25,
+      "comments": 13,
+      "domain": "jerodsanto.net",
+      "createdAt": "2026-07-01T11:41:27.000Z"
+    },
+    {
+      "title": "The C to Rust migration book",
+      "url": "https://mainmatter.com/c-to-rust-migration-book/",
+      "points": 22,
+      "comments": 16,
+      "domain": "mainmatter.com",
+      "createdAt": "2026-07-01T14:00:29.000Z"
+    },
+    {
+      "title": "Show HN: Kiso, an open-source publishing engine for Open Knowledge Format",
+      "url": "https://oak-invest.github.io/kiso/",
+      "points": 21,
+      "comments": 3,
+      "domain": "oak-invest.github.io",
+      "createdAt": "2026-06-27T21:08:03.000Z"
+    },
+    {
+      "title": "Ask HN: Books about Genetic Algorithms",
+      "url": "https://news.ycombinator.com/item?id=48711408",
+      "points": 15,
+      "comments": 9,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-06-28T20:40:07.000Z"
+    },
+    {
+      "title": "No AI Co-Authors. A Manifesto",
+      "url": "https://no-ai-coauthors.dev",
+      "points": 11,
+      "comments": 12,
+      "domain": "no-ai-coauthors.dev",
+      "createdAt": "2026-06-23T21:09:25.000Z"
+    },
+    {
+      "title": "'Once you have a machine think and write for you, you're cooked as a species'",
+      "url": "https://www.theguardian.com/books/2026/jun/27/dave-eggers-once-you-have-a-machine-think-and-write-for-you-youre-cooked-as-a-species",
+      "points": 10,
+      "comments": 1,
+      "domain": "theguardian.com",
+      "createdAt": "2026-06-28T05:10:12.000Z"
+    },
+    {
+      "title": "Now that your newsletter is AI-generated, I've Unsubscribed",
+      "url": "https://idiallo.com/blog/unsubscribed-from-ai-generated-newsletters",
+      "points": 8,
+      "comments": 1,
+      "domain": "idiallo.com",
+      "createdAt": "2026-06-21T06:34:32.000Z"
+    },
+    {
+      "title": "Ask HN: I miss old days of blogging without promotions",
+      "url": "https://news.ycombinator.com/item?id=48663180",
+      "points": 8,
+      "comments": 12,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-06-24T17:36:18.000Z"
+    },
+    {
+      "title": "Hangul, the only major writing system with a known inventor",
+      "url": "https://spacedaily.com/d-the-korean-alphabet-called-hangul-is-the-only-major-writing-system-in-human-history-with-a-known-inventor-and-a-documented-design-rationale-created-in-1443-by-king-sejong-of-the-joseon-dyn/",
+      "points": 8,
+      "comments": 1,
+      "domain": "spacedaily.com",
+      "createdAt": "2026-06-29T14:49:04.000Z"
+    },
+    {
+      "title": "Granta stops publishing short story award winners over AI controversy",
+      "url": "https://www.theguardian.com/books/2026/jun/20/granta-magazine-commonwealth-short-story-prize-ai",
+      "points": 5,
+      "comments": 0,
+      "domain": "theguardian.com",
+      "createdAt": "2026-06-20T16:23:11.000Z"
+    },
+    {
+      "title": "Show HN: Built an Obsidian plugin that rephrases your writing without takin over",
+      "url": "https://rephrasethis.co",
+      "points": 5,
+      "comments": 0,
+      "domain": "rephrasethis.co",
+      "createdAt": "2026-06-24T23:49:43.000Z"
+    }
+  ]
+}
