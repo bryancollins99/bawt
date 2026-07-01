@@ -1,0 +1,270 @@
+{
+  "technology": [
+    {
+      "title": "Should Social Media Be Banned for Under-16s?",
+      "description": "Take a stance on age limits for social media and argue whether protecting young users outweighs their right to access online communities.",
+      "type": "argumentative",
+      "grade": ["middle", "high", "college"],
+      "questions": ["Argue FOR: Do the mental-health risks justify a hard age limit?", "Argue AGAINST: Does a ban push teens toward less-safe, unregulated spaces?"]
+    },
+    {
+      "title": "AI Writing Tools Belong in the Classroom",
+      "description": "Defend or challenge the position that students should be allowed to use AI writing assistants for schoolwork.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["What is your thesis: is AI a calculator for writing, or a shortcut around learning?", "How do you answer the strongest objection to your view?"]
+    },
+    {
+      "title": "Smartphones Have No Place in Schools",
+      "description": "Write a persuasive editorial arguing for or against a full phone ban during the school day.",
+      "type": "argumentative",
+      "grade": ["middle", "high"],
+      "questions": ["Argue FOR: Do phones harm focus and worsen bullying enough to justify a ban?", "Argue AGAINST: Are phones essential safety and learning tools?"]
+    },
+    {
+      "title": "In Defense of the Right to Disconnect",
+      "description": "Make the case that workers should have a legal right to ignore work messages outside working hours.",
+      "type": "call-to-action",
+      "grade": ["high", "college"],
+      "questions": ["What concrete change are you urging readers or lawmakers to support?", "Why is voluntary etiquette not enough to fix the problem?"]
+    },
+    {
+      "title": "No, Video Games Are Not Making Kids Violent",
+      "description": "A rebuttal editorial answering the common claim that gaming causes real-world aggression.",
+      "type": "rebuttal",
+      "grade": ["middle", "high"],
+      "questions": ["What is the opposing claim you are answering, stated fairly?", "What evidence best dismantles that claim?"]
+    }
+  ],
+  "social": [
+    {
+      "title": "Voting Should Be Mandatory",
+      "description": "Argue for or against compulsory voting and what it would mean for a healthy democracy.",
+      "type": "argumentative",
+      "grade": ["high", "college"],
+      "questions": ["Argue FOR: Does higher turnout produce more legitimate government?", "Argue AGAINST: Is forcing a vote a violation of personal freedom?"]
+    },
+    {
+      "title": "It's Time to Rethink How We Treat the Homeless",
+      "description": "A call-to-action editorial urging your community to adopt a specific policy on homelessness.",
+      "type": "call-to-action",
+      "grade": ["high", "college"],
+      "questions": ["What single action are you asking readers to demand or support?", "How do you counter the 'it's too expensive' objection?"]
+    },
+    {
+      "title": "Cancel Culture Does More Harm Than Good",
+      "description": "State and defend your opinion on public shaming and accountability online.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["Where do you draw the line between accountability and mob justice?", "What is the strongest case against your position?"]
+    },
+    {
+      "title": "The Minimum Wage Should Be a Living Wage",
+      "description": "Take a persuasive stance on tying the minimum wage to the real cost of living.",
+      "type": "argumentative",
+      "grade": ["high", "college"],
+      "questions": ["Argue FOR: Is a living wage a matter of basic fairness?", "Argue AGAINST: Would it cost jobs and raise prices for everyone?"]
+    },
+    {
+      "title": "Why Community Service Should Be a Graduation Requirement",
+      "description": "Persuade your school board to require volunteer hours for a diploma.",
+      "type": "call-to-action",
+      "grade": ["middle", "high"],
+      "questions": ["What specific requirement are you proposing?", "How do you respond to students who say it forces charity?"]
+    }
+  ],
+  "environment": [
+    {
+      "title": "Ban Single-Use Plastics Now",
+      "description": "A call-to-action editorial pressing for an immediate ban on disposable plastics in your town or country.",
+      "type": "call-to-action",
+      "grade": ["middle", "high", "college"],
+      "questions": ["What exact ban or policy are you demanding, and from whom?", "How do you answer businesses that say the switch is too costly?"]
+    },
+    {
+      "title": "Nuclear Power Is the Green Energy We're Afraid Of",
+      "description": "Argue for or against expanding nuclear energy as a climate solution.",
+      "type": "argumentative",
+      "grade": ["high", "college"],
+      "questions": ["Argue FOR: Is nuclear the fastest path to cutting emissions?", "Argue AGAINST: Do waste and safety risks outweigh the benefits?"]
+    },
+    {
+      "title": "Individual Recycling Won't Save the Planet",
+      "description": "A rebuttal challenging the idea that personal habits, not corporate policy, are the real fix for climate change.",
+      "type": "rebuttal",
+      "grade": ["high", "college"],
+      "questions": ["What comforting belief are you pushing back against?", "Where should responsibility actually sit, and why?"]
+    },
+    {
+      "title": "Cities Should Be Built for People, Not Cars",
+      "description": "Defend the opinion that urban design must prioritise walking, cycling and transit.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["What does a people-first city look like in one sentence?", "How do you answer drivers who feel punished by the change?"]
+    },
+    {
+      "title": "Fast Fashion Is a Crisis We Keep Ignoring",
+      "description": "Persuade readers to change how they buy clothes, or to demand industry regulation.",
+      "type": "call-to-action",
+      "grade": ["middle", "high", "college"],
+      "questions": ["What are you urging readers to do differently starting today?", "Why isn't 'just buy less' a complete answer?"]
+    }
+  ],
+  "health": [
+    {
+      "title": "Junk Food Ads Aimed at Kids Should Be Banned",
+      "description": "Argue for or against restricting advertising of unhealthy food to children.",
+      "type": "argumentative",
+      "grade": ["middle", "high"],
+      "questions": ["Argue FOR: Do children deserve protection from manipulative marketing?", "Argue AGAINST: Is this the government overreaching into parents' choices?"]
+    },
+    {
+      "title": "Mental Health Days Should Count as Sick Days",
+      "description": "A call-to-action editorial urging schools or employers to recognise mental health absences.",
+      "type": "call-to-action",
+      "grade": ["high", "college"],
+      "questions": ["What policy change are you specifically asking for?", "How do you answer the fear that people will abuse it?"]
+    },
+    {
+      "title": "We're Wrong About How We Talk About Diets",
+      "description": "A rebuttal challenging popular but harmful assumptions about weight and health.",
+      "type": "rebuttal",
+      "grade": ["high", "college"],
+      "questions": ["What widely repeated claim are you correcting?", "What should replace that thinking?"]
+    },
+    {
+      "title": "Vaccines Should Be Required for School Entry",
+      "description": "Take a firm persuasive stance on mandatory childhood vaccination.",
+      "type": "argumentative",
+      "grade": ["high", "college"],
+      "questions": ["Argue FOR: Does community protection justify a mandate?", "Argue AGAINST: Where does personal medical freedom fit?"]
+    },
+    {
+      "title": "Why Schools Must Teach Real Sleep Habits",
+      "description": "Persuade educators that later start times and sleep education would improve student wellbeing.",
+      "type": "opinion",
+      "grade": ["middle", "high"],
+      "questions": ["What is your core claim about teens and sleep?", "How do you rebut 'earlier starts build discipline'?"]
+    }
+  ],
+  "education": [
+    {
+      "title": "Standardised Tests Measure the Wrong Things",
+      "description": "State and defend your opinion on whether high-stakes testing should be scrapped.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["What do tests actually reward, in your view?", "What is the strongest argument in favour of keeping them?"]
+    },
+    {
+      "title": "Homework Should Be Abolished in Primary School",
+      "description": "Argue for or against ending homework for young children.",
+      "type": "argumentative",
+      "grade": ["middle", "high"],
+      "questions": ["Argue FOR: Does homework harm young kids more than it helps?", "Argue AGAINST: Does it build habits that matter later?"]
+    },
+    {
+      "title": "College Isn't the Only Path Worth Respecting",
+      "description": "A rebuttal to the assumption that university is the default route to a good life.",
+      "type": "rebuttal",
+      "grade": ["high", "college"],
+      "questions": ["What cultural assumption are you challenging?", "What alternatives deserve equal respect, and why?"]
+    },
+    {
+      "title": "Every School Should Teach Personal Finance",
+      "description": "A call-to-action editorial demanding financial literacy be added to the curriculum.",
+      "type": "call-to-action",
+      "grade": ["high", "college"],
+      "questions": ["What specifically should schools be required to teach?", "How do you answer 'there's no room in the timetable'?"]
+    },
+    {
+      "title": "Grading Systems Are Failing Students",
+      "description": "Defend the opinion that letter grades should be replaced with better feedback.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["What is broken about the current grade, in your view?", "What would you replace it with, and how do you defend that?"]
+    }
+  ],
+  "current": [
+    {
+      "title": "Remote Work Is Here to Stay, and That's a Good Thing",
+      "description": "Take a persuasive stance on whether the shift away from the office should be embraced or reversed.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["What is your one-line verdict on remote work?", "How do you answer bosses who say culture needs the office?"]
+    },
+    {
+      "title": "The News Media Is Breaking Our Trust",
+      "description": "Argue for or against the claim that modern journalism has lost the public's confidence.",
+      "type": "argumentative",
+      "grade": ["high", "college"],
+      "questions": ["Argue FOR: Has sensationalism damaged the press beyond repair?", "Argue AGAINST: Is 'fake news' talk itself the real threat?"]
+    },
+    {
+      "title": "It's Time to Take a Four-Day Week Seriously",
+      "description": "A call-to-action editorial urging employers or lawmakers to trial a shorter work week.",
+      "type": "call-to-action",
+      "grade": ["high", "college"],
+      "questions": ["What action are you asking readers to support?", "How do you rebut 'less time means less output'?"]
+    },
+    {
+      "title": "We Shouldn't Fear Immigration, We Should Plan for It",
+      "description": "Defend a considered opinion on how societies should respond to migration.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["What is your central claim about immigration?", "What is the fairest version of the opposing view, and your reply?"]
+    },
+    {
+      "title": "The Space Race Is a Distraction From Earth's Problems",
+      "description": "A rebuttal challenging the idea that private space exploration deserves its current hype.",
+      "type": "rebuttal",
+      "grade": ["high", "college"],
+      "questions": ["What popular enthusiasm are you pushing back on?", "Where do you think that money and attention should go?"]
+    }
+  ],
+  "media": [
+    {
+      "title": "Influencers Should Be Held to Advertising Standards",
+      "description": "A call-to-action editorial demanding clearer rules for paid promotion online.",
+      "type": "call-to-action",
+      "grade": ["high", "college"],
+      "questions": ["What specific rule or disclosure are you calling for?", "How do you answer creators who say it stifles free expression?"]
+    },
+    {
+      "title": "Streaming Has Made Us Worse at Paying Attention",
+      "description": "Defend or challenge the opinion that endless content is reshaping how we think.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["What is your claim about attention and streaming?", "What is the best counterargument, and your response?"]
+    },
+    {
+      "title": "Don't Blame Video Games for Society's Problems",
+      "description": "A rebuttal answering critics who scapegoat entertainment media for real-world issues.",
+      "type": "rebuttal",
+      "grade": ["middle", "high"],
+      "questions": ["What accusation are you answering, stated fairly?", "What is the real cause you'd point to instead?"]
+    }
+  ],
+  "ethics": [
+    {
+      "title": "Zoos Do More Harm Than Good",
+      "description": "Argue for or against keeping animals in zoos in the modern era.",
+      "type": "argumentative",
+      "grade": ["middle", "high", "college"],
+      "questions": ["Argue FOR: Is captivity indefensible even for conservation?", "Argue AGAINST: Do zoos protect species that would otherwise vanish?"]
+    },
+    {
+      "title": "Genetic Editing of Humans Crosses a Line",
+      "description": "State and defend your opinion on the ethics of editing the human genome.",
+      "type": "opinion",
+      "grade": ["high", "college"],
+      "questions": ["Where exactly do you think the ethical line falls?", "How do you answer parents who could prevent disease this way?"]
+    },
+    {
+      "title": "Anonymous Online Speech Deserves Protection",
+      "description": "Argue for or against the right to speak anonymously on the internet.",
+      "type": "argumentative",
+      "grade": ["high", "college"],
+      "questions": ["Argue FOR: Does anonymity protect whistleblowers and the vulnerable?", "Argue AGAINST: Does it shield harassment and lies?"]
+    }
+  ]
+}
