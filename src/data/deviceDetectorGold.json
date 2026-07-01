@@ -15,6 +15,7 @@
     { "line": "She walked quietly across the room.", "expected": [], "type": "negative", "trap": "plain sentence, no shared sounds or repeats" },
     { "line": "A calm plain statement of simple fact.", "expected": [], "type": "negative", "trap": "non-adjacent same-letter words must not count as alliteration" },
     { "line": "Birds fly south before the cold arrives.", "expected": [], "type": "negative", "trap": "plain sentence, no device" },
-    { "line": "Our team finished the project ahead of schedule.", "expected": [], "type": "negative", "trap": "plain business sentence, no device" }
+    { "line": "Our team finished the project ahead of schedule.", "expected": [], "type": "negative", "trap": "plain business sentence, no device" },
+    { "line": "The dog barked. The cat slept.", "expected": [], "type": "negative", "trap": "anaphora on a function word (\"The\") must NOT count as repetition" }
   ]
 }

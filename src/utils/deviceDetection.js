@@ -128,7 +128,14 @@ const detectRepetition = (text) => {
     firstCounts[w] = (firstCounts[w] || 0) + 1;
   });
   Object.keys(firstCounts).forEach((w) => {
-    if (firstCounts[w] >= 2 && !repeated.includes(w)) anaphora.push(w);
+    if (
+      firstCounts[w] >= 2 &&
+      w.length >= 3 &&
+      !FUNCTION_WORDS.has(w) &&
+      !repeated.includes(w)
+    ) {
+      anaphora.push(w);
+    }
   });
 
   const matches = dedupe([...repeated, ...anaphora]);
