@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { SHAPES, buildPoem } from '../utils/concreteShapes';
 
 // A curated set of real, verifiable concrete / shape poems. Titles, poets and
@@ -40,9 +40,8 @@ const ConcretePoemMaker = () => {
   const [text, setText] = useState('write your poem here and watch it take shape');
   const [shapeKey, setShapeKey] = useState('heart');
   const [fontSize, setFontSize] = useState(14);
-  const [fillMode, setFillMode] = useState('solid');
+  const [fillMode, setFillMode] = useState('words');
   const [copied, setCopied] = useState(false);
-  const preRef = useRef(null);
 
   const { rows, plainText } = useMemo(
     () => buildPoem(text, shapeKey, fillMode),
@@ -222,7 +221,6 @@ const ConcretePoemMaker = () => {
       {/* Rendered poem */}
       <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 border border-gray-200 dark:border-gray-700 overflow-x-auto">
         <pre
-          ref={preRef}
           data-shape={shapeKey}
           aria-label={`Your text arranged as a ${SHAPES[shapeKey]?.name || shapeKey}`}
           className="font-mono text-gray-900 dark:text-gray-100 leading-tight inline-block"
