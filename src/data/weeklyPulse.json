@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T18:07:37.502Z",
+  "generatedAt": "2026-07-01T18:39:32.180Z",
   "weekOf": "2026-07-01",
   "items": [
     {
@@ -37,7 +37,7 @@
     {
       "title": "Claude's writing style has me on edge",
       "url": "https://jerodsanto.net/2026/06/claudes-writing-style-has-me-on-edge/",
-      "points": 25,
+      "points": 26,
       "comments": 13,
       "domain": "jerodsanto.net",
       "createdAt": "2026-07-01T11:41:27.000Z"
@@ -46,7 +46,7 @@
       "title": "The C to Rust migration book",
       "url": "https://mainmatter.com/c-to-rust-migration-book/",
       "points": 22,
-      "comments": 16,
+      "comments": 17,
       "domain": "mainmatter.com",
       "createdAt": "2026-07-01T14:00:29.000Z"
     },

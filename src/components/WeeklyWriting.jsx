@@ -54,9 +54,9 @@ const WeeklyWriting = () => {
           </p>
         )}
         <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">
-          A hand-tuned digest of the writing, publishing, and AI-writing stories
-          that writers were reading and debating most on Hacker News over the past
-          two weeks — ranked by how much discussion they drew. Refreshed every
+          An automatically compiled digest of the writing, publishing, and
+          AI-writing stories drawing the most discussion on Hacker News over the
+          past two weeks, ranked by community engagement. Rebuilt fresh every
           Monday. Follow any headline through to read the original at its source.
         </p>
       </header>

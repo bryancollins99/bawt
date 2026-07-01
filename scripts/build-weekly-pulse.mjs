@@ -146,6 +146,19 @@ async function main() {
   const results = await Promise.allSettled(TERMS.map((t) => fetchTerm(t, sinceUnix)));
   const fulfilled = results.filter((r) => r.status === 'fulfilled');
 
+  // Partial-failure floor. Promise.allSettled hides rejected terms, so a
+  // half-down HN API could still yield a few thin items and silently overwrite a
+  // rich committed file. If fewer than half the term queries succeeded, treat the
+  // week as degraded and keep the previous file untouched (exit clean → no-op).
+  const MIN_FULFILLED = Math.ceil(TERMS.length / 2);
+  if (fulfilled.length < MIN_FULFILLED && existsSync(OUT)) {
+    console.log(
+      `Only ${fulfilled.length}/${TERMS.length} term fetches succeeded (< ${MIN_FULFILLED}) — ` +
+        'keeping the previous weeklyPulse.json unchanged.'
+    );
+    process.exit(0);
+  }
+
   const byId = {};
   fulfilled.forEach((r) => {
     r.value.forEach((h) => {
