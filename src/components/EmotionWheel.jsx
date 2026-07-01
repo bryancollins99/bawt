@@ -58,13 +58,36 @@ const EmotionWheel = () => {
     setCopied('');
   };
 
-  const copy = (kind, value) => {
-    try {
-      navigator.clipboard?.writeText(value);
-      setCopied(kind);
+  // Copy to clipboard. navigator.clipboard.writeText rejects (async) inside a
+  // cross-origin embed without allow="clipboard-write", so we await it and fall
+  // back to execCommand — only marking "copied" when a write actually succeeds.
+  const copy = async (kind, value) => {
+    const flag = (ok) => {
+      setCopied(ok ? kind : `${kind}-fail`);
       setTimeout(() => setCopied(''), 1600);
+    };
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        flag(true);
+        return;
+      }
+      throw new Error('no async clipboard');
     } catch (_) {
-      /* clipboard unavailable — non-fatal */
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = value;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        flag(ok);
+      } catch (__) {
+        flag(false);
+      }
     }
   };
 
@@ -382,14 +405,14 @@ const EmotionWheel = () => {
                       onClick={() => copy('words', words.join(', '))}
                       className="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-medium hover:bg-blue-700 transition-colors"
                     >
-                      {copied === 'words' ? '✓ Copied' : '📋 Copy words'}
+                      {copied === 'words' ? '✓ Copied' : copied === 'words-fail' ? '⚠ Press ⌘/Ctrl+C' : '📋 Copy words'}
                     </button>
                     {pathString && (
                       <button
                         onClick={() => copy('path', pathString)}
                         className="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-xs font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                       >
-                        {copied === 'path' ? '✓ Copied' : 'Copy path'}
+                        {copied === 'path' ? '✓ Copied' : copied === 'path-fail' ? '⚠ Copy failed' : 'Copy path'}
                       </button>
                     )}
                   </div>
@@ -411,7 +434,7 @@ const EmotionWheel = () => {
       </div>
 
       <p className="mt-5 text-center text-xs text-gray-400 dark:text-gray-500">
-        Based on Dr. Gloria Willcox&rsquo;s Feeling Wheel (1982). No feeling words are invented.
+        Based on Parrott&rsquo;s (2001) three-tier emotion classification. No feeling words are invented.
       </p>
     </div>
   );

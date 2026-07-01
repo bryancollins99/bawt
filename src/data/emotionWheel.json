@@ -1,5 +1,5 @@
 {
-  "source": "Willcox Feeling Wheel (1982), 3-tier Junto/Geoffrey-Roberts arrangement. See emotionWheel.SOURCES.md.",
+  "source": "Parrott's (2001) three-tier emotion classification (primary/secondary/tertiary), via MIT-licensed jrosebr1/pyemotionwheel. See emotionWheel.SOURCES.md.",
   "cores": [
     {
       "name": "Joy",

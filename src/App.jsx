@@ -197,8 +197,9 @@ function App() {
     src="${embedUrl}" 
     width="100%" 
     height="600" 
-    frameborder="0" 
-    scrolling="auto" 
+    frameborder="0"
+    scrolling="auto"
+    allow="clipboard-write"
     title="${tool?.name} - BAWT Writing Tools"
     style="border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
   </iframe>
