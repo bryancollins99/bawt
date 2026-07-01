@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T18:39:32.180Z",
+  "generatedAt": "2026-07-01T21:00:30.652Z",
   "weekOf": "2026-07-01",
   "items": [
     {
@@ -21,7 +21,7 @@
     {
       "title": "Memoirs of Extraordinary Popular Delusions and the Madness of Crowds (1852)",
       "url": "https://www.gutenberg.org/ebooks/24518",
-      "points": 184,
+      "points": 186,
       "comments": 64,
       "domain": "gutenberg.org",
       "createdAt": "2026-06-30T12:47:51.000Z"
@@ -37,7 +37,7 @@
     {
       "title": "Claude's writing style has me on edge",
       "url": "https://jerodsanto.net/2026/06/claudes-writing-style-has-me-on-edge/",
-      "points": 26,
+      "points": 28,
       "comments": 13,
       "domain": "jerodsanto.net",
       "createdAt": "2026-07-01T11:41:27.000Z"
@@ -45,8 +45,8 @@
     {
       "title": "The C to Rust migration book",
       "url": "https://mainmatter.com/c-to-rust-migration-book/",
-      "points": 22,
-      "comments": 17,
+      "points": 23,
+      "comments": 20,
       "domain": "mainmatter.com",
       "createdAt": "2026-07-01T14:00:29.000Z"
     },
