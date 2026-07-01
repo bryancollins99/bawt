@@ -1,0 +1,45 @@
+{
+  "_comment": "Gold rubric for deterministic verification. Each entry is an answer-set → the expected recommended app NAME. Authored from editorial judgment, independent of the mapping code. The recommended pick is determined solely by (category, mustHave); budget and platform only reorder the alternatives, so they are varied here to prove they do not change the primary pick.",
+  "cases": [
+    {
+      "id": "memoir-structure",
+      "answers": { "category": "memoir", "budget": "paid", "platform": "mac", "mustHave": "structure" },
+      "expected": "Scrivener"
+    },
+    {
+      "id": "notes-linking",
+      "answers": { "category": "notes", "budget": "free", "platform": "cross", "mustHave": "linking" },
+      "expected": "Obsidian"
+    },
+    {
+      "id": "keyboard-mechanical",
+      "answers": { "category": "keyboard", "budget": "paid", "platform": "mac", "mustHave": "mechanical" },
+      "expected": "Keychron K2"
+    },
+    {
+      "id": "letter-grammar",
+      "answers": { "category": "letter", "budget": "free", "platform": "web", "mustHave": "grammar" },
+      "expected": "Grammarly"
+    },
+    {
+      "id": "notes-organize",
+      "answers": { "category": "notes", "budget": "paid", "platform": "windows", "mustHave": "organize" },
+      "expected": "Notion"
+    },
+    {
+      "id": "memoir-distraction",
+      "answers": { "category": "memoir", "budget": "paid", "platform": "mac", "mustHave": "distraction" },
+      "expected": "Ulysses"
+    },
+    {
+      "id": "letter-free",
+      "answers": { "category": "letter", "budget": "free", "platform": "web", "mustHave": "free" },
+      "expected": "Google Docs"
+    },
+    {
+      "id": "keyboard-ergonomic",
+      "answers": { "category": "keyboard", "budget": "paid", "platform": "windows", "mustHave": "ergonomic" },
+      "expected": "Microsoft Ergonomic Keyboard"
+    }
+  ]
+}
