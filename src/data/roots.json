@@ -1,0 +1,1046 @@
+[
+  { "root": "bio", "origin": "greek", "meaning": "life", "words": [
+    { "word": "biology", "definition": "the study of living organisms" },
+    { "word": "biography", "definition": "an account of a person's life" },
+    { "word": "antibiotic", "definition": "a medicine that destroys or slows bacteria" },
+    { "word": "symbiosis", "definition": "a close, mutually beneficial relationship between organisms" }
+  ] },
+  { "root": "geo", "origin": "greek", "meaning": "earth", "words": [
+    { "word": "geography", "definition": "the study of the earth's features and peoples" },
+    { "word": "geology", "definition": "the study of the earth's physical structure" },
+    { "word": "geometry", "definition": "the mathematics of shapes, lines, and space" },
+    { "word": "geothermal", "definition": "relating to heat from within the earth" }
+  ] },
+  { "root": "graph", "origin": "greek", "meaning": "write, draw", "words": [
+    { "word": "autograph", "definition": "a person's own signature" },
+    { "word": "paragraph", "definition": "a distinct section of a piece of writing" },
+    { "word": "telegraph", "definition": "a system for sending messages over distance" },
+    { "word": "photograph", "definition": "an image made by recording light" }
+  ] },
+  { "root": "gram", "origin": "greek", "meaning": "written, drawn", "words": [
+    { "word": "grammar", "definition": "the rules governing a language's structure" },
+    { "word": "telegram", "definition": "a message sent by telegraph" },
+    { "word": "diagram", "definition": "a simplified drawing that explains something" },
+    { "word": "epigram", "definition": "a short, witty saying" }
+  ] },
+  { "root": "phon", "origin": "greek", "meaning": "sound, voice", "words": [
+    { "word": "telephone", "definition": "a device for speaking to someone at a distance" },
+    { "word": "symphony", "definition": "an elaborate composition for full orchestra" },
+    { "word": "phonics", "definition": "a method of teaching reading by sound" },
+    { "word": "cacophony", "definition": "a harsh, discordant mixture of sounds" }
+  ] },
+  { "root": "photo", "origin": "greek", "meaning": "light", "words": [
+    { "word": "photograph", "definition": "an image made by recording light" },
+    { "word": "photosynthesis", "definition": "how plants make food from light" },
+    { "word": "photon", "definition": "a particle of light" },
+    { "word": "telephoto", "definition": "a lens for photographing distant objects" }
+  ] },
+  { "root": "chron", "origin": "greek", "meaning": "time", "words": [
+    { "word": "chronology", "definition": "the arrangement of events in time order" },
+    { "word": "chronic", "definition": "persisting for a long time" },
+    { "word": "synchronize", "definition": "to make things happen at the same time" },
+    { "word": "anachronism", "definition": "something out of its proper time" }
+  ] },
+  { "root": "chrom", "origin": "greek", "meaning": "color", "words": [
+    { "word": "chromatic", "definition": "relating to color" },
+    { "word": "monochrome", "definition": "having only one color" },
+    { "word": "chromosome", "definition": "a structure carrying genetic material" },
+    { "word": "polychrome", "definition": "decorated in many colors" }
+  ] },
+  { "root": "cosm", "origin": "greek", "meaning": "universe, world", "words": [
+    { "word": "cosmos", "definition": "the universe seen as an ordered whole" },
+    { "word": "cosmopolitan", "definition": "familiar with many parts of the world" },
+    { "word": "microcosm", "definition": "a small world representing a larger one" },
+    { "word": "cosmonaut", "definition": "a Russian astronaut" }
+  ] },
+  { "root": "crac", "origin": "greek", "meaning": "rule, power, government", "words": [
+    { "word": "democracy", "definition": "government by the people" },
+    { "word": "aristocracy", "definition": "rule by a privileged upper class" },
+    { "word": "autocracy", "definition": "rule by a single person with total power" },
+    { "word": "bureaucracy", "definition": "rule through many administrative offices" }
+  ] },
+  { "root": "dem", "origin": "greek", "meaning": "people", "words": [
+    { "word": "democracy", "definition": "government by the people" },
+    { "word": "demographic", "definition": "relating to the structure of populations" },
+    { "word": "epidemic", "definition": "a disease spreading widely among people" },
+    { "word": "demagogue", "definition": "a leader who exploits popular prejudice" }
+  ] },
+  { "root": "path", "origin": "greek", "meaning": "feeling, suffering, disease", "words": [
+    { "word": "sympathy", "definition": "shared feeling for another's sorrow" },
+    { "word": "empathy", "definition": "the ability to share another's feelings" },
+    { "word": "pathology", "definition": "the study of disease" },
+    { "word": "apathy", "definition": "a lack of interest or feeling" }
+  ] },
+  { "root": "psych", "origin": "greek", "meaning": "mind, soul", "words": [
+    { "word": "psychology", "definition": "the study of the mind and behavior" },
+    { "word": "psychic", "definition": "relating to the mind or supposed mental powers" },
+    { "word": "psychiatry", "definition": "the medical treatment of mental illness" },
+    { "word": "psyche", "definition": "the human soul, mind, or spirit" }
+  ] },
+  { "root": "tele", "origin": "greek", "meaning": "far, distant", "words": [
+    { "word": "telescope", "definition": "an instrument for viewing distant objects" },
+    { "word": "television", "definition": "a device for receiving broadcast images" },
+    { "word": "telepathy", "definition": "supposed communication of thoughts at a distance" },
+    { "word": "telegraph", "definition": "a system for sending messages over distance" }
+  ] },
+  { "root": "scop", "origin": "greek", "meaning": "look at, examine", "words": [
+    { "word": "microscope", "definition": "an instrument for viewing tiny objects" },
+    { "word": "periscope", "definition": "a tube for seeing over or around obstacles" },
+    { "word": "stethoscope", "definition": "an instrument for listening to the body" },
+    { "word": "kaleidoscope", "definition": "a tube showing changing colored patterns" }
+  ] },
+  { "root": "therm", "origin": "greek", "meaning": "heat", "words": [
+    { "word": "thermometer", "definition": "an instrument for measuring temperature" },
+    { "word": "thermal", "definition": "relating to heat" },
+    { "word": "thermostat", "definition": "a device that regulates temperature" },
+    { "word": "hypothermia", "definition": "dangerously low body temperature" }
+  ] },
+  { "root": "hydr", "origin": "greek", "meaning": "water", "words": [
+    { "word": "hydrant", "definition": "an outdoor pipe supplying water" },
+    { "word": "dehydrate", "definition": "to remove water from" },
+    { "word": "hydrogen", "definition": "the lightest chemical element" },
+    { "word": "hydraulic", "definition": "operated by liquid pressure" }
+  ] },
+  { "root": "bibl", "origin": "greek", "meaning": "book", "words": [
+    { "word": "bibliography", "definition": "a list of books and sources" },
+    { "word": "bibliophile", "definition": "a lover of books" },
+    { "word": "bibliomania", "definition": "an obsessive passion for collecting books" },
+    { "word": "Bible", "definition": "the sacred scriptures of Christianity" }
+  ] },
+  { "root": "auto", "origin": "greek", "meaning": "self", "words": [
+    { "word": "automatic", "definition": "working by itself with little control" },
+    { "word": "autobiography", "definition": "a life story written by its subject" },
+    { "word": "autonomy", "definition": "the right to self-government" },
+    { "word": "automobile", "definition": "a self-propelled road vehicle" }
+  ] },
+  { "root": "anthrop", "origin": "greek", "meaning": "human, mankind", "words": [
+    { "word": "anthropology", "definition": "the study of human societies" },
+    { "word": "philanthropy", "definition": "generous giving to help others" },
+    { "word": "misanthrope", "definition": "a person who dislikes humankind" },
+    { "word": "anthropomorphic", "definition": "giving human traits to non-humans" }
+  ] },
+  { "root": "arch", "origin": "greek", "meaning": "ruler, chief", "words": [
+    { "word": "monarch", "definition": "a single ruler such as a king or queen" },
+    { "word": "anarchy", "definition": "a state without government or order" },
+    { "word": "hierarchy", "definition": "a system of ranked authority" },
+    { "word": "patriarch", "definition": "a male head of a family or tribe" }
+  ] },
+  { "root": "aster", "origin": "greek", "meaning": "star", "words": [
+    { "word": "astronomy", "definition": "the study of stars and space" },
+    { "word": "asteroid", "definition": "a small rocky body orbiting the sun" },
+    { "word": "asterisk", "definition": "the star-shaped symbol *" },
+    { "word": "disaster", "definition": "a sudden great misfortune (literally 'ill-starred')" }
+  ] },
+  { "root": "naut", "origin": "greek", "meaning": "sailor, ship", "words": [
+    { "word": "astronaut", "definition": "a person trained to travel in space" },
+    { "word": "nautical", "definition": "relating to ships or sailing" },
+    { "word": "cosmonaut", "definition": "a Russian astronaut" },
+    { "word": "aeronautics", "definition": "the science of flight" }
+  ] },
+  { "root": "gen", "origin": "greek", "meaning": "birth, origin, race", "words": [
+    { "word": "genesis", "definition": "the origin or beginning of something" },
+    { "word": "genetics", "definition": "the study of heredity" },
+    { "word": "genocide", "definition": "the deliberate killing of a people" },
+    { "word": "homogeneous", "definition": "of the same kind throughout" }
+  ] },
+  { "root": "log", "origin": "greek", "meaning": "word, reason, speech", "words": [
+    { "word": "dialogue", "definition": "conversation between two or more people" },
+    { "word": "monologue", "definition": "a long speech by one person" },
+    { "word": "prologue", "definition": "an introduction to a literary work" },
+    { "word": "analogy", "definition": "a comparison between similar things" }
+  ] },
+  { "root": "meter", "origin": "greek", "meaning": "measure", "words": [
+    { "word": "diameter", "definition": "a straight line through the center of a circle" },
+    { "word": "perimeter", "definition": "the boundary length around a shape" },
+    { "word": "barometer", "definition": "an instrument measuring air pressure" },
+    { "word": "symmetry", "definition": "balanced proportion between parts" }
+  ] },
+  { "root": "micro", "origin": "greek", "meaning": "small", "words": [
+    { "word": "microscope", "definition": "an instrument for viewing tiny objects" },
+    { "word": "microphone", "definition": "a device for amplifying sound" },
+    { "word": "microbe", "definition": "a microscopic organism" },
+    { "word": "microcosm", "definition": "a small world representing a larger one" }
+  ] },
+  { "root": "macro", "origin": "greek", "meaning": "large, long", "words": [
+    { "word": "macroscopic", "definition": "visible to the naked eye" },
+    { "word": "macrocosm", "definition": "the universe as a whole" },
+    { "word": "macroeconomics", "definition": "the study of whole economies" },
+    { "word": "macron", "definition": "a bar placed over a long vowel" }
+  ] },
+  { "root": "mega", "origin": "greek", "meaning": "great, large", "words": [
+    { "word": "megaphone", "definition": "a cone for amplifying the voice" },
+    { "word": "megalith", "definition": "a large prehistoric stone" },
+    { "word": "megalomania", "definition": "a delusion of grandeur or power" },
+    { "word": "megabyte", "definition": "about a million bytes of data" }
+  ] },
+  { "root": "mono", "origin": "greek", "meaning": "one, single", "words": [
+    { "word": "monologue", "definition": "a long speech by one person" },
+    { "word": "monotone", "definition": "a single unchanging tone" },
+    { "word": "monopoly", "definition": "exclusive control of a market" },
+    { "word": "monochrome", "definition": "having only one color" }
+  ] },
+  { "root": "poly", "origin": "greek", "meaning": "many", "words": [
+    { "word": "polygon", "definition": "a shape with many straight sides" },
+    { "word": "polyglot", "definition": "a person who knows many languages" },
+    { "word": "polytheism", "definition": "belief in many gods" },
+    { "word": "polymer", "definition": "a compound of many repeating units" }
+  ] },
+  { "root": "morph", "origin": "greek", "meaning": "form, shape", "words": [
+    { "word": "metamorphosis", "definition": "a complete change of form" },
+    { "word": "amorphous", "definition": "having no definite shape" },
+    { "word": "morphology", "definition": "the study of form and structure" },
+    { "word": "anthropomorphic", "definition": "giving human traits to non-humans" }
+  ] },
+  { "root": "neo", "origin": "greek", "meaning": "new", "words": [
+    { "word": "neologism", "definition": "a newly coined word" },
+    { "word": "neonatal", "definition": "relating to newborn infants" },
+    { "word": "Neolithic", "definition": "of the later Stone Age" },
+    { "word": "neophyte", "definition": "a beginner or new convert" }
+  ] },
+  { "root": "paleo", "origin": "greek", "meaning": "ancient, old", "words": [
+    { "word": "paleontology", "definition": "the study of fossils" },
+    { "word": "Paleolithic", "definition": "of the early Stone Age" },
+    { "word": "paleography", "definition": "the study of ancient writing" },
+    { "word": "paleoclimate", "definition": "the climate of past ages" }
+  ] },
+  { "root": "phil", "origin": "greek", "meaning": "love, fondness", "words": [
+    { "word": "philosophy", "definition": "the love and study of wisdom" },
+    { "word": "philanthropy", "definition": "generous giving to help others" },
+    { "word": "bibliophile", "definition": "a lover of books" },
+    { "word": "philharmonic", "definition": "devoted to music" }
+  ] },
+  { "root": "phob", "origin": "greek", "meaning": "fear", "words": [
+    { "word": "claustrophobia", "definition": "fear of enclosed spaces" },
+    { "word": "arachnophobia", "definition": "fear of spiders" },
+    { "word": "xenophobia", "definition": "fear or hatred of strangers" },
+    { "word": "phobia", "definition": "an extreme or irrational fear" }
+  ] },
+  { "root": "soph", "origin": "greek", "meaning": "wise, wisdom", "words": [
+    { "word": "philosophy", "definition": "the love and study of wisdom" },
+    { "word": "sophisticated", "definition": "worldly-wise and refined" },
+    { "word": "sophomore", "definition": "a second-year student" },
+    { "word": "sophistry", "definition": "clever but misleading argument" }
+  ] },
+  { "root": "techn", "origin": "greek", "meaning": "art, skill, craft", "words": [
+    { "word": "technology", "definition": "the application of scientific knowledge" },
+    { "word": "technique", "definition": "a way of carrying out a task" },
+    { "word": "technical", "definition": "relating to a particular skill or subject" },
+    { "word": "pyrotechnics", "definition": "the art of making fireworks" }
+  ] },
+  { "root": "hetero", "origin": "greek", "meaning": "different, other", "words": [
+    { "word": "heterogeneous", "definition": "made of different kinds" },
+    { "word": "heterodox", "definition": "not conforming to accepted belief" },
+    { "word": "heteronym", "definition": "a word spelled like another but different in sound and sense" },
+    { "word": "heterosexual", "definition": "attracted to the opposite sex" }
+  ] },
+  { "root": "homo", "origin": "greek", "meaning": "same", "words": [
+    { "word": "homogeneous", "definition": "of the same kind throughout" },
+    { "word": "homonym", "definition": "a word that sounds like another but differs in meaning" },
+    { "word": "homophone", "definition": "a word pronounced like another" },
+    { "word": "homograph", "definition": "a word spelled like another but different in meaning" }
+  ] },
+  { "root": "gyn", "origin": "greek", "meaning": "woman", "words": [
+    { "word": "gynecology", "definition": "the medicine of women's health" },
+    { "word": "misogyny", "definition": "hatred of women" },
+    { "word": "androgynous", "definition": "having both male and female traits" },
+    { "word": "gynecoid", "definition": "resembling a woman in form" }
+  ] },
+  { "root": "andr", "origin": "greek", "meaning": "man, male", "words": [
+    { "word": "android", "definition": "a robot with human appearance" },
+    { "word": "androgynous", "definition": "having both male and female traits" },
+    { "word": "polyandry", "definition": "the practice of having several husbands" },
+    { "word": "andrology", "definition": "the medicine of male health" }
+  ] },
+  { "root": "pyr", "origin": "greek", "meaning": "fire", "words": [
+    { "word": "pyromania", "definition": "an obsessive urge to start fires" },
+    { "word": "pyre", "definition": "a pile of wood for burning a body" },
+    { "word": "pyrotechnics", "definition": "the art of making fireworks" },
+    { "word": "pyrometer", "definition": "a device for measuring high temperatures" }
+  ] },
+  { "root": "neur", "origin": "greek", "meaning": "nerve", "words": [
+    { "word": "neurology", "definition": "the study of the nervous system" },
+    { "word": "neuron", "definition": "a nerve cell" },
+    { "word": "neurotic", "definition": "marked by excessive anxiety" },
+    { "word": "neurosurgeon", "definition": "a surgeon of the nervous system" }
+  ] },
+  { "root": "cardi", "origin": "greek", "meaning": "heart", "words": [
+    { "word": "cardiology", "definition": "the study of the heart" },
+    { "word": "cardiac", "definition": "relating to the heart" },
+    { "word": "cardiovascular", "definition": "relating to the heart and blood vessels" },
+    { "word": "electrocardiogram", "definition": "a record of the heart's electrical activity" }
+  ] },
+  { "root": "derm", "origin": "greek", "meaning": "skin", "words": [
+    { "word": "dermatology", "definition": "the study of the skin" },
+    { "word": "epidermis", "definition": "the outer layer of skin" },
+    { "word": "hypodermic", "definition": "injected beneath the skin" },
+    { "word": "taxidermy", "definition": "the art of preserving animal skins" }
+  ] },
+  { "root": "hem", "origin": "greek", "meaning": "blood", "words": [
+    { "word": "hemoglobin", "definition": "the oxygen-carrying protein in blood" },
+    { "word": "hemorrhage", "definition": "heavy bleeding" },
+    { "word": "hemophilia", "definition": "a disorder that prevents blood clotting" },
+    { "word": "anemia", "definition": "a deficiency of red blood cells" }
+  ] },
+  { "root": "opt", "origin": "greek", "meaning": "eye, sight", "words": [
+    { "word": "optic", "definition": "relating to the eye or vision" },
+    { "word": "optometry", "definition": "the practice of testing eyesight" },
+    { "word": "autopsy", "definition": "an examination of a body after death" },
+    { "word": "myopia", "definition": "short-sightedness" }
+  ] },
+  { "root": "orth", "origin": "greek", "meaning": "straight, correct", "words": [
+    { "word": "orthodox", "definition": "holding accepted or correct beliefs" },
+    { "word": "orthodontist", "definition": "a dentist who straightens teeth" },
+    { "word": "orthography", "definition": "correct or standard spelling" },
+    { "word": "orthopedic", "definition": "relating to the correction of bones" }
+  ] },
+  { "root": "oste", "origin": "greek", "meaning": "bone", "words": [
+    { "word": "osteoporosis", "definition": "a disease of brittle, porous bones" },
+    { "word": "osteopathy", "definition": "treatment by manipulating bones and muscles" },
+    { "word": "osteology", "definition": "the study of bones" },
+    { "word": "osteoarthritis", "definition": "joint disease from cartilage breakdown" }
+  ] },
+  { "root": "necr", "origin": "greek", "meaning": "death, corpse", "words": [
+    { "word": "necropolis", "definition": "an ancient cemetery" },
+    { "word": "necrosis", "definition": "the death of body tissue" },
+    { "word": "necromancy", "definition": "supposed communication with the dead" },
+    { "word": "necrophobia", "definition": "fear of death or dead things" }
+  ] },
+  { "root": "phyt", "origin": "greek", "meaning": "plant, growth", "words": [
+    { "word": "neophyte", "definition": "a beginner or new convert" },
+    { "word": "epiphyte", "definition": "a plant growing on another plant" },
+    { "word": "phytoplankton", "definition": "microscopic drifting plants" },
+    { "word": "phytology", "definition": "the study of plants; botany" }
+  ] },
+  { "root": "zo", "origin": "greek", "meaning": "animal, living being", "words": [
+    { "word": "zoology", "definition": "the study of animals" },
+    { "word": "zodiac", "definition": "the belt of constellations named for animals" },
+    { "word": "protozoa", "definition": "single-celled animal-like organisms" },
+    { "word": "zoophyte", "definition": "an animal resembling a plant, such as coral" }
+  ] },
+  { "root": "theo", "origin": "greek", "meaning": "god", "words": [
+    { "word": "theology", "definition": "the study of God and religion" },
+    { "word": "theocracy", "definition": "government by religious authority" },
+    { "word": "theologian", "definition": "an expert in the study of religion" },
+    { "word": "apotheosis", "definition": "elevation to the rank of a god" }
+  ] },
+  { "root": "phag", "origin": "greek", "meaning": "eat", "words": [
+    { "word": "esophagus", "definition": "the tube carrying food to the stomach" },
+    { "word": "sarcophagus", "definition": "a stone coffin (literally 'flesh-eating')" },
+    { "word": "phagocyte", "definition": "a cell that engulfs harmful particles" },
+    { "word": "bacteriophage", "definition": "a virus that consumes bacteria" }
+  ] },
+  { "root": "gastr", "origin": "greek", "meaning": "stomach", "words": [
+    { "word": "gastric", "definition": "relating to the stomach" },
+    { "word": "gastronomy", "definition": "the art of good eating" },
+    { "word": "gastritis", "definition": "inflammation of the stomach lining" },
+    { "word": "gastropod", "definition": "a mollusk such as a snail" }
+  ] },
+  { "root": "phys", "origin": "greek", "meaning": "nature", "words": [
+    { "word": "physics", "definition": "the science of matter and energy" },
+    { "word": "physiology", "definition": "the study of how organisms function" },
+    { "word": "physique", "definition": "the form and build of a body" },
+    { "word": "metaphysics", "definition": "philosophy of being and reality" }
+  ] },
+  { "root": "dyn", "origin": "greek", "meaning": "power, force", "words": [
+    { "word": "dynamic", "definition": "characterized by energy and change" },
+    { "word": "dynamite", "definition": "a powerful explosive" },
+    { "word": "dynamo", "definition": "a machine that generates power" },
+    { "word": "dynasty", "definition": "a powerful ruling family" }
+  ] },
+  { "root": "erg", "origin": "greek", "meaning": "work", "words": [
+    { "word": "energy", "definition": "the capacity to do work" },
+    { "word": "ergonomic", "definition": "designed for efficient, comfortable work" },
+    { "word": "synergy", "definition": "combined action greater than the sum of parts" },
+    { "word": "allergy", "definition": "an overreaction of the body to a substance" }
+  ] },
+  { "root": "kine", "origin": "greek", "meaning": "movement, motion", "words": [
+    { "word": "kinetic", "definition": "relating to motion" },
+    { "word": "cinema", "definition": "the making and showing of films" },
+    { "word": "kinesiology", "definition": "the study of body movement" },
+    { "word": "telekinesis", "definition": "supposed movement of objects by the mind" }
+  ] },
+  { "root": "gno", "origin": "greek", "meaning": "know", "words": [
+    { "word": "diagnosis", "definition": "identification of an illness" },
+    { "word": "prognosis", "definition": "a forecast of how an illness will develop" },
+    { "word": "agnostic", "definition": "one who believes ultimate truth is unknowable" },
+    { "word": "gnome", "definition": "a pithy maxim of wisdom" }
+  ] },
+  { "root": "cryph", "origin": "greek", "meaning": "hidden, secret", "words": [
+    { "word": "cryptic", "definition": "having a hidden meaning" },
+    { "word": "cryptography", "definition": "the writing and solving of codes" },
+    { "word": "apocryphal", "definition": "of doubtful authenticity" },
+    { "word": "encrypt", "definition": "to convert into a hidden code" }
+  ] },
+  { "root": "hydra", "origin": "greek", "meaning": "sweat", "words": [
+    { "word": "hidrosis", "definition": "the secretion of sweat" },
+    { "word": "anhidrosis", "definition": "an inability to sweat normally" },
+    { "word": "hyperhidrosis", "definition": "excessive sweating" },
+    { "word": "hidradenitis", "definition": "inflammation of the sweat glands" }
+  ] },
+  { "root": "iatr", "origin": "greek", "meaning": "healing, medicine", "words": [
+    { "word": "pediatrics", "definition": "the branch of medicine for children" },
+    { "word": "psychiatry", "definition": "the medical treatment of mental illness" },
+    { "word": "podiatry", "definition": "the treatment of the feet" },
+    { "word": "geriatrics", "definition": "the medicine of old age" }
+  ] },
+  { "root": "chlor", "origin": "greek", "meaning": "green", "words": [
+    { "word": "chlorophyll", "definition": "the green pigment in plants" },
+    { "word": "chlorine", "definition": "a greenish-yellow chemical element" },
+    { "word": "chloroplast", "definition": "the plant cell part that makes food from light" },
+    { "word": "chlorosis", "definition": "an abnormal yellow-green in plants" }
+  ] },
+  { "root": "leuc", "origin": "greek", "meaning": "white", "words": [
+    { "word": "leukemia", "definition": "a cancer of white blood cells" },
+    { "word": "leukocyte", "definition": "a white blood cell" },
+    { "word": "leucine", "definition": "an essential amino acid" },
+    { "word": "leukoplakia", "definition": "white patches on a mucous membrane" }
+  ] },
+  { "root": "melan", "origin": "greek", "meaning": "black, dark", "words": [
+    { "word": "melancholy", "definition": "a deep, lasting sadness" },
+    { "word": "melanin", "definition": "the dark pigment of skin and hair" },
+    { "word": "melanoma", "definition": "a serious skin cancer" },
+    { "word": "melodrama", "definition": "an exaggerated, sensational drama" }
+  ] },
+  { "root": "aqua", "origin": "latin", "meaning": "water", "words": [
+    { "word": "aquarium", "definition": "a tank for keeping water animals" },
+    { "word": "aquatic", "definition": "living or growing in water" },
+    { "word": "aqueduct", "definition": "a channel for carrying water" },
+    { "word": "aquamarine", "definition": "a pale blue-green color or gem" }
+  ] },
+  { "root": "aud", "origin": "latin", "meaning": "hear, listen", "words": [
+    { "word": "audible", "definition": "able to be heard" },
+    { "word": "audience", "definition": "a group of listeners or viewers" },
+    { "word": "auditorium", "definition": "a hall for listening to performances" },
+    { "word": "audition", "definition": "a trial performance" }
+  ] },
+  { "root": "bene", "origin": "latin", "meaning": "good, well", "words": [
+    { "word": "benefit", "definition": "an advantage or good result" },
+    { "word": "benevolent", "definition": "kind and generous" },
+    { "word": "benefactor", "definition": "a person who gives help or money" },
+    { "word": "benediction", "definition": "the utterance of a blessing" }
+  ] },
+  { "root": "mal", "origin": "latin", "meaning": "bad, evil", "words": [
+    { "word": "malice", "definition": "the desire to harm others" },
+    { "word": "malignant", "definition": "harmful; likely to spread and worsen" },
+    { "word": "malfunction", "definition": "a failure to work correctly" },
+    { "word": "malevolent", "definition": "wishing harm to others" }
+  ] },
+  { "root": "dict", "origin": "latin", "meaning": "say, speak", "words": [
+    { "word": "predict", "definition": "to say what will happen in advance" },
+    { "word": "contradict", "definition": "to say the opposite" },
+    { "word": "dictionary", "definition": "a reference of words and meanings" },
+    { "word": "verdict", "definition": "a decision spoken by a jury" }
+  ] },
+  { "root": "duc", "origin": "latin", "meaning": "lead", "words": [
+    { "word": "conduct", "definition": "to lead or direct" },
+    { "word": "produce", "definition": "to bring forth or make" },
+    { "word": "aqueduct", "definition": "a channel that leads water" },
+    { "word": "educate", "definition": "to lead someone to knowledge" }
+  ] },
+  { "root": "fer", "origin": "latin", "meaning": "carry, bear", "words": [
+    { "word": "transfer", "definition": "to carry from one place to another" },
+    { "word": "refer", "definition": "to direct attention to a source" },
+    { "word": "conifer", "definition": "a cone-bearing tree" },
+    { "word": "prefer", "definition": "to like one thing more than another" }
+  ] },
+  { "root": "form", "origin": "latin", "meaning": "shape", "words": [
+    { "word": "transform", "definition": "to change the shape or nature of" },
+    { "word": "uniform", "definition": "always the same in form" },
+    { "word": "conform", "definition": "to match an accepted form" },
+    { "word": "reform", "definition": "to change into an improved form" }
+  ] },
+  { "root": "frag", "origin": "latin", "meaning": "break", "words": [
+    { "word": "fragment", "definition": "a small broken-off piece" },
+    { "word": "fragile", "definition": "easily broken" },
+    { "word": "fracture", "definition": "a break, especially in bone" },
+    { "word": "fraction", "definition": "a part broken off from a whole" }
+  ] },
+  { "root": "ject", "origin": "latin", "meaning": "throw", "words": [
+    { "word": "reject", "definition": "to throw back or refuse" },
+    { "word": "inject", "definition": "to force fluid in" },
+    { "word": "project", "definition": "to throw or cast forward" },
+    { "word": "eject", "definition": "to throw out forcefully" }
+  ] },
+  { "root": "junct", "origin": "latin", "meaning": "join", "words": [
+    { "word": "junction", "definition": "a point where things join" },
+    { "word": "conjunction", "definition": "a word that joins clauses" },
+    { "word": "injunction", "definition": "a court order to do or stop something" },
+    { "word": "juncture", "definition": "a critical joining point in time" }
+  ] },
+  { "root": "loc", "origin": "latin", "meaning": "place", "words": [
+    { "word": "location", "definition": "a particular place" },
+    { "word": "local", "definition": "relating to a nearby place" },
+    { "word": "dislocate", "definition": "to move out of place" },
+    { "word": "relocate", "definition": "to move to a new place" }
+  ] },
+  { "root": "luc", "origin": "latin", "meaning": "light", "words": [
+    { "word": "lucid", "definition": "clear and easy to understand" },
+    { "word": "translucent", "definition": "letting light pass through partly" },
+    { "word": "illuminate", "definition": "to light up" },
+    { "word": "elucidate", "definition": "to make clear; explain" }
+  ] },
+  { "root": "man", "origin": "latin", "meaning": "hand", "words": [
+    { "word": "manual", "definition": "done by hand" },
+    { "word": "manufacture", "definition": "to make goods (originally by hand)" },
+    { "word": "manuscript", "definition": "a document written by hand" },
+    { "word": "manicure", "definition": "cosmetic care of the hands" }
+  ] },
+  { "root": "matr", "origin": "latin", "meaning": "mother", "words": [
+    { "word": "maternal", "definition": "relating to a mother" },
+    { "word": "maternity", "definition": "the state of being a mother" },
+    { "word": "matriarch", "definition": "a female head of a family" },
+    { "word": "matrimony", "definition": "the state of marriage" }
+  ] },
+  { "root": "patr", "origin": "latin", "meaning": "father", "words": [
+    { "word": "paternal", "definition": "relating to a father" },
+    { "word": "patriarch", "definition": "a male head of a family or tribe" },
+    { "word": "patriot", "definition": "a person who loves their homeland" },
+    { "word": "patron", "definition": "a person who supports or protects" }
+  ] },
+  { "root": "mit", "origin": "latin", "meaning": "send", "words": [
+    { "word": "transmit", "definition": "to send across" },
+    { "word": "submit", "definition": "to send in or yield" },
+    { "word": "emit", "definition": "to send out" },
+    { "word": "omit", "definition": "to leave out" }
+  ] },
+  { "root": "miss", "origin": "latin", "meaning": "send", "words": [
+    { "word": "mission", "definition": "a task someone is sent to do" },
+    { "word": "dismiss", "definition": "to send away" },
+    { "word": "missile", "definition": "an object sent through the air as a weapon" },
+    { "word": "permission", "definition": "consent that lets something be sent or done" }
+  ] },
+  { "root": "mort", "origin": "latin", "meaning": "death", "words": [
+    { "word": "mortal", "definition": "subject to death" },
+    { "word": "immortal", "definition": "living forever" },
+    { "word": "mortuary", "definition": "a place where bodies are kept" },
+    { "word": "mortician", "definition": "an undertaker" }
+  ] },
+  { "root": "nat", "origin": "latin", "meaning": "born, birth", "words": [
+    { "word": "native", "definition": "belonging to a place by birth" },
+    { "word": "natal", "definition": "relating to birth" },
+    { "word": "prenatal", "definition": "before birth" },
+    { "word": "innate", "definition": "present from birth; inborn" }
+  ] },
+  { "root": "nomin", "origin": "latin", "meaning": "name", "words": [
+    { "word": "nominate", "definition": "to name as a candidate" },
+    { "word": "nominal", "definition": "in name only" },
+    { "word": "nomenclature", "definition": "a system of names" },
+    { "word": "misnomer", "definition": "a wrong or unsuitable name" }
+  ] },
+  { "root": "puls", "origin": "latin", "meaning": "drive, push", "words": [
+    { "word": "expel", "definition": "to drive out" },
+    { "word": "propel", "definition": "to drive forward" },
+    { "word": "impulse", "definition": "a sudden driving urge" },
+    { "word": "compel", "definition": "to force or drive to act" }
+  ] },
+  { "root": "pend", "origin": "latin", "meaning": "hang, weigh", "words": [
+    { "word": "pendant", "definition": "a hanging ornament" },
+    { "word": "suspend", "definition": "to hang or halt temporarily" },
+    { "word": "pendulum", "definition": "a weight swinging from a fixed point" },
+    { "word": "depend", "definition": "to rely on; hang upon" }
+  ] },
+  { "root": "port", "origin": "latin", "meaning": "carry", "words": [
+    { "word": "transport", "definition": "to carry from place to place" },
+    { "word": "portable", "definition": "able to be carried" },
+    { "word": "export", "definition": "to carry goods out to sell abroad" },
+    { "word": "import", "definition": "to carry goods in from abroad" }
+  ] },
+  { "root": "pos", "origin": "latin", "meaning": "put, place", "words": [
+    { "word": "position", "definition": "the place where something is put" },
+    { "word": "compose", "definition": "to put together" },
+    { "word": "deposit", "definition": "to put down or store" },
+    { "word": "expose", "definition": "to put out into view" }
+  ] },
+  { "root": "rupt", "origin": "latin", "meaning": "break, burst", "words": [
+    { "word": "rupture", "definition": "a break or burst" },
+    { "word": "erupt", "definition": "to burst out" },
+    { "word": "interrupt", "definition": "to break into or stop" },
+    { "word": "disrupt", "definition": "to break apart or throw into disorder" }
+  ] },
+  { "root": "scrib", "origin": "latin", "meaning": "write", "words": [
+    { "word": "describe", "definition": "to write or tell about" },
+    { "word": "prescribe", "definition": "to write out a directive, as for medicine" },
+    { "word": "subscribe", "definition": "to sign up by writing one's name" },
+    { "word": "scribble", "definition": "to write hastily or carelessly" }
+  ] },
+  { "root": "script", "origin": "latin", "meaning": "written", "words": [
+    { "word": "manuscript", "definition": "a handwritten document" },
+    { "word": "transcript", "definition": "a written copy" },
+    { "word": "scripture", "definition": "sacred writings" },
+    { "word": "postscript", "definition": "a note written after a letter's signature" }
+  ] },
+  { "root": "sect", "origin": "latin", "meaning": "cut", "words": [
+    { "word": "dissect", "definition": "to cut apart for study" },
+    { "word": "intersect", "definition": "to cut across each other" },
+    { "word": "bisect", "definition": "to cut into two parts" },
+    { "word": "section", "definition": "a cut-off part of a whole" }
+  ] },
+  { "root": "sens", "origin": "latin", "meaning": "feel", "words": [
+    { "word": "sensation", "definition": "a physical feeling" },
+    { "word": "sensitive", "definition": "quick to feel or respond" },
+    { "word": "sensory", "definition": "relating to the senses" },
+    { "word": "consensus", "definition": "general agreement or shared feeling" }
+  ] },
+  { "root": "spect", "origin": "latin", "meaning": "look, see", "words": [
+    { "word": "inspect", "definition": "to look at closely" },
+    { "word": "spectator", "definition": "a person who watches" },
+    { "word": "spectacle", "definition": "a striking sight" },
+    { "word": "respect", "definition": "to look at with regard (literally 'look back at')" }
+  ] },
+  { "root": "struct", "origin": "latin", "meaning": "build", "words": [
+    { "word": "construct", "definition": "to build" },
+    { "word": "structure", "definition": "something built or arranged" },
+    { "word": "instruct", "definition": "to teach; build up knowledge" },
+    { "word": "destruction", "definition": "the act of tearing down" }
+  ] },
+  { "root": "tact", "origin": "latin", "meaning": "touch", "words": [
+    { "word": "contact", "definition": "the state of touching" },
+    { "word": "tactile", "definition": "relating to the sense of touch" },
+    { "word": "intact", "definition": "whole and untouched" },
+    { "word": "tangible", "definition": "able to be touched or felt" }
+  ] },
+  { "root": "tract", "origin": "latin", "meaning": "pull, draw", "words": [
+    { "word": "attract", "definition": "to pull toward" },
+    { "word": "extract", "definition": "to pull out" },
+    { "word": "tractor", "definition": "a vehicle that pulls loads" },
+    { "word": "distract", "definition": "to pull attention away" }
+  ] },
+  { "root": "vent", "origin": "latin", "meaning": "come", "words": [
+    { "word": "invent", "definition": "to create; come upon something new" },
+    { "word": "prevent", "definition": "to stop from coming or happening" },
+    { "word": "convene", "definition": "to come together" },
+    { "word": "event", "definition": "something that comes to pass" }
+  ] },
+  { "root": "vert", "origin": "latin", "meaning": "turn", "words": [
+    { "word": "convert", "definition": "to turn into something else" },
+    { "word": "reverse", "definition": "to turn the other way" },
+    { "word": "introvert", "definition": "a person turned inward" },
+    { "word": "divert", "definition": "to turn aside" }
+  ] },
+  { "root": "vis", "origin": "latin", "meaning": "see", "words": [
+    { "word": "vision", "definition": "the sense of sight" },
+    { "word": "visible", "definition": "able to be seen" },
+    { "word": "revise", "definition": "to look at again and improve" },
+    { "word": "supervise", "definition": "to oversee" }
+  ] },
+  { "root": "voc", "origin": "latin", "meaning": "call, voice", "words": [
+    { "word": "vocal", "definition": "relating to the voice" },
+    { "word": "vocation", "definition": "a calling or occupation" },
+    { "word": "advocate", "definition": "a person who speaks for a cause" },
+    { "word": "provoke", "definition": "to call forth a reaction" }
+  ] },
+  { "root": "ambul", "origin": "latin", "meaning": "walk", "words": [
+    { "word": "ambulance", "definition": "a vehicle for the sick or injured" },
+    { "word": "amble", "definition": "to walk at a slow, easy pace" },
+    { "word": "ambulatory", "definition": "able to walk about" },
+    { "word": "somnambulist", "definition": "a sleepwalker" }
+  ] },
+  { "root": "capt", "origin": "latin", "meaning": "take, seize", "words": [
+    { "word": "capture", "definition": "to take by force" },
+    { "word": "captive", "definition": "a person taken and held" },
+    { "word": "caption", "definition": "a heading that captures a picture's meaning" },
+    { "word": "captivate", "definition": "to seize the attention of" }
+  ] },
+  { "root": "cept", "origin": "latin", "meaning": "take, receive", "words": [
+    { "word": "accept", "definition": "to take or receive willingly" },
+    { "word": "intercept", "definition": "to take or stop on the way" },
+    { "word": "concept", "definition": "an idea taken in the mind" },
+    { "word": "reception", "definition": "the act of receiving" }
+  ] },
+  { "root": "ced", "origin": "latin", "meaning": "go, yield", "words": [
+    { "word": "precede", "definition": "to go before" },
+    { "word": "recede", "definition": "to go back" },
+    { "word": "concede", "definition": "to yield or give in" },
+    { "word": "secede", "definition": "to formally withdraw" }
+  ] },
+  { "root": "cess", "origin": "latin", "meaning": "go, yield", "words": [
+    { "word": "process", "definition": "a series of steps that go forward" },
+    { "word": "access", "definition": "a means of going in" },
+    { "word": "recess", "definition": "a break; a going back" },
+    { "word": "procession", "definition": "a group moving forward in order" }
+  ] },
+  { "root": "cred", "origin": "latin", "meaning": "believe, trust", "words": [
+    { "word": "credit", "definition": "trust that allows delayed payment" },
+    { "word": "incredible", "definition": "too hard to believe" },
+    { "word": "credential", "definition": "proof that earns trust" },
+    { "word": "creed", "definition": "a statement of beliefs" }
+  ] },
+  { "root": "curs", "origin": "latin", "meaning": "run", "words": [
+    { "word": "cursor", "definition": "a moving marker on a screen" },
+    { "word": "excursion", "definition": "a short trip or run out" },
+    { "word": "precursor", "definition": "something that runs ahead of another" },
+    { "word": "cursive", "definition": "flowing, running handwriting" }
+  ] },
+  { "root": "dur", "origin": "latin", "meaning": "hard, lasting", "words": [
+    { "word": "durable", "definition": "able to last a long time" },
+    { "word": "endure", "definition": "to last or bear hardship" },
+    { "word": "duration", "definition": "the time something lasts" },
+    { "word": "obdurate", "definition": "stubbornly hardened" }
+  ] },
+  { "root": "fid", "origin": "latin", "meaning": "faith, trust", "words": [
+    { "word": "fidelity", "definition": "faithfulness" },
+    { "word": "confide", "definition": "to trust with a secret" },
+    { "word": "confident", "definition": "sure and trusting in oneself" },
+    { "word": "infidel", "definition": "one without the accepted faith" }
+  ] },
+  { "root": "flu", "origin": "latin", "meaning": "flow", "words": [
+    { "word": "fluent", "definition": "flowing smoothly, as in speech" },
+    { "word": "fluid", "definition": "a substance that flows" },
+    { "word": "influence", "definition": "a power that flows into and affects" },
+    { "word": "affluent", "definition": "wealthy; flowing with abundance" }
+  ] },
+  { "root": "grad", "origin": "latin", "meaning": "step, go", "words": [
+    { "word": "gradual", "definition": "moving in small steps" },
+    { "word": "graduate", "definition": "to advance a step, as in finishing study" },
+    { "word": "degrade", "definition": "to lower a step in rank or quality" },
+    { "word": "gradient", "definition": "a rate of step-by-step change" }
+  ] },
+  { "root": "gress", "origin": "latin", "meaning": "step, go", "words": [
+    { "word": "progress", "definition": "a step forward" },
+    { "word": "regress", "definition": "to step backward" },
+    { "word": "digress", "definition": "to step away from the topic" },
+    { "word": "aggressive", "definition": "prone to stepping toward attack" }
+  ] },
+  { "root": "greg", "origin": "latin", "meaning": "flock, herd, group", "words": [
+    { "word": "congregate", "definition": "to gather into a group" },
+    { "word": "gregarious", "definition": "fond of company; sociable" },
+    { "word": "segregate", "definition": "to separate from the group" },
+    { "word": "aggregate", "definition": "a total gathered together" }
+  ] },
+  { "root": "jud", "origin": "latin", "meaning": "judge, law", "words": [
+    { "word": "judge", "definition": "one who decides in a court of law" },
+    { "word": "judicial", "definition": "relating to courts and judges" },
+    { "word": "prejudice", "definition": "a judgment formed beforehand" },
+    { "word": "adjudicate", "definition": "to make a formal judgment" }
+  ] },
+  { "root": "lect", "origin": "latin", "meaning": "choose, gather, read", "words": [
+    { "word": "collect", "definition": "to gather together" },
+    { "word": "select", "definition": "to choose carefully" },
+    { "word": "lecture", "definition": "a spoken reading or talk" },
+    { "word": "neglect", "definition": "to fail to gather or attend to" }
+  ] },
+  { "root": "liber", "origin": "latin", "meaning": "free", "words": [
+    { "word": "liberty", "definition": "freedom" },
+    { "word": "liberal", "definition": "open-minded; favoring freedom" },
+    { "word": "liberate", "definition": "to set free" },
+    { "word": "libertine", "definition": "a person unrestrained by morals" }
+  ] },
+  { "root": "loqu", "origin": "latin", "meaning": "speak", "words": [
+    { "word": "eloquent", "definition": "speaking fluently and persuasively" },
+    { "word": "loquacious", "definition": "very talkative" },
+    { "word": "colloquial", "definition": "used in ordinary speech" },
+    { "word": "soliloquy", "definition": "a speech made alone, thinking aloud" }
+  ] },
+  { "root": "magn", "origin": "latin", "meaning": "great, large", "words": [
+    { "word": "magnify", "definition": "to make appear larger" },
+    { "word": "magnificent", "definition": "grand and impressive" },
+    { "word": "magnitude", "definition": "great size or importance" },
+    { "word": "magnanimous", "definition": "generous and great-spirited" }
+  ] },
+  { "root": "memor", "origin": "latin", "meaning": "mindful, remember", "words": [
+    { "word": "memory", "definition": "the power to recall the past" },
+    { "word": "memorial", "definition": "something that keeps a memory alive" },
+    { "word": "memorize", "definition": "to commit to memory" },
+    { "word": "commemorate", "definition": "to honor the memory of" }
+  ] },
+  { "root": "min", "origin": "latin", "meaning": "small, less", "words": [
+    { "word": "minimum", "definition": "the smallest amount" },
+    { "word": "minor", "definition": "lesser in size or importance" },
+    { "word": "diminish", "definition": "to make smaller" },
+    { "word": "minuscule", "definition": "extremely small" }
+  ] },
+  { "root": "mot", "origin": "latin", "meaning": "move", "words": [
+    { "word": "motion", "definition": "the act of moving" },
+    { "word": "promote", "definition": "to move forward or upward" },
+    { "word": "motor", "definition": "a machine that produces motion" },
+    { "word": "commotion", "definition": "a noisy disturbance" }
+  ] },
+  { "root": "numer", "origin": "latin", "meaning": "number", "words": [
+    { "word": "numeral", "definition": "a symbol for a number" },
+    { "word": "numerous", "definition": "many in number" },
+    { "word": "enumerate", "definition": "to count off one by one" },
+    { "word": "innumerable", "definition": "too many to count" }
+  ] },
+  { "root": "omni", "origin": "latin", "meaning": "all, every", "words": [
+    { "word": "omnipotent", "definition": "having all power" },
+    { "word": "omniscient", "definition": "knowing everything" },
+    { "word": "omnivore", "definition": "an eater of all kinds of food" },
+    { "word": "omnipresent", "definition": "present everywhere" }
+  ] },
+  { "root": "pac", "origin": "latin", "meaning": "peace", "words": [
+    { "word": "pacify", "definition": "to bring peace or calm" },
+    { "word": "pacific", "definition": "peaceful" },
+    { "word": "pacifist", "definition": "one who opposes war" },
+    { "word": "pact", "definition": "a peace agreement" }
+  ] },
+  { "root": "plet", "origin": "latin", "meaning": "fill, full", "words": [
+    { "word": "complete", "definition": "having all parts; fully filled" },
+    { "word": "deplete", "definition": "to use up; empty out" },
+    { "word": "replete", "definition": "filled or well-supplied" },
+    { "word": "supplement", "definition": "something added to fill a gap" }
+  ] },
+  { "root": "rect", "origin": "latin", "meaning": "straight, right, rule", "words": [
+    { "word": "correct", "definition": "free from error; set right" },
+    { "word": "direct", "definition": "going straight; to guide" },
+    { "word": "rectangle", "definition": "a four-sided figure with right angles" },
+    { "word": "erect", "definition": "upright; to build straight up" }
+  ] },
+  { "root": "sci", "origin": "latin", "meaning": "know", "words": [
+    { "word": "science", "definition": "systematic knowledge of the world" },
+    { "word": "conscience", "definition": "inner knowledge of right and wrong" },
+    { "word": "conscious", "definition": "aware; knowing" },
+    { "word": "prescient", "definition": "knowing things before they happen" }
+  ] },
+  { "root": "sed", "origin": "latin", "meaning": "sit, settle", "words": [
+    { "word": "sediment", "definition": "matter that settles to the bottom" },
+    { "word": "sedentary", "definition": "characterized by much sitting" },
+    { "word": "reside", "definition": "to settle or live in a place" },
+    { "word": "subside", "definition": "to settle down; become less" }
+  ] },
+  { "root": "sequ", "origin": "latin", "meaning": "follow", "words": [
+    { "word": "sequence", "definition": "an order in which things follow" },
+    { "word": "consequence", "definition": "a result that follows" },
+    { "word": "sequel", "definition": "a work that follows an earlier one" },
+    { "word": "subsequent", "definition": "coming after; following" }
+  ] },
+  { "root": "serv", "origin": "latin", "meaning": "keep, save, serve", "words": [
+    { "word": "preserve", "definition": "to keep safe from harm" },
+    { "word": "conserve", "definition": "to keep and use carefully" },
+    { "word": "reserve", "definition": "to keep back for later" },
+    { "word": "observe", "definition": "to watch and keep in mind" }
+  ] },
+  { "root": "sol", "origin": "latin", "meaning": "alone", "words": [
+    { "word": "solo", "definition": "performed alone" },
+    { "word": "solitude", "definition": "the state of being alone" },
+    { "word": "solitary", "definition": "existing or living alone" },
+    { "word": "desolate", "definition": "deserted and lonely" }
+  ] },
+  { "root": "son", "origin": "latin", "meaning": "sound", "words": [
+    { "word": "sonic", "definition": "relating to sound" },
+    { "word": "resonate", "definition": "to sound and vibrate" },
+    { "word": "unison", "definition": "sounding as one" },
+    { "word": "dissonance", "definition": "a harsh clash of sounds" }
+  ] },
+  { "root": "spir", "origin": "latin", "meaning": "breathe", "words": [
+    { "word": "respire", "definition": "to breathe" },
+    { "word": "inspire", "definition": "to breathe in ideas or feeling" },
+    { "word": "expire", "definition": "to breathe out; to end" },
+    { "word": "conspire", "definition": "to plot together (literally 'breathe together')" }
+  ] },
+  { "root": "tempor", "origin": "latin", "meaning": "time", "words": [
+    { "word": "temporary", "definition": "lasting only a short time" },
+    { "word": "contemporary", "definition": "belonging to the same time" },
+    { "word": "temporal", "definition": "relating to time" },
+    { "word": "extemporaneous", "definition": "done on the spur of the moment" }
+  ] },
+  { "root": "ten", "origin": "latin", "meaning": "hold, keep", "words": [
+    { "word": "retain", "definition": "to keep or hold" },
+    { "word": "tenant", "definition": "one who holds rented property" },
+    { "word": "tenacious", "definition": "holding on firmly" },
+    { "word": "tenure", "definition": "the holding of an office or land" }
+  ] },
+  { "root": "terr", "origin": "latin", "meaning": "earth, land", "words": [
+    { "word": "terrain", "definition": "a stretch of land" },
+    { "word": "territory", "definition": "an area of land under control" },
+    { "word": "terrestrial", "definition": "relating to the earth or land" },
+    { "word": "subterranean", "definition": "existing under the earth" }
+  ] },
+  { "root": "tort", "origin": "latin", "meaning": "twist", "words": [
+    { "word": "distort", "definition": "to twist out of shape" },
+    { "word": "contort", "definition": "to twist violently" },
+    { "word": "torture", "definition": "the twisting of body or mind in pain" },
+    { "word": "retort", "definition": "a sharp reply twisted back" }
+  ] },
+  { "root": "vac", "origin": "latin", "meaning": "empty", "words": [
+    { "word": "vacant", "definition": "empty; not occupied" },
+    { "word": "vacuum", "definition": "a space empty of matter" },
+    { "word": "evacuate", "definition": "to empty or clear out" },
+    { "word": "vacation", "definition": "a break that empties the schedule" }
+  ] },
+  { "root": "ver", "origin": "latin", "meaning": "truth", "words": [
+    { "word": "verify", "definition": "to prove to be true" },
+    { "word": "veracity", "definition": "truthfulness" },
+    { "word": "verdict", "definition": "a true statement given by a jury" },
+    { "word": "aver", "definition": "to state as true" }
+  ] },
+  { "root": "viv", "origin": "latin", "meaning": "live, life", "words": [
+    { "word": "vivid", "definition": "lively and vibrant" },
+    { "word": "revive", "definition": "to bring back to life" },
+    { "word": "survive", "definition": "to remain alive" },
+    { "word": "vivacious", "definition": "full of life and energy" }
+  ] },
+  { "root": "vol", "origin": "latin", "meaning": "will, wish", "words": [
+    { "word": "voluntary", "definition": "done of one's own will" },
+    { "word": "volition", "definition": "the power of choosing" },
+    { "word": "benevolent", "definition": "wishing to do good" },
+    { "word": "malevolent", "definition": "wishing to do harm" }
+  ] },
+  { "root": "vor", "origin": "latin", "meaning": "eat, devour", "words": [
+    { "word": "carnivore", "definition": "a meat-eating animal" },
+    { "word": "herbivore", "definition": "a plant-eating animal" },
+    { "word": "voracious", "definition": "eager to devour; greedy" },
+    { "word": "omnivore", "definition": "an eater of all kinds of food" }
+  ] },
+  { "root": "corp", "origin": "latin", "meaning": "body", "words": [
+    { "word": "corporation", "definition": "a legal body of people acting as one" },
+    { "word": "corpse", "definition": "a dead body" },
+    { "word": "corporal", "definition": "relating to the body" },
+    { "word": "incorporate", "definition": "to combine into one body" }
+  ] },
+  { "root": "cord", "origin": "latin", "meaning": "heart", "words": [
+    { "word": "cordial", "definition": "warm and heartfelt" },
+    { "word": "accord", "definition": "agreement of hearts or minds" },
+    { "word": "discord", "definition": "a lack of harmony" },
+    { "word": "concord", "definition": "harmony; agreement" }
+  ] },
+  { "root": "capit", "origin": "latin", "meaning": "head", "words": [
+    { "word": "capital", "definition": "the chief or head city" },
+    { "word": "captain", "definition": "the head of a team or ship" },
+    { "word": "decapitate", "definition": "to cut off the head" },
+    { "word": "capitulate", "definition": "to surrender on stated heads or terms" }
+  ] },
+  { "root": "ann", "origin": "latin", "meaning": "year", "words": [
+    { "word": "annual", "definition": "happening once a year" },
+    { "word": "anniversary", "definition": "the yearly return of a date" },
+    { "word": "biennial", "definition": "happening every two years" },
+    { "word": "millennium", "definition": "a period of a thousand years" }
+  ] },
+  { "root": "bell", "origin": "latin", "meaning": "war", "words": [
+    { "word": "rebel", "definition": "one who wages war against authority" },
+    { "word": "belligerent", "definition": "hostile and aggressive" },
+    { "word": "bellicose", "definition": "eager to fight" },
+    { "word": "antebellum", "definition": "before a war" }
+  ] },
+  { "root": "cid", "origin": "latin", "meaning": "cut, kill", "words": [
+    { "word": "incision", "definition": "a surgical cut" },
+    { "word": "homicide", "definition": "the killing of a person" },
+    { "word": "concise", "definition": "brief; cut short" },
+    { "word": "precise", "definition": "exact; sharply cut" }
+  ] },
+  { "root": "clud", "origin": "latin", "meaning": "close, shut", "words": [
+    { "word": "include", "definition": "to shut in; contain" },
+    { "word": "exclude", "definition": "to shut out" },
+    { "word": "seclude", "definition": "to shut away from others" },
+    { "word": "conclude", "definition": "to close or bring to an end" }
+  ] },
+  { "root": "equ", "origin": "latin", "meaning": "equal, even", "words": [
+    { "word": "equal", "definition": "the same in amount or value" },
+    { "word": "equator", "definition": "the line dividing the earth into equal halves" },
+    { "word": "equivalent", "definition": "equal in value or meaning" },
+    { "word": "equilibrium", "definition": "a state of balance" }
+  ] },
+  { "root": "flect", "origin": "latin", "meaning": "bend", "words": [
+    { "word": "reflect", "definition": "to bend back, as light" },
+    { "word": "deflect", "definition": "to bend or turn aside" },
+    { "word": "inflection", "definition": "a bend or change in the voice" },
+    { "word": "genuflect", "definition": "to bend the knee in respect" }
+  ] },
+  { "root": "later", "origin": "latin", "meaning": "side", "words": [
+    { "word": "lateral", "definition": "relating to the side" },
+    { "word": "bilateral", "definition": "having two sides" },
+    { "word": "unilateral", "definition": "involving only one side" },
+    { "word": "collateral", "definition": "side by side; additional security" }
+  ] },
+  { "root": "leg", "origin": "latin", "meaning": "law", "words": [
+    { "word": "legal", "definition": "permitted by law" },
+    { "word": "legislate", "definition": "to make laws" },
+    { "word": "legitimate", "definition": "lawful; genuine" },
+    { "word": "delegate", "definition": "one sent with lawful authority" }
+  ] },
+  { "root": "nov", "origin": "latin", "meaning": "new", "words": [
+    { "word": "novel", "definition": "new and unusual" },
+    { "word": "novice", "definition": "a beginner" },
+    { "word": "innovate", "definition": "to introduce something new" },
+    { "word": "renovate", "definition": "to make new again" }
+  ] },
+  { "root": "plic", "origin": "latin", "meaning": "fold", "words": [
+    { "word": "complicate", "definition": "to fold together; make complex" },
+    { "word": "duplicate", "definition": "to make a double or copy" },
+    { "word": "replicate", "definition": "to copy exactly" },
+    { "word": "implicate", "definition": "to fold in; involve" }
+  ] },
+  { "root": "sanct", "origin": "latin", "meaning": "holy, sacred", "words": [
+    { "word": "sanctify", "definition": "to make holy" },
+    { "word": "sanctuary", "definition": "a holy or safe place" },
+    { "word": "sanction", "definition": "official approval or penalty" },
+    { "word": "sacrosanct", "definition": "regarded as too sacred to touch" }
+  ] },
+  { "root": "simil", "origin": "latin", "meaning": "like, similar", "words": [
+    { "word": "similar", "definition": "alike but not identical" },
+    { "word": "simulate", "definition": "to imitate or make like" },
+    { "word": "assimilate", "definition": "to absorb and make similar" },
+    { "word": "simile", "definition": "a comparison using 'like' or 'as'" }
+  ] },
+  { "root": "urb", "origin": "latin", "meaning": "city", "words": [
+    { "word": "urban", "definition": "relating to a city" },
+    { "word": "suburb", "definition": "an outer part of a city" },
+    { "word": "urbane", "definition": "smoothly polite; city-mannered" },
+    { "word": "suburban", "definition": "relating to the suburbs" }
+  ] },
+  { "root": "ped", "origin": "latin", "meaning": "foot", "words": [
+    { "word": "pedal", "definition": "a lever pushed by the foot" },
+    { "word": "pedestrian", "definition": "a person traveling on foot" },
+    { "word": "pedestal", "definition": "the base or foot of a column" },
+    { "word": "centipede", "definition": "a creature with many legs" }
+  ] },
+  { "root": "ling", "origin": "latin", "meaning": "tongue, language", "words": [
+    { "word": "language", "definition": "a system of words and speech" },
+    { "word": "linguist", "definition": "a person skilled in languages" },
+    { "word": "bilingual", "definition": "speaking two languages" },
+    { "word": "linguistics", "definition": "the study of language" }
+  ] },
+  { "root": "reg", "origin": "latin", "meaning": "rule, king", "words": [
+    { "word": "regal", "definition": "relating to a king; majestic" },
+    { "word": "regulate", "definition": "to control by rule" },
+    { "word": "regime", "definition": "a system of rule" },
+    { "word": "regent", "definition": "one who rules for a monarch" }
+  ] },
+  { "root": "juven", "origin": "latin", "meaning": "young", "words": [
+    { "word": "juvenile", "definition": "youthful; not yet adult" },
+    { "word": "rejuvenate", "definition": "to make young again" },
+    { "word": "juvenescence", "definition": "the state of being youthful" },
+    { "word": "junior", "definition": "younger; of lower rank" }
+  ] },
+  { "root": "domin", "origin": "latin", "meaning": "master, lord", "words": [
+    { "word": "dominate", "definition": "to rule over" },
+    { "word": "dominion", "definition": "control or ruling power" },
+    { "word": "predominant", "definition": "having the greatest power" },
+    { "word": "domain", "definition": "an area under one's control" }
+  ] },
+  { "root": "sol", "origin": "latin", "meaning": "sun", "words": [
+    { "word": "solar", "definition": "relating to the sun" },
+    { "word": "parasol", "definition": "a light sunshade" },
+    { "word": "solstice", "definition": "when the sun reaches its highest or lowest point" },
+    { "word": "solarium", "definition": "a sunny room" }
+  ] },
+  { "root": "grat", "origin": "latin", "meaning": "pleasing, thankful", "words": [
+    { "word": "gratitude", "definition": "thankfulness" },
+    { "word": "grateful", "definition": "feeling thanks" },
+    { "word": "gratify", "definition": "to please or satisfy" },
+    { "word": "ingratiate", "definition": "to gain favor by pleasing" }
+  ] },
+  { "root": "clam", "origin": "latin", "meaning": "cry out, shout", "words": [
+    { "word": "exclaim", "definition": "to cry out suddenly" },
+    { "word": "proclaim", "definition": "to announce publicly" },
+    { "word": "clamor", "definition": "a loud outcry" },
+    { "word": "acclaim", "definition": "loud, enthusiastic approval" }
+  ] },
+  { "root": "cur", "origin": "latin", "meaning": "care", "words": [
+    { "word": "cure", "definition": "to restore to health; care for" },
+    { "word": "curator", "definition": "a person who cares for a collection" },
+    { "word": "accurate", "definition": "done with care; exact" },
+    { "word": "secure", "definition": "free from care or danger; safe" }
+  ] },
+  { "root": "cogn", "origin": "latin", "meaning": "know", "words": [
+    { "word": "recognize", "definition": "to know again" },
+    { "word": "cognition", "definition": "the process of knowing" },
+    { "word": "cognizant", "definition": "aware; having knowledge" },
+    { "word": "incognito", "definition": "with one's identity unknown" }
+  ] },
+  { "root": "fac", "origin": "latin", "meaning": "make, do", "words": [
+    { "word": "factory", "definition": "a place where goods are made" },
+    { "word": "manufacture", "definition": "to make goods on a large scale" },
+    { "word": "benefactor", "definition": "one who does good for others" },
+    { "word": "faction", "definition": "a group formed to do or push an aim" }
+  ] }
+]
