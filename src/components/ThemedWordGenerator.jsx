@@ -20,10 +20,11 @@ const PRESETS = [
 
 // Display order + labels for the grouped result columns.
 const GROUPS = [
+  { pos: 'poetic', name: 'Beautiful & Poetic Picks', accent: 'text-fuchsia-700 dark:text-fuchsia-300' },
   { pos: 'adjective', name: 'Adjectives', accent: 'text-indigo-700 dark:text-indigo-300' },
   { pos: 'noun', name: 'Nouns', accent: 'text-emerald-700 dark:text-emerald-300' },
   { pos: 'verb', name: 'Verbs', accent: 'text-amber-700 dark:text-amber-300' },
-  { pos: 'other', name: 'Related & Evocative', accent: 'text-rose-700 dark:text-rose-300' },
+  { pos: 'other', name: 'Related & Associated', accent: 'text-rose-700 dark:text-rose-300' },
 ];
 
 const DEBOUNCE_MS = 550;
@@ -47,6 +48,9 @@ const ThemedWordGenerator = () => {
     return entry && Array.isArray(entry.words) ? entry.words : null;
   };
 
+  // Route curated "associated" words into the Beautiful & Poetic Picks group.
+  const asPoetic = (w) => (w.associated ? { ...w, pos: 'poetic' } : w);
+
   const runSearch = useCallback(async (rawTheme) => {
     const t = (rawTheme || '').trim();
     if (!t) {
@@ -66,19 +70,29 @@ const ThemedWordGenerator = () => {
     // Ignore stale responses (a newer search superseded this one).
     if (reqId !== requestIdRef.current) return;
 
+    const fb = getFallback(t);
+
     if (live.length > 0) {
-      setWords(live);
-      setSource('live');
-    } else {
-      // Datamuse unreachable/empty → bundled curated fallback so we never blank.
-      const fb = getFallback(t);
+      // Live path: enrich with the curated Beautiful & Poetic picks for known
+      // presets so the evocative, AIO-resistant words always surface — not just
+      // the raw Datamuse synonym list. Dedupe against what live already returned.
+      let merged = live;
       if (fb) {
-        setWords(fb);
-        setSource('fallback');
-      } else {
-        setWords([]);
-        setSource('empty');
+        const liveSet = new Set(live.map((w) => w.word.toLowerCase()));
+        const picks = fb
+          .filter((w) => w.associated && !liveSet.has(w.word.toLowerCase()))
+          .map((w) => ({ word: w.word, pos: 'poetic', associated: true }));
+        merged = [...picks, ...live];
       }
+      setWords(merged);
+      setSource('live');
+    } else if (fb) {
+      // Datamuse unreachable/empty → bundled curated fallback so we never blank.
+      setWords(fb.map(asPoetic));
+      setSource('fallback');
+    } else {
+      setWords([]);
+      setSource('empty');
     }
     setLoading(false);
   }, []);

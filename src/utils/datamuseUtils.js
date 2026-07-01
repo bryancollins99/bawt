@@ -32,6 +32,16 @@ async function fetchJson(url) {
   }
 }
 
+// Quality gate: Datamuse's raw ml= results include noise that fails the
+// AIO-resistance bar (multi-word phrases like "visible light", the query term
+// echoed back). Drop those so the live path stays evocative, not a synonym dump.
+function isQualityWord(word, themeLower) {
+  if (!word) return false;
+  if (word.includes(' ')) return false; // multi-word phrase, not a single evocative word
+  if (word.toLowerCase() === themeLower) return false; // the theme echoed back
+  return true;
+}
+
 // Map a Datamuse tags array to a coarse part-of-speech bucket.
 function posFromTags(tags) {
   if (!Array.isArray(tags)) return 'other';
@@ -61,13 +71,14 @@ export async function fetchThemedWords(theme) {
   const mlRows = settled[0].status === 'fulfilled' ? settled[0].value : [];
   const trgRows = settled[1].status === 'fulfilled' ? settled[1].value : [];
 
+  const themeLower = t.toLowerCase();
   const seen = new Set();
   const out = [];
 
   // means-like rows carry POS tags (md=p)
   for (const row of mlRows) {
     const w = (row && row.word || '').trim();
-    if (!w || seen.has(w.toLowerCase())) continue;
+    if (!w || seen.has(w.toLowerCase()) || !isQualityWord(w, themeLower)) continue;
     seen.add(w.toLowerCase());
     out.push({ word: w, pos: posFromTags(row.tags), associated: false });
   }
@@ -75,7 +86,7 @@ export async function fetchThemedWords(theme) {
   // rel_trg rows are evocative/associated; they rarely carry POS tags.
   for (const row of trgRows) {
     const w = (row && row.word || '').trim();
-    if (!w || seen.has(w.toLowerCase())) continue;
+    if (!w || seen.has(w.toLowerCase()) || !isQualityWord(w, themeLower)) continue;
     seen.add(w.toLowerCase());
     out.push({ word: w, pos: 'other', associated: true });
   }
