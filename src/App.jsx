@@ -33,6 +33,7 @@ import RootWordExplorer from './components/RootWordExplorer';
 import WritingAppFinder from './components/WritingAppFinder';
 import WriterPulse from './components/WriterPulse';
 import WeeklyWriting from './components/WeeklyWriting';
+import DeadWordChecker from './components/DeadWordChecker';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -83,6 +84,7 @@ function App() {
       case 'writing-app-finder': return 'writing-app-finder';
       case 'writer-pulse': return 'writer-pulse';
       case 'weekly-writing': return 'weekly-writing';
+      case 'dead-word-checker': return 'dead-word-checker';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -179,7 +181,8 @@ function App() {
     { id: 'root-explorer', name: 'Root Word Explorer', icon: '🌱' },
     { id: 'writing-app-finder', name: 'Writing App Finder', icon: '🧭' },
     { id: 'writer-pulse', name: 'Writer Pulse', icon: '📡' },
-    { id: 'weekly-writing', name: 'This Week in Writing & AI', icon: '🗞️' }
+    { id: 'weekly-writing', name: 'This Week in Writing & AI', icon: '🗞️' },
+    { id: 'dead-word-checker', name: 'Dead / Weak-Word Checker', icon: '🩹' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -350,6 +353,7 @@ function App() {
         {currentTool === 'writing-app-finder' && <WritingAppFinder />}
         {currentTool === 'writer-pulse' && <WriterPulse />}
         {currentTool === 'weekly-writing' && <WeeklyWriting />}
+        {currentTool === 'dead-word-checker' && <DeadWordChecker />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
