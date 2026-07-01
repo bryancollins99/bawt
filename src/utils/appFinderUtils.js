@@ -66,12 +66,28 @@ export function getRecommendation(answers, data) {
   const mapping = byCategory[mustHave] || byCategory[Object.keys(byCategory)[0]];
   if (!mapping) return null;
 
-  const recommended = data.apps[mapping.recommended];
+  let recommended = data.apps[mapping.recommended];
   if (!recommended) return null;
 
-  const altApps = (mapping.alternatives || [])
-    .map((id) => data.apps[id])
-    .filter(Boolean);
+  let altIds = [...(mapping.alternatives || [])];
+
+  // Free-budget honesty: if the reader asked for free-only and the top pick has
+  // no free tier, promote the first free alternative to the recommended slot and
+  // demote the paid pick into the alternatives. Deterministic (first free alt in
+  // curated order). Hardware categories with no free option keep the paid pick.
+  if (answers.budget === 'free' && !budgetFits(recommended, 'free')) {
+    const freeAltId = altIds.find(
+      (id) => data.apps[id] && budgetFits(data.apps[id], 'free')
+    );
+    if (freeAltId) {
+      const paidTopId = mapping.recommended;
+      recommended = data.apps[freeAltId];
+      altIds = altIds.filter((id) => id !== freeAltId);
+      altIds.unshift(paidTopId);
+    }
+  }
+
+  const altApps = altIds.map((id) => data.apps[id]).filter(Boolean);
 
   return {
     category,

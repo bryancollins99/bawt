@@ -27,7 +27,7 @@ const WritingAppFinder = () => {
     {
       key: 'budget',
       title: "What's your budget?",
-      subtitle: 'We only surface free picks if you want them.',
+      subtitle: 'Choose free and we lead with a no-cost pick where one exists.',
       options: data.questions.budget,
     },
     {
