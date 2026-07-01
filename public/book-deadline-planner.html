@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Deadline Planner | Become a Writer Today</title>
+<meta name="description" content="Turn your book idea into a daily word count. Set a goal and a deadline, get your daily target, log your words and stay on pace until the manuscript is done.">
+<meta property="og:title" content="Book Deadline Planner">
+<meta property="og:description" content="Set a goal and a deadline. Get your daily word target. Finish your book.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2B4C8C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B4C8C'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='bold' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Book Deadline Planner","applicationCategory":"Productivity","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"},"publisher":{"@type":"Organization","name":"Become a Writer Today","url":"https://becomeawritertoday.com"}}
+</script>
+<style>
+  :root{
+    --paper:#FCFCFB; --card:#FFFFFF; --ink:#1C2430; --ink-2:#5A6472; --muted:#8A93A0;
+    --line:#E5E3DC; --brand:#2B4C8C; --brand-hover:#22407A; --data:#3E63AE;
+    --good:#2E7D32; --warn:#B26A00; --bad:#B3261E;
+    --good-bg:#EAF3EB; --warn-bg:#F7EFE2; --bad-bg:#F9E9E8;
+    --radius:10px; --mono:'Courier Prime',ui-monospace,monospace;
+    --display:'Zilla Slab',Georgia,serif;
+    --body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:20px 16px 64px}
+  a{color:var(--brand)}
+  :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
+
+  header.site{padding:8px 0 28px}
+  .eyebrow{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+  .eyebrow a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line)}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,7vw,42px);line-height:1.08;letter-spacing:-.01em}
+  .lede{margin-top:10px;color:var(--ink-2);max-width:48ch}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:16px}
+  .card h2{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:14px}
+
+  form .row{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  label{font-size:14px;font-weight:600;color:var(--ink)}
+  .hint{font-size:13px;font-weight:400;color:var(--muted)}
+  input[type=text],input[type=number],input[type=date],input[type=email],select{
+    font-family:var(--body);font-size:16px;padding:11px 12px;border:1px solid var(--line);
+    border-radius:8px;background:#fff;color:var(--ink);width:100%}
+  input[type=number]{font-family:var(--mono)}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:460px){.grid-2{grid-template-columns:1fr}}
+
+  .daychips{display:flex;gap:6px;flex-wrap:wrap}
+  .daychips button{font-family:var(--mono);font-size:14px;padding:8px 0;width:44px;border:1px solid var(--line);
+    border-radius:8px;background:#fff;color:var(--ink-2);cursor:pointer}
+  .daychips button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff}
+
+  .btn{display:inline-block;font-size:16px;font-weight:600;padding:12px 20px;border-radius:8px;border:1px solid var(--brand);
+    background:var(--brand);color:#fff;cursor:pointer;width:100%}
+  .btn:hover{background:var(--brand-hover)}
+  .btn-quiet{background:#fff;color:var(--brand)}
+  .btn-quiet:hover{background:#F3F6FB}
+  .btn-row{display:flex;gap:10px}
+  .btn-row .btn{width:auto;flex:1}
+
+  .error{display:none;background:var(--bad-bg);color:var(--bad);border-radius:8px;padding:10px 12px;font-size:14px;margin-bottom:12px}
+  .error.show{display:block}
+
+  #results{display:none}
+  #results.show{display:block}
+  .hero{padding:26px 20px;text-align:center}
+  .hero .k{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+  .hero .n{font-family:var(--mono);font-weight:700;font-size:clamp(52px,15vw,84px);line-height:1;color:var(--brand);margin:6px 0 2px}
+  .hero .u{font-family:var(--display);font-size:20px;color:var(--ink)}
+  .hero .sub{margin-top:10px;font-size:15px;color:var(--ink-2)}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  @media (max-width:460px){.stats{grid-template-columns:1fr 1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;text-align:center}
+  .stat .n{font-family:var(--mono);font-weight:700;font-size:24px}
+  .stat .k{font-size:12px;color:var(--ink-2);margin-top:2px}
+
+  /* Signature: the manuscript meter — a typed page edge filling up */
+  .ms{margin-top:8px}
+  .ms .pageline{font-family:var(--mono);font-size:14px;color:var(--ink-2);display:flex;justify-content:space-between;margin-bottom:6px}
+  .meter{position:relative;height:34px;border:1px solid var(--line);border-radius:6px;background:
+    repeating-linear-gradient(90deg,#fff 0 6px,#F4F2EC 6px 7px);overflow:hidden}
+  .meter .fill{position:absolute;inset:0 auto 0 0;width:0%;background:
+    repeating-linear-gradient(90deg,var(--data) 0 6px,#33518F 6px 7px);border-radius:5px 0 0 5px;transition:width .8s ease}
+  @media (prefers-reduced-motion:reduce){.meter .fill{transition:none}}
+  .meter .tick{position:absolute;top:0;bottom:0;width:2px;background:var(--paper)}
+  .milestones{list-style:none;margin-top:14px}
+  .milestones li{display:flex;justify-content:space-between;padding:8px 2px;border-bottom:1px dashed var(--line);font-size:15px}
+  .milestones li:last-child{border-bottom:none}
+  .milestones .m-date{font-family:var(--mono);color:var(--ink-2)}
+  .milestones li.done .m-date::after{content:" ✓";color:var(--good)}
+
+  .pace{display:none;margin-top:14px;padding:10px 14px;border-radius:8px;font-size:15px;font-weight:600}
+  .pace.show{display:flex;gap:8px;align-items:flex-start}
+  .pace.good{background:var(--good-bg);color:var(--good)}
+  .pace.warn{background:var(--warn-bg);color:var(--warn)}
+  .pace.bad{background:var(--bad-bg);color:var(--bad)}
+  .pace small{font-weight:400;color:var(--ink-2)}
+
+  .logrow{display:flex;gap:10px}
+  .logrow input{flex:1}
+  .logrow .btn{width:auto;padding:11px 18px}
+  .streakline{margin-top:12px;font-size:14px;color:var(--ink-2)}
+  .streakline b{font-family:var(--mono);color:var(--ink)}
+
+  .bars{display:flex;align-items:flex-end;gap:2px;height:96px;margin-top:16px;padding-top:8px}
+  .bars .bar{flex:1;position:relative;background:var(--data);border-radius:4px 4px 0 0;min-height:2px;cursor:default}
+  .bars .bar.zero{background:var(--line)}
+  .bars .bar .tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+    background:var(--ink);color:#fff;font-family:var(--mono);font-size:12px;padding:4px 8px;border-radius:6px;white-space:nowrap;z-index:2}
+  .bars .bar:hover .tip,.bars .bar:focus .tip{display:block}
+  .bars .bar .lbl{position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);
+    font-family:var(--mono);font-size:11px;color:var(--ink-2);white-space:nowrap}
+  .baraxis{display:flex;gap:2px;margin-top:4px}
+  .baraxis span{flex:1;text-align:center;font-family:var(--mono);font-size:10px;color:var(--muted)}
+
+  .sharebox{display:flex;gap:10px;margin-top:4px}
+  .sharebox input{flex:1;font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+  .copied{font-size:13px;color:var(--good);margin-top:8px;min-height:18px}
+
+  .kitform{display:flex;gap:10px}
+  @media (max-width:460px){.kitform{flex-direction:column}}
+  .kitform input{flex:1}
+  .kitform .btn{width:auto}
+  .kit-note{font-size:13px;color:var(--muted);margin-top:8px}
+  .kit-done{display:none;color:var(--good);font-size:15px;font-weight:600}
+
+  footer.site{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+  footer.site p{margin-bottom:6px}
+  .selftest{display:none;font-family:var(--mono);font-size:13px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;margin-top:16px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <p class="eyebrow"><a href="https://becomeawritertoday.com/">Become a Writer Today</a> · Free tool</p>
+    <h1>Book Deadline Planner</h1>
+    <p class="lede">Set a word count goal and a deadline. Get the daily target that finishes your book, then log your words and stay on pace.</p>
+  </header>
+
+  <section class="card" aria-labelledby="plan-h">
+    <h2 id="plan-h">Your book</h2>
+    <div class="error" id="err" role="alert"></div>
+    <form id="planform" autocomplete="off">
+      <div class="row">
+        <label for="f-title">Working title <span class="hint">(optional)</span></label>
+        <input type="text" id="f-title" maxlength="80" placeholder="Untitled manuscript">
+      </div>
+      <div class="grid-2">
+        <div class="row">
+          <label for="f-genre">Type of book</label>
+          <select id="f-genre">
+            <option value="80000">Novel · 80,000</option>
+            <option value="90000">Thriller · 90,000</option>
+            <option value="110000">Epic fantasy · 110,000</option>
+            <option value="60000">Young adult · 60,000</option>
+            <option value="75000">Memoir · 75,000</option>
+            <option value="60001">Nonfiction · 60,000</option>
+            <option value="30000">Novella · 30,000</option>
+            <option value="50000">50K challenge · 50,000</option>
+            <option value="0">Custom</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="f-goal">Goal (words)</label>
+          <input type="number" id="f-goal" min="100" step="100" value="80000" required>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="row">
+          <label for="f-current">Words written so far</label>
+          <input type="number" id="f-current" min="0" step="100" value="0">
+        </div>
+        <div class="row">
+          <label for="f-deadline">Deadline</label>
+          <input type="date" id="f-deadline" required>
+        </div>
+      </div>
+      <div class="row">
+        <label id="days-l">Writing days</label>
+        <div class="daychips" role="group" aria-labelledby="days-l" id="daychips"></div>
+      </div>
+      <button type="submit" class="btn">Get my daily target</button>
+    </form>
+  </section>
+
+  <section id="results" aria-live="polite">
+    <div class="card hero">
+      <p class="k">Write</p>
+      <p class="n" id="r-wpd">0</p>
+      <p class="u">words a day</p>
+      <p class="sub" id="r-sub"></p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><p class="n" id="r-days">0</p><p class="k">writing days left</p></div>
+      <div class="stat"><p class="n" id="r-remaining">0</p><p class="k">words to go</p></div>
+      <div class="stat"><p class="n" id="r-weekly">0</p><p class="k">words a week</p></div>
+    </div>
+
+    <div class="card ms">
+      <h2>Your manuscript</h2>
+      <p class="pageline"><span id="r-pages">p. 0 of 0</span><span id="r-pct">0%</span></p>
+      <div class="meter" role="img" id="meter-img" aria-label="Manuscript progress">
+        <div class="fill" id="r-fill"></div>
+        <div class="tick" style="left:25%"></div>
+        <div class="tick" style="left:50%"></div>
+        <div class="tick" style="left:75%"></div>
+      </div>
+      <ul class="milestones" id="r-miles"></ul>
+      <div class="pace" id="r-pace"></div>
+    </div>
+
+    <div class="card">
+      <h2>Log today's words</h2>
+      <div class="logrow">
+        <input type="number" id="f-log" min="0" step="10" placeholder="e.g. 750" aria-label="Words written today">
+        <button class="btn" id="log-btn" type="button">Log</button>
+      </div>
+      <p class="streakline" id="r-streak"></p>
+      <div class="bars" id="r-bars" aria-hidden="true"></div>
+      <div class="baraxis" id="r-axis" aria-hidden="true"></div>
+      <details style="margin-top:10px">
+        <summary style="font-size:14px;color:var(--ink-2);cursor:pointer">Log as a table</summary>
+        <table id="r-table" style="width:100%;margin-top:8px;font-size:14px;font-family:var(--mono)"></table>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2>Share your plan</h2>
+      <div class="sharebox">
+        <input type="text" id="r-link" readonly aria-label="Shareable plan link">
+        <button class="btn btn-quiet" id="copy-btn" type="button" style="width:auto">Copy</button>
+      </div>
+      <p class="copied" id="copied"></p>
+    </div>
+
+    <div class="card" id="kit-card">
+      <h2>Save your plan</h2>
+      <p style="font-size:15px;color:var(--ink-2);margin-bottom:12px">Get your plan link by email, plus a weekly nudge from Bryan to keep you on pace.</p>
+      <iframe name="bdp_kit_sink" title="subscription" style="display:none"></iframe>
+      <form class="kitform" id="kitform" action="https://app.kit.com/forms/8060129/subscriptions" method="post" target="bdp_kit_sink">
+        <input type="email" name="email_address" id="f-email" placeholder="you@example.com" required aria-label="Email address">
+        <input type="hidden" name="fields[plan_url]" id="f-planurl" value="">
+        <button class="btn" type="submit">Email me my plan</button>
+      </form>
+      <p class="kit-done" id="kit-done">Check your inbox to confirm, your plan link is on its way.</p>
+      <p class="kit-note">Free. Unsubscribe any time.</p>
+    </div>
+  </section>
+
+  <pre class="selftest" id="selftest"></pre>
+
+  <footer class="site">
+    <p>Built by <a href="https://becomeawritertoday.com/">Become a Writer Today</a>. Words are counted in your browser and stored on your device only.</p>
+    <p><a href="https://becomeawritertoday.com/tools/">More free writing tools</a></p>
+  </footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id)};
+var DAY=86400000;
+var DAYNAMES=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+var LS_PLAN="bdp-plan", LS_LOG="bdp-log";
+
+// ---------- pure helpers (self-tested) ----------
+function iso(d){ // local date -> YYYY-MM-DD
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function parseISO(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
+// weekdays: array of 7 booleans, Mon..Sun. Counts writing days from `from` to `to` inclusive.
+function countWritingDays(from,to,weekdays){
+  var n=0,d=new Date(from.getTime());
+  while(d<=to){ if(weekdays[(d.getDay()+6)%7]) n++; d=new Date(d.getTime()+DAY);}
+  return n;
+}
+function wordsPerDay(remaining,daysLeft){
+  if(remaining<=0) return 0;
+  if(daysLeft<=0) return Infinity;
+  return Math.ceil(remaining/daysLeft);
+}
+// date when cumulative crosses `target`, writing `wpd` on writing days from `from`
+function crossDate(from,weekdays,current,wpd,target){
+  if(current>=target) return null; // already done
+  if(wpd<=0) return null;
+  var d=new Date(from.getTime()),c=current,guard=0;
+  while(guard++<36600){
+    if(weekdays[(d.getDay()+6)%7]){ c+=wpd; if(c>=target) return d; }
+    d=new Date(d.getTime()+DAY);
+  }
+  return null;
+}
+function fmtNum(n){return n.toLocaleString("en-US");}
+function fmtDate(d){return d.toLocaleDateString("en-US",{day:"numeric",month:"short",year:"numeric"});}
+function streakOf(log,today,weekdays){
+  var s=0,d=new Date(today.getTime());
+  if(!(log[iso(d)]>0)) d=new Date(d.getTime()-DAY); // today not logged yet doesn't break streak
+  while(true){
+    var w=weekdays[(d.getDay()+6)%7];
+    if(w){ if(log[iso(d)]>0){s++;} else break; }
+    d=new Date(d.getTime()-DAY);
+    if(s>3660) break;
+  }
+  return s;
+}
+
+// ---------- state ----------
+var plan=null; // {t,g,c,d,w:[7 bools]}
+var heroAnim=0;
+var log={};    // {"YYYY-MM-DD": words}
+try{ log=JSON.parse(localStorage.getItem(LS_LOG)||"{}")||{}; }catch(e){}
+
+function loggedTotal(){ var s=0; for(var k in log) s+=log[k]; return s; }
+function saveLog(){ try{localStorage.setItem(LS_LOG,JSON.stringify(log));}catch(e){} }
+function savePlan(){ try{localStorage.setItem(LS_PLAN,JSON.stringify(plan));}catch(e){} }
+
+function planToURL(p){
+  var q=new URLSearchParams();
+  if(p.t) q.set("t",p.t);
+  q.set("g",p.g); q.set("c",p.c); q.set("d",p.d);
+  q.set("w",p.w.map(function(b){return b?1:0}).join(""));
+  return location.origin+location.pathname+"?"+q.toString();
+}
+function planFromURL(){
+  var q=new URLSearchParams(location.search);
+  if(!q.get("g")||!q.get("d")) return null;
+  var w=(q.get("w")||"1111111").split("").map(function(c){return c==="1"});
+  while(w.length<7) w.push(true);
+  return {t:(q.get("t")||"").slice(0,80), g:Math.max(100,+q.get("g")||0), c:Math.max(0,+q.get("c")||0), d:q.get("d"), w:w.slice(0,7)};
+}
+
+// ---------- form ----------
+var chipsWrap=$("daychips");
+DAYNAMES.forEach(function(n,i){
+  var b=document.createElement("button");
+  b.type="button"; b.textContent=n; b.setAttribute("aria-pressed","true"); b.dataset.i=i;
+  b.addEventListener("click",function(){ b.setAttribute("aria-pressed", b.getAttribute("aria-pressed")==="true"?"false":"true"); });
+  chipsWrap.appendChild(b);
+});
+function chipsGet(){ return Array.prototype.map.call(chipsWrap.children,function(b){return b.getAttribute("aria-pressed")==="true"}); }
+function chipsSet(w){ Array.prototype.forEach.call(chipsWrap.children,function(b,i){ b.setAttribute("aria-pressed", w[i]?"true":"false"); }); }
+
+$("f-genre").addEventListener("change",function(){
+  var v=+this.value; if(v>0) $("f-goal").value= v===60001?60000:v;
+});
+
+function readForm(){
+  return {
+    t:$("f-title").value.trim(),
+    g:Math.max(100,Math.round(+$("f-goal").value||0)),
+    c:Math.max(0,Math.round(+$("f-current").value||0)),
+    d:$("f-deadline").value,
+    w:chipsGet()
+  };
+}
+function fillForm(p){
+  $("f-title").value=p.t||"";
+  $("f-goal").value=p.g;
+  $("f-current").value=p.c;
+  $("f-deadline").value=p.d;
+  chipsSet(p.w);
+}
+
+$("planform").addEventListener("submit",function(e){
+  e.preventDefault();
+  var p=readForm(), err=$("err"), today=new Date(); today.setHours(0,0,0,0);
+  err.className="error";
+  if(!p.d){ err.textContent="Pick a deadline."; err.className="error show"; return; }
+  if(parseISO(p.d)<=today){ err.textContent="Your deadline needs to be after today. Pick a future date."; err.className="error show"; return; }
+  if(!p.w.some(Boolean)){ err.textContent="Pick at least one writing day."; err.className="error show"; return; }
+  if(p.c>=p.g){ err.textContent="Words written already meets the goal. Raise the goal, or take the win and start the next book."; err.className="error show"; return; }
+  plan=p; savePlan();
+  history.replaceState(null,"",planToURL(plan));
+  render(true);
+  $("results").scrollIntoView({behavior:"smooth",block:"start"});
+});
+
+// ---------- render ----------
+function render(animate){
+  if(!plan) return;
+  var today=new Date(); today.setHours(0,0,0,0);
+  var deadline=parseISO(plan.d);
+  var current=plan.c+loggedTotal();
+  var remaining=Math.max(0,plan.g-current);
+  var daysLeft=countWritingDays(today,deadline,plan.w);
+  var wpd=wordsPerDay(remaining,daysLeft);
+  var writingDaysPerWeek=plan.w.filter(Boolean).length;
+
+  $("results").className="show";
+  var heroN=$("r-wpd");
+  var target=(wpd===Infinity)?remaining:wpd;
+  heroAnim++; // invalidate any in-flight count-up
+  heroN.textContent=fmtNum(target);
+  if(animate && !matchMedia("(prefers-reduced-motion: reduce)").matches && target>0 && target<100000){
+    var t0=performance.now(), token=heroAnim;
+    (function tick(now){
+      if(token!==heroAnim) return;
+      var k=Math.min(1,(now-t0)/700);
+      heroN.textContent=fmtNum(Math.round(target*(k*(2-k))));
+      if(k<1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  var title=plan.t||"your book";
+  $("r-sub").textContent = remaining===0
+    ? "Done. "+title.charAt(0).toUpperCase()+title.slice(1)+" is at goal."
+    : "to finish "+title+" by "+fmtDate(deadline);
+  $("r-days").textContent=fmtNum(daysLeft);
+  $("r-remaining").textContent=fmtNum(remaining);
+  $("r-weekly").textContent=(wpd===Infinity)?"—":fmtNum(wpd*writingDaysPerWeek);
+
+  // manuscript meter (250 words = 1 ms page)
+  var pagesDone=Math.floor(current/250), pagesAll=Math.ceil(plan.g/250);
+  var pct=Math.min(100,Math.round(current/plan.g*100));
+  $("r-pages").textContent="p. "+fmtNum(pagesDone)+" of "+fmtNum(pagesAll);
+  $("r-pct").textContent=pct+"%";
+  $("r-fill").style.width=pct+"%";
+  $("meter-img").setAttribute("aria-label","Manuscript progress: page "+pagesDone+" of "+pagesAll+", "+pct+" percent");
+
+  // milestones at required pace
+  var miles=$("r-miles"); miles.innerHTML="";
+  [[25,"First quarter"],[50,"Halfway"],[75,"Three quarters"],[100,"The End"]].forEach(function(m){
+    var t=Math.round(plan.g*m[0]/100);
+    var li=document.createElement("li");
+    var when;
+    if(current>=t){ li.className="done"; when="done"; }
+    else { var cd=crossDate(today,plan.w,current,wpd===Infinity?remaining:wpd,t); when=cd?fmtDate(cd):"—"; }
+    li.innerHTML="<span>"+m[1]+" · <span style='font-family:var(--mono)'>"+fmtNum(t)+"</span></span><span class='m-date'>"+when+"</span>";
+    miles.appendChild(li);
+  });
+
+  // pace verdict from last 7 calendar days of logs
+  var paceEl=$("r-pace"); paceEl.className="pace";
+  var logDates=Object.keys(log);
+  if(logDates.length>=2 && remaining>0){
+    var sum7=0;
+    for(var i=0;i<7;i++){ var d=new Date(today.getTime()-i*DAY); sum7+=log[iso(d)]||0; }
+    var perWritingDay=writingDaysPerWeek?(sum7/7)*(7/writingDaysPerWeek):0;
+    if(perWritingDay>0){
+      var projected=crossDate(today,plan.w,current,Math.round(perWritingDay),plan.g);
+      if(projected){
+        var diff=Math.round((projected-deadline)/DAY);
+        if(diff<=-3){ paceEl.className="pace show good"; paceEl.innerHTML="<span>✓</span><span>Ahead of pace. At your 7-day average you finish "+fmtDate(projected)+", "+Math.abs(diff)+" days early.</span>"; }
+        else if(diff<=3){ paceEl.className="pace show good"; paceEl.innerHTML="<span>✓</span><span>On pace for "+fmtDate(deadline)+". Keep logging.</span>"; }
+        else { paceEl.className="pace show bad"; paceEl.innerHTML="<span>!</span><span>Behind pace. At your 7-day average you finish "+fmtDate(projected)+". Today's target is "+fmtNum(wpd)+" words. <small>Miss a day? The target self-corrects.</small></span>"; }
+      }
+    }
+  }
+
+  // log widgets
+  var streak=streakOf(log,today,plan.w);
+  $("r-streak").innerHTML="Streak: <b>"+streak+"</b> writing day"+(streak===1?"":"s")+" · Logged total: <b>"+fmtNum(loggedTotal())+"</b> words";
+  var bars=$("r-bars"),axis=$("r-axis"); bars.innerHTML=""; axis.innerHTML="";
+  var max=1,vals=[];
+  for(var i=13;i>=0;i--){ var d=new Date(today.getTime()-i*DAY); var v=log[iso(d)]||0; vals.push({d:d,v:v}); if(v>max)max=v; }
+  vals.forEach(function(o,idx){
+    var b=document.createElement("div");
+    b.className="bar"+(o.v?"":" zero"); b.tabIndex=0;
+    b.style.height=Math.max(2,Math.round(o.v/max*88))+"px";
+    b.innerHTML="<span class='tip'>"+fmtDate(o.d)+" · "+fmtNum(o.v)+"</span>"+(idx===13&&o.v?"<span class='lbl'>"+fmtNum(o.v)+"</span>":"");
+    bars.appendChild(b);
+    var s=document.createElement("span"); s.textContent=(idx===0||idx===13)?o.d.getDate():""; axis.appendChild(s);
+  });
+  var tbl=$("r-table"); tbl.innerHTML="<tr><th style='text-align:left'>Date</th><th style='text-align:right'>Words</th></tr>";
+  logDates.sort().reverse().slice(0,30).forEach(function(k){
+    tbl.innerHTML+="<tr><td>"+k+"</td><td style='text-align:right'>"+fmtNum(log[k])+"</td></tr>";
+  });
+
+  // share + email
+  var url=planToURL(plan);
+  $("r-link").value=url;
+  $("f-planurl").value=url;
+}
+
+$("log-btn").addEventListener("click",function(){
+  var v=Math.max(0,Math.round(+$("f-log").value||0));
+  if(!v) return;
+  var today=iso(new Date());
+  log[today]=(log[today]||0)+v;
+  saveLog(); $("f-log").value="";
+  render(false);
+});
+
+$("copy-btn").addEventListener("click",function(){
+  var url=$("r-link").value;
+  function done(){ $("copied").textContent="Copied. Send it to your writing group."; }
+  if(navigator.share && matchMedia("(max-width:700px)").matches){
+    navigator.share({title:"My book plan",url:url}).catch(function(){});
+  } else if(navigator.clipboard){ navigator.clipboard.writeText(url).then(done); }
+  else { $("r-link").select(); document.execCommand("copy"); done(); }
+});
+
+$("kitform").addEventListener("submit",function(){
+  setTimeout(function(){
+    $("kitform").style.display="none";
+    $("kit-done").style.display="block";
+  },300);
+});
+
+// ---------- boot ----------
+(function boot(){
+  var today=new Date(); today.setHours(0,0,0,0);
+  var dflt=new Date(today.getTime()+90*DAY);
+  $("f-deadline").value=iso(dflt);
+  var fromURL=planFromURL(), saved=null;
+  try{ saved=JSON.parse(localStorage.getItem(LS_PLAN)||"null"); }catch(e){}
+  var p=fromURL||saved;
+  if(p && p.g && p.d){
+    plan=p; fillForm(p);
+    if(fromURL) savePlan();
+    if(parseISO(p.d)>today) render(false);
+  }
+})();
+
+// ---------- self-tests ----------
+if(new URLSearchParams(location.search).get("selftest")==="1"){
+  var out=[],pass=0,fail=0;
+  function eq(name,got,want){ var ok=JSON.stringify(got)===JSON.stringify(want); ok?pass++:fail++; out.push((ok?"PASS":"FAIL")+" "+name+(ok?"":" got="+JSON.stringify(got)+" want="+JSON.stringify(want))); }
+  var all=[1,1,1,1,1,1,1].map(Boolean), wk=[1,1,1,1,1,0,0].map(Boolean);
+  eq("7 days inclusive",countWritingDays(new Date(2026,6,1),new Date(2026,6,7),all),7);
+  eq("weekdays only Jul1-7 2026",countWritingDays(new Date(2026,6,1),new Date(2026,6,7),wk),5); // Wed..Tue minus Sat/Sun
+  eq("single day",countWritingDays(new Date(2026,6,6),new Date(2026,6,6),wk),1); // Monday
+  eq("wpd rounds up",wordsPerDay(1000,3),334);
+  eq("wpd done",wordsPerDay(0,10),0);
+  eq("wpd no days",wordsPerDay(500,0),Infinity);
+  var cd=crossDate(new Date(2026,6,1),all,0,1000,3000);
+  eq("crossDate 3k @1k/day from Jul1",iso(cd),"2026-07-03");
+  var cd2=crossDate(new Date(2026,6,3),wk,0,1000,2000); // Fri writing day, Sat/Sun skip, Mon crosses
+  eq("crossDate skips weekend",iso(cd2),"2026-07-06");
+  eq("crossDate already done",crossDate(new Date(2026,6,1),all,5000,1000,3000),null);
+  eq("streak empty",streakOf({},new Date(2026,6,1),all),0);
+  eq("streak 2 ending yesterday",streakOf({"2026-06-29":500,"2026-06-30":500},new Date(2026,6,1),all),2);
+  eq("streak bridges rest days",streakOf({"2026-07-03":500,"2026-07-06":500},new Date(2026,6,7),wk),2);
+  var st=$("selftest"); st.style.display="block";
+  st.textContent="SELFTEST "+pass+"/"+(pass+fail)+" passed\n"+out.join("\n");
+  console.log(st.textContent);
+}
+})();
+</script>
+</body>
+</html>
