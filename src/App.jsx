@@ -26,7 +26,8 @@ import WritingQualityScorer from './components/WritingQualityScorer';
 import RandomWordsGenerator from './components/RandomWordsGenerator';
 import RomanticWordsGenerator from './components/RomanticWordsGenerator';
 import SadWordsGenerator from './components/SadWordsGenerator';
-import { 
+import LiteraryDeviceDetector from './components/LiteraryDeviceDetector';
+import {
   countWords, 
   countFillerWordsByType, 
   analyzeEmotions, 
@@ -69,6 +70,7 @@ function App() {
       case 'random-words': return 'random-words';
       case 'romantic-words': return 'romantic-words';
       case 'sad-words': return 'sad-words';
+      case 'literary-devices': return 'literary-devices';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -158,7 +160,8 @@ function App() {
     { id: 'writing-quality-scorer', name: 'Writing Quality Scorer', icon: '📊' },
     { id: 'random-words', name: 'Random Words Generator', icon: '🎲' },
     { id: 'romantic-words', name: 'Romantic Words Generator', icon: '💕' },
-    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' }
+    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' },
+    { id: 'literary-devices', name: 'Literary Device Detector', icon: '🔎' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -322,6 +325,8 @@ function App() {
         {currentTool === 'romantic-words' && <RomanticWordsGenerator />}
 
         {currentTool === 'sad-words' && <SadWordsGenerator />}
+
+        {currentTool === 'literary-devices' && <LiteraryDeviceDetector />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
