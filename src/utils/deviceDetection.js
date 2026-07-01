@@ -10,7 +10,7 @@
 //
 // Every detector returns matches with an explanation that names its own limits.
 
-import { doWordsRhyme } from './rhymeUtils';
+import { doWordsRhyme } from './rhymeUtils.js';
 
 // Words that carry little lexical weight — excluded from repetition counting
 // and internal-rhyme pairing so loose endings don't create false positives.
