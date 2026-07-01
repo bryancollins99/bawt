@@ -91,6 +91,11 @@
   to = "/?embed=true&tool=sad-words"
   status = 200
 
+[[redirects]]
+  from = "/embed/writing-app-finder"
+  to = "/?embed=true&tool=writing-app-finder"
+  status = 200
+
 # Handle client-side routing
 [[redirects]]
   from = "/*"

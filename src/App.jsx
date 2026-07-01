@@ -26,6 +26,7 @@ import WritingQualityScorer from './components/WritingQualityScorer';
 import RandomWordsGenerator from './components/RandomWordsGenerator';
 import RomanticWordsGenerator from './components/RomanticWordsGenerator';
 import SadWordsGenerator from './components/SadWordsGenerator';
+import WritingAppFinder from './components/WritingAppFinder';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -69,6 +70,7 @@ function App() {
       case 'random-words': return 'random-words';
       case 'romantic-words': return 'romantic-words';
       case 'sad-words': return 'sad-words';
+      case 'writing-app-finder': return 'writing-app-finder';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -158,7 +160,8 @@ function App() {
     { id: 'writing-quality-scorer', name: 'Writing Quality Scorer', icon: '📊' },
     { id: 'random-words', name: 'Random Words Generator', icon: '🎲' },
     { id: 'romantic-words', name: 'Romantic Words Generator', icon: '💕' },
-    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' }
+    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' },
+    { id: 'writing-app-finder', name: 'Writing App Finder', icon: '🧭' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -322,6 +325,8 @@ function App() {
         {currentTool === 'romantic-words' && <RomanticWordsGenerator />}
 
         {currentTool === 'sad-words' && <SadWordsGenerator />}
+
+        {currentTool === 'writing-app-finder' && <WritingAppFinder />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
