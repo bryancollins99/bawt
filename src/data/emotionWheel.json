@@ -1,0 +1,279 @@
+{
+  "source": "Parrott's (2001) three-tier emotion classification (primary/secondary/tertiary), via MIT-licensed jrosebr1/pyemotionwheel. See emotionWheel.SOURCES.md.",
+  "cores": [
+    {
+      "name": "Joy",
+      "color": "#F59E0B",
+      "secondary": [
+        {
+          "name": "Content",
+          "tertiary": [
+            "Pleased",
+            "Satisfied"
+          ]
+        },
+        {
+          "name": "Happy",
+          "tertiary": [
+            "Amused",
+            "Delighted"
+          ]
+        },
+        {
+          "name": "Cheerful",
+          "tertiary": [
+            "Jovial",
+            "Blissful"
+          ]
+        },
+        {
+          "name": "Proud",
+          "tertiary": [
+            "Triumphant",
+            "Illustrious"
+          ]
+        },
+        {
+          "name": "Optimistic",
+          "tertiary": [
+            "Eager",
+            "Hopeful"
+          ]
+        },
+        {
+          "name": "Enthusiastic",
+          "tertiary": [
+            "Excited",
+            "Zeal"
+          ]
+        },
+        {
+          "name": "Elation",
+          "tertiary": [
+            "Euphoric",
+            "Jubilation"
+          ]
+        },
+        {
+          "name": "Enthralled",
+          "tertiary": [
+            "Enchanted",
+            "Rapture"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Love",
+      "color": "#EC4899",
+      "secondary": [
+        {
+          "name": "Affectionate",
+          "tertiary": [
+            "Fondness",
+            "Romantic"
+          ]
+        },
+        {
+          "name": "Longing",
+          "tertiary": [
+            "Sentimental",
+            "Attracted"
+          ]
+        },
+        {
+          "name": "Desire",
+          "tertiary": [
+            "Passion",
+            "Infatuation"
+          ]
+        },
+        {
+          "name": "Tenderness",
+          "tertiary": [
+            "Caring",
+            "Compassionate"
+          ]
+        },
+        {
+          "name": "Peaceful",
+          "tertiary": [
+            "Relieved",
+            "Satisfied"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Surprise",
+      "color": "#14B8A6",
+      "secondary": [
+        {
+          "name": "Stunned",
+          "tertiary": [
+            "Shocked",
+            "Dismayed"
+          ]
+        },
+        {
+          "name": "Confused",
+          "tertiary": [
+            "Disillusioned",
+            "Perplexed"
+          ]
+        },
+        {
+          "name": "Amazed",
+          "tertiary": [
+            "Astonished",
+            "Awe-struck"
+          ]
+        },
+        {
+          "name": "Overcome",
+          "tertiary": [
+            "Speechless",
+            "Astounded"
+          ]
+        },
+        {
+          "name": "Moved",
+          "tertiary": [
+            "Stimulated",
+            "Touched"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fear",
+      "color": "#8B5CF6",
+      "secondary": [
+        {
+          "name": "Scared",
+          "tertiary": [
+            "Frightened",
+            "Helpless"
+          ]
+        },
+        {
+          "name": "Terror",
+          "tertiary": [
+            "Panic",
+            "Hysterical"
+          ]
+        },
+        {
+          "name": "Insecure",
+          "tertiary": [
+            "Inferior",
+            "Inadequate"
+          ]
+        },
+        {
+          "name": "Nervous",
+          "tertiary": [
+            "Worried",
+            "Anxious"
+          ]
+        },
+        {
+          "name": "Horror",
+          "tertiary": [
+            "Mortified",
+            "Dread"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Anger",
+      "color": "#EF4444",
+      "secondary": [
+        {
+          "name": "Rage",
+          "tertiary": [
+            "Hate",
+            "Hostile"
+          ]
+        },
+        {
+          "name": "Exasperated",
+          "tertiary": [
+            "Agitated",
+            "Frustrated"
+          ]
+        },
+        {
+          "name": "Irritable",
+          "tertiary": [
+            "Annoyed",
+            "Aggravated"
+          ]
+        },
+        {
+          "name": "Envy",
+          "tertiary": [
+            "Resentful",
+            "Jealous"
+          ]
+        },
+        {
+          "name": "Disgust",
+          "tertiary": [
+            "Contempt",
+            "Revolted"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sadness",
+      "color": "#3B82F6",
+      "secondary": [
+        {
+          "name": "Suffering",
+          "tertiary": [
+            "Agony",
+            "Hurt"
+          ]
+        },
+        {
+          "name": "Despondent",
+          "tertiary": [
+            "Depression",
+            "Sorrow"
+          ]
+        },
+        {
+          "name": "Disappointed",
+          "tertiary": [
+            "Dismayed",
+            "Displeased"
+          ]
+        },
+        {
+          "name": "Shameful",
+          "tertiary": [
+            "Regretful",
+            "Guilty"
+          ]
+        },
+        {
+          "name": "Neglected",
+          "tertiary": [
+            "Isolated",
+            "Lonely"
+          ]
+        },
+        {
+          "name": "Despair",
+          "tertiary": [
+            "Grief",
+            "Powerless"
+          ]
+        }
+      ]
+    }
+  ]
+}

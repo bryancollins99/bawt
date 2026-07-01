@@ -134,6 +134,21 @@
   status = 200
 
 [[redirects]]
+  from = "/embed/concrete-poem-maker"
+  to = "/?embed=true&tool=concrete-poem-maker"
+  status = 200
+
+[[redirects]]
+  from = "/embed/emotion-wheel"
+  to = "/?embed=true&tool=emotion-wheel"
+  status = 200
+
+[[redirects]]
+  from = "/embed/dead-word-checker"
+  to = "/?embed=true&tool=dead-word-checker"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

@@ -1,0 +1,113 @@
+{
+  "intensifiers": {
+    "label": "Intensifiers",
+    "accent": "amber",
+    "blurb": "Weak amplifiers that inflate a sentence without adding meaning. Usually the fix is to cut the intensifier and pick a stronger core word.",
+    "words": {
+      "very": ["extremely", "remarkably", "cut it and pick a stronger adjective"],
+      "really": ["genuinely", "truly", "cut it"],
+      "so": ["extremely", "therefore", "cut it"],
+      "too": ["excessively", "overly"],
+      "quite": ["notably", "fairly", "cut it"],
+      "rather": ["somewhat", "cut it"],
+      "pretty": ["fairly", "reasonably", "cut it"],
+      "extremely": ["intensely", "acutely", "cut it and pick a vivid word"],
+      "incredibly": ["remarkably", "exceptionally"],
+      "totally": ["completely", "entirely", "cut it"],
+      "absolutely": ["unquestionably", "cut it"],
+      "completely": ["entirely", "wholly"],
+      "utterly": ["thoroughly", "wholly"],
+      "highly": ["exceptionally", "cut it"],
+      "super": ["exceptionally", "cut it"]
+    }
+  },
+  "weakAdjectives": {
+    "label": "Weak Adjectives",
+    "accent": "rose",
+    "blurb": "Vague, overused descriptors that tell the reader nothing specific. Replace with a precise, sensory word.",
+    "words": {
+      "good": ["excellent", "effective", "impressive", "say what makes it good"],
+      "bad": ["poor", "harmful", "flawed", "say what makes it bad"],
+      "nice": ["pleasant", "thoughtful", "charming", "say what makes it nice"],
+      "great": ["outstanding", "remarkable", "significant"],
+      "big": ["enormous", "substantial", "sprawling"],
+      "small": ["tiny", "compact", "modest"],
+      "interesting": ["compelling", "intriguing", "say why it interests you"],
+      "amazing": ["astonishing", "remarkable", "breathtaking"],
+      "beautiful": ["stunning", "elegant", "striking"],
+      "important": ["essential", "critical", "pivotal"],
+      "happy": ["delighted", "content", "elated"],
+      "sad": ["heartbroken", "despondent", "forlorn"],
+      "fun": ["entertaining", "exhilarating", "delightful"],
+      "special": ["distinctive", "singular", "say what sets it apart"]
+    }
+  },
+  "vagueNouns": {
+    "label": "Vague Nouns",
+    "accent": "indigo",
+    "blurb": "Placeholder nouns that hide the real subject. Name the specific object, idea, or category instead.",
+    "words": {
+      "thing": ["item", "detail", "name the specific object or idea"],
+      "things": ["items", "details", "name them specifically"],
+      "stuff": ["belongings", "materials", "name it specifically"],
+      "aspect": ["feature", "element", "detail"],
+      "aspects": ["features", "elements", "details"],
+      "factor": ["cause", "influence", "reason"],
+      "factors": ["causes", "influences", "reasons"],
+      "area": ["field", "region", "topic"],
+      "way": ["method", "approach", "route"],
+      "part": ["section", "portion", "component"],
+      "kind": ["variety", "class", "name the category"],
+      "sort": ["variety", "class", "name the category"],
+      "type": ["variety", "class", "category"],
+      "point": ["argument", "detail", "reason"],
+      "matter": ["issue", "subject", "concern"]
+    }
+  },
+  "weakVerbs": {
+    "label": "Weak Verbs",
+    "accent": "emerald",
+    "blurb": "Low-energy verbs that do little work. A precise, active verb carries far more meaning.",
+    "words": {
+      "got": ["received", "obtained", "earned", "reached"],
+      "get": ["receive", "obtain", "acquire", "reach"],
+      "gets": ["receives", "obtains", "acquires"],
+      "went": ["walked", "rushed", "travelled", "drove"],
+      "go": ["travel", "head", "proceed"],
+      "put": ["placed", "positioned", "set", "arranged"],
+      "made": ["created", "built", "produced", "forced"],
+      "make": ["create", "build", "produce", "craft"],
+      "said": ["explained", "argued", "noted", "insisted"],
+      "says": ["explains", "argues", "notes", "insists"],
+      "did": ["completed", "performed", "carried out"],
+      "look": ["gaze", "stare", "glance", "study"],
+      "walk": ["stride", "amble", "march", "stroll"],
+      "move": ["shift", "glide", "surge", "dart"]
+    }
+  },
+  "fillerQualifiers": {
+    "label": "Filler Qualifiers",
+    "accent": "sky",
+    "blurb": "Hedging words that soften and clutter. Most can be deleted outright to make the sentence more direct.",
+    "words": {
+      "just": ["cut it", "simply", "merely"],
+      "actually": ["cut it", "in fact"],
+      "basically": ["cut it", "in short", "essentially"],
+      "literally": ["cut it", "exactly"],
+      "simply": ["cut it", "merely"],
+      "essentially": ["cut it", "in effect"],
+      "generally": ["cut it", "usually"],
+      "arguably": ["cut it", "perhaps"],
+      "perhaps": ["cut it", "possibly"],
+      "maybe": ["cut it", "possibly"],
+      "possibly": ["cut it", "perhaps"],
+      "somewhat": ["cut it", "slightly"],
+      "kind of": ["cut it", "somewhat"],
+      "sort of": ["cut it", "somewhat"],
+      "a bit": ["cut it", "slightly"],
+      "a lot": ["many", "much", "a great deal", "specify the amount"],
+      "of course": ["cut it", "naturally"],
+      "in order to": ["to"]
+    }
+  }
+}
