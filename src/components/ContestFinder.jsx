@@ -23,6 +23,57 @@ const TYPE_STYLES = {
   grant: 'bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-200',
 };
 
+// BAWT Kit (ConvertKit) "Join (generic)" inline form — become-a-writer-today.kit.com
+const KIT_FORM_ID = '8060129';
+
+const DeadlineAlertsForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+  return (
+    <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+      <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-1">
+        📬 Get deadline alerts
+      </h3>
+      {submitted ? (
+        <p className="text-blue-700 dark:text-blue-400 text-sm">
+          Thanks! Check your inbox to confirm your subscription.
+        </p>
+      ) : (
+        <>
+          <p className="text-blue-700 dark:text-blue-400 text-sm mb-3">
+            Never miss an entry window. We&apos;ll email you when contests are about to close.
+          </p>
+          {/* Hidden sink so the cross-origin POST to Kit never navigates the tool */}
+          <iframe name="bawt_kit_sink" title="subscription" style={{ display: 'none' }} />
+          <form
+            action={`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`}
+            method="post"
+            target="bawt_kit_sink"
+            onSubmit={() => setTimeout(() => setSubmitted(true), 300)}
+            className="flex flex-col sm:flex-row gap-2"
+          >
+            <input
+              type="email"
+              name="email_address"
+              required
+              placeholder="you@example.com"
+              className="flex-1 px-3 py-2 border border-blue-300 dark:border-blue-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium whitespace-nowrap"
+            >
+              Notify me
+            </button>
+          </form>
+          <p className="mt-2 text-xs text-blue-600/70 dark:text-blue-400/60">
+            No spam. Unsubscribe anytime.
+          </p>
+        </>
+      )}
+    </div>
+  );
+};
+
 const ContestFinder = () => {
   const [genre, setGenre] = useState('all');
   const [type, setType] = useState('all');
@@ -267,41 +318,7 @@ const ContestFinder = () => {
         </div>
       )}
 
-      {/*
-        Deadline-alerts email capture — INTENTIONAL MVP STUB.
-        No Kit form id is wired yet (needs-Bryan tail). When the "deadline alerts"
-        form/list id is provided, replace the inert form below with the Kit embed
-        (e.g. <script data-uid="KIT_FORM_ID">) or post to the Kit API endpoint.
-        KIT_FORM_ID = TODO (needs-Bryan)
-      */}
-      <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-        <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-1">
-          📬 Get deadline alerts
-        </h3>
-        <p className="text-blue-700 dark:text-blue-400 text-sm mb-3">
-          Never miss an entry window. We&apos;ll email you when contests you care about are about to close.
-        </p>
-        <form
-          className="flex flex-col sm:flex-row gap-2"
-          onSubmit={(e) => e.preventDefault()}
-          aria-label="Deadline alerts sign-up (coming soon)"
-        >
-          <input
-            type="email"
-            placeholder="you@example.com"
-            className="flex-1 px-3 py-2 border border-blue-300 dark:border-blue-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            disabled
-          />
-          <button
-            type="submit"
-            disabled
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg opacity-60 cursor-not-allowed text-sm font-medium whitespace-nowrap"
-            title="Email alerts are being set up"
-          >
-            Notify me (coming soon)
-          </button>
-        </form>
-      </div>
+      <DeadlineAlertsForm />
 
       {/* Data note */}
       <p className="mt-6 text-xs text-gray-400 dark:text-gray-500 text-center">
