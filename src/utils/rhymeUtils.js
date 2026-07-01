@@ -68,7 +68,7 @@ export const analyzeRhymeScheme = (lines) => {
 };
 
 // Simple rhyme detection
-const doWordsRhyme = (word1, word2) => {
+export const doWordsRhyme = (word1, word2) => {
   if (word1 === word2) return true;
   
   // Check if they end with same 2+ characters
