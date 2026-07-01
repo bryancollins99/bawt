@@ -198,16 +198,19 @@ function BreakTab() {
                 )}
               </div>
 
-              {result.status !== 'verified' && (
-                <p className="mt-4 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-3">
-                  This is a possible breakdown produced by matching our root collection — not a
-                  guaranteed etymology. Some words merely contain a root's letters without deriving
-                  from it.
+              {result.note && (
+                <p className="mt-4 text-sm text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg px-3 py-2">
+                  ⚠ {result.note}
                 </p>
               )}
 
-              {result.note && (
-                <p className="mt-2 text-xs text-amber-700 dark:text-amber-300">⚠ {result.note}</p>
+              {result.status !== 'verified' && (
+                <p className="mt-3 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-100 dark:border-gray-700 pt-3">
+                  This is a <strong>possible</strong> breakdown from matching our root collection —
+                  not a guaranteed etymology. A word can contain a root's letters by coincidence (a
+                  "false friend") without deriving from it, so treat the roots shown above as
+                  suggestions to check, not proof.
+                </p>
               )}
             </>
           )}

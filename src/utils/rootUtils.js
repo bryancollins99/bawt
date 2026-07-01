@@ -56,6 +56,18 @@ export const HOMOGRAPH_NOTES = {
   gen: 'The form "gen" spans Greek "birth/race" and Latin "produce".',
 };
 
+// Known "false friends": common words that merely CONTAIN a root's letters by coincidence and are
+// NOT derived from it. Matching flags these explicitly so the tool never teaches a wrong etymology
+// on a well-known trap. (The general framing below already warns on every unverified split; this
+// gives the classic traps a precise, named correction.)
+export const FALSE_FRIENDS = {
+  monastery: 'Coincidence, not derivation: "monastery" contains "aster" (star) but comes from Greek "monos" (alone) — it is not "one + star".',
+  normal: 'Coincidence, not derivation: "normal" contains "mal" (bad) but comes from Latin "norma" (a carpenter\'s square, i.e. a rule/standard).',
+  moral: 'Coincidence, not derivation: "moral" contains "mal" (bad) but comes from Latin "mos/moris" (custom).',
+  matter: 'Coincidence, not derivation: "matter" contains "matr" (mother) but comes from Latin "materia" (material/substance).',
+  cordon: 'Coincidence, not derivation: "cordon" contains "cord" (heart) but comes from a diminutive of "cord/rope", not the heart root.',
+};
+
 // Combining vowels that link two morphemes (thermO-meter, chronO-logy, demO-cracy).
 const CONNECTORS = new Set(['o', 'i']);
 
@@ -209,7 +221,12 @@ export function decomposeWord(rawInput) {
   else if (hasGap) status = 'partial';
   else status = 'possible';
 
-  return { input, normalized: word, status, parts, note: buildAmbiguityNote(parts) };
+  const notes = [];
+  if (FALSE_FRIENDS[word]) notes.push(FALSE_FRIENDS[word]);
+  const homograph = buildAmbiguityNote(parts);
+  if (homograph) notes.push(homograph);
+
+  return { input, normalized: word, status, parts, note: notes.join(' ') };
 }
 
 function isSuffix(s) {
