@@ -8,14 +8,17 @@ const ReportTopicsGenerator = () => {
   const [gradeLevel, setGradeLevel] = useState('any');
   const [generatedTopics, setGeneratedTopics] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [hasGenerated, setHasGenerated] = useState(false);
 
   const isEditorial = mode === 'editorial';
 
   const switchMode = (nextMode) => {
     if (nextMode === mode) return;
     setMode(nextMode);
+    setSubject('any'); // subject lists differ between modes (editorial adds media/ethics)
     setReportType('any'); // report/editorial have different type vocabularies
     setGeneratedTopics([]);
+    setHasGenerated(false);
   };
 
   const topicsDatabase = {
@@ -198,6 +201,7 @@ const ReportTopicsGenerator = () => {
       // Shuffle and limit to 6 topics
       const shuffled = filteredTopics.sort(() => 0.5 - Math.random());
       setGeneratedTopics(shuffled.slice(0, 6));
+      setHasGenerated(true);
       setIsGenerating(false);
     }, 800);
   };
@@ -312,6 +316,8 @@ const ReportTopicsGenerator = () => {
               <option value="health">Health & Medicine</option>
               <option value="education">Education & Family</option>
               <option value="current">Current Events</option>
+              {isEditorial && <option value="media">Media & Culture</option>}
+              {isEditorial && <option value="ethics">Ethics & Society</option>}
             </select>
           </div>
 
@@ -449,8 +455,21 @@ const ReportTopicsGenerator = () => {
         </div>
       )}
 
+      {/* No-results state (a valid filter combo returned nothing) */}
+      {hasGenerated && generatedTopics.length === 0 && (
+        <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-6 border border-amber-200 dark:border-amber-800 text-center">
+          <h3 className="text-lg font-semibold text-amber-800 dark:text-amber-300 mb-2">
+            🔍 No topics matched those filters
+          </h3>
+          <p className="text-amber-700 dark:text-amber-300">
+            Not every subject has every {isEditorial ? 'stance' : 'type'}. Try setting one filter back to
+            &ldquo;Any&rdquo; and generating again.
+          </p>
+        </div>
+      )}
+
       {/* Help Section */}
-      {generatedTopics.length === 0 && (
+      {!hasGenerated && generatedTopics.length === 0 && (
         <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 border border-blue-200 dark:border-blue-800">
           <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-3">
             💡 How to Use This Tool
