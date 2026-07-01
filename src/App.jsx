@@ -32,6 +32,7 @@ import LiteraryDeviceDetector from './components/LiteraryDeviceDetector';
 import RootWordExplorer from './components/RootWordExplorer';
 import WritingAppFinder from './components/WritingAppFinder';
 import WriterPulse from './components/WriterPulse';
+import WeeklyWriting from './components/WeeklyWriting';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -81,6 +82,7 @@ function App() {
       case 'root-explorer': return 'root-explorer';
       case 'writing-app-finder': return 'writing-app-finder';
       case 'writer-pulse': return 'writer-pulse';
+      case 'weekly-writing': return 'weekly-writing';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -176,7 +178,8 @@ function App() {
     { id: 'literary-devices', name: 'Literary Device Detector', icon: '🔎' },
     { id: 'root-explorer', name: 'Root Word Explorer', icon: '🌱' },
     { id: 'writing-app-finder', name: 'Writing App Finder', icon: '🧭' },
-    { id: 'writer-pulse', name: 'Writer Pulse', icon: '📡' }
+    { id: 'writer-pulse', name: 'Writer Pulse', icon: '📡' },
+    { id: 'weekly-writing', name: 'This Week in Writing & AI', icon: '🗞️' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -346,6 +349,7 @@ function App() {
         {currentTool === 'root-explorer' && <RootWordExplorer />}
         {currentTool === 'writing-app-finder' && <WritingAppFinder />}
         {currentTool === 'writer-pulse' && <WriterPulse />}
+        {currentTool === 'weekly-writing' && <WeeklyWriting />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (
