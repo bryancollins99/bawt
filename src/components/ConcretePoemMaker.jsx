@@ -25,9 +25,9 @@ const GALLERY = [
     note: 'Poems whose words are arranged as pictures — the Eiffel Tower, falling rain, a dove.',
   },
   {
-    title: 'A Coney Island of the Mind',
-    poet: 'Lawrence Ferlinghetti (1958)',
-    note: 'Lines scattered and stepped across the page so the layout paces how the poem is read aloud.',
+    title: 'Swan and Shadow',
+    poet: 'John Hollander (1969)',
+    note: 'From Types of Shape — the lines form a swan above the water with its own reflection mirrored below.',
   },
   {
     title: 'l(a',
@@ -40,10 +40,14 @@ const ConcretePoemMaker = () => {
   const [text, setText] = useState('write your poem here and watch it take shape');
   const [shapeKey, setShapeKey] = useState('heart');
   const [fontSize, setFontSize] = useState(14);
+  const [fillMode, setFillMode] = useState('solid');
   const [copied, setCopied] = useState(false);
   const preRef = useRef(null);
 
-  const { rows, plainText } = useMemo(() => buildPoem(text, shapeKey), [text, shapeKey]);
+  const { rows, plainText } = useMemo(
+    () => buildPoem(text, shapeKey, fillMode),
+    [text, shapeKey, fillMode]
+  );
 
   const handleCopy = async () => {
     try {
@@ -115,7 +119,9 @@ const ConcretePoemMaker = () => {
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-y"
           />
           <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            Your letters are repeated to fill the whole silhouette, so any length works.
+            Your words are repeated to fill the whole silhouette, so any length works.
+            Use <strong>Solid</strong> for the crispest shape or <strong>Keep words</strong> to
+            keep your text readable.
           </p>
         </div>
 
@@ -144,19 +150,54 @@ const ConcretePoemMaker = () => {
           </div>
         </div>
 
-        {/* Font size */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Text size: {fontSize}px
-          </label>
-          <input
-            type="range"
-            min="8"
-            max="24"
-            value={fontSize}
-            onChange={(e) => setFontSize(parseInt(e.target.value, 10))}
-            className="w-full accent-blue-600"
-          />
+        {/* Font size + fill mode */}
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Text size: {fontSize}px
+            </label>
+            <input
+              type="range"
+              min="8"
+              max="24"
+              value={fontSize}
+              onChange={(e) => setFontSize(parseInt(e.target.value, 10))}
+              className="w-full accent-blue-600"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Fill
+            </label>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={() => setFillMode('solid')}
+                aria-pressed={fillMode === 'solid'}
+                className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                  fillMode === 'solid'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600'
+                }`}
+                title="Pack every cell with a letter for the crispest shape"
+              >
+                Solid
+              </button>
+              <button
+                type="button"
+                onClick={() => setFillMode('words')}
+                aria-pressed={fillMode === 'words'}
+                className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                  fillMode === 'words'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600'
+                }`}
+                title="Keep your spaces so the words stay readable"
+              >
+                Keep words
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -224,7 +265,7 @@ const ConcretePoemMaker = () => {
           {GALLERY.map((poem) => (
             <div
               key={poem.title}
-              className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 shadow-sm"
+              className="bg-white dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600 shadow-sm"
             >
               <h4 className="font-semibold text-gray-900 dark:text-white">
                 {poem.title}

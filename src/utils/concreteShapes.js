@@ -153,27 +153,41 @@ export const SHAPES = {
   },
 };
 
-// Collapse all whitespace out of the source so the silhouette fills solid
-// (spaces would punch holes and wreck recognisability). Falls back to a default
-// phrase when the user has not typed anything usable yet.
-export function normaliseSource(text) {
+// Prepare the source characters that get flowed into the silhouette.
+//   'solid' — collapse ALL whitespace so every filled cell holds a letter and
+//             the shape reads at maximum density (best silhouette).
+//   'words' — collapse runs of whitespace to a single space so the user's word
+//             boundaries survive and the poem stays readable (spaces sit inside
+//             the shape as small gaps rather than breaking its outline).
+// Falls back to a default phrase when nothing usable has been typed yet.
+export function normaliseSource(text, mode = 'solid') {
+  if (mode === 'words') {
+    const cleaned = (text || '').replace(/\s+/g, ' ').trim();
+    return cleaned.length > 0 ? cleaned : 'write your poem here';
+  }
   const cleaned = (text || '').replace(/\s+/g, '');
   return cleaned.length > 0 ? cleaned : 'writeyourpoemhere';
 }
 
 // Build the poem grid for a shape. Returns rows of { char, filled } plus a
 // plain-text rendering (filled = char, empty = space) for copy/download.
-export function buildPoem(text, shapeKey) {
+// Rows are padded to a uniform width so the silhouette stays symmetric.
+export function buildPoem(text, shapeKey, mode = 'solid') {
   const shape = SHAPES[shapeKey] || SHAPES.heart;
-  const source = normaliseSource(text);
+  const source = normaliseSource(text, mode);
+  const width = Math.max(...shape.mask.map((line) => line.length));
   let i = 0;
   const rows = shape.mask.map((line) => {
+    const padded = line.padEnd(width, ' ');
     const cells = [];
-    for (const ch of line) {
+    for (const ch of padded) {
       if (ch === ' ') {
         cells.push({ char: ' ', filled: false });
       } else {
-        cells.push({ char: source[i % source.length], filled: true });
+        // In 'words' mode a source space keeps the word boundary but leaves the
+        // cell visually blank; the cell still counts as part of the silhouette.
+        const srcChar = source[i % source.length];
+        cells.push({ char: srcChar, filled: srcChar !== ' ' });
         i += 1;
       }
     }
