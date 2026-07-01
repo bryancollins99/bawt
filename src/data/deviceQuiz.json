@@ -1,0 +1,173 @@
+{
+  "_note": "Curated literary-device quiz bank. Each question: exactly one correct `device` that appears in `options`. Covers detectable devices AND the phoneme/semantic/structural devices the detector deliberately cannot flag (assonance, consonance, metaphor, allegory, farce, tragic hero, ballad).",
+  "questions": [
+    {
+      "id": 1,
+      "example": "\"The fair breeze blew, the white foam flew.\"",
+      "device": "Alliteration",
+      "options": ["Alliteration", "Metaphor", "Onomatopoeia", "Allegory"],
+      "explanation": "The repeated leading consonant sounds — 'fair'/'foam'/'flew' and 'breeze'/'blew' — mark alliteration, the repetition of initial consonant sounds in nearby words."
+    },
+    {
+      "id": 2,
+      "example": "\"The rain in Spain stays mainly on the plain.\"",
+      "device": "Assonance",
+      "options": ["Assonance", "Consonance", "Alliteration", "Ballad"],
+      "explanation": "The repeated long 'ai' vowel sound (rain, Spain, mainly, plain) is assonance — repetition of vowel SOUNDS, which is why it can't be detected from spelling alone."
+    },
+    {
+      "id": 3,
+      "example": "\"The lumpy, bumpy road made the trip rough.\"",
+      "device": "Consonance",
+      "options": ["Consonance", "Assonance", "Simile", "Farce"],
+      "explanation": "The repeated 'mp' consonant sound in 'lumpy' and 'bumpy' is consonance — repetition of consonant SOUNDS within or at the end of words, not just at the start."
+    },
+    {
+      "id": 4,
+      "example": "\"The bacon sizzled and the kettle whistled.\"",
+      "device": "Onomatopoeia",
+      "options": ["Onomatopoeia", "Metaphor", "Consonance", "Hyperbole"],
+      "explanation": "'Sizzled' and 'whistled' imitate the sounds they describe — that's onomatopoeia."
+    },
+    {
+      "id": 5,
+      "example": "\"Time is a thief that steals our best years.\"",
+      "device": "Metaphor",
+      "options": ["Metaphor", "Simile", "Personification", "Onomatopoeia"],
+      "explanation": "Time is described AS a thief directly (no 'like' or 'as') — a metaphor, an implied comparison. Detecting this needs meaning, not patterns, so it's quiz-only."
+    },
+    {
+      "id": 6,
+      "example": "\"Her smile was as warm as the summer sun.\"",
+      "device": "Simile",
+      "options": ["Simile", "Metaphor", "Assonance", "Allegory"],
+      "explanation": "The comparison uses the marker 'as … as', making it a simile rather than a metaphor."
+    },
+    {
+      "id": 7,
+      "example": "\"George Orwell's Animal Farm uses a farmyard revolt to represent the Russian Revolution.\"",
+      "device": "Allegory",
+      "options": ["Allegory", "Ballad", "Farce", "Repetition"],
+      "explanation": "An extended story whose characters and events stand for real-world ideas or events is an allegory — a whole-narrative device, not a line-level pattern."
+    },
+    {
+      "id": 8,
+      "example": "\"A dizzying cast of mistaken identities, slammed doors, and men hiding in wardrobes drives the whole plot.\"",
+      "device": "Farce",
+      "options": ["Farce", "Tragic Hero", "Metaphor", "Alliteration"],
+      "explanation": "Exaggerated, improbable situations played for broad comedy — mistaken identities, physical mishaps — define farce."
+    },
+    {
+      "id": 9,
+      "example": "\"Macbeth's ambition raises him to the throne and then destroys him.\"",
+      "device": "Tragic Hero",
+      "options": ["Tragic Hero", "Allegory", "Farce", "Onomatopoeia"],
+      "explanation": "A noble figure brought down by a fatal flaw (here, ambition) is a tragic hero — a character archetype, not a wording pattern."
+    },
+    {
+      "id": 10,
+      "example": "\"A short narrative poem in four-line stanzas, telling of a doomed lover and sung to a simple tune.\"",
+      "device": "Ballad",
+      "options": ["Ballad", "Allegory", "Assonance", "Simile"],
+      "explanation": "A ballad is a narrative poem, often in quatrains with a song-like rhythm, that tells a dramatic story — a form, identified by structure."
+    },
+    {
+      "id": 11,
+      "example": "\"So we beat on, boats against the current, borne back ceaselessly into the past.\"",
+      "device": "Alliteration",
+      "options": ["Alliteration", "Assonance", "Farce", "Repetition"],
+      "explanation": "'Beat'/'boats'/'borne'/'back' repeat the initial 'b' sound — alliteration."
+    },
+    {
+      "id": 12,
+      "example": "\"I wandered lonely as a cloud that floats on high o'er vales and hills.\"",
+      "device": "Simile",
+      "options": ["Simile", "Metaphor", "Consonance", "Allegory"],
+      "explanation": "'Lonely as a cloud' compares the speaker to a cloud using 'as' — a simile."
+    },
+    {
+      "id": 13,
+      "example": "\"And miles to go before I sleep, and miles to go before I sleep.\"",
+      "device": "Repetition",
+      "options": ["Repetition", "Assonance", "Onomatopoeia", "Farce"],
+      "explanation": "The whole clause is deliberately repeated for emphasis and effect — repetition."
+    },
+    {
+      "id": 14,
+      "example": "\"The wind whispered secrets through the trembling trees.\"",
+      "device": "Personification",
+      "options": ["Personification", "Onomatopoeia", "Simile", "Ballad"],
+      "explanation": "Giving the wind the human ability to 'whisper secrets' is personification."
+    },
+    {
+      "id": 15,
+      "example": "\"I've told you a million times to clean your room!\"",
+      "device": "Hyperbole",
+      "options": ["Hyperbole", "Metaphor", "Consonance", "Allegory"],
+      "explanation": "'A million times' is a deliberate, obvious exaggeration for effect — hyperbole."
+    },
+    {
+      "id": 16,
+      "example": "\"Go and get the gray goose from the garden gate.\"",
+      "device": "Alliteration",
+      "options": ["Alliteration", "Assonance", "Metaphor", "Tragic Hero"],
+      "explanation": "The hard 'g' repeats across 'go'/'get'/'gray'/'goose'/'garden'/'gate' — alliteration."
+    },
+    {
+      "id": 17,
+      "example": "\"The buzzing bee and the humming bird filled the noisy meadow.\"",
+      "device": "Onomatopoeia",
+      "options": ["Onomatopoeia", "Simile", "Allegory", "Consonance"],
+      "explanation": "'Buzzing' and 'humming' name the sounds they describe — onomatopoeia."
+    },
+    {
+      "id": 18,
+      "example": "\"The early bird catches the worm, but the second mouse gets the cheese.\"",
+      "device": "Assonance",
+      "options": ["Assonance", "Alliteration", "Onomatopoeia", "Farce"],
+      "explanation": "The repeated short/long vowel echoes (the 'ir'/'or' and 'ee' sounds) show assonance — matched by ear, not by spelling."
+    },
+    {
+      "id": 19,
+      "example": "\"He clasped the flask, then dropped it on the desk with a task unfinished.\"",
+      "device": "Consonance",
+      "options": ["Consonance", "Assonance", "Repetition", "Ballad"],
+      "explanation": "The repeated 'sk' consonant cluster (clasped, flask, desk, task) is consonance."
+    },
+    {
+      "id": 20,
+      "example": "\"Life is a broken-winged bird that cannot fly.\"",
+      "device": "Metaphor",
+      "options": ["Metaphor", "Simile", "Onomatopoeia", "Farce"],
+      "explanation": "Life is equated directly with a broken-winged bird — a metaphor, not a marked comparison."
+    },
+    {
+      "id": 21,
+      "example": "\"The pilgrim's journey past the Slough of Despond and Vanity Fair maps a Christian's path to salvation.\"",
+      "device": "Allegory",
+      "options": ["Allegory", "Ballad", "Hyperbole", "Alliteration"],
+      "explanation": "Named places and people that each stand for a spiritual concept make this an allegory (as in The Pilgrim's Progress)."
+    },
+    {
+      "id": 22,
+      "example": "\"Oedipus, a wise and noble king, is undone by the very fate he tries to escape.\"",
+      "device": "Tragic Hero",
+      "options": ["Tragic Hero", "Allegory", "Personification", "Consonance"],
+      "explanation": "A high-standing protagonist destroyed by fate and his own flaw is the classic tragic hero."
+    },
+    {
+      "id": 23,
+      "example": "\"Doors slam, trousers fall, and the vicar is mistaken for the burglar in a whirl of chaos.\"",
+      "device": "Farce",
+      "options": ["Farce", "Ballad", "Metaphor", "Assonance"],
+      "explanation": "Improbable, exaggerated comic mayhem built on mistaken identity and physical gags is farce."
+    },
+    {
+      "id": 24,
+      "example": "\"It tells, in singing four-line verses with a haunting refrain, the tale of Sir Patrick Spens lost at sea.\"",
+      "device": "Ballad",
+      "options": ["Ballad", "Allegory", "Simile", "Onomatopoeia"],
+      "explanation": "A story-telling poem in song-like quatrains with a refrain is a ballad."
+    }
+  ]
+}
