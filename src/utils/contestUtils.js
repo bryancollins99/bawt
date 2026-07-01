@@ -43,18 +43,35 @@ export function isExpired(iso, now = new Date()) {
 
 /**
  * Human-friendly deadline status derived live from the ISO date.
+ * @param {string} iso
+ * @param {boolean} recurring - rolling / weekly contests: once the listed date
+ *   passes, the opportunity re-opens rather than closing, so we surface it as a
+ *   rolling deadline instead of "Closed".
  * @returns {{label: string, tone: string, days: number|null}}
- *   tone ∈ 'expired' | 'urgent' | 'soon' | 'open' | 'unknown'
+ *   tone ∈ 'expired' | 'urgent' | 'soon' | 'open' | 'rolling' | 'unknown'
  */
-export function deadlineStatus(iso, now = new Date()) {
+export function deadlineStatus(iso, recurring = false, now = new Date()) {
   const days = daysUntil(iso, now);
   if (days === null) return { label: 'Deadline TBC', tone: 'unknown', days: null };
-  if (days < 0) return { label: 'Closed', tone: 'expired', days };
+  if (days < 0) {
+    return recurring
+      ? { label: 'Rolling deadline', tone: 'rolling', days }
+      : { label: 'Closed', tone: 'expired', days };
+  }
   if (days === 0) return { label: 'Closes today', tone: 'urgent', days };
   if (days === 1) return { label: '1 day left', tone: 'urgent', days };
   if (days <= 7) return { label: `${days} days left`, tone: 'urgent', days };
   if (days <= 30) return { label: `${days} days left`, tone: 'soon', days };
   return { label: `${days} days left`, tone: 'open', days };
+}
+
+/**
+ * Whether an entry should be treated as closed for filtering/sorting.
+ * Recurring (weekly/rolling) opportunities are never "closed" — their listed
+ * date is just the next known cut-off.
+ */
+export function effectiveExpired(entry, now = new Date()) {
+  return isExpired(entry.deadline, now) && !entry.recurring;
 }
 
 /** Format an ISO date for display, e.g. "31 Oct 2026". Falls back gracefully. */
@@ -91,7 +108,7 @@ export function filterContests(entries, filters = {}, now = new Date()) {
     if (type !== 'all' && e.type !== type) return false;
     if (genre !== 'all' && !(Array.isArray(e.genres) && e.genres.includes(genre))) return false;
     if (freeOnly && !e.freeEntry) return false;
-    if (hideExpired && isExpired(e.deadline, now)) return false;
+    if (hideExpired && effectiveExpired(e, now)) return false;
     if (q) {
       const hay = `${e.name} ${e.prize || ''} ${e.eligibility || ''} ${(e.genres || []).join(' ')}`.toLowerCase();
       if (!hay.includes(q)) return false;
@@ -111,8 +128,12 @@ export function sortContests(entries, sortBy = 'deadline', now = new Date()) {
   }
   // 'deadline'
   return copy.sort((a, b) => {
-    const da = daysUntil(a.deadline, now);
-    const db = daysUntil(b.deadline, now);
+    let da = daysUntil(a.deadline, now);
+    let db = daysUntil(b.deadline, now);
+    // Recurring (rolling/weekly) contests never "close": if their listed date has
+    // passed, treat them as imminent (0) so they stay near the top, not sunk.
+    if (da !== null && da < 0 && a.recurring) da = 0;
+    if (db !== null && db < 0 && b.recurring) db = 0;
     // TBC (null) always last
     if (da === null && db === null) return a.name.localeCompare(b.name);
     if (da === null) return 1;

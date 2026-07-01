@@ -13,6 +13,7 @@ const TONE_STYLES = {
   urgent: 'bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-200',
   soon: 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200',
   open: 'bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-200',
+  rolling: 'bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-200',
   expired: 'bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-400',
   unknown: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-200',
 };
@@ -47,7 +48,7 @@ const ContestFinder = () => {
   };
 
   const closingSoon = results.filter((e) => {
-    const s = deadlineStatus(e.deadline);
+    const s = deadlineStatus(e.deadline, e.recurring);
     return s.tone === 'urgent';
   }).length;
 
@@ -167,7 +168,7 @@ const ContestFinder = () => {
       ) : (
         <div className="space-y-4">
           {results.map((entry, i) => {
-            const status = deadlineStatus(entry.deadline);
+            const status = deadlineStatus(entry.deadline, entry.recurring);
             const expired = status.tone === 'expired';
             return (
               <div
@@ -205,7 +206,15 @@ const ContestFinder = () => {
                     </div>
                   </div>
                   <div className="text-right shrink-0">
-                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${TONE_STYLES[status.tone]}`}>
+                    <span
+                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${TONE_STYLES[status.tone]}`}
+                      title={
+                        entry.projected
+                          ? 'Estimated from this contest’s recurring annual cycle — confirm the exact date on the organiser’s page.'
+                          : undefined
+                      }
+                    >
+                      {entry.projected && status.tone !== 'expired' ? '≈ ' : ''}
                       {status.label}
                     </span>
                     <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
