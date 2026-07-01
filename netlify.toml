@@ -93,6 +93,36 @@
 
 # Handle client-side routing
 [[redirects]]
+  from = "/embed/contest-finder"
+  to = "/?embed=true&tool=contest-finder"
+  status = 200
+
+[[redirects]]
+  from = "/embed/themed-words"
+  to = "/?embed=true&tool=themed-words"
+  status = 200
+
+[[redirects]]
+  from = "/embed/literary-devices"
+  to = "/?embed=true&tool=literary-devices"
+  status = 200
+
+[[redirects]]
+  from = "/embed/root-explorer"
+  to = "/?embed=true&tool=root-explorer"
+  status = 200
+
+[[redirects]]
+  from = "/embed/writing-app-finder"
+  to = "/?embed=true&tool=writing-app-finder"
+  status = 200
+
+[[redirects]]
+  from = "/embed/writer-pulse"
+  to = "/?embed=true&tool=writer-pulse"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

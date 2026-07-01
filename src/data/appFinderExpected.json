@@ -1,0 +1,55 @@
+{
+  "_comment": "Gold rubric for deterministic verification. Each entry is an answer-set → the expected recommended app NAME. Authored from editorial judgment, independent of the mapping code. The recommended pick is a deterministic function of (category, mustHave) PLUS a free-budget override: when budget=free and the (category, mustHave) pick has no free tier, the first free alternative is promoted (the *-free cases below prove this). Platform never changes the pick; it only reorders alternatives.",
+  "cases": [
+    {
+      "id": "memoir-structure",
+      "answers": { "category": "memoir", "budget": "paid", "platform": "mac", "mustHave": "structure" },
+      "expected": "Scrivener"
+    },
+    {
+      "id": "notes-linking",
+      "answers": { "category": "notes", "budget": "free", "platform": "cross", "mustHave": "linking" },
+      "expected": "Obsidian"
+    },
+    {
+      "id": "keyboard-mechanical",
+      "answers": { "category": "keyboard", "budget": "paid", "platform": "mac", "mustHave": "mechanical" },
+      "expected": "Keychron K2"
+    },
+    {
+      "id": "letter-grammar",
+      "answers": { "category": "letter", "budget": "free", "platform": "web", "mustHave": "grammar" },
+      "expected": "Grammarly"
+    },
+    {
+      "id": "notes-organize",
+      "answers": { "category": "notes", "budget": "paid", "platform": "windows", "mustHave": "organize" },
+      "expected": "Notion"
+    },
+    {
+      "id": "memoir-distraction",
+      "answers": { "category": "memoir", "budget": "paid", "platform": "mac", "mustHave": "distraction" },
+      "expected": "Ulysses"
+    },
+    {
+      "id": "letter-free",
+      "answers": { "category": "letter", "budget": "free", "platform": "web", "mustHave": "free" },
+      "expected": "Google Docs"
+    },
+    {
+      "id": "keyboard-ergonomic",
+      "answers": { "category": "keyboard", "budget": "paid", "platform": "windows", "mustHave": "ergonomic" },
+      "expected": "Microsoft Ergonomic Keyboard"
+    },
+    {
+      "id": "memoir-structure-free",
+      "answers": { "category": "memoir", "budget": "free", "platform": "cross", "mustHave": "structure" },
+      "expected": "Google Docs"
+    },
+    {
+      "id": "letter-templates-free",
+      "answers": { "category": "letter", "budget": "free", "platform": "web", "mustHave": "templates" },
+      "expected": "Google Docs"
+    }
+  ]
+}

@@ -26,6 +26,12 @@ import WritingQualityScorer from './components/WritingQualityScorer';
 import RandomWordsGenerator from './components/RandomWordsGenerator';
 import RomanticWordsGenerator from './components/RomanticWordsGenerator';
 import SadWordsGenerator from './components/SadWordsGenerator';
+import ContestFinder from './components/ContestFinder';
+import ThemedWordGenerator from './components/ThemedWordGenerator';
+import LiteraryDeviceDetector from './components/LiteraryDeviceDetector';
+import RootWordExplorer from './components/RootWordExplorer';
+import WritingAppFinder from './components/WritingAppFinder';
+import WriterPulse from './components/WriterPulse';
 import { 
   countWords, 
   countFillerWordsByType, 
@@ -69,6 +75,12 @@ function App() {
       case 'random-words': return 'random-words';
       case 'romantic-words': return 'romantic-words';
       case 'sad-words': return 'sad-words';
+      case 'contest-finder': return 'contest-finder';
+      case 'themed-words': return 'themed-words';
+      case 'literary-devices': return 'literary-devices';
+      case 'root-explorer': return 'root-explorer';
+      case 'writing-app-finder': return 'writing-app-finder';
+      case 'writer-pulse': return 'writer-pulse';
       default: return 'hard-words-quiz'; // Default to hard words quiz
     }
   };
@@ -158,7 +170,13 @@ function App() {
     { id: 'writing-quality-scorer', name: 'Writing Quality Scorer', icon: '📊' },
     { id: 'random-words', name: 'Random Words Generator', icon: '🎲' },
     { id: 'romantic-words', name: 'Romantic Words Generator', icon: '💕' },
-    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' }
+    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' },
+    { id: 'contest-finder', name: 'Contest & Grant Finder', icon: '🏆' },
+    { id: 'themed-words', name: 'Themed Word Generator', icon: '🎨' },
+    { id: 'literary-devices', name: 'Literary Device Detector', icon: '🔎' },
+    { id: 'root-explorer', name: 'Root Word Explorer', icon: '🌱' },
+    { id: 'writing-app-finder', name: 'Writing App Finder', icon: '🧭' },
+    { id: 'writer-pulse', name: 'Writer Pulse', icon: '📡' }
   ];
 
   // Generate complete embed HTML code for current tool
@@ -322,6 +340,12 @@ function App() {
         {currentTool === 'romantic-words' && <RomanticWordsGenerator />}
 
         {currentTool === 'sad-words' && <SadWordsGenerator />}
+        {currentTool === 'contest-finder' && <ContestFinder />}
+        {currentTool === 'themed-words' && <ThemedWordGenerator />}
+        {currentTool === 'literary-devices' && <LiteraryDeviceDetector />}
+        {currentTool === 'root-explorer' && <RootWordExplorer />}
+        {currentTool === 'writing-app-finder' && <WritingAppFinder />}
+        {currentTool === 'writer-pulse' && <WriterPulse />}
 
         {/* Footer - Hidden in embed mode */}
         {!isEmbedMode && (

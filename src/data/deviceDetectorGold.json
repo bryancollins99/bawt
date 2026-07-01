@@ -1,0 +1,21 @@
+{
+  "_note": "Labeled precision fixture for src/utils/deviceDetection.js. Positives must flag every device in `expected` (extra in-scope labels allowed). Negatives/traps must produce ZERO device labels. No line should ever surface assonance/consonance/metaphor/allegory (quiz-only, structurally impossible from the detector).",
+  "lines": [
+    { "line": "Peter Piper picked a peck of pickled peppers.", "expected": ["alliteration"], "type": "positive" },
+    { "line": "The clock went tick tock through the night.", "expected": ["onomatopoeia"], "type": "positive" },
+    { "line": "Never, never, never give up on your dreams.", "expected": ["repetition"], "type": "positive" },
+    { "line": "She sells seashells by the seashore.", "expected": ["alliteration"], "type": "positive" },
+    { "line": "The bees buzz and the snakes hiss loudly.", "expected": ["onomatopoeia"], "type": "positive" },
+    { "line": "As brave as a lion, he faced the storm.", "expected": ["simile"], "type": "positive" },
+    { "line": "He runs like the wind across the field.", "expected": ["simile"], "type": "positive" },
+    { "line": "Round and round the ragged rock the rascal ran.", "expected": ["alliteration"], "type": "positive" },
+    { "line": "The cat sat on the mat in the flat.", "expected": ["internal-rhyme"], "type": "positive" },
+    { "line": "I like coffee every single morning.", "expected": [], "type": "negative", "trap": "simile (\"like\" as a verb, not a comparison marker)" },
+    { "line": "The ordinary meeting ended on time.", "expected": [], "type": "negative", "trap": "plain declarative sentence, no device" },
+    { "line": "She walked quietly across the room.", "expected": [], "type": "negative", "trap": "plain sentence, no shared sounds or repeats" },
+    { "line": "A calm plain statement of simple fact.", "expected": [], "type": "negative", "trap": "non-adjacent same-letter words must not count as alliteration" },
+    { "line": "Birds fly south before the cold arrives.", "expected": [], "type": "negative", "trap": "plain sentence, no device" },
+    { "line": "Our team finished the project ahead of schedule.", "expected": [], "type": "negative", "trap": "plain business sentence, no device" },
+    { "line": "The dog barked. The cat slept.", "expected": [], "type": "negative", "trap": "anaphora on a function word (\"The\") must NOT count as repetition" }
+  ]
+}
