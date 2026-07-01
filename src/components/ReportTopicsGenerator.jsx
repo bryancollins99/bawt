@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
+import editorialTopics from '../data/editorialTopics.json';
 
 const ReportTopicsGenerator = () => {
+  const [mode, setMode] = useState('report'); // 'report' | 'editorial'
   const [subject, setSubject] = useState('any');
   const [reportType, setReportType] = useState('any');
   const [gradeLevel, setGradeLevel] = useState('any');
   const [generatedTopics, setGeneratedTopics] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
+
+  const isEditorial = mode === 'editorial';
+
+  const switchMode = (nextMode) => {
+    if (nextMode === mode) return;
+    setMode(nextMode);
+    setReportType('any'); // report/editorial have different type vocabularies
+    setGeneratedTopics([]);
+  };
 
   const topicsDatabase = {
     technology: [
@@ -160,12 +171,16 @@ const ReportTopicsGenerator = () => {
     
     setTimeout(() => {
       let filteredTopics = [];
-      
+
+      // Editorial mode swaps the dataset; report mode is unchanged.
+      const activeDb = isEditorial ? editorialTopics : topicsDatabase;
+
       // Get topics from selected subject or all subjects
-      const subjectsToSearch = subject === 'any' ? Object.keys(topicsDatabase) : [subject];
-      
+      const subjectsToSearch = subject === 'any' ? Object.keys(activeDb) : [subject];
+
       subjectsToSearch.forEach(subj => {
-        topicsDatabase[subj].forEach(topic => {
+        // Guard: dropdown offers fixed subject keys that a dataset may not contain.
+        (activeDb[subj] || []).forEach(topic => {
           // Filter by report type
           if (reportType === 'any' || topic.type === reportType) {
             // Filter by grade level
@@ -198,30 +213,78 @@ const ReportTopicsGenerator = () => {
       environment: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300',
       health: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
       education: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
-      current: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300'
+      current: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300',
+      media: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300',
+      ethics: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300'
     };
     return colors[subject] || 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300';
   };
 
   const getTypeColor = (type) => {
     const colors = {
+      // Report types
       informational: 'bg-blue-500',
-      persuasive: 'bg-red-500', 
+      persuasive: 'bg-red-500',
       analytical: 'bg-green-500',
-      comparative: 'bg-purple-500'
+      comparative: 'bg-purple-500',
+      // Editorial stance types (single-word colour segment matters for the inline style below)
+      opinion: 'bg-purple-500',
+      argumentative: 'bg-red-500',
+      rebuttal: 'bg-blue-500',
+      'call-to-action': 'bg-orange-500'
     };
     return colors[type] || 'bg-gray-500';
   };
+
+  const typeLabel = (type) =>
+    type
+      .split('-')
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
 
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="mb-6">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
-          📝 Report Writing Topics Generator
+          {isEditorial ? '🗞️ Editorial Writing Topics Generator' : '📝 Report Writing Topics Generator'}
         </h2>
         <p className="text-gray-600 dark:text-gray-300">
-          Discover engaging report topics for students based on subject, type, and grade level
+          {isEditorial
+            ? 'Find persuasive editorial and opinion topics to argue a stance on current issues, by subject and grade level'
+            : 'Discover engaging report topics for students based on subject, type, and grade level'}
         </p>
+      </div>
+
+      {/* Mode toggle */}
+      <div className="mb-6">
+        <div className="inline-flex rounded-lg bg-gray-100 dark:bg-gray-700 p-1" role="tablist" aria-label="Topic mode">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={!isEditorial}
+            onClick={() => switchMode('report')}
+            className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+              !isEditorial
+                ? 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow'
+                : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+            }`}
+          >
+            📝 Report topics
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={isEditorial}
+            onClick={() => switchMode('editorial')}
+            className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+              isEditorial
+                ? 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow'
+                : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+            }`}
+          >
+            🗞️ Editorial topics
+          </button>
+        </div>
       </div>
 
       {/* Filters */}
@@ -254,7 +317,7 @@ const ReportTopicsGenerator = () => {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Report Type
+              {isEditorial ? 'Editorial Stance' : 'Report Type'}
             </label>
             <select
               value={reportType}
@@ -264,10 +327,21 @@ const ReportTopicsGenerator = () => {
                        focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="any">Any Type</option>
-              <option value="informational">Informational</option>
-              <option value="persuasive">Persuasive/Argumentative</option>
-              <option value="analytical">Analytical</option>
-              <option value="comparative">Comparative</option>
+              {isEditorial ? (
+                <>
+                  <option value="opinion">Opinion / Editorial</option>
+                  <option value="argumentative">Argue For or Against</option>
+                  <option value="rebuttal">Rebuttal / Counterargument</option>
+                  <option value="call-to-action">Call to Action</option>
+                </>
+              ) : (
+                <>
+                  <option value="informational">Informational</option>
+                  <option value="persuasive">Persuasive/Argumentative</option>
+                  <option value="analytical">Analytical</option>
+                  <option value="comparative">Comparative</option>
+                </>
+              )}
             </select>
           </div>
 
@@ -304,7 +378,7 @@ const ReportTopicsGenerator = () => {
               Generating Topics...
             </span>
           ) : (
-            '🎯 Generate Report Topics'
+            isEditorial ? '🎯 Generate Editorial Topics' : '🎯 Generate Report Topics'
           )}
         </button>
       </div>
@@ -313,7 +387,7 @@ const ReportTopicsGenerator = () => {
       {generatedTopics.length > 0 && (
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
-            📚 Your Report Topics ({generatedTopics.length})
+            📚 {isEditorial ? 'Your Editorial Topics' : 'Your Report Topics'} ({generatedTopics.length})
           </h3>
           
           {generatedTopics.map((topic) => (
@@ -324,7 +398,7 @@ const ReportTopicsGenerator = () => {
                     {topic.subject.charAt(0).toUpperCase() + topic.subject.slice(1)}
                   </span>
                   <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{backgroundColor: getTypeColor(topic.type).split('-')[1]}}>
-                    {topic.type.charAt(0).toUpperCase() + topic.type.slice(1)}
+                    {typeLabel(topic.type)}
                   </span>
                   <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-700 dark:bg-gray-600 dark:text-gray-300">
                     {topic.grade.map(g => g.charAt(0).toUpperCase() + g.slice(1)).join(', ')}
@@ -350,7 +424,7 @@ const ReportTopicsGenerator = () => {
               
               <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
                 <h5 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  🤔 Research Questions to Consider:
+                  {isEditorial ? '🗣️ Angles & Arguments to Explore:' : '🤔 Research Questions to Consider:'}
                 </h5>
                 <ul className="space-y-1">
                   {topic.questions.map((question, index) => (
