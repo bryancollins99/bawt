@@ -128,6 +128,11 @@
   status = 200
 
 [[redirects]]
+  from = "/embed/concrete-poem-maker"
+  to = "/?embed=true&tool=concrete-poem-maker"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
