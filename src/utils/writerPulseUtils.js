@@ -181,7 +181,11 @@ export function readPulseCache() {
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (!parsed || !Array.isArray(parsed.stories) || !parsed.stories.length) return null;
-    return parsed;
+    // Re-filter by age on read so the "last 7 days" promise holds even for a
+    // stale cache — never surface week-old stories as if they were current.
+    const fresh = parsed.stories.filter((s) => ageDays(s) < MAX_AGE_DAYS);
+    if (!fresh.length) return null;
+    return { ...parsed, stories: fresh };
   } catch (e) {
     return null;
   }

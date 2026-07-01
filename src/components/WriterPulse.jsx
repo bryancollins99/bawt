@@ -20,7 +20,7 @@ import {
  */
 const WriterPulse = () => {
   const [stories, setStories] = useState([]);
-  const [status, setStatus] = useState('loading'); // loading | live | cached | empty | error
+  const [status, setStatus] = useState('loading'); // loading | live | cached | empty
   const [note, setNote] = useState(null);
 
   const load = useCallback(async () => {
@@ -92,26 +92,17 @@ const WriterPulse = () => {
         </div>
       )}
 
-      {/* Empty state — live fetch worked but nothing on-topic and no cache */}
+      {/* Empty state — no stories to show and no cache to fall back to.
+          Covers both "nothing fresh on-topic" and "live feed unavailable":
+          fetchWriterPulse returns [] for both (it never throws), so we don't
+          misattribute a network failure to "nothing on-topic". */}
       {status === 'empty' && (
         <div className="mt-6 text-center py-10">
           <p className="text-gray-600 dark:text-gray-300">
-            No fresh writing stories in the last 7 days right now.
+            No fresh writing stories to show right now.
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            Check back soon — this feed updates as Hacker News does.
-          </p>
-        </div>
-      )}
-
-      {/* Error state — fetch failed AND no cache to fall back to */}
-      {status === 'error' && (
-        <div className="mt-6 text-center py-10">
-          <p className="text-gray-600 dark:text-gray-300">
-            Couldn’t load the live feed just now, and no cached stories are available.
-          </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            Please try again shortly.
+            The live feed may be briefly unavailable — try Refresh, or check back soon.
           </p>
         </div>
       )}
