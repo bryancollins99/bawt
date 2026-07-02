@@ -363,9 +363,9 @@ function bestWeekOf(log){
   var dates=Object.keys(log).filter(function(k){return log[k]>0;}).sort();
   if(!dates.length) return 0;
   var earliest=parseISO(dates[0]);
-  var today=new Date(); today.setHours(0,0,0,0);
+  var latest=parseISO(dates[dates.length-1]);
   var vals=[],d=new Date(earliest.getTime());
-  while(d<=today){vals.push(log[iso(d)]||0);d=new Date(d.getTime()+DAY);}
+  while(d<=latest){vals.push(log[iso(d)]||0);d=new Date(d.getTime()+DAY);}
   if(vals.length<7) return vals.reduce(function(a,b){return a+b;},0);
   var sum=vals.slice(0,7).reduce(function(a,b){return a+b;},0),max=sum;
   for(var i=7;i<vals.length;i++){sum+=vals[i]-vals[i-7];if(sum>max)max=sum;}
