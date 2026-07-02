@@ -36,13 +36,15 @@ import WeeklyWriting from './components/WeeklyWriting';
 import ConcretePoemMaker from './components/ConcretePoemMaker';
 import EmotionWheel from './components/EmotionWheel';
 import DeadWordChecker from './components/DeadWordChecker';
-import { 
-  countWords, 
-  countFillerWordsByType, 
-  analyzeEmotions, 
-  calculateClarityScore, 
-  getTopFillerWords 
+import {
+  countWords,
+  countFillerWordsByType,
+  analyzeEmotions,
+  calculateClarityScore,
+  getTopFillerWords
 } from './utils/textAnalysis';
+import { safeGetItem, safeSetItem } from './utils/safeStorage';
+import { tools, resolveTool, NOT_FOUND } from './utils/toolRegistry';
 
 function App() {
   // Check URL parameters for embed mode and tool selection
@@ -50,56 +52,25 @@ function App() {
   const isEmbedMode = urlParams.get('embed') === 'true';
   const toolFromUrl = urlParams.get('tool');
   
-  // Map URL tool parameter to internal tool ID
-  const getInitialTool = () => {
-    switch(toolFromUrl) {
-      case 'palindrome': return 'palindrome';
-      case 'tone': return 'tone';
-      case 'rhyming': return 'rhyming';
-      case 'essay-hook': return 'essay-hook';
-      case 'action-generator': return 'action-generator';
-      case 'descriptive-generator': return 'descriptive-generator';
-      case 'filler-words': return 'filler-words';
-      case 'conjunction-tool': return 'conjunction-tool';
-      case 'female-authors': return 'female-authors';
-      case 'hard-words-quiz': return 'hard-words-quiz';
-      case 'writing-software-quiz': return 'writing-software-quiz';
-      case 'crime-thriller-quiz': return 'crime-thriller-quiz';
-      case 'stephen-king-timeline': return 'stephen-king-timeline';
-      case 'famous-poems-timeline': return 'famous-poems-timeline';
-      case 'strong-female-character': return 'strong-female-character';
-      case 'grammarly-roi-calculator': return 'grammarly-roi-calculator';
-      case 'grammarly-plan-quiz': return 'grammarly-plan-quiz';
-      case 'grammarly-comparison': return 'grammarly-comparison';
-      case 'report-topics': return 'report-topics';
-      case 'grammar-examples': return 'grammar-examples';
-      case 'poetry-words': return 'poetry-words';
-      case 'disney-hero-journey': return 'disney-hero-journey';
-      case 'writing-quality-scorer': return 'writing-quality-scorer';
-      case 'random-words': return 'random-words';
-      case 'romantic-words': return 'romantic-words';
-      case 'sad-words': return 'sad-words';
-      case 'contest-finder': return 'contest-finder';
-      case 'themed-words': return 'themed-words';
-      case 'literary-devices': return 'literary-devices';
-      case 'root-explorer': return 'root-explorer';
-      case 'writing-app-finder': return 'writing-app-finder';
-      case 'writer-pulse': return 'writer-pulse';
-      case 'weekly-writing': return 'weekly-writing';
-      case 'concrete-poem-maker': return 'concrete-poem-maker';
-      case 'emotion-wheel': return 'emotion-wheel';
-      case 'dead-word-checker': return 'dead-word-checker';
-      default: return 'hard-words-quiz'; // Default to hard words quiz
-    }
-  };
+  // Map URL tool parameter to internal tool ID.
+  // Unknown ?tool= values resolve to NOT_FOUND (visible message) rather than
+  // silently rendering the default tool on the wrong page.
+  const getInitialTool = () => resolveTool(toolFromUrl);
 
   const [currentTool, setCurrentTool] = useState(getInitialTool());
   const [text, setText] = useState('');
   const [analysis, setAnalysis] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Check for saved theme preference or default to light mode
-    const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : false;
+    // Check for saved theme preference or default to light mode.
+    // safeGetItem never throws — direct localStorage access here crashed the
+    // app on first render inside iframes with third-party storage blocked.
+    const saved = safeGetItem('darkMode');
+    if (!saved) return false;
+    try {
+      return JSON.parse(saved) === true;
+    } catch (e) {
+      return false;
+    }
   });
 
   // Update URL when tool changes (only in non-embed mode)
@@ -119,7 +90,7 @@ function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    safeSetItem('darkMode', JSON.stringify(isDarkMode));
   }, [isDarkMode]);
 
   const handleTextChange = useCallback((newText) => {
@@ -151,45 +122,6 @@ function App() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
-
-  const tools = [
-    { id: 'palindrome', name: 'Palindrome Checker', icon: '🔄' },
-    { id: 'tone', name: 'Tone Checker', icon: '📝' },
-    { id: 'rhyming', name: 'Rhyming Assistant', icon: '🎵' },
-    { id: 'essay-hook', name: 'Essay Hook Generator', icon: '🪝' },
-    { id: 'action-generator', name: 'Action Generator', icon: '⚡' },
-    { id: 'descriptive-generator', name: 'Descriptive Generator', icon: '🎨' },
-    { id: 'filler-words', name: 'Filler Words Processor', icon: '🧹' },
-    { id: 'conjunction-tool', name: 'Conjunction Tool', icon: '🔗' },
-    { id: 'female-authors', name: 'Female Authors Timeline', icon: '👩‍💼' },
-    { id: 'hard-words-quiz', name: 'Hard Words Spelling Quiz', icon: '📝' },
-    { id: 'writing-software-quiz', name: 'Writing Software Quiz', icon: '🧠' },
-    { id: 'crime-thriller-quiz', name: 'Crime Thriller Book Finder', icon: '🔍' },
-    { id: 'stephen-king-timeline', name: 'Stephen King Complete Timeline', icon: '📚' },
-    { id: 'famous-poems-timeline', name: 'Most Famous Poems Timeline', icon: '📜' },
-    { id: 'strong-female-character', name: 'Strong Female Characters', icon: '💪' },
-    { id: 'grammarly-roi-calculator', name: 'Grammarly ROI Calculator', icon: '🧮' },
-    { id: 'grammarly-plan-quiz', name: 'Grammarly Plan Finder', icon: '🎯' },
-    { id: 'grammarly-comparison', name: 'Writing Tools Comparison', icon: '🔄' },
-    { id: 'report-topics', name: 'Report Topics Generator', icon: '📋' },
-    { id: 'grammar-examples', name: 'Grammar Examples Generator', icon: '📝' },
-    { id: 'poetry-words', name: 'Poetry Words Generator', icon: '🌟' },
-    { id: 'disney-hero-journey', name: 'Disney Hero\'s Journey Explorer', icon: '🎬' },
-    { id: 'writing-quality-scorer', name: 'Writing Quality Scorer', icon: '📊' },
-    { id: 'random-words', name: 'Random Words Generator', icon: '🎲' },
-    { id: 'romantic-words', name: 'Romantic Words Generator', icon: '💕' },
-    { id: 'sad-words', name: 'Sad Words Generator', icon: '😢' },
-    { id: 'contest-finder', name: 'Contest & Grant Finder', icon: '🏆' },
-    { id: 'themed-words', name: 'Themed Word Generator', icon: '🎨' },
-    { id: 'literary-devices', name: 'Literary Device Detector', icon: '🔎' },
-    { id: 'root-explorer', name: 'Root Word Explorer', icon: '🌱' },
-    { id: 'writing-app-finder', name: 'Writing App Finder', icon: '🧭' },
-    { id: 'writer-pulse', name: 'Writer Pulse', icon: '📡' },
-    { id: 'weekly-writing', name: 'This Week in Writing & AI', icon: '🗞️' },
-    { id: 'concrete-poem-maker', name: 'Concrete Poem Maker', icon: '🔷' },
-    { id: 'emotion-wheel', name: 'Emotion & Feelings Wheel', icon: '🎡' },
-    { id: 'dead-word-checker', name: 'Dead / Weak-Word Checker', icon: '🩹' }
-  ];
 
   // Generate complete embed HTML code for current tool
   const getEmbedCode = (toolId) => {
@@ -260,8 +192,8 @@ function App() {
           </div>
         )}
 
-        {/* Embed HTML Helper - Only show in non-embed mode */}
-        {!isEmbedMode && (
+        {/* Embed HTML Helper - Only show in non-embed mode, for real tools */}
+        {!isEmbedMode && currentTool !== NOT_FOUND && (
           <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
             <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 mb-2">
               🖼️ Complete Embed HTML for {tools.find(t => t.id === currentTool)?.name}:
@@ -290,6 +222,26 @@ function App() {
                 <p className="pt-2"><strong>💡 Usage:</strong> Copy the HTML above and paste directly into your WordPress HTML block, page editor, or website code!</p>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Unknown ?tool= value: visible message instead of a silent wrong tool */}
+        {currentTool === NOT_FOUND && (
+          <div
+            className={`flex flex-col items-center justify-center text-center px-4 ${
+              isEmbedMode ? 'py-8' : 'py-16'
+            }`}
+            role="alert"
+          >
+            <p className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              Tool not found
+            </p>
+            <a
+              href="https://becomeawritertoday.com/tools/"
+              className="text-sm text-red-700 dark:text-red-400 underline"
+            >
+              Browse all tools
+            </a>
           </div>
         )}
 

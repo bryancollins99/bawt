@@ -21,6 +21,8 @@
  * penalises. Render as a SIDEBAR / WIDGET only, never as an indexable page.
  */
 
+import { safeGetItem, safeSetItem } from './safeStorage';
+
 export const CACHE_KEY = 'bawt_writer_pulse_cache_v1';
 const MAX_AGE_DAYS = 7;
 const MAX_ITEMS = 25;
@@ -177,7 +179,7 @@ export async function fetchWriterPulse() {
 
 export function readPulseCache() {
   try {
-    const raw = window.localStorage.getItem(CACHE_KEY);
+    const raw = safeGetItem(CACHE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (!parsed || !Array.isArray(parsed.stories) || !parsed.stories.length) return null;
@@ -192,12 +194,6 @@ export function readPulseCache() {
 }
 
 export function writePulseCache(stories) {
-  try {
-    window.localStorage.setItem(
-      CACHE_KEY,
-      JSON.stringify({ savedAt: Date.now(), stories })
-    );
-  } catch (e) {
-    /* private mode / quota — non-fatal */
-  }
+  // safeSetItem is a no-op on private mode / quota / blocked storage.
+  safeSetItem(CACHE_KEY, JSON.stringify({ savedAt: Date.now(), stories }));
 }
