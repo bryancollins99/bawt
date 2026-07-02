@@ -4,7 +4,11 @@ import {
   filterContests,
   sortContests,
   collectGenres,
+  collectRegions,
+  collectAudiences,
+  collectYears,
   genreLabel,
+  regionLabel,
   deadlineStatus,
   formatDeadline,
 } from '../utils/contestUtils';
@@ -78,24 +82,37 @@ const ContestFinder = () => {
   const [genre, setGenre] = useState('all');
   const [type, setType] = useState('all');
   const [freeOnly, setFreeOnly] = useState(false);
+  const [cashOnly, setCashOnly] = useState(false);
   const [hideExpired, setHideExpired] = useState(true);
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState('deadline');
+  const [region, setRegion] = useState('all');
+  const [audience, setAudience] = useState('all');
+  const [year, setYear] = useState('all');
 
-  const genres = useMemo(() => collectGenres(contests), []);
+  const genres    = useMemo(() => collectGenres(contests), []);
+  const regions   = useMemo(() => collectRegions(contests), []);
+  const audiences = useMemo(() => collectAudiences(contests), []);
+  const years     = useMemo(() => collectYears(contests), []);
 
   const results = useMemo(() => {
-    const filtered = filterContests(contests, { genre, type, freeOnly, hideExpired, search });
+    const filtered = filterContests(contests, {
+      genre, type, freeOnly, cashOnly, hideExpired, search, region, audience, year,
+    });
     return sortContests(filtered, sortBy);
-  }, [genre, type, freeOnly, hideExpired, search, sortBy]);
+  }, [genre, type, freeOnly, cashOnly, hideExpired, search, sortBy, region, audience, year]);
 
   const resetFilters = () => {
     setGenre('all');
     setType('all');
     setFreeOnly(false);
+    setCashOnly(false);
     setHideExpired(true);
     setSearch('');
     setSortBy('deadline');
+    setRegion('all');
+    setAudience('all');
+    setYear('all');
   };
 
   const closingSoon = results.filter((e) => {
@@ -140,6 +157,36 @@ const ContestFinder = () => {
         </div>
 
         <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Region</label>
+          <select value={region} onChange={(e) => setRegion(e.target.value)} className={selectClass}>
+            <option value="all">All regions</option>
+            {regions.map((r) => (
+              <option key={r} value={r}>{regionLabel(r)}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Audience</label>
+          <select value={audience} onChange={(e) => setAudience(e.target.value)} className={selectClass}>
+            <option value="all">All writers</option>
+            {audiences.map((a) => (
+              <option key={a} value={a}>{a.charAt(0).toUpperCase() + a.slice(1)}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Deadline year</label>
+          <select value={year} onChange={(e) => setYear(e.target.value)} className={selectClass}>
+            <option value="all">Any year</option>
+            {years.map((y) => (
+              <option key={y} value={y}>{y}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Sort by</label>
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className={selectClass}>
             <option value="deadline">Soonest deadline</option>
@@ -147,13 +194,13 @@ const ContestFinder = () => {
           </select>
         </div>
 
-        <div>
+        <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Search</label>
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Name, prize, eligibility…"
+            placeholder="Name, prize, eligibility..."
             className={selectClass}
           />
         </div>
@@ -168,6 +215,15 @@ const ContestFinder = () => {
             className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
           />
           <span>Free entry only</span>
+        </label>
+        <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+          <input
+            type="checkbox"
+            checked={cashOnly}
+            onChange={(e) => setCashOnly(e.target.checked)}
+            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          />
+          <span>Cash prize only</span>
         </label>
         <label className="flex items-center space-x-2 text-sm font-medium text-gray-700 dark:text-gray-300">
           <input

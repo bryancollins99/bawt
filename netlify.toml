@@ -11,6 +11,11 @@
   to = "/book-deadline-planner.html"
   status = 200
 
+[[redirects]]
+  from = "/contests"
+  to = "/writing-contests.html"
+  status = 200
+
 # Redirects for clean embed URLs
 [[redirects]]
   from = "/embed/tone-checker"
