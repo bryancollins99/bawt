@@ -1,46 +1,124 @@
 {
   "disclosure": "Affiliate disclosure: Become a Writer Today may earn a commission when you buy through links on this page, at no extra cost to you. We only recommend tools we believe are genuinely useful. Prices were accurate at publication and may change — always check the vendor's site.",
   "categories": {
-    "letter": { "label": "Letters & correspondence", "sourcePage": "https://becomeawritertoday.com/best-letter-writing-apps/" },
-    "notes": { "label": "Notes & ideas", "sourcePage": "https://becomeawritertoday.com/note-taking-apps/" },
-    "memoir": { "label": "A memoir or long-form book", "sourcePage": "https://becomeawritertoday.com/memoir-writing-software/" },
-    "keyboard": { "label": "A better typing setup", "sourcePage": "https://becomeawritertoday.com/best-keyboard-for-writers/" }
+    "letter": {
+      "label": "Letters & correspondence",
+      "sourcePage": "https://becomeawritertoday.com/best-letter-writing-apps/"
+    },
+    "notes": {
+      "label": "Notes & ideas",
+      "sourcePage": "https://becomeawritertoday.com/note-taking-apps/"
+    },
+    "memoir": {
+      "label": "A memoir or long-form book",
+      "sourcePage": "https://becomeawritertoday.com/memoir-writing-software/"
+    },
+    "keyboard": {
+      "label": "A better typing setup",
+      "sourcePage": "https://becomeawritertoday.com/best-keyboard-for-writers/"
+    }
   },
   "questions": {
     "budget": [
-      { "value": "free", "label": "Free only" },
-      { "value": "paid", "label": "Paid is fine" }
+      {
+        "value": "free",
+        "label": "Free only"
+      },
+      {
+        "value": "paid",
+        "label": "Paid is fine"
+      }
     ],
     "platform": [
-      { "value": "mac", "label": "Mac / iPhone / iPad" },
-      { "value": "windows", "label": "Windows" },
-      { "value": "cross", "label": "Any / cross-platform" },
-      { "value": "web", "label": "Web-based" }
+      {
+        "value": "mac",
+        "label": "Mac / iPhone / iPad"
+      },
+      {
+        "value": "windows",
+        "label": "Windows"
+      },
+      {
+        "value": "cross",
+        "label": "Any / cross-platform"
+      },
+      {
+        "value": "web",
+        "label": "Web-based"
+      }
     ],
     "mustHave": {
       "letter": [
-        { "value": "grammar", "label": "Grammar & polish" },
-        { "value": "templates", "label": "Templates & formatting" },
-        { "value": "free", "label": "Free & collaborative" },
-        { "value": "design", "label": "Design & visual layout" }
+        {
+          "value": "grammar",
+          "label": "Grammar & polish"
+        },
+        {
+          "value": "templates",
+          "label": "Templates & formatting"
+        },
+        {
+          "value": "free",
+          "label": "Free & collaborative"
+        },
+        {
+          "value": "design",
+          "label": "Design & visual layout"
+        }
       ],
       "notes": [
-        { "value": "linking", "label": "Linking & a second brain" },
-        { "value": "organize", "label": "Databases & organization" },
-        { "value": "clip", "label": "Web clipping & search" },
-        { "value": "simple", "label": "Quick & simple capture" }
+        {
+          "value": "linking",
+          "label": "Linking & a second brain"
+        },
+        {
+          "value": "organize",
+          "label": "Databases & organization"
+        },
+        {
+          "value": "clip",
+          "label": "Web clipping & search"
+        },
+        {
+          "value": "simple",
+          "label": "Quick & simple capture"
+        }
       ],
       "memoir": [
-        { "value": "structure", "label": "Structure & organization" },
-        { "value": "distraction", "label": "Distraction-free writing" },
-        { "value": "prompts", "label": "Guided prompts" },
-        { "value": "free", "label": "Free & simple" }
+        {
+          "value": "structure",
+          "label": "Structure & organization"
+        },
+        {
+          "value": "distraction",
+          "label": "Distraction-free writing"
+        },
+        {
+          "value": "prompts",
+          "label": "Guided prompts"
+        },
+        {
+          "value": "free",
+          "label": "Free & simple"
+        }
       ],
       "keyboard": [
-        { "value": "mechanical", "label": "Mechanical & tactile" },
-        { "value": "quiet", "label": "Quiet & comfortable" },
-        { "value": "ergonomic", "label": "Ergonomic" },
-        { "value": "minimal", "label": "Minimal (Mac)" }
+        {
+          "value": "mechanical",
+          "label": "Mechanical & tactile"
+        },
+        {
+          "value": "quiet",
+          "label": "Quiet & comfortable"
+        },
+        {
+          "value": "ergonomic",
+          "label": "Ergonomic"
+        },
+        {
+          "value": "minimal",
+          "label": "Minimal (Mac)"
+        }
       ]
     }
   },
@@ -48,8 +126,18 @@
     "grammarly": {
       "name": "Grammarly",
       "category": "letter",
-      "useCases": ["grammar & polish", "professional tone", "everyday correspondence"],
-      "platforms": ["mac", "windows", "web", "ios", "android"],
+      "useCases": [
+        "grammar & polish",
+        "professional tone",
+        "everyday correspondence"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "web",
+        "ios",
+        "android"
+      ],
       "price": "Free plan; Premium from ~$12/mo",
       "affiliateUrl": "https://grammarly.pxf.io/c/1131357/3023347/31551",
       "why": "A grammar and clarity layer that works inside almost any app — ideal for polishing letters and emails before you send them."
@@ -57,8 +145,16 @@
     "msword": {
       "name": "Microsoft Word",
       "category": "letter",
-      "useCases": ["templates & formatting", "professional documents", "print-ready letters"],
-      "platforms": ["mac", "windows", "web"],
+      "useCases": [
+        "templates & formatting",
+        "professional documents",
+        "print-ready letters"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "web"
+      ],
       "price": "Microsoft 365 from ~$6.99/mo",
       "affiliateUrl": "PLACEHOLDER",
       "why": "The standard for formal, print-ready correspondence, with a deep library of letter templates and precise formatting control."
@@ -66,8 +162,18 @@
     "googledocs": {
       "name": "Google Docs",
       "category": "letter",
-      "useCases": ["free & collaborative", "cloud editing", "simple writing"],
-      "platforms": ["mac", "windows", "web", "ios", "android"],
+      "useCases": [
+        "free & collaborative",
+        "cloud editing",
+        "simple writing"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "web",
+        "ios",
+        "android"
+      ],
       "price": "Free with a Google account",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Free, autosaving and collaborative — share a letter or draft and get comments in real time from any device."
@@ -75,8 +181,18 @@
     "canva": {
       "name": "Canva",
       "category": "letter",
-      "useCases": ["design & visual layout", "branded stationery", "templates"],
-      "platforms": ["mac", "windows", "web", "ios", "android"],
+      "useCases": [
+        "design & visual layout",
+        "branded stationery",
+        "templates"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "web",
+        "ios",
+        "android"
+      ],
       "price": "Free plan; Pro from ~$12.99/mo",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Best when the look matters — designed letterheads, invitations and visually styled correspondence from drag-and-drop templates."
@@ -84,8 +200,18 @@
     "obsidian": {
       "name": "Obsidian",
       "category": "notes",
-      "useCases": ["linking & a second brain", "markdown", "offline knowledge base"],
-      "platforms": ["mac", "windows", "linux", "ios", "android"],
+      "useCases": [
+        "linking & a second brain",
+        "markdown",
+        "offline knowledge base"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
       "price": "Free for personal use",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Local markdown files with backlinks and a graph view — the go-to for building a connected 'second brain' that you fully own and works offline."
@@ -93,8 +219,18 @@
     "notion": {
       "name": "Notion",
       "category": "notes",
-      "useCases": ["databases & organization", "workspaces", "templates"],
-      "platforms": ["mac", "windows", "web", "ios", "android"],
+      "useCases": [
+        "databases & organization",
+        "workspaces",
+        "templates"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "web",
+        "ios",
+        "android"
+      ],
       "price": "Free plan; Plus from ~$10/mo",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Notes, databases and project docs in one flexible workspace — strongest when you want to organize and cross-reference, not just jot."
@@ -102,8 +238,18 @@
     "evernote": {
       "name": "Evernote",
       "category": "notes",
-      "useCases": ["web clipping & search", "capture", "cross-device sync"],
-      "platforms": ["mac", "windows", "web", "ios", "android"],
+      "useCases": [
+        "web clipping & search",
+        "capture",
+        "cross-device sync"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "web",
+        "ios",
+        "android"
+      ],
       "price": "Free plan; Personal from ~$14.99/mo",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Its web clipper and powerful search make it the classic pick for capturing articles, receipts and research and finding them again later."
@@ -111,8 +257,16 @@
     "googlekeep": {
       "name": "Google Keep",
       "category": "notes",
-      "useCases": ["quick & simple capture", "checklists", "reminders"],
-      "platforms": ["web", "ios", "android"],
+      "useCases": [
+        "quick & simple capture",
+        "checklists",
+        "reminders"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
       "price": "Free with a Google account",
       "affiliateUrl": "PLACEHOLDER",
       "why": "The fastest way to jot a quick note or checklist and have it sync everywhere for free — no structure to fuss with."
@@ -120,8 +274,15 @@
     "applenotes": {
       "name": "Apple Notes",
       "category": "notes",
-      "useCases": ["quick & simple capture", "handwriting", "apple ecosystem"],
-      "platforms": ["mac", "ios"],
+      "useCases": [
+        "quick & simple capture",
+        "handwriting",
+        "apple ecosystem"
+      ],
+      "platforms": [
+        "mac",
+        "ios"
+      ],
       "price": "Free on Apple devices",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Built into every Apple device and genuinely capable — instant capture, scanning and handwriting with iCloud sync, at no cost."
@@ -129,8 +290,16 @@
     "scrivener": {
       "name": "Scrivener",
       "category": "memoir",
-      "useCases": ["structure & organization", "long-form", "research binder"],
-      "platforms": ["mac", "windows", "ios"],
+      "useCases": [
+        "structure & organization",
+        "long-form",
+        "research binder"
+      ],
+      "platforms": [
+        "mac",
+        "windows",
+        "ios"
+      ],
       "price": "One-time ~$59.99 (macOS/Windows)",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Purpose-built for long projects — the binder, corkboard and outliner let you reorganize chapters and keep research beside your draft."
@@ -138,8 +307,15 @@
     "ulysses": {
       "name": "Ulysses",
       "category": "memoir",
-      "useCases": ["distraction-free writing", "markdown", "apple ecosystem"],
-      "platforms": ["mac", "ios"],
+      "useCases": [
+        "distraction-free writing",
+        "markdown",
+        "apple ecosystem"
+      ],
+      "platforms": [
+        "mac",
+        "ios"
+      ],
       "price": "Subscription from ~$5.99/mo",
       "affiliateUrl": "PLACEHOLDER",
       "why": "A calm, distraction-free markdown environment across Mac and iOS — ideal if you want to just write without formatting noise."
@@ -147,8 +323,16 @@
     "storyworth": {
       "name": "StoryWorth",
       "category": "memoir",
-      "useCases": ["guided prompts", "family memoir", "printed book"],
-      "platforms": ["web", "ios", "android"],
+      "useCases": [
+        "guided prompts",
+        "family memoir",
+        "printed book"
+      ],
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
       "price": "~$99/year (includes a printed book)",
       "affiliateUrl": "PLACEHOLDER",
       "why": "Emails a weekly prompt and compiles the answers into a bound keepsake book — the easiest on-ramp for a family memoir."
@@ -156,8 +340,16 @@
     "dayone": {
       "name": "Day One",
       "category": "memoir",
-      "useCases": ["daily journaling", "prompts", "apple ecosystem"],
-      "platforms": ["mac", "ios", "android"],
+      "useCases": [
+        "daily journaling",
+        "prompts",
+        "apple ecosystem"
+      ],
+      "platforms": [
+        "mac",
+        "ios",
+        "android"
+      ],
       "price": "Free plan; Premium from ~$34.99/year",
       "affiliateUrl": "PLACEHOLDER",
       "why": "A polished journaling app with photos, locations and prompts — great for the daily entries that a memoir is later built from."
@@ -165,73 +357,204 @@
     "keychron": {
       "name": "Keychron K2",
       "category": "keyboard",
-      "useCases": ["mechanical & tactile", "wireless", "cross-platform"],
-      "platforms": ["mac", "windows"],
+      "useCases": [
+        "mechanical & tactile",
+        "wireless",
+        "cross-platform"
+      ],
+      "platforms": [
+        "mac",
+        "windows"
+      ],
       "price": "~$79-99",
-      "affiliateUrl": "PLACEHOLDER",
+      "affiliateUrl": "https://www.amazon.com/s?k=Keychron+K2&tag=work089-20",
       "why": "A compact wireless mechanical board that switches between Mac and Windows layouts — the writer favorite for a satisfying tactile feel."
     },
     "logitechmxkeys": {
       "name": "Logitech MX Keys",
       "category": "keyboard",
-      "useCases": ["quiet & comfortable", "low-profile", "multi-device"],
-      "platforms": ["mac", "windows"],
+      "useCases": [
+        "quiet & comfortable",
+        "low-profile",
+        "multi-device"
+      ],
+      "platforms": [
+        "mac",
+        "windows"
+      ],
       "price": "~$99-119",
-      "affiliateUrl": "PLACEHOLDER",
+      "affiliateUrl": "https://www.amazon.com/s?k=Logitech+MX+Keys&tag=work089-20",
       "why": "Quiet, low-profile keys with a comfortable typing feel and multi-device switching — best for long writing sessions in shared spaces."
     },
     "mselite": {
       "name": "Microsoft Ergonomic Keyboard",
       "category": "keyboard",
-      "useCases": ["ergonomic", "wrist comfort", "split layout"],
-      "platforms": ["windows", "mac"],
+      "useCases": [
+        "ergonomic",
+        "wrist comfort",
+        "split layout"
+      ],
+      "platforms": [
+        "windows",
+        "mac"
+      ],
       "price": "~$59-129 (varies by model)",
-      "affiliateUrl": "PLACEHOLDER",
+      "affiliateUrl": "https://www.amazon.com/s?k=Microsoft+Ergonomic+Keyboard&tag=work089-20",
       "why": "A split, curved layout with a cushioned palm rest that reduces wrist strain — the pick if comfort over long hours is the priority."
     },
     "applemagic": {
       "name": "Apple Magic Keyboard",
       "category": "keyboard",
-      "useCases": ["minimal", "apple ecosystem", "low-profile"],
-      "platforms": ["mac", "ios"],
+      "useCases": [
+        "minimal",
+        "apple ecosystem",
+        "low-profile"
+      ],
+      "platforms": [
+        "mac",
+        "ios"
+      ],
       "price": "~$99-149",
-      "affiliateUrl": "PLACEHOLDER",
+      "affiliateUrl": "https://www.amazon.com/s?k=Apple+Magic+Keyboard&tag=work089-20",
       "why": "Slim, silent and seamless with Macs and iPads — the minimal choice for a clean Apple desk setup."
     },
     "daskeyboard": {
       "name": "Das Keyboard 4 Professional",
       "category": "keyboard",
-      "useCases": ["mechanical & tactile", "premium build", "full-size"],
-      "platforms": ["mac", "windows"],
+      "useCases": [
+        "mechanical & tactile",
+        "premium build",
+        "full-size"
+      ],
+      "platforms": [
+        "mac",
+        "windows"
+      ],
       "price": "~$169",
-      "affiliateUrl": "PLACEHOLDER",
+      "affiliateUrl": "https://www.amazon.com/s?k=Das+Keyboard+4+Professional&tag=work089-20",
       "why": "A premium full-size mechanical board with a solid build and media controls — for writers who want a durable desktop workhorse."
     }
   },
   "recommendations": {
     "letter": {
-      "grammar": { "recommended": "grammarly", "alternatives": ["googledocs", "msword"] },
-      "templates": { "recommended": "msword", "alternatives": ["googledocs", "canva"] },
-      "free": { "recommended": "googledocs", "alternatives": ["grammarly", "msword"] },
-      "design": { "recommended": "canva", "alternatives": ["msword", "googledocs"] }
+      "grammar": {
+        "recommended": "grammarly",
+        "alternatives": [
+          "googledocs",
+          "msword"
+        ]
+      },
+      "templates": {
+        "recommended": "msword",
+        "alternatives": [
+          "googledocs",
+          "canva"
+        ]
+      },
+      "free": {
+        "recommended": "googledocs",
+        "alternatives": [
+          "grammarly",
+          "msword"
+        ]
+      },
+      "design": {
+        "recommended": "canva",
+        "alternatives": [
+          "msword",
+          "googledocs"
+        ]
+      }
     },
     "notes": {
-      "linking": { "recommended": "obsidian", "alternatives": ["notion", "evernote"] },
-      "organize": { "recommended": "notion", "alternatives": ["evernote", "obsidian"] },
-      "clip": { "recommended": "evernote", "alternatives": ["notion", "googlekeep"] },
-      "simple": { "recommended": "googlekeep", "alternatives": ["applenotes", "evernote"] }
+      "linking": {
+        "recommended": "obsidian",
+        "alternatives": [
+          "notion",
+          "evernote"
+        ]
+      },
+      "organize": {
+        "recommended": "notion",
+        "alternatives": [
+          "evernote",
+          "obsidian"
+        ]
+      },
+      "clip": {
+        "recommended": "evernote",
+        "alternatives": [
+          "notion",
+          "googlekeep"
+        ]
+      },
+      "simple": {
+        "recommended": "googlekeep",
+        "alternatives": [
+          "applenotes",
+          "evernote"
+        ]
+      }
     },
     "memoir": {
-      "structure": { "recommended": "scrivener", "alternatives": ["ulysses", "googledocs"] },
-      "distraction": { "recommended": "ulysses", "alternatives": ["scrivener", "googledocs"] },
-      "prompts": { "recommended": "storyworth", "alternatives": ["dayone", "googledocs"] },
-      "free": { "recommended": "googledocs", "alternatives": ["scrivener", "dayone"] }
+      "structure": {
+        "recommended": "scrivener",
+        "alternatives": [
+          "ulysses",
+          "googledocs"
+        ]
+      },
+      "distraction": {
+        "recommended": "ulysses",
+        "alternatives": [
+          "scrivener",
+          "googledocs"
+        ]
+      },
+      "prompts": {
+        "recommended": "storyworth",
+        "alternatives": [
+          "dayone",
+          "googledocs"
+        ]
+      },
+      "free": {
+        "recommended": "googledocs",
+        "alternatives": [
+          "scrivener",
+          "dayone"
+        ]
+      }
     },
     "keyboard": {
-      "mechanical": { "recommended": "keychron", "alternatives": ["daskeyboard", "logitechmxkeys"] },
-      "quiet": { "recommended": "logitechmxkeys", "alternatives": ["applemagic", "keychron"] },
-      "ergonomic": { "recommended": "mselite", "alternatives": ["logitechmxkeys", "keychron"] },
-      "minimal": { "recommended": "applemagic", "alternatives": ["logitechmxkeys", "keychron"] }
+      "mechanical": {
+        "recommended": "keychron",
+        "alternatives": [
+          "daskeyboard",
+          "logitechmxkeys"
+        ]
+      },
+      "quiet": {
+        "recommended": "logitechmxkeys",
+        "alternatives": [
+          "applemagic",
+          "keychron"
+        ]
+      },
+      "ergonomic": {
+        "recommended": "mselite",
+        "alternatives": [
+          "logitechmxkeys",
+          "keychron"
+        ]
+      },
+      "minimal": {
+        "recommended": "applemagic",
+        "alternatives": [
+          "logitechmxkeys",
+          "keychron"
+        ]
+      }
     }
   }
 }
