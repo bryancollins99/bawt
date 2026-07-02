@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Dashboard | Become a Writer Today</title>
+<meta name="description" content="Track your writing streak, personal records, and daily word count. A habit dashboard for writers, saved on your device.">
+<meta property="og:title" content="Writing Dashboard">
+<meta property="og:description" content="Your writing streak, records, and word count in one place. Free, saved on your device.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2B4C8C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232B4C8C'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='bold' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Writing Dashboard","applicationCategory":"Productivity","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"},"publisher":{"@type":"Organization","name":"Become a Writer Today","url":"https://becomeawritertoday.com"}}
+</script>
+<style>
+  :root{
+    --paper:#FCFCFB; --card:#FFFFFF; --ink:#1C2430; --ink-2:#5A6472; --muted:#8A93A0;
+    --line:#E5E3DC; --brand:#2B4C8C; --brand-hover:#22407A; --data:#3E63AE;
+    --good:#2E7D32; --warn:#B26A00; --bad:#B3261E;
+    --good-bg:#EAF3EB; --warn-bg:#F7EFE2; --bad-bg:#F9E9E8;
+    --radius:10px; --mono:'Courier Prime',ui-monospace,monospace;
+    --display:'Zilla Slab',Georgia,serif;
+    --body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --heat-0:#EDECEA; --heat-1:#C3D8F8; --heat-2:#89B1EB; --heat-3:#4F86D8; --heat-4:#1A59AD;
+  }
+  @media(prefers-color-scheme:dark){
+    :root{
+      --paper:#1A1D24; --card:#222730; --ink:#E8ECF0; --ink-2:#9AA5B4; --muted:#6B7787;
+      --line:#333B47; --brand:#5B82D4; --brand-hover:#7399DC; --data:#5B82D4;
+      --good:#4CAF50; --warn:#FFA726; --bad:#EF5350;
+      --good-bg:#1B3320; --warn-bg:#2D2010; --bad-bg:#2D1010;
+      --heat-0:#252830; --heat-1:#1A3560; --heat-2:#2A5595; --heat-3:#3A80BF; --heat-4:#5AA8E8;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
+  a{color:var(--brand)}
+  :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
+
+  header.site{padding:8px 0 28px}
+  .eyebrow{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+  .eyebrow a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line)}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,7vw,42px);line-height:1.08;letter-spacing:-.01em}
+  .lede{margin-top:10px;color:var(--ink-2);max-width:52ch}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:16px}
+  .card h2{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:14px}
+
+  .btn{display:inline-block;font-size:16px;font-weight:600;padding:12px 20px;border-radius:8px;
+    border:1px solid var(--brand);background:var(--brand);color:#fff;cursor:pointer;text-decoration:none;line-height:1.2}
+  .btn:hover{background:var(--brand-hover)}
+  .btn-quiet{background:var(--card);color:var(--brand)}
+  .btn-quiet:hover{background:var(--line)}
+  .btn-sm{font-size:14px;padding:8px 14px}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap}
+
+  /* Nudge bar (PRD-2) */
+  .nudge-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;
+    background:var(--warn-bg);border:1px solid var(--warn);border-radius:var(--radius);
+    padding:12px 16px;margin-top:12px;font-size:15px;color:var(--warn)}
+  .nudge-bar button{background:none;border:none;font-size:20px;cursor:pointer;
+    color:var(--warn);line-height:1;padding:0 4px;flex-shrink:0}
+
+  /* Empty state */
+  .empty-state{text-align:center;padding:48px 20px}
+  .empty-state h2{font-family:var(--display);font-size:24px;margin-bottom:12px}
+  .empty-state p{color:var(--ink-2);margin-bottom:20px;max-width:40ch;margin-left:auto;margin-right:auto}
+
+  /* Streak hero */
+  .streak-hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+  @media(max-width:400px){.streak-hero{grid-template-columns:1fr}}
+  .streak-item{border-radius:8px;padding:16px;text-align:center}
+  .streak-item.primary{background:var(--brand);color:#fff}
+  .streak-item.secondary{background:var(--paper);border:1px solid var(--line)}
+  .streak-item .sn{font-family:var(--mono);font-weight:700;font-size:clamp(40px,12vw,56px);line-height:1}
+  .streak-item.primary .sn{color:#fff}
+  .streak-item.secondary .sn{color:var(--brand)}
+  .streak-item .sk{font-size:13px;margin-top:4px;opacity:.8}
+  .streak-item.secondary .sk{opacity:1;color:var(--ink-2)}
+
+  /* Stats grid */
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:500px){.stats-grid{grid-template-columns:1fr 1fr}}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+  .stat .n{font-family:var(--mono);font-weight:700;font-size:20px;line-height:1.2;color:var(--ink)}
+  .stat .k{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2);margin-top:3px}
+  .streak-note{font-size:13px;color:var(--muted);margin-top:12px}
+
+  /* Heatmap */
+  .heatmap-outer{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+  .heatmap-layout{display:flex;gap:4px;min-width:min-content}
+  .day-labels{display:flex;flex-direction:column;padding-top:22px}
+  .day-labels span{font-family:var(--mono);font-size:10px;color:var(--muted);
+    height:14px;display:flex;align-items:center;line-height:1}
+  .heatmap-right{display:flex;flex-direction:column;gap:2px}
+  .month-row{display:flex;height:18px}
+  .month-row span{font-family:var(--mono);font-size:10px;color:var(--muted);
+    display:inline-block;overflow:hidden;flex-shrink:0}
+  .heatmap-grid{display:grid;grid-template-rows:repeat(7,12px);grid-auto-columns:12px;
+    grid-auto-flow:column;gap:2px}
+  .hc{width:12px;height:12px;border-radius:2px;background:var(--heat-0)}
+  .hc[data-b="1"]{background:var(--heat-1)}
+  .hc[data-b="2"]{background:var(--heat-2)}
+  .hc[data-b="3"]{background:var(--heat-3)}
+  .hc[data-b="4"]{background:var(--heat-4)}
+  .hc.future{opacity:.2}
+  .heat-legend{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:var(--muted)}
+  .heat-swatches{display:flex;gap:2px}
+  .heat-swatches div{width:12px;height:12px;border-radius:2px}
+
+  /* Sprint timer */
+  .dur-buttons{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  .dur-btn{font-family:var(--mono);font-size:14px;font-weight:700;padding:8px 16px;
+    border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
+  .dur-btn.active,.dur-btn:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+  .dur-btn:disabled{opacity:.4;cursor:default}
+  .sprint-clock{font-family:var(--mono);font-weight:700;font-size:clamp(44px,14vw,68px);
+    text-align:center;color:var(--brand);line-height:1;margin:6px 0}
+  .sprint-area{width:100%;min-height:90px;font-family:var(--body);font-size:16px;
+    padding:10px 12px;border:1px solid var(--line);border-radius:8px;
+    background:var(--card);color:var(--ink);resize:vertical;margin-bottom:8px}
+  .sprint-area:disabled{opacity:.45;cursor:not-allowed}
+  .sprint-wc{font-family:var(--mono);font-size:14px;color:var(--ink-2);margin-bottom:10px}
+  .sprint-result{display:none;padding:12px 14px;background:var(--good-bg);border-radius:8px;margin-top:10px}
+  .sprint-result.show{display:block}
+  .sprint-result p{font-size:15px;color:var(--good)}
+  .sprint-best{font-size:13px;color:var(--muted);margin-top:4px}
+
+  /* Log */
+  .logrow{display:flex;gap:10px}
+  .logrow input{flex:1;font-family:var(--mono);font-size:16px;padding:11px 12px;
+    border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+  .logrow .btn{width:auto;padding:11px 18px}
+  .today-note{font-size:14px;color:var(--ink-2);margin-top:8px}
+
+  /* Reminder (PRD-2) */
+  .reminder-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+  .reminder-row input[type=time]{font-family:var(--mono);font-size:15px;padding:8px 12px;
+    border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+  .reminder-status{font-size:14px;color:var(--muted);margin-bottom:6px}
+  .reminder-fine-print{font-size:13px;color:var(--muted)}
+
+  /* Share card (PRD-2) */
+  .sc-preview{background:var(--brand);color:#fff;border-radius:12px;
+    padding:28px 24px;text-align:center;margin-bottom:14px}
+  .sc-preview .sc-day{font-family:var(--mono);font-weight:700;
+    font-size:clamp(40px,12vw,60px);line-height:1}
+  .sc-preview .sc-label{font-size:13px;opacity:.75;letter-spacing:.04em;text-transform:uppercase}
+  .sc-preview .sc-words{font-family:var(--mono);font-size:18px;margin-top:10px}
+  .sc-preview .sc-site{font-size:12px;opacity:.55;margin-top:14px}
+  .sharebox{display:flex;gap:10px}
+  .sharebox input{flex:1;font-family:var(--mono);font-size:13px;padding:10px 12px;
+    border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink-2)}
+  .copy-confirm{font-size:13px;color:var(--good);margin-top:8px;min-height:18px}
+
+  footer.site{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+  footer.site p{margin-bottom:6px}
+  .selftest{display:none;font-family:var(--mono);font-size:13px;background:var(--ink);
+    color:#fff;padding:10px 14px;border-radius:8px;margin-top:16px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <p class="eyebrow"><a href="https://becomeawritertoday.com/">Become a Writer Today</a> &middot; Free tool</p>
+    <h1>Writing Dashboard</h1>
+    <p class="lede">Your streak, records, and word count saved on this device. Open the <a href="/plan">Book Deadline Planner</a> to set a deadline and daily target.</p>
+  </header>
+
+  <div id="nudge-bar" class="nudge-bar" role="alert" style="display:none">
+    <span id="nudge-text">You have not logged any words today. Your writing streak is waiting.</span>
+    <button id="nudge-dismiss" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <div id="empty-state" class="card empty-state" style="display:none">
+    <h2>Log your first words to start your streak</h2>
+    <p>Open the Book Deadline Planner, log today's word count, then come back here to see your streak and records.</p>
+    <a href="/plan" class="btn">Open book planner</a>
+  </div>
+
+  <div id="main-content" style="display:none">
+
+    <section class="card" aria-labelledby="streaks-h">
+      <h2 id="streaks-h">Streak &amp; Records</h2>
+      <div class="streak-hero">
+        <div class="streak-item primary">
+          <p class="sk">Current streak</p>
+          <p class="sn" id="stat-streak">0</p>
+          <p class="sk">days</p>
+        </div>
+        <div class="streak-item secondary">
+          <p class="sk">Longest streak</p>
+          <p class="sn" id="stat-longest">0</p>
+          <p class="sk">days</p>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><p class="n" id="stat-best-day">0</p><p class="k">Best day</p></div>
+        <div class="stat"><p class="n" id="stat-best-week">0</p><p class="k">Best 7-day run</p></div>
+        <div class="stat"><p class="n" id="stat-total">0</p><p class="k">Total words</p></div>
+        <div class="stat"><p class="n" id="stat-days">0</p><p class="k">Days written</p></div>
+        <div class="stat"><p class="n" id="stat-this-week">0</p><p class="k">This week</p></div>
+        <div class="stat"><p class="n" id="stat-this-month">0</p><p class="k">This month</p></div>
+      </div>
+      <p class="streak-note" id="streak-note"></p>
+    </section>
+
+    <section class="card" aria-labelledby="heatmap-h">
+      <h2 id="heatmap-h">Writing Year</h2>
+      <div class="heatmap-outer">
+        <div class="heatmap-layout">
+          <div class="day-labels" aria-hidden="true">
+            <span style="height:22px"></span>
+            <span>Mon</span>
+            <span style="height:14px"></span>
+            <span>Wed</span>
+            <span style="height:14px"></span>
+            <span>Fri</span>
+            <span style="height:14px"></span>
+            <span>Sun</span>
+          </div>
+          <div class="heatmap-right">
+            <div class="month-row" id="heatmap-months" aria-hidden="true"></div>
+            <div class="heatmap-grid" id="heatmap-grid" role="img" aria-label="Writing activity over the past year"></div>
+          </div>
+        </div>
+      </div>
+      <div class="heat-legend" aria-hidden="true">
+        <span>Less</span>
+        <div class="heat-swatches">
+          <div style="background:var(--heat-0)"></div>
+          <div style="background:var(--heat-1)"></div>
+          <div style="background:var(--heat-2)"></div>
+          <div style="background:var(--heat-3)"></div>
+          <div style="background:var(--heat-4)"></div>
+        </div>
+        <span>More</span>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="sprint-h">
+      <h2 id="sprint-h">Word Sprint</h2>
+      <div class="dur-buttons" role="group" aria-label="Sprint duration">
+        <button class="dur-btn active" data-min="10" type="button">10 min</button>
+        <button class="dur-btn" data-min="15" type="button">15 min</button>
+        <button class="dur-btn" data-min="25" type="button">25 min</button>
+      </div>
+      <p class="sprint-clock" id="sprint-clock" aria-live="polite">10:00</p>
+      <textarea class="sprint-area" id="sprint-area"
+        placeholder="Start the timer, then write here. Words are counted as you type."
+        disabled aria-label="Sprint writing area"></textarea>
+      <p class="sprint-wc"><span id="sprint-wc">0</span> words</p>
+      <div class="btn-row">
+        <button class="btn" id="sprint-go" type="button">Go</button>
+        <button class="btn btn-quiet" id="sprint-stop" type="button" style="display:none">Stop early</button>
+      </div>
+      <div class="sprint-result" id="sprint-result">
+        <p id="sprint-result-text"></p>
+        <p class="sprint-best" id="sprint-best"></p>
+        <button class="btn btn-sm" id="sprint-log-btn" type="button" style="margin-top:10px;display:none">Add to today's log</button>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="reminder-h">
+      <h2 id="reminder-h">Daily Reminder</h2>
+      <div class="reminder-row">
+        <input type="time" id="reminder-time" aria-label="Reminder time">
+        <button class="btn btn-sm" id="reminder-enable" type="button">Enable</button>
+        <button class="btn btn-sm btn-quiet" id="reminder-clear" type="button" style="display:none">Clear</button>
+      </div>
+      <p class="reminder-status" id="reminder-status"></p>
+      <p class="reminder-fine-print">Reminders work on this device in this browser. If the tab is closed when the time arrives, the reminder shows on your next visit to this page.</p>
+    </section>
+
+    <section class="card" aria-labelledby="share-h">
+      <h2 id="share-h">Share Your Streak</h2>
+      <div class="sc-preview">
+        <p class="sc-label">Writing streak</p>
+        <p class="sc-day" id="sc-day">0</p>
+        <p class="sc-label">days</p>
+        <p class="sc-words" id="sc-words">0 total words</p>
+        <p class="sc-site">becomeawritertoday.com/dashboard</p>
+      </div>
+      <div class="sharebox">
+        <input type="text" id="share-text" readonly aria-label="Shareable text">
+        <button class="btn btn-quiet" id="share-copy" type="button">Copy</button>
+      </div>
+      <p class="copy-confirm" id="share-confirm"></p>
+    </section>
+
+  </div>
+
+  <section class="card" aria-labelledby="log-h">
+    <h2 id="log-h">Log Today's Words</h2>
+    <div class="logrow">
+      <input type="number" id="f-log" min="0" step="10" placeholder="e.g. 750" aria-label="Words written today">
+      <button class="btn" id="log-btn" type="button">Log</button>
+    </div>
+    <p class="today-note" id="today-note"></p>
+  </section>
+
+  <pre class="selftest" id="selftest"></pre>
+
+  <footer class="site">
+    <p>Built by <a href="https://becomeawritertoday.com/">Become a Writer Today</a>. Words are counted in your browser and stored on this device only.</p>
+    <p><a href="/plan">Book Deadline Planner</a> &middot; <a href="https://becomeawritertoday.com/tools/">More free writing tools</a></p>
+  </footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id);};
+var DAY=86400000;
+var LS_LOG="bdp-log",LS_PLAN="bdp-plan",LS_SPRINTS="wd-sprints",LS_REMINDER="wd-reminder",LS_NUDGE="wd-nudge-dismissed";
+
+// ---------- pure helpers — verbatim from book-deadline-planner ----------
+function iso(d){
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function parseISO(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
+function streakOf(log,today,weekdays){
+  var s=0,d=new Date(today.getTime());
+  if(!(log[iso(d)]>0)) d=new Date(d.getTime()-DAY); // today not logged yet doesn't break streak
+  while(true){
+    var w=weekdays[(d.getDay()+6)%7];
+    if(w){ if(log[iso(d)]>0){s++;} else break; }
+    d=new Date(d.getTime()-DAY);
+    if(s>3660) break;
+  }
+  return s;
+}
+
+// ---------- dashboard helpers ----------
+function longestStreakOf(log,weekdays){
+  var dates=Object.keys(log).filter(function(k){return log[k]>0;}).sort();
+  if(!dates.length) return 0;
+  var earliest=parseISO(dates[0]);
+  var today=new Date(); today.setHours(0,0,0,0);
+  var max=0,cur=0,d=new Date(earliest.getTime());
+  while(d<=today){
+    if(weekdays[(d.getDay()+6)%7]){
+      if(log[iso(d)]>0){cur++;if(cur>max)max=cur;}
+      else{cur=0;}
+    }
+    d=new Date(d.getTime()+DAY);
+  }
+  return max;
+}
+function bestDayOf(log){
+  var max=0;
+  for(var k in log) if(log[k]>max) max=log[k];
+  return max;
+}
+function bestWeekOf(log){
+  var dates=Object.keys(log).filter(function(k){return log[k]>0;}).sort();
+  if(!dates.length) return 0;
+  var earliest=parseISO(dates[0]);
+  var latest=parseISO(dates[dates.length-1]);
+  var vals=[],d=new Date(earliest.getTime());
+  while(d<=latest){vals.push(log[iso(d)]||0);d=new Date(d.getTime()+DAY);}
+  if(vals.length<7) return vals.reduce(function(a,b){return a+b;},0);
+  var sum=vals.slice(0,7).reduce(function(a,b){return a+b;},0),max=sum;
+  for(var i=7;i<vals.length;i++){sum+=vals[i]-vals[i-7];if(sum>max)max=sum;}
+  return max;
+}
+function thisWeekTotal(log,today){
+  var dayIdx=(today.getDay()+6)%7,sum=0;
+  for(var i=0;i<7;i++){
+    var d=new Date(today.getTime()+(i-dayIdx)*DAY);
+    sum+=log[iso(d)]||0;
+  }
+  return sum;
+}
+function thisMonthTotal(log,today){
+  var prefix=today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0");
+  var sum=0;
+  for(var k in log) if(k.slice(0,7)===prefix) sum+=log[k];
+  return sum;
+}
+function totalWordsOf(log){var s=0;for(var k in log)s+=log[k];return s;}
+function daysWrittenOf(log){return Object.keys(log).filter(function(k){return log[k]>0;}).length;}
+function heatBucket(words){
+  if(!words||words<=0) return 0;
+  if(words<500) return 1;
+  if(words<1000) return 2;
+  if(words<2000) return 3;
+  return 4;
+}
+function fmtNum(n){return n.toLocaleString("en-US");}
+
+// ---------- nudge pure fn (PRD-2) ----------
+function shouldNudge(opts){
+  if(!opts.reminderTime) return false;
+  if(opts.todaysWords>0) return false;
+  if(opts.lastDismissedDate===iso(opts.now)) return false;
+  var parts=opts.reminderTime.split(":");
+  var rh=+parts[0],rm=+parts[1];
+  var nh=opts.now.getHours(),nm=opts.now.getMinutes();
+  return (nh>rh)||(nh===rh&&nm>=rm);
+}
+
+// ---------- state ----------
+var log={};
+try{log=JSON.parse(localStorage.getItem(LS_LOG)||"{}")||{};}catch(e){}
+var weekdays=[1,1,1,1,1,1,1].map(Boolean),hasPlan=false;
+try{
+  var plan=JSON.parse(localStorage.getItem(LS_PLAN)||"null");
+  if(plan&&plan.w&&plan.w.length===7){weekdays=plan.w.map(Boolean);hasPlan=true;}
+}catch(e){}
+var sprints={bestWPM:0};
+try{sprints=JSON.parse(localStorage.getItem(LS_SPRINTS)||"{}")||{};if(!sprints.bestWPM)sprints.bestWPM=0;}catch(e){}
+var reminder={time:"",permission:"default"};
+try{reminder=JSON.parse(localStorage.getItem(LS_REMINDER)||"{}")||{};if(!reminder.time)reminder.time="";}catch(e){}
+
+function saveLog(){try{localStorage.setItem(LS_LOG,JSON.stringify(log));}catch(e){}}
+function saveSprints(){try{localStorage.setItem(LS_SPRINTS,JSON.stringify(sprints));}catch(e){}}
+function saveReminder(){try{localStorage.setItem(LS_REMINDER,JSON.stringify(reminder));}catch(e){}}
+
+// ---------- render ----------
+function renderAll(){
+  var today=new Date(); today.setHours(0,0,0,0);
+  var hasData=Object.keys(log).some(function(k){return log[k]>0;});
+
+  $("empty-state").style.display=hasData?"none":"block";
+  $("main-content").style.display=hasData?"block":"none";
+
+  renderTodayNote(today);
+
+  if(!hasData) return;
+
+  var curStreak=streakOf(log,today,weekdays);
+  var longStreak=longestStreakOf(log,weekdays);
+
+  $("stat-streak").textContent=fmtNum(curStreak);
+  $("stat-longest").textContent=fmtNum(longStreak);
+  $("stat-best-day").textContent=fmtNum(bestDayOf(log));
+  $("stat-best-week").textContent=fmtNum(bestWeekOf(log));
+  $("stat-total").textContent=fmtNum(totalWordsOf(log));
+  $("stat-days").textContent=fmtNum(daysWrittenOf(log));
+  $("stat-this-week").textContent=fmtNum(thisWeekTotal(log,today));
+  $("stat-this-month").textContent=fmtNum(thisMonthTotal(log,today));
+  $("streak-note").textContent=hasPlan
+    ?"Streak counts your writing days; rest days are skipped."
+    :"Calendar-day streak. Open the planner to set writing days and rest days.";
+
+  renderHeatmap(today);
+  renderShare(curStreak,totalWordsOf(log));
+}
+
+function renderTodayNote(today){
+  var v=log[iso(today)]||0;
+  $("today-note").textContent=v>0?"Today: "+fmtNum(v)+" words logged on this device.":"Nothing logged today yet.";
+}
+
+function renderHeatmap(today){
+  var dayIdx=(today.getDay()+6)%7;
+  var weekStart=new Date(today.getTime()-dayIdx*DAY);
+  var gridStart=new Date(weekStart.getTime()-52*7*DAY);
+
+  var grid=$("heatmap-grid"); grid.innerHTML="";
+  var monthsEl=$("heatmap-months"); monthsEl.innerHTML="";
+
+  // Month labels: width per column = 14px (12px cell + 2px gap)
+  var CELL=14;
+  for(var w=0;w<53;w++){
+    var weekMon=new Date(gridStart.getTime()+w*7*DAY);
+    var label="";
+    for(var dd=0;dd<7;dd++){
+      var cd=new Date(weekMon.getTime()+dd*DAY);
+      if(cd.getDate()===1){label=cd.toLocaleDateString("en-US",{month:"short"});break;}
+    }
+    var sp=document.createElement("span");
+    sp.style.width=CELL+"px";
+    if(label){sp.textContent=label;}
+    monthsEl.appendChild(sp);
+  }
+
+  // Grid cells
+  for(var w=0;w<53;w++){
+    for(var d=0;d<7;d++){
+      var cellDate=new Date(gridStart.getTime()+(w*7+d)*DAY);
+      var isFuture=cellDate>today;
+      var words=isFuture?0:(log[iso(cellDate)]||0);
+      var cell=document.createElement("div");
+      cell.className="hc"+(isFuture?" future":"");
+      if(!isFuture) cell.dataset.b=String(heatBucket(words));
+      cell.title=iso(cellDate)+(isFuture?"":" · "+fmtNum(words)+" words");
+      grid.appendChild(cell);
+    }
+  }
+}
+
+function renderShare(streak,total){
+  $("sc-day").textContent=fmtNum(streak);
+  $("sc-words").textContent=fmtNum(total)+" total words";
+  $("share-text").value="Writing streak: "+streak+" day"+(streak===1?"":"s")
+    +" | "+fmtNum(total)+" total words"
+    +" | Track yours at becomeawritertoday.com/dashboard";
+}
+
+// ---------- nudge (PRD-2) ----------
+function renderNudge(){
+  var now=new Date();
+  var todayISO=iso(now);
+  var todaysWords=log[todayISO]||0;
+  var lastDismissed="";
+  try{lastDismissed=localStorage.getItem(LS_NUDGE)||"";}catch(e){}
+  var show=shouldNudge({now:now,reminderTime:reminder.time||null,todaysWords:todaysWords,lastDismissedDate:lastDismissed});
+  $("nudge-bar").style.display=show?"flex":"none";
+
+  if(show&&reminder.permission==="granted"&&typeof Notification!=="undefined"&&Notification.permission==="granted"){
+    try{new Notification("Writing Dashboard",{body:"You have not written today. Log your words to keep your streak."});}catch(e){}
+  }
+}
+
+$("nudge-dismiss").addEventListener("click",function(){
+  try{localStorage.setItem(LS_NUDGE,iso(new Date()));}catch(e){}
+  $("nudge-bar").style.display="none";
+});
+
+// ---------- reminder (PRD-2) ----------
+function renderReminderUI(){
+  if(reminder.time){
+    $("reminder-time").value=reminder.time;
+    $("reminder-enable").style.display="none";
+    $("reminder-clear").style.display="inline-block";
+    $("reminder-status").textContent="Reminder set for "+reminder.time+" on this device.";
+  } else {
+    $("reminder-enable").style.display="inline-block";
+    $("reminder-clear").style.display="none";
+    $("reminder-status").textContent="";
+  }
+}
+
+$("reminder-enable").addEventListener("click",function(){
+  var t=$("reminder-time").value;
+  if(!t){$("reminder-status").textContent="Pick a time first.";return;}
+  if(typeof Notification==="undefined"||Notification.permission==="denied"){
+    reminder.time=t;reminder.permission="denied";saveReminder();renderReminderUI();
+    $("reminder-status").textContent="Reminder set. An in-page nudge will appear on your next visit after "+t+". (Browser notifications are blocked.)";
+    return;
+  }
+  Notification.requestPermission().then(function(perm){
+    reminder.time=t;reminder.permission=perm;saveReminder();renderReminderUI();
+    if(perm==="granted"){
+      $("reminder-status").textContent="Browser notification enabled for "+t+" on this device.";
+    } else {
+      $("reminder-status").textContent="Browser notifications blocked. In-page nudge will still appear after "+t+".";
+    }
+  });
+});
+
+$("reminder-clear").addEventListener("click",function(){
+  reminder={time:"",permission:"default"};saveReminder();renderReminderUI();
+  $("reminder-time").value="";
+});
+
+// ---------- log ----------
+$("log-btn").addEventListener("click",function(){
+  var v=Math.max(0,Math.round(+$("f-log").value||0));
+  if(!v) return;
+  var todayKey=iso(new Date());
+  log[todayKey]=(log[todayKey]||0)+v; // additive — never overwrite
+  saveLog();
+  $("f-log").value="";
+  renderAll();
+  renderNudge();
+});
+
+// ---------- sprint ----------
+var sprintDurMin=10,sprintTick=null,sprintSecsLeft=0,sprintActive=false,sprintWordsAtEnd=0;
+
+function setActiveDur(min){
+  sprintDurMin=min;
+  Array.prototype.forEach.call(document.querySelectorAll(".dur-btn"),function(b){
+    b.classList.toggle("active",+b.dataset.min===min);
+  });
+  if(!sprintActive) updateClock(min*60);
+}
+
+function updateClock(secs){
+  var m=Math.floor(secs/60),s=secs%60;
+  $("sprint-clock").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+}
+
+function countWords(txt){
+  return txt.trim()?txt.trim().split(/\s+/).length:0;
+}
+
+Array.prototype.forEach.call(document.querySelectorAll(".dur-btn"),function(btn){
+  btn.addEventListener("click",function(){
+    if(sprintActive) return;
+    setActiveDur(+btn.dataset.min);
+  });
+});
+
+$("sprint-area").addEventListener("input",function(){
+  $("sprint-wc").textContent=fmtNum(countWords(this.value));
+});
+
+$("sprint-go").addEventListener("click",function(){
+  sprintActive=true;
+  sprintSecsLeft=sprintDurMin*60;
+  $("sprint-area").disabled=false;
+  $("sprint-area").value="";
+  $("sprint-area").focus();
+  $("sprint-wc").textContent="0";
+  $("sprint-go").style.display="none";
+  $("sprint-stop").style.display="inline-block";
+  $("sprint-result").className="sprint-result";
+  Array.prototype.forEach.call(document.querySelectorAll(".dur-btn"),function(b){b.disabled=true;});
+  updateClock(sprintSecsLeft);
+  sprintTick=setInterval(function(){
+    sprintSecsLeft--;
+    updateClock(sprintSecsLeft);
+    if(sprintSecsLeft<=0){clearInterval(sprintTick);sprintTick=null;finishSprint();}
+  },1000);
+});
+
+$("sprint-stop").addEventListener("click",function(){
+  if(sprintTick){clearInterval(sprintTick);sprintTick=null;}
+  finishSprint();
+});
+
+function finishSprint(){
+  sprintActive=false;
+  $("sprint-go").style.display="inline-block";
+  $("sprint-stop").style.display="none";
+  Array.prototype.forEach.call(document.querySelectorAll(".dur-btn"),function(b){b.disabled=false;});
+
+  var words=countWords($("sprint-area").value);
+  var secsUsed=sprintDurMin*60-sprintSecsLeft;
+  var minsTaken=Math.max(secsUsed/60,0.1);
+  var wpm=Math.round(words/minsTaken);
+  sprintWordsAtEnd=words;
+
+  var resultText=words+" word"+(words===1?"":"s")+" in "+sprintDurMin+" min";
+  if(wpm>0) resultText+=" ("+wpm+" WPM)";
+  $("sprint-result-text").textContent=resultText;
+
+  if(words>0&&wpm>sprints.bestWPM){
+    sprints.bestWPM=wpm;saveSprints();
+    $("sprint-best").textContent="New personal best: "+wpm+" WPM";
+  } else if(sprints.bestWPM>0){
+    $("sprint-best").textContent="Personal best: "+fmtNum(sprints.bestWPM)+" WPM";
+  } else {
+    $("sprint-best").textContent="";
+  }
+
+  var logBtn=$("sprint-log-btn");
+  logBtn.style.display=words>0?"inline-block":"none";
+  logBtn.textContent="Add "+words+" words to today's log";
+  logBtn.disabled=false;
+  $("sprint-result").className="sprint-result show";
+  updateClock(sprintDurMin*60);
+  $("sprint-area").disabled=true;
+}
+
+$("sprint-log-btn").addEventListener("click",function(){
+  if(!sprintWordsAtEnd) return;
+  var todayKey=iso(new Date());
+  log[todayKey]=(log[todayKey]||0)+sprintWordsAtEnd; // additive
+  saveLog();
+  renderAll();
+  renderNudge();
+  this.textContent="Added";
+  this.disabled=true;
+});
+
+// ---------- share copy (PRD-2) ----------
+$("share-copy").addEventListener("click",function(){
+  var text=$("share-text").value;
+  function done(){$("share-confirm").textContent="Copied.";}
+  if(navigator.clipboard){navigator.clipboard.writeText(text).then(done);}
+  else{$("share-text").select();document.execCommand("copy");done();}
+});
+
+// ---------- boot ----------
+(function boot(){
+  renderAll();
+  renderReminderUI();
+  renderNudge();
+  updateClock(sprintDurMin*60);
+})();
+
+// ---------- self-tests ----------
+if(new URLSearchParams(location.search).get("selftest")==="1"){
+  var out=[],pass=0,fail=0;
+  function eq(name,got,want){
+    var ok=JSON.stringify(got)===JSON.stringify(want);
+    ok?pass++:fail++;
+    out.push((ok?"PASS":"FAIL")+" "+name+(ok?"":" got="+JSON.stringify(got)+" want="+JSON.stringify(want)));
+  }
+  var all=[1,1,1,1,1,1,1].map(Boolean),wk=[1,1,1,1,1,0,0].map(Boolean);
+
+  // streakOf — parity with planner (verbatim fn, same test vectors)
+  eq("streakOf empty",streakOf({},new Date(2026,6,7),all),0);
+  eq("streakOf 2 ending yesterday",streakOf({"2026-06-29":500,"2026-06-30":500},new Date(2026,6,1),all),2);
+  eq("streakOf bridges rest days (wk mask)",streakOf({"2026-07-03":500,"2026-07-06":500},new Date(2026,6,7),wk),2);
+  eq("streakOf today logged counts",streakOf({"2026-07-06":500,"2026-07-07":500},new Date(2026,6,7),wk),2);
+
+  // longestStreakOf
+  eq("longestStreak empty",longestStreakOf({},all),0);
+  // 3 consecutive weekdays, breaks on 4th
+  eq("longestStreak 3 all days",longestStreakOf({"2025-06-02":500,"2025-06-03":500,"2025-06-04":500},all),3);
+  // Mon-Wed, gap Thu, then new run Mon (bridges Sat/Sun)
+  eq("longestStreak bridges weekend wk",longestStreakOf({"2026-06-29":500,"2026-06-30":500,"2026-07-01":500,"2026-07-06":1000},wk),3);
+
+  // bestDayOf
+  eq("bestDay empty",bestDayOf({}),0);
+  eq("bestDay picks max",bestDayOf({"2026-07-01":1000,"2026-07-02":500,"2026-07-03":2000}),2000);
+
+  // bestWeekOf (rolling 7-day window)
+  var wlog7={"2026-07-01":500,"2026-07-02":500,"2026-07-03":500,"2026-07-04":500,"2026-07-05":500,"2026-07-06":500,"2026-07-07":500};
+  eq("bestWeek 7 equal days",bestWeekOf(wlog7),3500);
+  var wlogR={"2026-06-25":200,"2026-07-01":500,"2026-07-02":500,"2026-07-03":500,"2026-07-04":500,"2026-07-05":500,"2026-07-06":500,"2026-07-07":500};
+  eq("bestWeek rolling prefers denser window",bestWeekOf(wlogR),3500);
+
+  // heatBucket — single-hue ramp buckets
+  eq("heatBucket 0",heatBucket(0),0);
+  eq("heatBucket 1",heatBucket(1),1);
+  eq("heatBucket 499",heatBucket(499),1);
+  eq("heatBucket 500",heatBucket(500),2);
+  eq("heatBucket 999",heatBucket(999),2);
+  eq("heatBucket 1000",heatBucket(1000),3);
+  eq("heatBucket 1999",heatBucket(1999),3);
+  eq("heatBucket 2000",heatBucket(2000),4);
+
+  // thisWeekTotal (Mon-anchored week)
+  // 2026-07-06 is Monday, 2026-07-07 is Tuesday — build a week where only Mon+Tue have words
+  var weekLog={"2026-07-06":300,"2026-07-07":700};
+  var weekTuesday=new Date(2026,6,7); // Tuesday Jul 7, dayIdx=1 (Mon=0)
+  eq("thisWeekTotal Mon+Tue",thisWeekTotal(weekLog,weekTuesday),1000);
+  eq("thisWeekTotal excludes prior week",thisWeekTotal({"2026-06-30":999,"2026-07-06":100},weekTuesday),100);
+
+  // thisMonthTotal
+  var monthLog={"2026-07-01":200,"2026-07-15":800,"2026-06-30":9999};
+  eq("thisMonthTotal sums current month only",thisMonthTotal(monthLog,new Date(2026,6,7)),1000);
+
+  // shouldNudge (PRD-2)
+  var t900=new Date(2026,6,7,9,0),t859=new Date(2026,6,7,8,59);
+  eq("nudge fires at reminder time",shouldNudge({now:t900,reminderTime:"09:00",todaysWords:0,lastDismissedDate:null}),true);
+  eq("nudge not before time",shouldNudge({now:t859,reminderTime:"09:00",todaysWords:0,lastDismissedDate:null}),false);
+  eq("nudge suppressed when logged",shouldNudge({now:t900,reminderTime:"09:00",todaysWords:500,lastDismissedDate:null}),false);
+  eq("nudge suppressed when dismissed today",shouldNudge({now:t900,reminderTime:"09:00",todaysWords:0,lastDismissedDate:"2026-07-07"}),false);
+  eq("nudge suppressed with no reminder",shouldNudge({now:t900,reminderTime:null,todaysWords:0,lastDismissedDate:null}),false);
+
+  var st=$("selftest"); st.style.display="block";
+  st.textContent="SELFTEST "+pass+"/"+(pass+fail)+" passed\n"+out.join("\n");
+  console.log(st.textContent);
+}
+})();
+</script>
+</body>
+</html>

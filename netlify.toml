@@ -12,6 +12,11 @@
   status = 200
 
 [[redirects]]
+  from = "/dashboard"
+  to = "/writing-dashboard.html"
+  status = 200
+
+[[redirects]]
   from = "/contests"
   to = "/writing-contests.html"
   status = 200
