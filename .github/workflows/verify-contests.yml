@@ -1,0 +1,43 @@
+name: Verify Contest URLs
+
+# Checks all contest URLs in contests.json, rolls recurring/projected past-deadline
+# entries forward one year, flags genuinely dead URLs as stale, and commits the
+# updated data + report back to main.
+#
+# Intentionally manual-only (workflow_dispatch) for now — this repo is parked.
+# When BAWT is promoted to sprint focus, flip to a weekly schedule:
+#   schedule:
+#     - cron: '0 7 * * 1'  # Mondays 07:00 UTC
+#
+# See scripts/verify-contests.mjs for the full classification logic.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run self-test
+        run: node scripts/verify-contests.mjs --self-test
+
+      - name: Verify contest URLs and roll deadlines
+        run: node scripts/verify-contests.mjs
+
+      - name: Commit updated data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/contests.json src/data/contests.SOURCES.md scripts/.contest-verify-report.json
+          git diff --quiet --cached || (git commit -m "chore: verify contest URLs and roll deadlines" && git push)

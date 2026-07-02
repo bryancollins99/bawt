@@ -1,0 +1,64 @@
+{
+  "verifyDate": "2026-07-02",
+  "total": 45,
+  "live": 36,
+  "stale": 9,
+  "expired": 0,
+  "rolled": 0,
+  "details": [
+    {
+      "name": "Rattle Poetry Prize",
+      "url": "https://www.rattle.com/poetryprize/",
+      "bucket": "stale",
+      "reason": "HTTP 500"
+    },
+    {
+      "name": "Frontier Poetry — Frontier OPEN",
+      "url": "https://www.frontierpoetry.com/2026-frontier-open/",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "The Bridport Prize — Poetry",
+      "url": "https://www.bridportprize.org.uk/",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "The Bridport Prize — Short Story",
+      "url": "https://www.bridportprize.org.uk/",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "The Bridport Prize — Flash Fiction",
+      "url": "https://www.bridportprize.org.uk/",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Bridport Peggy Chapman-Andrews First Novel Award",
+      "url": "https://www.bridportprize.org.uk/",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "The Caledonia Novel Award",
+      "url": "https://thecaledonianovelaward.com/",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "Arts Council England — Developing Your Creative Practice (DYCP)",
+      "url": "https://www.artscouncil.org.uk/dycp",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    },
+    {
+      "name": "NEA Creative Writing Fellowships (USA)",
+      "url": "https://www.arts.gov/grants/creative-writing-fellowships/application-calendar",
+      "bucket": "stale",
+      "reason": "HTTP 403"
+    }
+  ]
+}
