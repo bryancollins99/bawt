@@ -734,6 +734,17 @@ if(new URLSearchParams(location.search).get("selftest")==="1"){
   eq("heatBucket 1999",heatBucket(1999),3);
   eq("heatBucket 2000",heatBucket(2000),4);
 
+  // thisWeekTotal (Mon-anchored week)
+  // 2026-07-06 is Monday, 2026-07-07 is Tuesday — build a week where only Mon+Tue have words
+  var weekLog={"2026-07-06":300,"2026-07-07":700};
+  var weekTuesday=new Date(2026,6,7); // Tuesday Jul 7, dayIdx=1 (Mon=0)
+  eq("thisWeekTotal Mon+Tue",thisWeekTotal(weekLog,weekTuesday),1000);
+  eq("thisWeekTotal excludes prior week",thisWeekTotal({"2026-06-30":999,"2026-07-06":100},weekTuesday),100);
+
+  // thisMonthTotal
+  var monthLog={"2026-07-01":200,"2026-07-15":800,"2026-06-30":9999};
+  eq("thisMonthTotal sums current month only",thisMonthTotal(monthLog,new Date(2026,6,7)),1000);
+
   // shouldNudge (PRD-2)
   var t900=new Date(2026,6,7,9,0),t859=new Date(2026,6,7,8,59);
   eq("nudge fires at reminder time",shouldNudge({now:t900,reminderTime:"09:00",todaysWords:0,lastDismissedDate:null}),true);
