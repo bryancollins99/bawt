@@ -371,7 +371,7 @@
       "why": "A compact wireless mechanical board that switches between Mac and Windows layouts — the writer favorite for a satisfying tactile feel."
     },
     "logitechmxkeys": {
-      "name": "Logitech MX Keys",
+      "name": "Logitech MX Keys S",
       "category": "keyboard",
       "useCases": [
         "quiet & comfortable",
@@ -382,12 +382,12 @@
         "mac",
         "windows"
       ],
-      "price": "~$99-119",
-      "affiliateUrl": "https://www.amazon.com/s?k=Logitech+MX+Keys&tag=work089-20",
-      "why": "Quiet, low-profile keys with a comfortable typing feel and multi-device switching — best for long writing sessions in shared spaces."
+      "price": "~$109-129",
+      "affiliateUrl": "https://www.amazon.com/s?k=Logitech+MX+Keys+S&tag=work089-20",
+      "why": "Quiet, low-profile keys with smart backlighting and multi-device Flow switching — the 2026 refresh of the writer-favourite MX Keys, best for long sessions in shared spaces."
     },
     "mselite": {
-      "name": "Microsoft Ergonomic Keyboard",
+      "name": "Logitech Ergo K860",
       "category": "keyboard",
       "useCases": [
         "ergonomic",
@@ -398,9 +398,9 @@
         "windows",
         "mac"
       ],
-      "price": "~$59-129 (varies by model)",
-      "affiliateUrl": "https://www.amazon.com/s?k=Microsoft+Ergonomic+Keyboard&tag=work089-20",
-      "why": "A split, curved layout with a cushioned palm rest that reduces wrist strain — the pick if comfort over long hours is the priority."
+      "price": "~$129",
+      "affiliateUrl": "https://www.amazon.com/s?k=Logitech+Ergo+K860&tag=work089-20",
+      "why": "A split, curved layout with a cushioned wrist rest that eases strain over long hours — the current best ergonomic pick now that Microsoft has discontinued its keyboards."
     },
     "applemagic": {
       "name": "Apple Magic Keyboard",
@@ -419,20 +419,20 @@
       "why": "Slim, silent and seamless with Macs and iPads — the minimal choice for a clean Apple desk setup."
     },
     "daskeyboard": {
-      "name": "Das Keyboard 4 Professional",
+      "name": "NuPhy Air75 V2",
       "category": "keyboard",
       "useCases": [
         "mechanical & tactile",
-        "premium build",
-        "full-size"
+        "low-profile",
+        "portable"
       ],
       "platforms": [
         "mac",
         "windows"
       ],
-      "price": "~$169",
-      "affiliateUrl": "https://www.amazon.com/s?k=Das+Keyboard+4+Professional&tag=work089-20",
-      "why": "A premium full-size mechanical board with a solid build and media controls — for writers who want a durable desktop workhorse."
+      "price": "~$110-130",
+      "affiliateUrl": "https://www.amazon.com/s?k=NuPhy+Air75+V2&tag=work089-20",
+      "why": "An ultra-thin 16mm low-profile wireless mechanical board with a near-MacBook feel — the 2026 favourite for writers who want mechanical tactility without desk bulk."
     }
   },
   "recommendations": {
