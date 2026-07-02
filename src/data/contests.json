@@ -2,7 +2,9 @@
   {
     "name": "National Poetry Competition (The Poetry Society)",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "£8 first poem, £6 after",
     "freeEntry": false,
     "deadline": "2026-10-31",
@@ -10,12 +12,19 @@
     "prize": "£5,000 first prize",
     "eligibility": "Open worldwide, 18+, unpublished poem, max 40 lines",
     "url": "https://poetrysociety.org.uk/competitions/national-poetry-competition/",
-    "source": "poetrysociety.org.uk"
+    "source": "poetrysociety.org.uk",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ]
   },
   {
     "name": "Rattle Poetry Prize",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "$30 (incl. subscription)",
     "freeEntry": false,
     "deadline": "2026-07-15",
@@ -23,12 +32,19 @@
     "prize": "$15,000 + ten $500 finalists",
     "eligibility": "Open worldwide, English, unpublished poems (up to 4)",
     "url": "https://www.rattle.com/poetryprize/",
-    "source": "rattle.com"
+    "source": "rattle.com",
+    "stale": true,
+    "staleReason": "HTTP 500",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Tom Howard / Margaret Reid Poetry Contest",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "See website",
     "freeEntry": false,
     "deadline": "2026-10-01",
@@ -36,12 +52,17 @@
     "prize": "$12,000 total",
     "eligibility": "Open worldwide; published and unpublished work",
     "url": "https://winningwriters.com/our-contests/tom-howard-margaret-reid-poetry-contest",
-    "source": "winningwriters.com"
+    "source": "winningwriters.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Wergle Flomp Humor Poetry Contest",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2027-04-01",
@@ -49,12 +70,17 @@
     "prize": "$3,750 total",
     "eligibility": "Open worldwide; published and unpublished work",
     "url": "https://winningwriters.com/our-contests/wergle-flomp-humor-poetry-contest-free",
-    "source": "winningwriters.com"
+    "source": "winningwriters.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "The Moth Poetry Prize",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "€16 per poem",
     "freeEntry": false,
     "deadline": "2026-12-31",
@@ -62,12 +88,17 @@
     "prize": "€6,000 first; €11,000 total",
     "eligibility": "Open worldwide, 16+, previously unpublished, no line limit",
     "url": "https://www.themothmagazine.com/the-moth-poetry-prize",
-    "source": "themothmagazine.com"
+    "source": "themothmagazine.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Gregory O'Donoghue International Poetry Prize",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "€7 single / €30 for five",
     "freeEntry": false,
     "deadline": "2026-11-30",
@@ -75,12 +106,17 @@
     "prize": "€2,000 + publication + festival reading",
     "eligibility": "Open worldwide, poems up to 40 lines",
     "url": "https://munsterlit.ie/odonoghue-competition/",
-    "source": "munsterlit.ie"
+    "source": "munsterlit.ie",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Magma Poetry Competition",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "£5 first poem, £4 after",
     "freeEntry": false,
     "deadline": "2027-01-31",
@@ -88,12 +124,17 @@
     "prize": "£1,000 first, £300 second, £150 third",
     "eligibility": "Open worldwide; previously unpublished poems",
     "url": "https://magmapoetry.com/competition/",
-    "source": "magmapoetry.com"
+    "source": "magmapoetry.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Ledbury Poetry Competition",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "£6 per poem",
     "freeEntry": false,
     "deadline": "2026-07-27",
@@ -101,12 +142,17 @@
     "prize": "£1,000 + Arvon course (1st), £500 (2nd), £250 (3rd)",
     "eligibility": "Open worldwide; up to 10 poems, max 40 lines each",
     "url": "https://ledburypoetry.org.uk/home/ledbury-poetry-competition-2026/",
-    "source": "ledburypoetry.org.uk"
+    "source": "ledburypoetry.org.uk",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Frontier Poetry — Frontier OPEN",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "See website",
     "freeEntry": false,
     "deadline": "2026-07-12",
@@ -114,12 +160,19 @@
     "prize": "$5,000 + nine $100 finalists + publication",
     "eligibility": "Open internationally, all poets regardless of publication history",
     "url": "https://www.frontierpoetry.com/2026-frontier-open/",
-    "source": "frontierpoetry.com"
+    "source": "frontierpoetry.com",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "The Bridport Prize — Poetry",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "£13 per poem",
     "freeEntry": false,
     "deadline": "2027-05-31",
@@ -127,12 +180,20 @@
     "prize": "£5,000 first, £1,000 second, £500 third",
     "eligibility": "Any nationality writing in English, 16+, unpublished, max 42 lines",
     "url": "https://www.bridportprize.org.uk/",
-    "source": "bridportprize.org.uk"
+    "source": "bridportprize.org.uk",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "The Bridport Prize — Short Story",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "£15 per story",
     "freeEntry": false,
     "deadline": "2027-05-31",
@@ -140,12 +201,19 @@
     "prize": "£5,000 first, £1,000 second, £500 third",
     "eligibility": "Any nationality writing in English, 16+, unpublished, max 5,000 words",
     "url": "https://www.bridportprize.org.uk/",
-    "source": "bridportprize.org.uk"
+    "source": "bridportprize.org.uk",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "The Bridport Prize — Flash Fiction",
     "type": "contest",
-    "genres": ["flash-fiction"],
+    "genres": [
+      "flash-fiction"
+    ],
     "fee": "£12 per flash",
     "freeEntry": false,
     "deadline": "2027-05-31",
@@ -153,12 +221,20 @@
     "prize": "£1,000 first, £500 second, £250 third",
     "eligibility": "Any nationality writing in English, 16+, unpublished, max 250 words",
     "url": "https://www.bridportprize.org.uk/",
-    "source": "bridportprize.org.uk"
+    "source": "bridportprize.org.uk",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Bridport Peggy Chapman-Andrews First Novel Award",
     "type": "contest",
-    "genres": ["novel", "fiction"],
+    "genres": [
+      "novel",
+      "fiction"
+    ],
     "fee": "£26 per entry",
     "freeEntry": false,
     "deadline": "2027-05-31",
@@ -166,12 +242,20 @@
     "prize": "£1,500 + mentoring / agent package",
     "eligibility": "Unpublished novelists; 8,000-word opening + synopsis",
     "url": "https://www.bridportprize.org.uk/",
-    "source": "bridportprize.org.uk"
+    "source": "bridportprize.org.uk",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Bristol Short Story Prize",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "£14 (free low-income entries)",
     "freeEntry": false,
     "deadline": "2027-01-31",
@@ -179,12 +263,18 @@
     "prize": "£1,500 first, £500 second, £250 third",
     "eligibility": "Open worldwide, 16+, published & unpublished, max 4,000 words",
     "url": "https://bssp.blogs.bristol.ac.uk/",
-    "source": "bssp.blogs.bristol.ac.uk"
+    "source": "bssp.blogs.bristol.ac.uk",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Commonwealth Short Story Prize",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2026-11-01",
@@ -192,12 +282,21 @@
     "prize": "£5,000 overall; £2,500 per regional winner",
     "eligibility": "Citizen of a Commonwealth country, 18+, 2,000–5,000 words",
     "url": "https://commonwealthfoundation.com/short-story-prize/",
-    "source": "commonwealthfoundation.com"
+    "source": "commonwealthfoundation.com",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": [
+      "adult"
+    ]
   },
   {
     "name": "Aesthetica Creative Writing Award",
     "type": "contest",
-    "genres": ["poetry", "short-story", "fiction"],
+    "genres": [
+      "poetry",
+      "short-story",
+      "fiction"
+    ],
     "fee": "£12 poem / £18 story",
     "freeEntry": false,
     "deadline": "2026-08-31",
@@ -205,12 +304,17 @@
     "prize": "Two £2,500 prizes + anthology publication",
     "eligibility": "Open worldwide; poetry ≤40 lines, fiction ≤2,000 words",
     "url": "https://aestheticamagazine.com/creative-writing-award/",
-    "source": "aestheticamagazine.com"
+    "source": "aestheticamagazine.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Bath Flash Fiction Award",
     "type": "contest",
-    "genres": ["flash-fiction"],
+    "genres": [
+      "flash-fiction"
+    ],
     "fee": "See website",
     "freeEntry": false,
     "deadline": "2026-10-04",
@@ -218,12 +322,18 @@
     "prize": "£1,000 first, £300 second, £100 third",
     "eligibility": "Open worldwide; up to 300 words",
     "url": "https://bathflashfictionaward.com/",
-    "source": "bathflashfictionaward.com"
+    "source": "bathflashfictionaward.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Bath Short Story Award",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "£9 per entry",
     "freeEntry": false,
     "deadline": "2027-04-26",
@@ -231,12 +341,18 @@
     "prize": "£1,200 first, £300 second, £100 third",
     "eligibility": "Open worldwide; max 2,200 words",
     "url": "https://www.bathshortstoryaward.org/",
-    "source": "bathshortstoryaward.org"
+    "source": "bathshortstoryaward.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Reedsy Prompts Weekly Short Story Contest",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2026-07-03",
@@ -245,12 +361,17 @@
     "prize": "$250 weekly",
     "eligibility": "Open worldwide; respond to weekly prompts",
     "url": "https://reedsy.com/creative-writing-prompts",
-    "source": "reedsy.com"
+    "source": "reedsy.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "SmokeLong Quarterly Award for Flash Fiction",
     "type": "contest",
-    "genres": ["flash-fiction"],
+    "genres": [
+      "flash-fiction"
+    ],
     "fee": "$15 per entry",
     "freeEntry": false,
     "deadline": "2027-05-10",
@@ -258,12 +379,20 @@
     "prize": "$2,500 first, $1,000 second, $500 third",
     "eligibility": "Open worldwide, 18+; flash fiction",
     "url": "https://www.smokelong.com/the-smokelong-quarterly-award-for-flash-fiction-2026/",
-    "source": "smokelong.com"
+    "source": "smokelong.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ]
   },
   {
     "name": "Galley Beggar Press Short Story Prize",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "£11 per story (free hardship entries)",
     "freeEntry": false,
     "deadline": "2026-11-08",
@@ -271,12 +400,17 @@
     "prize": "£2,500 winner; £200 shortlist",
     "eligibility": "Open worldwide, English; max 6,000 words",
     "url": "https://www.galleybeggar.co.uk/prize",
-    "source": "galleybeggar.co.uk"
+    "source": "galleybeggar.co.uk",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "National Flash Fiction Day Micro Competition",
     "type": "contest",
-    "genres": ["flash-fiction"],
+    "genres": [
+      "flash-fiction"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2027-02-15",
@@ -284,12 +418,19 @@
     "prize": "Publication + small cash prizes",
     "eligibility": "Open worldwide; micro fiction (typically ≤100 words)",
     "url": "https://www.nationalflashfictionday.co.uk/index.php/competition/competition-submission-guidelines/",
-    "source": "nationalflashfictionday.co.uk"
+    "source": "nationalflashfictionday.co.uk",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "L. Ron Hubbard Writers of the Future Contest",
     "type": "contest",
-    "genres": ["speculative", "short-story", "fiction"],
+    "genres": [
+      "speculative",
+      "short-story",
+      "fiction"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2026-09-30",
@@ -298,12 +439,18 @@
     "prize": "$1,000/$750/$500 per quarter + $5,000 annual grand prize",
     "eligibility": "Emerging writers; SF/fantasy/light horror ≤17,000 words; no AI",
     "url": "https://writersofthefuture.com/enter-writer-contest/",
-    "source": "writersofthefuture.com"
+    "source": "writersofthefuture.com",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "Mslexia Novel Competition",
     "type": "contest",
-    "genres": ["novel", "fiction"],
+    "genres": [
+      "novel",
+      "fiction"
+    ],
     "fee": "See website",
     "freeEntry": false,
     "deadline": "2026-09-21",
@@ -311,12 +458,18 @@
     "prize": "£5,000 + manuscript feedback + agent intros",
     "eligibility": "Women, any nationality, unpublished novels ≥50,000 words",
     "url": "https://mslexia.co.uk/competitions/adult-novel/",
-    "source": "mslexia.co.uk"
+    "source": "mslexia.co.uk",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Bath Novel Award",
     "type": "contest",
-    "genres": ["novel", "fiction"],
+    "genres": [
+      "novel",
+      "fiction"
+    ],
     "fee": "£33 per novel",
     "freeEntry": false,
     "deadline": "2027-05-31",
@@ -324,12 +477,19 @@
     "prize": "£5,000",
     "eligibility": "Unagented emerging writers, adult/YA; 5,000-word opening + synopsis",
     "url": "https://bathnovelaward.co.uk/",
-    "source": "bathnovelaward.co.uk"
+    "source": "bathnovelaward.co.uk",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "Bath Children's Novel Award",
     "type": "contest",
-    "genres": ["children", "novel", "fiction"],
+    "genres": [
+      "children",
+      "novel",
+      "fiction"
+    ],
     "fee": "£33 per novel",
     "freeEntry": false,
     "deadline": "2026-11-30",
@@ -337,12 +497,18 @@
     "prize": "£5,000",
     "eligibility": "Emerging, unagented authors of children's / YA books",
     "url": "https://bathnovelaward.co.uk/childrens-novel-award/",
-    "source": "bathnovelaward.co.uk"
+    "source": "bathnovelaward.co.uk",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "The Caledonia Novel Award",
     "type": "contest",
-    "genres": ["novel", "fiction"],
+    "genres": [
+      "novel",
+      "fiction"
+    ],
     "fee": "£28 per novel",
     "freeEntry": false,
     "deadline": "2026-10-15",
@@ -350,12 +516,21 @@
     "prize": "£1,500 first + £500 second + writing course",
     "eligibility": "Unpublished or self-published novelists; first 20 pages + synopsis",
     "url": "https://thecaledonianovelaward.com/",
-    "source": "thecaledonianovelaward.com"
+    "source": "thecaledonianovelaward.com",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "The Times / Chicken House Children's Fiction Competition",
     "type": "contest",
-    "genres": ["children", "novel", "fiction"],
+    "genres": [
+      "children",
+      "novel",
+      "fiction"
+    ],
     "fee": "See website",
     "freeEntry": false,
     "deadline": "2027-06-01",
@@ -363,12 +538,18 @@
     "prize": "Publishing contract + £10,000 royalty advance",
     "eligibility": "Unpublished & unagented writers; novel for ages 7–18",
     "url": "https://www.chickenhousebooks.com/submissions/",
-    "source": "chickenhousebooks.com"
+    "source": "chickenhousebooks.com",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "Fish Publishing Short Story Prize",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "€24 / €16 subsequent",
     "freeEntry": false,
     "deadline": "2026-11-30",
@@ -376,12 +557,17 @@
     "prize": "€3,000 first + workshop; €300 second & third",
     "eligibility": "Any nationality writing in English; max 5,000 words; unpublished",
     "url": "https://fishpublishing.com/competition/short-story-contest/",
-    "source": "fishpublishing.com"
+    "source": "fishpublishing.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Fish Publishing Flash Fiction Prize",
     "type": "contest",
-    "genres": ["flash-fiction"],
+    "genres": [
+      "flash-fiction"
+    ],
     "fee": "€16 / €11 subsequent",
     "freeEntry": false,
     "deadline": "2027-02-28",
@@ -389,12 +575,18 @@
     "prize": "€1,000 first; course + €300 second; €300 third",
     "eligibility": "Any nationality writing in English; max 300 words",
     "url": "https://fishpublishing.com/competition/flash-fiction-contest/",
-    "source": "fishpublishing.com"
+    "source": "fishpublishing.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Fish Publishing Short Memoir Prize",
     "type": "contest",
-    "genres": ["memoir", "nonfiction"],
+    "genres": [
+      "memoir",
+      "nonfiction"
+    ],
     "fee": "€22 / €15 subsequent",
     "freeEntry": false,
     "deadline": "2027-01-31",
@@ -402,12 +594,17 @@
     "prize": "€1,000 first; course + €300 second & third",
     "eligibility": "Any nationality writing in English; max 4,000 words; unpublished",
     "url": "https://fishpublishing.com/competition/short-memoir-contest/",
-    "source": "fishpublishing.com"
+    "source": "fishpublishing.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Fish Publishing Poetry Prize",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "€16 / €11 subsequent",
     "freeEntry": false,
     "deadline": "2027-03-31",
@@ -415,12 +612,18 @@
     "prize": "€1,000 first; course + €300 second; €300 third",
     "eligibility": "Any nationality writing in English; poems ≤60 lines",
     "url": "https://fishpublishing.com/competition/poetry-contest/",
-    "source": "fishpublishing.com"
+    "source": "fishpublishing.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Fitzcarraldo Editions Essay Prize",
     "type": "contest",
-    "genres": ["essay", "nonfiction"],
+    "genres": [
+      "essay",
+      "nonfiction"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2027-03-16",
@@ -428,12 +631,18 @@
     "prize": "£4,000 + residency + publication",
     "eligibility": "Unpublished writers in UK & Ireland, no book deal; essay proposal ≥25,000 words",
     "url": "https://fitzcarraldoeditions.com/prizes/essay-prize/the-essay-prize-entry-requirements/",
-    "source": "fitzcarraldoeditions.com"
+    "source": "fitzcarraldoeditions.com",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "The Nine Dots Prize",
     "type": "contest",
-    "genres": ["essay", "nonfiction"],
+    "genres": [
+      "essay",
+      "nonfiction"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2027-01-24",
@@ -441,12 +650,17 @@
     "prize": "US$100,000 + book deal",
     "eligibility": "Open worldwide; 3,000-word response to the set question",
     "url": "https://ninedotsprize.org/",
-    "source": "ninedotsprize.org"
+    "source": "ninedotsprize.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Wells Festival of Literature — Poetry Competition",
     "type": "contest",
-    "genres": ["poetry"],
+    "genres": [
+      "poetry"
+    ],
     "fee": "£8 per poem",
     "freeEntry": false,
     "deadline": "2027-06-30",
@@ -454,12 +668,18 @@
     "prize": "Share of £5,000 across sections",
     "eligibility": "Original, unpublished poems up to 40 lines",
     "url": "https://wellsfestivalofliterature.org.uk/competitions/",
-    "source": "wellsfestivalofliterature.org.uk"
+    "source": "wellsfestivalofliterature.org.uk",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "Wells Festival of Literature — Short Story Competition",
     "type": "contest",
-    "genres": ["short-story", "fiction"],
+    "genres": [
+      "short-story",
+      "fiction"
+    ],
     "fee": "£8 per entry",
     "freeEntry": false,
     "deadline": "2027-06-30",
@@ -467,12 +687,19 @@
     "prize": "Share of £5,000 across sections",
     "eligibility": "Original, unpublished short stories 1,000–2,000 words",
     "url": "https://wellsfestivalofliterature.org.uk/competitions/short-story-competition/",
-    "source": "wellsfestivalofliterature.org.uk"
+    "source": "wellsfestivalofliterature.org.uk",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "Wells Festival of Literature — Book for Children Competition",
     "type": "contest",
-    "genres": ["children", "novel", "fiction"],
+    "genres": [
+      "children",
+      "novel",
+      "fiction"
+    ],
     "fee": "£8 per entry",
     "freeEntry": false,
     "deadline": "2027-06-30",
@@ -480,12 +707,20 @@
     "prize": "Share of £5,000 across sections",
     "eligibility": "First three chapters + synopsis; book for ages 7–YA",
     "url": "https://wellsfestivalofliterature.org.uk/competitions/",
-    "source": "wellsfestivalofliterature.org.uk"
+    "source": "wellsfestivalofliterature.org.uk",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "Arts Council England — Developing Your Creative Practice (DYCP)",
     "type": "grant",
-    "genres": ["poetry", "fiction", "nonfiction", "essay"],
+    "genres": [
+      "poetry",
+      "fiction",
+      "nonfiction",
+      "essay"
+    ],
     "fee": "Free to apply",
     "freeEntry": true,
     "deadline": "2026-07-02",
@@ -494,12 +729,21 @@
     "prize": "£2,000–£12,000 for creative development",
     "eligibility": "England-based individual creative practitioners; rolling rounds; limits on repeat applicants",
     "url": "https://www.artscouncil.org.uk/dycp",
-    "source": "artscouncil.org.uk"
+    "source": "artscouncil.org.uk",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": "uk",
+    "audience": null
   },
   {
     "name": "NEA Creative Writing Fellowships (USA)",
     "type": "grant",
-    "genres": ["poetry", "fiction", "nonfiction"],
+    "genres": [
+      "poetry",
+      "fiction",
+      "nonfiction"
+    ],
     "fee": "Free to apply",
     "freeEntry": true,
     "deadline": "2027-03-15",
@@ -507,12 +751,21 @@
     "prize": "$25,000 fellowship",
     "eligibility": "US citizens / permanent residents; published creative writers meeting thresholds",
     "url": "https://www.arts.gov/grants/creative-writing-fellowships/application-calendar",
-    "source": "arts.gov"
+    "source": "arts.gov",
+    "stale": true,
+    "staleReason": "HTTP 403",
+    "hasCashPrize": true,
+    "region": "us",
+    "audience": null
   },
   {
     "name": "Guggenheim Fellowship (US & Canada)",
     "type": "grant",
-    "genres": ["poetry", "fiction", "nonfiction"],
+    "genres": [
+      "poetry",
+      "fiction",
+      "nonfiction"
+    ],
     "fee": "Free to apply",
     "freeEntry": true,
     "deadline": "2026-09-15",
@@ -520,12 +773,20 @@
     "prize": "Grant amount varies; ~175 fellowships/year",
     "eligibility": "US/Canada citizens or permanent residents; mid-career practitioners",
     "url": "https://www.gf.org/program/how-to-apply",
-    "source": "gf.org"
+    "source": "gf.org",
+    "hasCashPrize": true,
+    "region": null,
+    "audience": null
   },
   {
     "name": "Arts Council of Ireland — Literature Bursary Award",
     "type": "grant",
-    "genres": ["fiction", "nonfiction", "poetry", "children"],
+    "genres": [
+      "fiction",
+      "nonfiction",
+      "poetry",
+      "children"
+    ],
     "fee": "Free to apply",
     "freeEntry": true,
     "deadline": "2027-02-11",
@@ -533,12 +794,20 @@
     "prize": "€7,500 / €10,000 / €15,000 / €20,000",
     "eligibility": "Professional literary writers based in Ireland",
     "url": "https://artscouncil.ie/funding-opportunities/bursary-award-round-1/literature-bursary-award-english-language-round-1/",
-    "source": "artscouncil.ie"
+    "source": "artscouncil.ie",
+    "hasCashPrize": true,
+    "region": "ireland",
+    "audience": null
   },
   {
     "name": "Irish Writers Centre — National Mentoring Programme (Words Ireland)",
     "type": "grant",
-    "genres": ["fiction", "nonfiction", "poetry", "children"],
+    "genres": [
+      "fiction",
+      "nonfiction",
+      "poetry",
+      "children"
+    ],
     "fee": "Free",
     "freeEntry": true,
     "deadline": "2027-01-15",
@@ -546,12 +815,21 @@
     "prize": "Mentoring with an established Irish writer (min 35 places)",
     "eligibility": "Emerging writers 18+ resident on the island of Ireland",
     "url": "https://irishwriterscentre.ie/national-mentoring-programme/",
-    "source": "irishwriterscentre.ie"
+    "source": "irishwriterscentre.ie",
+    "hasCashPrize": false,
+    "region": "ireland",
+    "audience": [
+      "adult"
+    ]
   },
   {
     "name": "PEN America — Emerging Voices Fellowship",
     "type": "grant",
-    "genres": ["fiction", "nonfiction", "poetry"],
+    "genres": [
+      "fiction",
+      "nonfiction",
+      "poetry"
+    ],
     "fee": "Free to apply",
     "freeEntry": true,
     "deadline": "2027-01-31",
@@ -559,12 +837,18 @@
     "prize": "$1,500 each (nine fellows) + mentorship",
     "eligibility": "Early-career US writers from underrepresented communities; no book published/under contract",
     "url": "https://pen.org/emerging-voices-fellowship/",
-    "source": "pen.org"
+    "source": "pen.org",
+    "hasCashPrize": true,
+    "region": "us",
+    "audience": null
   },
   {
     "name": "Speculative Literature Foundation — Grants",
     "type": "grant",
-    "genres": ["speculative", "fiction"],
+    "genres": [
+      "speculative",
+      "fiction"
+    ],
     "fee": "Free to apply",
     "freeEntry": true,
     "deadline": "2027-05-31",
@@ -572,12 +856,19 @@
     "prize": "$500–$1,000 depending on grant",
     "eligibility": "International speculative-fiction writers; multiple grants year-round",
     "url": "https://speculativeliterature.org/grants/",
-    "source": "speculativeliterature.org"
+    "source": "speculativeliterature.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": null
   },
   {
     "name": "Amazon Literary Partnership Grants",
     "type": "grant",
-    "genres": ["fiction", "nonfiction", "poetry"],
+    "genres": [
+      "fiction",
+      "nonfiction",
+      "poetry"
+    ],
     "fee": "Free to apply",
     "freeEntry": true,
     "deadline": "2027-05-01",
@@ -585,6 +876,9 @@
     "prize": "$5,000–$20,000 per organization",
     "eligibility": "US-registered nonprofit literary organizations only — not individual writers",
     "url": "https://www.aboutamazon.com/news/books-and-authors/apply-now-for-this-years-amazon-literary-partnership-grants",
-    "source": "aboutamazon.com"
+    "source": "aboutamazon.com",
+    "hasCashPrize": true,
+    "region": "us",
+    "audience": null
   }
 ]

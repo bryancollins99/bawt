@@ -87,11 +87,15 @@ export function formatDeadline(iso) {
  * Filter a list of contest entries.
  * @param {Array} entries
  * @param {Object} filters
- * @param {string}  filters.genre       - genre slug or 'all'
- * @param {string}  filters.type        - 'all' | 'contest' | 'grant'
- * @param {boolean} filters.freeOnly    - only show free-entry entries
- * @param {boolean} filters.hideExpired - drop entries whose deadline has passed
- * @param {string}  filters.search      - case-insensitive text match on name/prize/eligibility
+ * @param {string}  filters.genre        - genre slug or 'all'
+ * @param {string}  filters.type         - 'all' | 'contest' | 'grant'
+ * @param {boolean} filters.freeOnly     - only show free-entry entries
+ * @param {boolean} filters.hideExpired  - drop entries whose deadline has passed
+ * @param {string}  filters.search       - case-insensitive text match on name/prize/eligibility
+ * @param {string}  filters.region       - region slug ('all' | 'worldwide' | 'us' | 'uk' | 'ireland' | ...)
+ * @param {string}  filters.audience     - audience slug ('all' | 'adult' | 'teen' | 'youth' | 'student')
+ * @param {boolean} filters.cashOnly     - only show entries with a cash prize
+ * @param {string}  filters.year         - deadline year ('all' | '2026' | '2027' | ...)
  * @param {Date}    now
  */
 export function filterContests(entries, filters = {}, now = new Date()) {
@@ -101,6 +105,10 @@ export function filterContests(entries, filters = {}, now = new Date()) {
     freeOnly = false,
     hideExpired = false,
     search = '',
+    region = 'all',
+    audience = 'all',
+    cashOnly = false,
+    year = 'all',
   } = filters;
   const q = search.trim().toLowerCase();
 
@@ -109,6 +117,10 @@ export function filterContests(entries, filters = {}, now = new Date()) {
     if (genre !== 'all' && !(Array.isArray(e.genres) && e.genres.includes(genre))) return false;
     if (freeOnly && !e.freeEntry) return false;
     if (hideExpired && effectiveExpired(e, now)) return false;
+    if (region !== 'all' && e.region !== region) return false;
+    if (audience !== 'all' && !(Array.isArray(e.audience) && e.audience.includes(audience))) return false;
+    if (cashOnly && !e.hasCashPrize) return false;
+    if (year !== 'all' && (e.deadline ? e.deadline.slice(0, 4) : null) !== year) return false;
     if (q) {
       const hay = `${e.name} ${e.prize || ''} ${e.eligibility || ''} ${(e.genres || []).join(' ')}`.toLowerCase();
       if (!hay.includes(q)) return false;
@@ -154,10 +166,37 @@ export function collectGenres(entries) {
   return Array.from(set).sort();
 }
 
+/** Distinct non-null region values present in the dataset. */
+export function collectRegions(entries) {
+  const set = new Set();
+  entries.forEach((e) => { if (e.region) set.add(e.region); });
+  return Array.from(set).sort();
+}
+
+/** Distinct non-null audience values present in the dataset. */
+export function collectAudiences(entries) {
+  const set = new Set();
+  entries.forEach((e) => (e.audience || []).forEach((a) => set.add(a)));
+  return Array.from(set).sort();
+}
+
+/** Distinct deadline years present in the dataset. */
+export function collectYears(entries) {
+  const set = new Set();
+  entries.forEach((e) => { if (e.deadline) set.add(e.deadline.slice(0, 4)); });
+  return Array.from(set).sort();
+}
+
 /** Turn a genre slug into a display label, e.g. "short-story" -> "Short Story". */
 export function genreLabel(slug) {
   return String(slug)
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
+}
+
+/** Human-readable label for a region slug. */
+export function regionLabel(slug) {
+  const MAP = { worldwide: 'Worldwide', us: 'USA', uk: 'UK', ireland: 'Ireland', canada: 'Canada' };
+  return MAP[slug] || slug.charAt(0).toUpperCase() + slug.slice(1);
 }

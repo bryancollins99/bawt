@@ -18,6 +18,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/build-contest-page.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "build:embed": "vite build --mode embed",

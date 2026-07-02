@@ -1,0 +1,49 @@
+<!-- Writing Contests Database — WordPress page artifact
+     Slug: /writing-contests-database/
+
+     BEFORE APPLYING: verify the slug is not caught by an existing Rank Math redirect.
+     The /tools/ slug was blocked by a legacy redirect in the 2026-07-02 session.
+     Run: wp redirect list --format=table | grep writing-contests
+     and check Rank Math > Redirections for any rule matching /writing-contests-database/.
+     If clear, apply via WP-CLI or the editor.
+
+     WP-CLI insert (run from server with WP installed):
+       wp post create \
+         --post_type=page \
+         --post_title="Writing Contests Database 2026" \
+         --post_name="writing-contests-database" \
+         --post_status=publish \
+         --post_author=1 \
+         --post_content="$(cat handoff/writing-contests-database-page.html)" \
+         --post_excerpt="A filterable database of writing contests, grants, and prizes with live deadlines."
+
+     Or paste the content block below directly into the WordPress block editor
+     using the HTML block type.
+-->
+
+<!-- wp:paragraph -->
+<p>This database lists writing contests and grants, with filters for genre, region, cash prizes, and the closing year. Each entry links directly to the organiser's page. Deadlines are hand-curated and verified by automated link checks.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Use the filters to find contests open worldwide or in your region, contests that offer a cash prize, free-entry opportunities, or contests closing in 2026 or 2027. The database covers poetry, short story, flash fiction, novel, essay, memoir, and speculative fiction.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="width:100%;overflow:hidden;">
+  <iframe
+    src="https://bawt.netlify.app/writing-contests.html"
+    title="Writing Contests and Grants Database"
+    width="100%"
+    height="1000"
+    frameborder="0"
+    scrolling="yes"
+    style="border:none;display:block;"
+    loading="lazy">
+  </iframe>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p>Looking for more writing resources? See the <a href="/free-writing-tools/">free writing tools collection</a> or use the <a href="/plan/">book deadline planner</a> to map out your manuscript schedule.</p>
+<!-- /wp:paragraph -->
