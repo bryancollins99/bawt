@@ -31,14 +31,18 @@ Each tool can be embedded in WordPress using URL parameters:
 https://your-domain.com/?embed=true&tool=TOOL_ID
 ```
 
-**Tool IDs:**
-- `emotional-tone` - Emotional Tone + Filler Checker
-- `palindrome` - Palindrome Checker  
-- `royalty` - Book Royalty Calculator
+**Tool IDs** (full registry in `src/utils/toolRegistry.js`):
+- `tone` - Emotional Tone + Filler Checker
+- `palindrome` - Palindrome Checker
+- `hard-words-quiz` - Hard Words Spelling Quiz
+
+An unknown `tool` value renders a visible "Tool not found" message with a link
+to the tools index (it no longer falls back silently to a default tool), so
+double-check the ID against `src/utils/toolRegistry.js` before shipping an embed.
 
 **Example WordPress shortcode:**
 ```html
-<iframe src="https://your-tools-site.com/?embed=true&tool=emotional-tone" 
+<iframe src="https://your-tools-site.com/?embed=true&tool=tone" 
         width="100%" height="800" frameborder="0"></iframe>
 ```
 
