@@ -124,11 +124,13 @@ function sessionEvent({
   slug,
   amount_total = 1900,
   currency = "usd",
+  created = 1783000000,
 } = {}) {
   // Payment Link session: NO inline line_items / price (mirrors reality). When a
   // slug is given it rides in metadata.slug (the PRIMARY, secret-key-free path);
-  // otherwise the webhook falls back to price-id resolution.
-  const object = { id: sessionId, customer_details: { email }, amount_total, currency };
+  // otherwise the webhook falls back to price-id resolution. `created` + `id` are
+  // the stable keys the sale log dedups on across Stripe re-deliveries.
+  const object = { id: sessionId, created, customer_details: { email }, amount_total, currency };
   if (slug) object.metadata = { slug };
   return JSON.stringify({
     id: "evt_test",
@@ -364,7 +366,14 @@ async function run() {
     assert.equal(bySlug["filler-word-pack"].count, 1, "per-slug count (filler)");
     assert.equal(bySlug["filler-word-pack"].gross, 1900, "per-slug gross (filler)");
     assert.equal(bySlug["prompt-word-bank-pack"].gross, 1200, "per-slug gross (prompt pack)");
-    ok("completed session writes one hashed sale record; /_sales aggregates per-slug totals");
+
+    // Idempotency: Stripe re-delivers the SAME session -> must not double-count.
+    await webhookHandler(webhookEvent(raw)); // identical id + created as the first
+    assert.equal(salesStore._map.size, 2, "re-delivered session overwrites, no double-count");
+    const restats = JSON.parse((await salesStatsHandler({ httpMethod: "GET" })).body);
+    assert.equal(restats.count, 2, "/_sales count stable across re-delivery");
+    assert.equal(restats.gross, 3100, "/_sales gross stable across re-delivery");
+    ok("completed session writes one hashed sale record; /_sales aggregates; re-delivery is idempotent");
   }
 
   // ---- 10. dry-run records NO sale ----

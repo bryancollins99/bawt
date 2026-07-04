@@ -105,21 +105,6 @@ export async function handler(event) {
     return json(200, { received: true, mapped: false, slug, via });
   }
 
-  // Record the sale (guarded: never in dry-run). A metrics-store failure must
-  // not block fulfilment, so this is best-effort with its own try/catch.
-  if (!dryRun) {
-    try {
-      await recordSale(getSalesStore(), {
-        slug: product.slug,
-        amount_total: session.amount_total,
-        currency: session.currency,
-        email,
-      });
-    } catch (e) {
-      console.error(`[stripe-webhook] sale record failed for ${product.slug}: ${e.message}`);
-    }
-  }
-
   if (!email) {
     console.error(`[stripe-webhook] no buyer email on session ${session.id} for ${product.slug}`);
     return json(200, { received: true, mapped: true, emailed: false, reason: "no-email" });
@@ -128,6 +113,24 @@ export async function handler(event) {
   const exp = Math.floor(Date.now() / 1000) + TOKEN_TTL_SECONDS;
   const token = mintToken(DELIVER_TOKEN_SECRET, { slug: product.slug, email, exp });
   const url = `${downloadBaseUrl()}/download?token=${encodeURIComponent(token)}`;
+
+  // Record the sale (guarded: never in dry-run). Keyed on the session's stable
+  // created time + id so a Stripe re-delivery overwrites rather than double-counts.
+  // Best-effort: a metrics-store failure must not block fulfilment.
+  if (!dryRun) {
+    try {
+      await recordSale(getSalesStore(), {
+        slug: product.slug,
+        amount_total: session.amount_total,
+        currency: session.currency,
+        email,
+        ts: Number.isFinite(session.created) ? session.created * 1000 : undefined,
+        sessionId: session.id,
+      });
+    } catch (e) {
+      console.error(`[stripe-webhook] sale record failed for ${product.slug}: ${e.message}`);
+    }
+  }
 
   try {
     const result = await sendDownloadEmail({

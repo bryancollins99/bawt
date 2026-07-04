@@ -256,9 +256,17 @@ export function hashEmail(email) {
 
 // Write one sale record. Returns { key, record }. Throws only on a store error;
 // callers wrap this so a metrics failure never blocks fulfilment.
-export async function recordSale(store, { slug, amount_total, currency, email, ts } = {}) {
+//
+// The key is "<ISO ts>_<slug>_<sessionId>". Stripe delivers
+// checkout.session.completed AT LEAST once (retries on our 500s are expected), so
+// the key must be STABLE across re-deliveries: pass the session's own `created`
+// time as `ts` and its id as `sessionId`, and a redelivery overwrites the same
+// record instead of double-counting. Only falls back to Date.now() if no stable
+// timestamp is supplied.
+export async function recordSale(store, { slug, amount_total, currency, email, ts, sessionId } = {}) {
   const stamp = Number.isFinite(ts) ? ts : Date.now();
-  const key = `${new Date(stamp).toISOString()}_${slug}`;
+  const idPart = sessionId ? `_${sessionId}` : "";
+  const key = `${new Date(stamp).toISOString()}_${slug}${idPart}`;
   const record = {
     slug: slug || null,
     amount_total: Number.isFinite(amount_total) ? amount_total : null,
