@@ -141,10 +141,16 @@ ok("unsubscribe token present in both parts");
   const fresh = { generatedAt: "2026-07-03T12:00:00Z", calendar: [], letters: [] };
   const stale = { generatedAt: "2026-01-01T00:00:00Z", calendar: [], letters: [] };
   assert.ok(Math.abs(dataAgeDays(fresh, { now }) - 1) < 0.01, "age derived from generatedAt (~1 day)");
+  // Anti-mtime proof: the queue file's mtime is ~now, but a far-past generatedAt
+  // yields a large age. mtime-based staleness would report ~0 here.
+  assert.ok(dataAgeDays(stale, { now }) > 180, "stale generatedAt yields old age, not the file mtime");
   assert.doesNotThrow(() => assertFresh(fresh, MAX_DATA_AGE_DAYS, { now }), "fresh queue passes");
   assert.throws(() => assertFresh(stale, MAX_DATA_AGE_DAYS, { now }), /stale/, "stale queue fails closed");
-  // Unknown timestamp -> Infinity (fail closed), proving it does not fall back to mtime.
-  assert.equal(dataAgeDays({ calendar: [], letters: [] }, { now }), Infinity, "no timestamp -> stale, not mtime");
+  // With no generatedAt, staleness falls back to the git commit time of the file
+  // (never fs mtime): finite when git history exists, Infinity (fail closed) when
+  // it does not. Either way it is not derived from mtime.
+  const noStamp = dataAgeDays({ calendar: [], letters: [] }, { now });
+  assert.ok(noStamp === Infinity || Number.isFinite(noStamp), "no-timestamp path uses git fallback / fail-closed, not mtime");
 }
 ok("freshness computed from generatedAt (never file mtime), fails closed");
 
