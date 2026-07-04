@@ -5,7 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Serverless functions (list-capture double opt-in: subscribe + confirm)
+# Serverless functions:
+#   list-capture double opt-in (subscribe, confirm),
+#   newsletter one-click poll (vote),
+#   digital-product delivery (stripe-webhook, download)
 [functions]
   directory = "netlify/functions"
 
@@ -109,6 +112,12 @@
 [[redirects]]
   from = "/embed/sad-words"
   to = "/?embed=true&tool=sad-words"
+  status = 200
+
+# Newsletter one-click poll endpoint (footer Yes/No links)
+[[redirects]]
+  from = "/vote"
+  to = "/.netlify/functions/vote"
   status = 200
 
 # Handle client-side routing

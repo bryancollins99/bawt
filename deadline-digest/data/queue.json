@@ -1,0 +1,424 @@
+{
+  "generatedAt": "2026-07-04T21:02:06.355Z",
+  "meta": {
+    "note": "Personal-letter send queue for Become a Writer Today. calendar = 36 slots (weeks 1-12, 3/week, Mon/Wed/Fri). letters[n] maps to calendar slot n (1-based). Each letter carries BOTH an affiliate (P.S.) and a product (P.P.S.); anchor text only, URLs live in href. Slots 10-36 await drafted bodies."
+  },
+  "calendar": [
+    {
+      "week": 1,
+      "thread": "craft/editing",
+      "source": "50 Filler Words List to Cut From Your Writing",
+      "monetise": "product",
+      "detail": "Filler-Word Killer Editor Pack"
+    },
+    {
+      "week": 1,
+      "thread": "ai-for-writers",
+      "source": "The 8 Best Grammar Checkers for Writers in 2026",
+      "monetise": "affiliate",
+      "detail": "grammarly"
+    },
+    {
+      "week": 1,
+      "thread": "freelance-income",
+      "source": "7 Income Streams for Writers to Get Rich",
+      "monetise": "product",
+      "detail": "How to Earn $3-5k Writing Online"
+    },
+    {
+      "week": 2,
+      "thread": "craft/editing",
+      "source": "Show Don't Tell: Examples From Literature",
+      "monetise": "affiliate",
+      "detail": "prowritingaid"
+    },
+    {
+      "week": 2,
+      "thread": "ai-for-writers",
+      "source": "Grammarly Alternatives: 12 Tools Compared (2026)",
+      "monetise": "affiliate",
+      "detail": "grammarly"
+    },
+    {
+      "week": 2,
+      "thread": "mindset",
+      "source": "Finding Time to Write: Balancing Creative Projects",
+      "monetise": "product",
+      "detail": "The Fearless Creative"
+    },
+    {
+      "week": 3,
+      "thread": "craft/editing",
+      "source": "How to Write a Short Story: A Complete Guide",
+      "monetise": "affiliate",
+      "detail": "prowritingaid"
+    },
+    {
+      "week": 3,
+      "thread": "ai-for-writers",
+      "source": "Best AI Writing Software: Reviews and Comparisons",
+      "monetise": "product",
+      "detail": "Claude Code for Writers"
+    },
+    {
+      "week": 3,
+      "thread": "notes-systems",
+      "source": "7 Best Apps for Taking Notes While Reading",
+      "monetise": "product",
+      "detail": "The Zettelkasten for Creators Kit"
+    },
+    {
+      "week": 4,
+      "thread": "craft/editing",
+      "source": "Top Dead Words List: 103 Overused Words to Avoid",
+      "monetise": "product",
+      "detail": "Filler-Word Killer Editor Pack"
+    },
+    {
+      "week": 4,
+      "thread": "ai-for-writers",
+      "source": "Grammarly Review (2026): An Honest Verdict",
+      "monetise": "affiliate",
+      "detail": "grammarly"
+    },
+    {
+      "week": 4,
+      "thread": "deadlines",
+      "source": "15 Poetry Contests to Enter in 2026",
+      "monetise": "affiliate",
+      "detail": "contest organiser"
+    },
+    {
+      "week": 5,
+      "thread": "craft/editing",
+      "source": "Transition Words for Writers: The Complete List",
+      "monetise": "affiliate",
+      "detail": "prowritingaid"
+    },
+    {
+      "week": 5,
+      "thread": "ai-for-writers",
+      "source": "Best AI Writing Software: Reviews and Comparisons",
+      "monetise": "product",
+      "detail": "Claude Code for Writers"
+    },
+    {
+      "week": 5,
+      "thread": "prompts",
+      "source": "List of Random Words To Upgrade Your Writing",
+      "monetise": "product",
+      "detail": "Prompt / Word-Bank Pack"
+    },
+    {
+      "week": 6,
+      "thread": "craft/editing",
+      "source": "Best Books on the Craft of Writing",
+      "monetise": "product",
+      "detail": "Filler-Word Killer Editor Pack"
+    },
+    {
+      "week": 6,
+      "thread": "ai-for-writers",
+      "source": "Which Grammarly Plan is Best? Free vs. Premium",
+      "monetise": "affiliate",
+      "detail": "grammarly"
+    },
+    {
+      "week": 6,
+      "thread": "freelance-income",
+      "source": "Freelance Writing: The Complete Guide",
+      "monetise": "affiliate",
+      "detail": "teachable"
+    },
+    {
+      "week": 7,
+      "thread": "craft/editing",
+      "source": "Words to Describe Setting in Fiction: 150+",
+      "monetise": "affiliate",
+      "detail": "prowritingaid"
+    },
+    {
+      "week": 7,
+      "thread": "ai-for-writers",
+      "source": "The 8 Best Grammar Checkers for Writers in 2026",
+      "monetise": "product",
+      "detail": "Claude Code for Writers"
+    },
+    {
+      "week": 7,
+      "thread": "mindset",
+      "source": "Top 57 Famous Writer Quotes",
+      "monetise": "affiliate",
+      "detail": "masterclass"
+    },
+    {
+      "week": 8,
+      "thread": "craft/editing",
+      "source": "Writing Characterization: A Step-By-Step Guide",
+      "monetise": "affiliate",
+      "detail": "prowritingaid"
+    },
+    {
+      "week": 8,
+      "thread": "ai-for-writers",
+      "source": "Grammarly Alternatives: 12 Tools Compared (2026)",
+      "monetise": "affiliate",
+      "detail": "grammarly"
+    },
+    {
+      "week": 8,
+      "thread": "notes-systems",
+      "source": "16 Best Note-Taking Apps in 2026",
+      "monetise": "product",
+      "detail": "The Zettelkasten for Creators Kit"
+    },
+    {
+      "week": 9,
+      "thread": "craft/editing",
+      "source": "10 Best Writing Tips for Short Stories",
+      "monetise": "product",
+      "detail": "Filler-Word Killer Editor Pack"
+    },
+    {
+      "week": 9,
+      "thread": "ai-for-writers",
+      "source": "Best AI Writing Software: Reviews and Comparisons",
+      "monetise": "product",
+      "detail": "Claude Code for Writers"
+    },
+    {
+      "week": 9,
+      "thread": "deadlines",
+      "source": "14 Writing Grants to Apply For in 2026",
+      "monetise": "product",
+      "detail": "Writers' Deadline Database"
+    },
+    {
+      "week": 10,
+      "thread": "craft/editing",
+      "source": "How To Use Figurative Language",
+      "monetise": "affiliate",
+      "detail": "prowritingaid"
+    },
+    {
+      "week": 10,
+      "thread": "ai-for-writers",
+      "source": "Grammarly Review (2026): An Honest Verdict",
+      "monetise": "affiliate",
+      "detail": "grammarly"
+    },
+    {
+      "week": 10,
+      "thread": "prompts",
+      "source": "List of Random Words To Upgrade Your Writing",
+      "monetise": "affiliate",
+      "detail": "masterclass"
+    },
+    {
+      "week": 11,
+      "thread": "craft/editing",
+      "source": "24 Content Writing Practice Exercises",
+      "monetise": "product",
+      "detail": "Filler-Word Killer Editor Pack"
+    },
+    {
+      "week": 11,
+      "thread": "ai-for-writers",
+      "source": "Best AI Writing Software: Reviews and Comparisons",
+      "monetise": "product",
+      "detail": "Claude Code for Writers"
+    },
+    {
+      "week": 11,
+      "thread": "freelance-income",
+      "source": "15 Top Freelance Job Ideas for Writers",
+      "monetise": "product",
+      "detail": "How to Earn $3-5k Writing Online"
+    },
+    {
+      "week": 12,
+      "thread": "craft/editing",
+      "source": "15 Best Writing Tips From Stephen King",
+      "monetise": "affiliate",
+      "detail": "prowritingaid"
+    },
+    {
+      "week": 12,
+      "thread": "ai-for-writers",
+      "source": "Which Grammarly Plan is Best? Free vs. Premium",
+      "monetise": "affiliate",
+      "detail": "grammarly"
+    },
+    {
+      "week": 12,
+      "thread": "mindset",
+      "source": "110 Thinking Quotes to Transform Your Mind",
+      "monetise": "product",
+      "detail": "The Fearless Creative"
+    }
+  ],
+  "letters": [
+    {
+      "n": 1,
+      "subject": "The 50 words quietly weakening your writing",
+      "preview": "Very, just, that, basically. Cut them and watch your sentences get sharper.",
+      "thread": "craft/editing",
+      "topic": null,
+      "affiliate": {
+        "slug": "prowritingaid",
+        "anchor": "ProWritingAid",
+        "text": "When I want a second pass on a draft, I run it through {{LINK}} to catch the filler I have gone blind to."
+      },
+      "product": {
+        "name": "Filler-Word Killer Editor Pack",
+        "anchor": "the Filler-Word Killer Editor Pack",
+        "text": "Want the cutting done for you? {{LINK}} flags all 50 filler words so you can strike them in one pass."
+      },
+      "body": "Hi there,\n\nFiller words make English writing weak.\n\nWriting should be concise and meaningful, especially for online audiences with shorter attention spans. Using too many filler words gives the impression of inexperience, meaning your audience may be hesitant to take you seriously.\n\nChoosing the right word for your specific meaning and leaving out any unnecessary words will help you communicate more effectively.\n\nFiller words are unnecessary words or phrases that add length without meaning, such as \"very,\" \"just,\" \"that,\" and \"basically.\" Unlike spoken fillers (um, uh), written filler words weaken clarity and authority.\n\nSo when you write, watch for the words that carry little meaning, don't serve a purpose, or can be removed from the sentence without altering the meaning. If a word can go and the sentence still means the same thing, let it go.\n\nThe best way to avoid filler phrases and words is to keep a filler words list on hand. That way you stop guessing and start cutting.\n\nRead your next paragraph back and hunt for just one filler. You'll feel the sentence tighten.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 2,
+      "subject": "The tool that catches your mistakes",
+      "preview": "After a decade at the comma face, here's how I pick a grammar checker.",
+      "thread": "ai-for-writers",
+      "topic": null,
+      "affiliate": {
+        "slug": "grammarly",
+        "anchor": "Grammarly",
+        "text": "{{LINK}} is the one I reach for first when I want the mistakes caught before a reader ever sees them."
+      },
+      "product": {
+        "name": "Claude Code for Writers",
+        "anchor": "Claude Code for Writers",
+        "text": "If you want to go past checking and actually build with AI, {{LINK}} shows you how."
+      },
+      "body": "Hi friend,\n\nThe best grammar checker is the one that catches the mistakes you keep making and fits the way you already write. That's it. That's the whole test.\n\nAfter more than a decade running this site and editing thousands of posts, I've leaned on most of these tools at the comma face. And here's what I've learned: a misplaced comma or a wonky sentence structure won't sink a piece on its own. But enough of them chip away at a reader's trust before they ever reach your point.\n\nThat's where grammar checkers come in. They're no longer simple spell-checks. The better ones flag style, tone, and clarity problems a human editor would catch on a second read. They detect the spelling and punctuation slips, sure, but they also nudge you toward clearer, warmer sentences.\n\nThe leading options in 2026 are Grammarly, ProWritingAid, and Hemingway Editor. Each suits a different kind of writer and a different budget. The trick isn't finding the \"best\" one in the abstract. It's matching a checker to your own writing style and the errors you personally keep repeating.\n\nStart there, and the rest sorts itself out.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 3,
+      "subject": "The starving artist is a lie",
+      "preview": "Seven ways writers actually get paid now.",
+      "thread": "freelance-income",
+      "topic": null,
+      "affiliate": {
+        "slug": "teachable",
+        "anchor": "Teachable",
+        "text": "If one of your income streams is teaching what you know, {{LINK}} is where I would host the course."
+      },
+      "product": {
+        "name": "Filler-Word Killer Editor Pack",
+        "anchor": "the Filler-Word Killer Editor Pack",
+        "text": "Paid work rewards clean drafts, and {{LINK}} strips the filler in one pass."
+      },
+      "body": "Hi there,\n\nFor far too long, the image of the \"starving artist\" has clung to writers like an unwelcome shadow. We've been told, implicitly and explicitly, that our craft is a labour of love, a passion project, and that true financial success is reserved for a lucky few.\n\nBut let me tell you, that narrative is as outdated as a typewriter.\n\nIn today's digital age, the landscape for writers has been completely redefined. The internet has democratised creativity, throwing open a myriad of doors for anyone with a command of language and a desire to share their voice. This isn't just about making ends meet. It's about building a robust, diversified financial life that lets you thrive, not just survive.\n\nIncome streams for writers include freelance writing, self-publishing, content marketing, online courses, affiliate marketing, ghostwriting, and coaching.\n\nYou don't need all seven. But you do need more than one. Authors like Mark Dawson and Joanna Penn built six-figure careers by diversifying beyond a single source. The lesson isn't that they got lucky. It's that they stopped betting everything on one door.\n\nPick one stream you haven't tried. Open that door this week.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 4,
+      "subject": "The line that fixed my nervous character",
+      "preview": "Not \"she was nervous.\" Something you can feel instead.",
+      "thread": "craft/editing",
+      "topic": null,
+      "affiliate": {
+        "slug": "prowritingaid",
+        "anchor": "ProWritingAid",
+        "text": "When I go back through a draft hunting for flat, tell-y sentences, I run it through {{LINK}} first. Its sensory and pacing checks flag the lines begging to be shown."
+      },
+      "product": {
+        "name": "Filler-Word Killer Editor Pack",
+        "anchor": "the Filler-Word Killer Editor Pack",
+        "text": "Once the telling is fixed, the filler is next. {{LINK}} flags all 50 filler words in one pass."
+      },
+      "body": "Hi friend,\n\nHere is the most misunderstood piece of writing advice going: show, don't tell.\n\nIt does not mean never use the verb \"to be.\" It does not mean avoid all adjectives, or describe everything in visual detail. It means this: when you have the chance to make a reader feel something rather than just understand it, prefer the former.\n\nInstead of \"she was nervous,\" you write \"she pressed her thumbnail into the meat of her palm.\" The difference is between information and experience. Telling gives information. Showing creates experience. Both are necessary. The real question is which one serves the scene.\n\nMy favourite example is Carver's \"Cathedral.\" He never tells us the narrator is jealous and hostile. He shows it through behaviour: the clipped, dismissive descriptions of the blind man, the refusal to engage, the drinking. The emotion is in the action, not the statement.\n\nSo it is a useful default, not an absolute rule. Summary and telling have their place too. But next time you catch yourself writing \"he was angry,\" stop. Ask what he does with his hands instead.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 5,
+      "subject": "Grammarly is not the right fit for everyone",
+      "preview": "The right tool depends on what you're actually writing.",
+      "thread": "ai-for-writers",
+      "topic": null,
+      "affiliate": {
+        "slug": "grammarly",
+        "anchor": "Grammarly",
+        "text": "If you want to see whether Grammarly earns its spot in your stack, you can try {{LINK}}."
+      },
+      "product": {
+        "name": "Claude Code for Writers",
+        "anchor": "Claude Code for Writers",
+        "text": "When you are ready to build with AI instead of just checking with it, {{LINK}} is the guide."
+      },
+      "body": "Hi there,\n\nGrammarly dominates the grammar checker space. But after testing every tool on my alternatives list, I keep coming back to one thing: it is not the right fit for everyone.\n\nThe best alternative depends entirely on your use case. LanguageTool if you want open-source grammar checking. QuillBot for paraphrasing. Hemingway App for readability and style. ProWritingAid for long-form manuscript editing. ChatGPT for AI-assisted drafting. Wordtune for sentence rewriting. Each one serves a different writing need, and none of them is trying to be everything at once.\n\nSo whether you need a free option, a tool built for academic writing, an AI that generates content, a dedicated paraphraser, or a focused readability editor, there is a better fit for your specific situation.\n\nIt is also worth knowing what Grammarly has become. In 2024 the company renamed its paid Premium plan to Grammarly Pro, so the lineup is now Free, Pro, and a custom-priced Enterprise plan. Still a strong product. Just no longer the only sensible answer.\n\nPick the tool that matches the writing in front of you, not the one with the biggest name.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 6,
+      "subject": "The snowball that gets your book written",
+      "preview": "A reader asked how I balance daily content with the books. Here's the honest answer.",
+      "thread": "mindset",
+      "topic": null,
+      "affiliate": {
+        "slug": "masterclass",
+        "anchor": "MasterClass",
+        "text": "When I want to learn craft from writers at the top of the game, I watch {{LINK}}."
+      },
+      "product": {
+        "name": "Filler-Word Killer Editor Pack",
+        "anchor": "the Filler-Word Killer Editor Pack",
+        "text": "When you do sit down to edit, {{LINK}} makes the cutting quick so momentum survives."
+      },
+      "body": "Hi friend,\n\nA reader asked me a question on social media a few days ago: \"How do you find the time for daily articles and newsletter content AND the time to actually write your books?\"\n\nIt's a common struggle. You want to produce consistent content while also working on longer, more substantial projects. And when I try to do both at once, I feel tense and stressed, like bending a stick until it snaps.\n\nSo I don't. I pick one project to work on first thing. For a few years, that project was a book. Like a snowball rolling downhill, starting with 300 words creates momentum.\n\nWhen I had a full-time job as a copywriter for a fintech, I got up around five or six to work on my books. I gave up gaming on my Xbox late at night. I still missed it, but I enjoyed writing more than levelling up in Call of Duty.\n\nThen I quit my job to work full-time at my business. I canned the 5am starts because I was sick of looking at the bags under my eyes. Now I start around nine, when the kids are at school and the house is quiet.\n\nThe season changes. The one-project rule doesn't.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 7,
+      "subject": "The hardest form to master (and the best place to learn)",
+      "preview": "Why short stories teach you more than a novel ever will.",
+      "thread": "craft/editing",
+      "topic": null,
+      "affiliate": {
+        "slug": "prowritingaid",
+        "anchor": "ProWritingAid",
+        "text": "When your draft is done, the editing is where a short story is won or lost. I run mine through {{LINK}} to catch the over-explanation and slow spots."
+      },
+      "product": {
+        "name": "Filler-Word Killer Editor Pack",
+        "anchor": "the Filler-Word Killer Editor Pack",
+        "text": "The other thief of a tight story is filler. {{LINK}} flags all 50 in one pass."
+      },
+      "body": "Hi,\n\nShort stories are the hardest form to master and the best place to learn to write. They give you immediate feedback on every decision, character, voice, structure, scene, without the long commitment of a novel.\n\nHere is the thing most writers miss: a short story is not a small novel. It works differently. It has to do its work in a single sustained movement, usually focusing on one character, one situation, and one significant change.\n\nThe form rewards compression, implication, precision of detail, and endings that resonate rather than resolve. It punishes over-explanation, multiple plot threads, slow openings, and anything that does not serve the central situation.\n\nThat word, situation, is where I want you to start. Every short story needs a central situation: a specific circumstance that creates pressure on a character. This is not the same as a plot. A plot is what happens. A central situation is the condition that makes things happen.\n\nA woman learns her estranged father is dying. Two strangers are trapped in a lift. A soldier returns home to find everything familiar has become strange.\n\nEach of those creates immediate pressure. Find yours, and the story starts writing itself.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 8,
+      "subject": "The honest truth about AI writing tools",
+      "preview": "Most of them run on the same engine anyway.",
+      "thread": "ai-for-writers",
+      "topic": null,
+      "affiliate": {
+        "slug": "grammarly",
+        "anchor": "Grammarly",
+        "text": "If you want a checker that catches the slips before a reader does, you can try {{LINK}}."
+      },
+      "product": {
+        "name": "Claude Code for Writers",
+        "anchor": "Claude Code for Writers",
+        "text": "If you want to go past templates and actually build with AI, {{LINK}} shows you how."
+      },
+      "body": "Hi there,\n\nEvery week someone asks me which AI writing tool is best. ChatGPT? Jasper? Copy.ai? The list feels endless, and it keeps growing. AI is expected to see an annual growth rate of 37.3% from 2023 to 2030, so the flood of new tools is not slowing down.\n\nHere is the part nobody selling you a subscription wants to say out loud: most of these applications use the same large language models to power content creation. So do not worry too much about the quality of the work. They are quite similar under the hood.\n\nThat changes the question you should be asking. Instead of hunting for the \"best\" one, look at the different features, benefits, and templates, and opt for the software that is most relevant to your needs.\n\nAfter testing a stack of them, I found ChatGPT, Jasper, Copy.ai, and GrammarlyGO are your best bets. They are affordable, produce quality outputs, and keep releasing features that streamline your writing process.\n\nPick the one that fits how you actually work, then stop shopping and start writing.\n\nWrite on,\nBryan"
+    },
+    {
+      "n": 9,
+      "subject": "The best apps for taking notes while you read",
+      "preview": "Evernote, Notion, Apple Notes and more, plus the habit that beats all of them.",
+      "thread": "notes-systems",
+      "topic": null,
+      "affiliate": {
+        "slug": "masterclass",
+        "anchor": "MasterClass",
+        "text": "If you want to learn the craft from writers who have mastered it, {{LINK}} is where I would start."
+      },
+      "product": {
+        "name": "The Zettelkasten for Creators Kit",
+        "anchor": "the Zettelkasten for Creators Kit",
+        "text": "Capturing notes is step one. Turning them into finished writing is the part most people miss, and {{LINK}} shows the system I use."
+      },
+      "body": "Hi friend,\n\nWhether you're a student, researcher, or writer, taking notes while you read is an important skill.\n\nMany of us grew up taking notes the old-school way, with a paper and pad. But technology has made note-taking simpler, more efficient, and more comfortable. Our reading habits are now closely linked to our phones and tablets, and several good note-taking apps have arrived in recent years.\n\nThe best apps for taking notes while reading include Evernote, Notion, Apple Notes, Google Keep, and Kindle's built-in highlight tool. Each one helps you capture ideas digitally, across every device you own.\n\nThe big draw is convenience. A good app gives you features a pen and pad never could, and you can reach your notes from most devices, including your smartphone or tablet.\n\nSo pick the one that suits how you already read. The tool matters less than the habit of catching a good idea before it slips away.\n\nWrite on,\nBryan"
+    }
+  ]
+}

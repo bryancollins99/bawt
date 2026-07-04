@@ -1,0 +1,106 @@
+name: Newsletter send
+
+# Sends the Become a Writer Today newsletter.
+#
+# Schedule (Europe/London):
+#   Mon / Wed / Fri 07:00  -> the next evergreen personal letter
+#   Thursday        07:00  -> the dynamic Deadline Digest (rebuilt live from
+#                             src/data/contests.json)
+# send.js routes by weekday automatically (UTC Thursday = digest).
+#
+# GitHub cron is UTC and has no DST. 06:00 UTC = 07:00 BST (summer) / 06:00 GMT
+# (winter). We accept the one-hour winter drift rather than double-fire.
+#
+# LIVE SEND IS GATED. It runs a dry preview unless the repo variable
+# NEWSLETTER_LIVE == 'true' (or a manual run picks mode: live). Even when
+# "live", send.js still falls back to a dry run if RESEND_API_KEY is unset.
+#
+# Manual trigger (one command):
+#   gh workflow run newsletter.yml                       # dry, weekday-routed
+#   gh workflow run newsletter.yml -f template=digest    # dry, force the digest
+#   gh workflow run newsletter.yml -f mode=live           # live attempt
+#   gh workflow run newsletter.yml -f mode=live -f template=letter
+
+on:
+  schedule:
+    - cron: "0 6 * * 1,3,4,5"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry (preview only) or live (attempt a real send)"
+        type: choice
+        default: dry
+        options: [dry, live]
+        required: true
+      template:
+        description: "which template: auto (weekday), letter, or digest"
+        type: choice
+        default: auto
+        options: [auto, letter, digest]
+        required: true
+
+concurrency:
+  group: newsletter-send
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history so the digest's git-commit-time freshness guard can
+          # read the last commit that touched src/data/contests.json.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install send-engine deps
+        working-directory: deadline-digest
+        run: npm install --no-audit --no-fund
+
+      - name: Resolve mode + template flags
+        id: cfg
+        run: |
+          LIVE="false"
+          if [ "${{ vars.NEWSLETTER_LIVE }}" = "true" ]; then LIVE="true"; fi
+          if [ "${{ github.event.inputs.mode }}" = "live" ]; then LIVE="true"; fi
+          echo "live=$LIVE" >> "$GITHUB_OUTPUT"
+
+          TEMPLATE_FLAG=""
+          case "${{ github.event.inputs.template }}" in
+            letter) TEMPLATE_FLAG="--letter" ;;
+            digest) TEMPLATE_FLAG="--digest" ;;
+            *)      TEMPLATE_FLAG="" ;;   # auto -> weekday routing in send.js
+          esac
+          echo "template_flag=$TEMPLATE_FLAG" >> "$GITHUB_OUTPUT"
+          echo "Resolved: live=$LIVE template_flag='$TEMPLATE_FLAG'"
+
+      - name: Send newsletter
+        working-directory: deadline-digest
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          RESEND_BASE_SEGMENT_ID: ${{ vars.RESEND_BASE_SEGMENT_ID }}
+          RESEND_TOPIC_FICTION: ${{ vars.RESEND_TOPIC_FICTION }}
+          RESEND_TOPIC_POETRY: ${{ vars.RESEND_TOPIC_POETRY }}
+          RESEND_TOPIC_NONFICTION: ${{ vars.RESEND_TOPIC_NONFICTION }}
+        run: |
+          FLAG="${{ steps.cfg.outputs.template_flag }}"
+          if [ "${{ steps.cfg.outputs.live }}" = "true" ]; then
+            echo "LIVE send attempt (falls back to dry if RESEND_API_KEY unset)"
+            node send.js $FLAG
+          else
+            echo "DRY run (default). No email will be sent."
+            node send.js $FLAG --dry
+          fi
+
+      - name: Upload previews (dry runs)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-previews
+          path: deadline-digest/preview-*
+          if-no-files-found: ignore

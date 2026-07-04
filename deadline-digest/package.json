@@ -1,0 +1,17 @@
+{
+  "name": "bawt-deadline-digest",
+  "version": "1.0.0",
+  "description": "Newsletter send engine for Become a Writer Today. Renders pure personal letters from Bryan and sends them as Resend broadcasts. Dry-run by default; live send is gated everywhere.",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "resend": "^4.0.0"
+  },
+  "scripts": {
+    "build": "node send.js --dry",
+    "send": "node send.js",
+    "dry": "node send.js --dry",
+    "self-test": "node self-test.mjs",
+    "test": "node self-test.mjs"
+  }
+}
