@@ -19,16 +19,25 @@
 import { readFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { getStore } from "@netlify/blobs";
 import { BLOB_STORE_NAME, PRODUCTS } from "../netlify/functions/_deliver-lib.js";
 
 const HOME = os.homedir();
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const BUILD_OUTPUT = path.join(REPO_ROOT, "build-output");
 
 // slug -> source zip on disk (outside the repo, never committed).
+// Mixed pattern: the older three products live under ~/src; the two products
+// built in-repo (deadline database, prompt pack) are packaged into build-output/
+// by their build scripts, so point at those. Run each build script first:
+//   node scripts/build-deadline-database.mjs && node scripts/build-prompt-pack.mjs
 const SOURCES = {
   "filler-word-pack": path.join(HOME, "src", "filler-word-editor-pack-v1.0.zip"),
   "claude-code-for-writers": path.join(HOME, "src", "cc-for-writers-v1.0.zip"),
   "zettelkasten-kit": path.join(HOME, "src", "zk-creators-kit-v1.0.zip"),
+  "writers-deadline-database": path.join(BUILD_OUTPUT, "deadline-database-v1.0.zip"),
+  "prompt-word-bank-pack": path.join(BUILD_OUTPUT, "prompt-word-bank-pack-v1.0.zip"),
 };
 
 // Sanity: every product slug in the mapping must have a source file here.

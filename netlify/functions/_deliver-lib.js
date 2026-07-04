@@ -35,6 +35,19 @@ export const PRODUCTS = {
     name: "The Zettelkasten for Creators Kit",
     filename: "zk-creators-kit-v1.0.zip",
   },
+  // --- PENDING: real Stripe price ids not yet created (see BLOCKED.md). ---
+  // These two placeholder keys wire the delivery path end to end now; swapping
+  // in each live price id later is a single find-and-replace of the key string.
+  PRICE_ID_PENDING_deadline_database: {
+    slug: "writers-deadline-database",
+    name: "Writers' Deadline Database",
+    filename: "deadline-database-v1.0.zip",
+  },
+  PRICE_ID_PENDING_prompt_pack: {
+    slug: "prompt-word-bank-pack",
+    name: "Prompt / Word-Bank Pack",
+    filename: "prompt-word-bank-pack-v1.0.zip",
+  },
 };
 
 // Reverse lookup by slug (used by download.js to resolve the streamed file).

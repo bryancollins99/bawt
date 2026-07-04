@@ -29,11 +29,15 @@
     },
     "Writers' Deadline Database": {
       "checkout_url": "STRIPE_CHECKOUT_PENDING",
-      "blurb": "Every writing grant and contest deadline worth chasing, in one place."
+      "blurb": "Every writing grant and contest deadline worth chasing, in one place.",
+      "slug": "writers-deadline-database",
+      "zip": "deadline-database-v1.0.zip"
     },
     "Prompt / Word-Bank Pack": {
       "checkout_url": "STRIPE_CHECKOUT_PENDING",
-      "blurb": "A bank of prompts and words to break a blank page open."
+      "blurb": "A bank of prompts and words to break a blank page open.",
+      "slug": "prompt-word-bank-pack",
+      "zip": "prompt-word-bank-pack-v1.0.zip"
     }
   }
 }
