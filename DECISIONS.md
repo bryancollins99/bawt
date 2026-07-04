@@ -272,3 +272,53 @@ publicly fetchable.
 No import from PR #15 or PR #16 code. `netlify.toml` gains its own `[functions]` block
 and `/stripe-webhook` + `/download` redirects; if those PRs also add a `[functions]` block
 on their branches, the merge is a trivial keep-one (same directory value).
+
+# DECISIONS — Two new digital products (deadline database + prompt pack)
+
+Adds two buildable, self-contained products that plug into the existing delivery flow.
+
+## What this ships
+
+1. **Writers' Deadline Database ($29)** — `scripts/build-deadline-database.mjs` reads ALL
+   45 records in `src/data/contests.json` and emits ONE self-contained HTML file (embedded
+   JSON + inline CSS + vanilla JS, zero external/CDN deps, works offline by double-click).
+   Full-text search; filters for genre, region, free-vs-paid entry, has-cash-prize; sortable
+   columns (click a header, click again to reverse); days-left computed on load; each row
+   links to the organiser. Slug `writers-deadline-database`, zip `deadline-database-v1.0.zip`.
+2. **Prompt / Word-Bank Pack ($12)** — `scripts/build-prompt-pack.mjs` assembles the pack
+   from the site's own generator word banks: 275 prompts (fiction 72, flash 55, poetry 40,
+   nonfiction/essay 108) plus 461 vivid words in five categorised banks (descriptive,
+   sensory, action verbs, emotion words, poetic words), plus a one-page drafting-session
+   guide. Emits BOTH printable HTML and a markdown version. Slug `prompt-word-bank-pack`,
+   zip `prompt-word-bank-pack-v1.0.zip`.
+
+## Key decisions
+
+1. **Content generator vs zip packaging are split.** Each script exports a pure
+   `build({ outDir })` that returns counts + rendered artefacts; a CLI tail packages the
+   zip via `zip`. `scripts/productBuildTest.mjs` drives `build()` only, so the tested path
+   never needs the zip binary and no product output can leak into `dist/`. Output goes to
+   the gitignored `build-output/` dir; the build scripts are NOT wired into `prebuild`/
+   `build`, so `npm run build` (Vite) is unchanged and product files never reach `dist/`.
+2. **Everything is deterministic.** The React generators shuffle with `Math.random()`; the
+   build scripts do NOT. Word extraction is source order (then sorted); prompt assembly uses
+   fixed modular strides. Reruns are diff-free and the self-test's count assertions are
+   stable.
+3. **Word banks are extracted from the generators, not re-invented.** `build-prompt-pack.mjs`
+   parses the inline word arrays in `ActionGenerator.jsx` / `DescriptiveGenerator.jsx` /
+   `PoetryWordsGenerator.jsx` (node cannot import JSX) plus the bundled `emotionWheel.json`
+   (Parrott tertiary tier). Prompts also draw on `editorialTopics.json` for the nonfiction
+   set. Extraction throws if any bank comes back empty, so a future generator refactor cannot
+   silently ship an empty pack.
+4. **Brand palette** matches the email-deliver palette named in the brief: serif (Georgia),
+   cream `#f6f4ef`, red `#b23a48`. NOT the contest-page blue/paper palette. No em dashes in
+   any UI copy; en/em dashes in the source contest fields are cleaned before embedding
+   (number ranges become "N to M", other uses collapse to a plain hyphen), and both build
+   scripts + the self-test assert zero fancy dashes in output.
+5. **Wiring for one-edit go-live.** Both products are in `deadline-digest/config/products.json`
+   (with `slug` + `zip`, `checkout_url: STRIPE_CHECKOUT_PENDING`) and in the `_deliver-lib.js`
+   `PRODUCTS` map under placeholder price-id keys (`PRICE_ID_PENDING_deadline_database`,
+   `PRICE_ID_PENDING_prompt_pack`). `scripts/upload-products.mjs` gains both zips (sourced from
+   `build-output/`, a deliberate mix with the older `~/src` zips). `deliverTest.mjs`'s slug
+   assertion now checks distinctness generically and the count of 5. See BLOCKED.md for the
+   exact swap steps.

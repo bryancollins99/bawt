@@ -175,6 +175,58 @@ steps are done in Stripe and Netlify. Nothing here can be automated safely from 
 - Do one real low-value purchase, confirm the email arrives and the download link streams
   the correct zip, then let the link expire (~72h) and confirm it then rejects.
 
+---
+
+# BLOCKED / GO-LIVE — Two new products (deadline database + prompt pack)
+
+The two products are built, wired, and tested, but they are **not purchasable** until the
+Stripe pieces exist. Each ships with placeholders that are designed to be swapped in one edit.
+
+## For EACH of the two products, create in Stripe (Bryan, manual)
+
+Products: **Writers' Deadline Database ($29)** and **Prompt / Word-Bank Pack ($12)**.
+
+1. **Create the Stripe product + price** (one price each: 29.00 and 12.00).
+2. **Create a Payment Link** for each price.
+3. **Copy the `price_...` id and the payment-link URL.**
+
+## Then swap the placeholders (three edits per product)
+
+1. `deadline-digest/config/products.json` — replace `"checkout_url": "STRIPE_CHECKOUT_PENDING"`
+   with the live payment-link URL, under `"Writers' Deadline Database"` and
+   `"Prompt / Word-Bank Pack"` respectively.
+2. `netlify/functions/_deliver-lib.js` — in the `PRODUCTS` map, rename the placeholder key to
+   the real price id:
+   - `PRICE_ID_PENDING_deadline_database:` -> `price_<real id for the database>:`
+   - `PRICE_ID_PENDING_prompt_pack:` -> `price_<real id for the prompt pack>:`
+   (The `slug`, `name`, and `filename` under each key stay as-is.)
+3. If using the Payment-Link `metadata.price_id` route rather than `STRIPE_SECRET_KEY`
+   line-item retrieval (see the delivery go-live checklist above), set each link's metadata
+   `price_id` to match.
+
+## Build + upload the two zips (one time, and after any data refresh)
+
+The zips are NOT committed (gitignored). Build them, then upload:
+
+```
+node scripts/build-deadline-database.mjs   # -> build-output/deadline-database-v1.0.zip
+node scripts/build-prompt-pack.mjs          # -> build-output/prompt-word-bank-pack-v1.0.zip
+NETLIFY_SITE_ID=<site-id> NETLIFY_AUTH_TOKEN=<netlify-PAT> node scripts/upload-products.mjs
+```
+
+`upload-products.mjs` now includes both new slugs (`writers-deadline-database`,
+`prompt-word-bank-pack`), sourced from `build-output/`. Its sanity loop exits non-zero if a
+mapped slug has no source zip, so build both before uploading. Re-run the deadline-database
+build whenever `src/data/contests.json` changes so the shipped file stays current (its header
+shows the compile date and days-left is computed on the buyer's machine on every open).
+
+## Placeholders to grep for
+
+- `STRIPE_CHECKOUT_PENDING` (products.json — both new products)
+- `PRICE_ID_PENDING_deadline_database`, `PRICE_ID_PENDING_prompt_pack` (_deliver-lib.js)
+
+---
+
 ## Working-tree note (not part of this PR)
 
 The working tree also contains `deadline-digest/` (untracked) and a modified
