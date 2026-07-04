@@ -334,6 +334,50 @@ ${rows}
   </div>
   <p class="no-results" id="no-results">No contests match these filters. Try widening the genre or region.</p>
 
+  <section class="subscribe-card" aria-labelledby="sub-h" style="margin-top:28px;padding:22px 20px;border:1px solid #e5c9cd;border-radius:12px;background:#fdf3f4">
+    <h2 id="sub-h" style="font-family:var(--display);color:#b23a48;font-size:22px;margin-bottom:6px">Get free deadline alerts</h2>
+    <p style="color:var(--ink-2);font-size:15px;margin-bottom:14px;max-width:58ch">Pick what you write and we will email you the deadlines worth entering, plus the weekly Deadline Digest. We use double opt-in, so you confirm by email first. No spam, unsubscribe any time.</p>
+    <form id="sub-form" style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <label for="sub-genre" style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2)">I write</label>
+        <select id="sub-genre" style="font-size:14px;padding:8px 10px;border:1px solid #e5c9cd;border-radius:6px;background:#fff;color:var(--ink)">
+          <option value="fiction">Fiction</option>
+          <option value="poetry">Poetry</option>
+          <option value="nonfiction">Nonfiction</option>
+          <option value="all" selected>Everything</option>
+        </select>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;flex:1;min-width:180px">
+        <label for="sub-email" style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-2)">Email</label>
+        <input type="email" id="sub-email" required placeholder="you@example.com" style="font-size:14px;padding:8px 10px;border:1px solid #e5c9cd;border-radius:6px;background:#fff;color:var(--ink)">
+      </div>
+      <button type="submit" id="sub-btn" style="font-size:15px;font-weight:700;padding:9px 20px;border:none;border-radius:8px;background:#b23a48;color:#fff;cursor:pointer">Email me the deadlines</button>
+    </form>
+    <p id="sub-msg" role="status" style="font-size:14px;margin-top:10px;min-height:1.2em;color:var(--ink-2)"></p>
+  </section>
+  <script>
+  (function(){
+    var f=document.getElementById('sub-form');
+    if(!f) return;
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var email=document.getElementById('sub-email').value.trim();
+      var genre=document.getElementById('sub-genre').value;
+      var btn=document.getElementById('sub-btn');
+      var msg=document.getElementById('sub-msg');
+      if(!email){return;}
+      btn.disabled=true; msg.style.color='#5a6472'; msg.textContent='Sending your confirmation email...';
+      fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,genre:genre,source_surface:'contests-db'})})
+        .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {ok:r.ok,j:j};});})
+        .then(function(res){
+          if(res.ok){ f.style.display='none'; msg.style.color='#2e7d32'; msg.textContent='Almost there. Check your inbox and click the link to confirm.'; }
+          else { btn.disabled=false; msg.style.color='#b3261e'; msg.textContent=(res.j&&res.j.error)||'Something went wrong. Please try again.'; }
+        })
+        .catch(function(){ btn.disabled=false; msg.style.color='#b3261e'; msg.textContent='Network error. Please try again.'; });
+    });
+  }());
+  </script>
+
   <div class="cross-links">
     <a href="https://becomeawritertoday.com/free-writing-tools/">Free writing tools</a>
     <a href="https://becomeawritertoday.com/plan/">Book deadline planner</a>
@@ -406,6 +450,7 @@ ${rows}
   applyFilters();
 }());
 </script>
+<script src="/exit-intent.js" defer></script>
 </body>
 </html>`;
 

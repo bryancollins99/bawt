@@ -1,6 +1,6 @@
-// confirm.js — double opt-in step 2 (the click target).
+// confirm.js - double opt-in step 2 (the click target).
 //
-// GET ?token=... — verifies the HMAC token, then:
+// GET ?token=... - verifies the HMAC token, then:
 //   updateContact(unsubscribed:false, consent_timestamp)
 //   -> addToSegment(base)                (idempotent; duplicate = success)
 //   -> updateContactTopics(opt_in genre) ("all" -> all three topics)

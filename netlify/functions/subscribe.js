@@ -1,10 +1,10 @@
-// subscribe.js — double opt-in step 1.
+// subscribe.js - double opt-in step 1.
 //
 // POST { email, genre } where genre is one of fiction|poetry|nonfiction|all
 // (anything else falls back to "all"). Creates an UNCONFIRMED contact
 // (unsubscribed:true) in the base segment carrying source_surface +
 // consent_timestamp, builds an HMAC-signed confirm URL, and sends the confirm
-// email — GUARDED: when BAWT_DRY_RUN=1 or RESEND_API_KEY is unset, the send is
+// email - GUARDED: when BAWT_DRY_RUN=1 or RESEND_API_KEY is unset, the send is
 // skipped and the confirmUrl is returned/logged instead. Never sends in tests.
 
 import {

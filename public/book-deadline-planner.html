@@ -247,13 +247,12 @@
     <div class="card" id="kit-card">
       <h2>Save your plan</h2>
       <p style="font-size:15px;color:var(--ink-2);margin-bottom:12px">Get your plan link by email, plus a weekly nudge from Bryan to keep you on pace.</p>
-      <iframe name="bdp_kit_sink" title="subscription" style="display:none"></iframe>
-      <form class="kitform" id="kitform" action="https://app.kit.com/forms/8060129/subscriptions" method="post" target="bdp_kit_sink">
+      <form class="kitform" id="kitform">
         <input type="email" name="email_address" id="f-email" placeholder="you@example.com" required aria-label="Email address">
-        <input type="hidden" name="fields[plan_url]" id="f-planurl" value="">
+        <input type="hidden" id="f-planurl" value="">
         <button class="btn" type="submit">Email me my plan</button>
       </form>
-      <p class="kit-done" id="kit-done">Check your inbox to confirm, your plan link is on its way.</p>
+      <p class="kit-done" id="kit-done">Almost there. Check your inbox and click the link to confirm your subscription.</p>
       <p class="kit-note">Free. Unsubscribe any time.</p>
     </div>
   </section>
@@ -500,11 +499,19 @@ $("copy-btn").addEventListener("click",function(){
   else { $("r-link").select(); document.execCommand("copy"); done(); }
 });
 
-$("kitform").addEventListener("submit",function(){
-  setTimeout(function(){
-    $("kitform").style.display="none";
-    $("kit-done").style.display="block";
-  },300);
+$("kitform").addEventListener("submit",function(e){
+  e.preventDefault();
+  var email=$("f-email").value.trim();
+  if(!email) return;
+  var btn=this.querySelector("button[type=submit]");
+  if(btn) btn.disabled=true;
+  fetch("/.netlify/functions/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,genre:"all",source_surface:"book-deadline-planner"})})
+    .then(function(r){return r.ok;})
+    .then(function(okv){
+      if(okv){ $("kitform").style.display="none"; $("kit-done").style.display="block"; }
+      else { if(btn) btn.disabled=false; }
+    })
+    .catch(function(){ if(btn) btn.disabled=false; });
 });
 
 // ---------- boot ----------
@@ -547,5 +554,6 @@ if(new URLSearchParams(location.search).get("selftest")==="1"){
 }
 })();
 </script>
+<script src="/exit-intent.js" defer></script>
 </body>
 </html>

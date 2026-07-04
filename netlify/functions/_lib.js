@@ -1,4 +1,4 @@
-// _lib.js — shared helpers for the BAWT list-capture functions.
+// _lib.js - shared helpers for the BAWT list-capture functions.
 //
 // ESM module (root package.json is "type": "module"). No new npm dependency:
 // crypto is a Node builtin and fetch is a Node 18+ global.
@@ -98,7 +98,7 @@ export function verify(token) {
   const expected = b64url(createHmac('sha256', secret()).update(body).digest());
   const a = Buffer.from(sig);
   const b = Buffer.from(expected);
-  // timingSafeEqual throws on length mismatch — guard first, treat as reject.
+  // timingSafeEqual throws on length mismatch - guard first, treat as reject.
   if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
 
   let payload;

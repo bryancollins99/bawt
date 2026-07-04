@@ -27,11 +27,46 @@ const TYPE_STYLES = {
   grant: 'bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-200',
 };
 
-// BAWT Kit (ConvertKit) "Join (generic)" inline form — become-a-writer-today.kit.com
-const KIT_FORM_ID = '8060129';
+// Double opt-in capture into Resend via the shared Netlify function.
+// Replaces the former Kit form 8060129 POST to close list fragmentation.
+const SUBSCRIBE_ENDPOINT = '/.netlify/functions/subscribe';
 
 const DeadlineAlertsForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState('');
+  const [genre, setGenre] = useState('all');
+  const [error, setError] = useState('');
+  const [sending, setSending] = useState(false);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const value = email.trim();
+    if (!value) return;
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch(SUBSCRIBE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: value, genre, source_surface: 'contest-finder' }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        let msg = 'Something went wrong. Please try again.';
+        try {
+          const j = await res.json();
+          if (j && j.error) msg = j.error;
+        } catch (_) { /* ignore */ }
+        setError(msg);
+        setSending(false);
+      }
+    } catch (_) {
+      setError('Network error. Please try again.');
+      setSending(false);
+    }
+  };
+
   return (
     <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
       <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-1">
@@ -39,39 +74,49 @@ const DeadlineAlertsForm = () => {
       </h3>
       {submitted ? (
         <p className="text-blue-700 dark:text-blue-400 text-sm">
-          Thanks! Check your inbox to confirm your subscription.
+          Almost there. Check your inbox and click the link to confirm your subscription.
         </p>
       ) : (
         <>
           <p className="text-blue-700 dark:text-blue-400 text-sm mb-3">
-            Never miss an entry window. We&apos;ll email you when contests are about to close.
+            Pick what you write and we will email you when contests are about to close. We use double
+            opt-in, so you confirm by email first.
           </p>
-          {/* Hidden sink so the cross-origin POST to Kit never navigates the tool */}
-          <iframe name="bawt_kit_sink" title="subscription" style={{ display: 'none' }} />
-          <form
-            action={`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`}
-            method="post"
-            target="bawt_kit_sink"
-            onSubmit={() => setTimeout(() => setSubmitted(true), 300)}
-            className="flex flex-col sm:flex-row gap-2"
-          >
+          <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-2">
+            <select
+              value={genre}
+              onChange={(e) => setGenre(e.target.value)}
+              aria-label="What you write"
+              className="px-3 py-2 border border-blue-300 dark:border-blue-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="fiction">Fiction</option>
+              <option value="poetry">Poetry</option>
+              <option value="nonfiction">Nonfiction</option>
+              <option value="all">Everything</option>
+            </select>
             <input
               type="email"
-              name="email_address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="you@example.com"
               className="flex-1 px-3 py-2 border border-blue-300 dark:border-blue-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium whitespace-nowrap"
+              disabled={sending}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium whitespace-nowrap disabled:opacity-60"
             >
               Notify me
             </button>
           </form>
-          <p className="mt-2 text-xs text-blue-600/70 dark:text-blue-400/60">
-            No spam. Unsubscribe anytime.
-          </p>
+          {error ? (
+            <p className="mt-2 text-xs text-red-600 dark:text-red-400">{error}</p>
+          ) : (
+            <p className="mt-2 text-xs text-blue-600/70 dark:text-blue-400/60">
+              No spam. Unsubscribe anytime.
+            </p>
+          )}
         </>
       )}
     </div>
