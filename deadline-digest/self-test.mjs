@@ -42,6 +42,7 @@ import {
 import { renderLetter, resolveProductUrl } from "./render.js";
 import { affiliateLink, DISCLOSURE_LINE } from "./config/affiliates.js";
 import {
+  loadContests,
   selectContests,
   shouldSkipDigest,
   renderDigest,
@@ -223,6 +224,16 @@ ok("dry-run guard safe by default; Thursday routes to digest, else letter");
   assert.equal(shouldSkipDigest(selectContests([], { now })), true, "empty selection is skippable");
   assert.equal(shouldSkipDigest(selected), false, "non-empty selection is not skipped");
 
+  // dash-laden live-style data must not leak em/en dashes into the digest
+  const dashy = [
+    { name: "Bridport Prize — Poetry", genres: ["poetry"], deadline: "2026-07-12", prize: "£2,000–£12,000", fee: "£9–£12", region: "worldwide", url: "https://bridport.example" },
+  ];
+  const rDash = renderDigest(selectContests(dashy, { now }), { now });
+  assert.ok(!EM_DASH.test(rDash.html), "digest sanitizes em/en dashes from contest names/prizes (html)");
+  assert.ok(!EM_DASH.test(rDash.text), "digest sanitizes em/en dashes from contest names/prizes (text)");
+  assert.ok(!EM_DASH.test(rDash.subject), "digest subject sanitizes dashes");
+  assert.ok(rDash.html.includes("Bridport Prize - Poetry"), "em dash in name becomes a hyphen");
+
   const r = renderDigest(selected, { now });
   assert.ok(r.html && r.text, "digest renders html + text");
   assert.ok(r.html.includes('href="https://alpha.example/prize"'), "digest links to organiser (alpha)");
@@ -250,5 +261,19 @@ ok("digest selects/sorts correctly, links to organisers, dual-monetises, clean +
   assert.throws(() => assertContestsFresh(null, CONTESTS_MAX_AGE_DAYS, { now }), /stale/, "unknown contests age fails closed");
 }
 ok("contests freshness guard fires on stale/unknown data (git commit time, not mtime)");
+
+// --- 17. real contests dataset renders dash-free --------------------------
+{
+  // Render the entire live dataset (window wide open) and assert zero em/en
+  // dashes survive into the email, even though the source data contains them.
+  const all = loadContests();
+  const wide = selectContests(all, { now: Date.parse("2020-01-01T00:00:00Z"), windowDays: 100000 });
+  assert.ok(wide.length > 0, "real dataset yields selectable contests with a wide window");
+  const r = renderDigest(wide, { now: Date.parse("2020-01-01T00:00:00Z"), windowDays: 100000 });
+  assert.ok(!EM_DASH.test(r.html), "full real dataset renders dash-free (html)");
+  assert.ok(!EM_DASH.test(r.text), "full real dataset renders dash-free (text)");
+  assert.ok(!EM_DASH.test(r.subject), "full real dataset renders dash-free (subject)");
+}
+ok("full live contests.json renders the digest with zero em/en dashes");
 
 console.log(`\nAll self-test groups passed (${passed} groups).`);

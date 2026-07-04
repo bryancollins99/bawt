@@ -129,6 +129,16 @@ export function digestProduct() {
 
 // ---- rendering -----------------------------------------------------------
 
+// Contest data is authored elsewhere and routinely uses en/em dashes (name
+// "Bridport Prize — Poetry", prize "£2,000–£12,000"). The rendered email must
+// carry zero em/en dashes, so every data-derived field is dash-sanitized before
+// it is emitted. (The 9 letters are hand-written and already clean.)
+export function cleanDashes(s) {
+  return String(s).replace(/[–—]/g, "-");
+}
+const esc = (s) => escapeHtml(cleanDashes(s)); // HTML: sanitize then escape
+const plain = (s) => cleanDashes(s); // plain-text: sanitize only
+
 function titleGenres(genres) {
   if (!Array.isArray(genres) || genres.length === 0) return "Writing";
   const s = genres.map((g) => String(g).replace(/-/g, " ")).join(", ");
@@ -153,7 +163,7 @@ export function digestDateKey(now) {
 
 export function digestSubject(selected) {
   const lead = selected[0];
-  const short = String(lead.name).split(/[(:]/)[0].trim();
+  const short = cleanDashes(String(lead.name).split(/[(:]/)[0].trim());
   return `${selected.length} writing deadline${selected.length === 1 ? "" : "s"} closing soon (${short} leads)`;
 }
 
@@ -174,13 +184,13 @@ export function renderDigest(selected, opts = {}) {
   const rowsHtml = selected
     .map((c, i) => {
       const days = daysUntil(c.deadline, now);
-      const meta = `${titleGenres(c.genres)} &middot; ${escapeHtml(c.region || "See eligibility")} &middot; ${escapeHtml(
+      const meta = `${esc(titleGenres(c.genres))} &middot; ${esc(c.region || "See eligibility")} &middot; ${esc(
         c.prize || "See site"
-      )} &middot; ${escapeHtml(feeLabel(c))}`;
+      )} &middot; ${esc(feeLabel(c))}`;
       return `<div style="${rowStyle}">
-  <a href="${escapeHtml(c.url)}" style="${nameStyle}">${escapeHtml(c.name)}</a>
+  <a href="${escapeHtml(c.url)}" style="${nameStyle}">${esc(c.name)}</a>
   <div style="${metaStyle}">${meta}</div>
-  <div style="${dayStyle(i === 0)}">${escapeHtml(closesLabel(days, i === 0))}</div>
+  <div style="${dayStyle(i === 0)}">${esc(closesLabel(days, i === 0))}</div>
 </div>`;
     })
     .join("\n");
@@ -188,9 +198,9 @@ export function renderDigest(selected, opts = {}) {
   const rowsText = selected
     .map((c, i) => {
       const days = daysUntil(c.deadline, now);
-      return `${c.name} (${c.url})\n  ${titleGenres(c.genres)} · ${c.region || "See eligibility"} · ${
+      return `${plain(c.name)} (${c.url})\n  ${plain(titleGenres(c.genres))} · ${plain(c.region || "See eligibility")} · ${plain(
         c.prize || "See site"
-      } · ${feeLabel(c)} · ${closesLabel(days, i === 0)}`;
+      )} · ${plain(feeLabel(c))} · ${closesLabel(days, i === 0)}`;
     })
     .join("\n\n");
 
