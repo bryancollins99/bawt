@@ -1,9 +1,11 @@
 {
-  "_comment": "Maps a product name (the letter's `detail` when monetise === 'product') to its Stripe checkout and a short blurb. Seed checkout_url values are STRIPE_CHECKOUT_PENDING placeholders. Replace each with the live Stripe Checkout link before enabling live sends. The '[Get it]' marker in a letter P.S. is rewritten by render.js into a link to checkout_url.",
+  "_comment": "Maps a product name (the letter's `detail` when monetise === 'product') to its Stripe checkout and a short blurb. Seed checkout_url values are STRIPE_CHECKOUT_PENDING placeholders. Replace each with the live Stripe Checkout link before enabling live sends. The '[Get it]' marker in a letter P.S. is rewritten by render.js into a link to checkout_url. Products that also have a digital deliverable carry `slug` (== the Netlify Blobs key in netlify/functions/_deliver-lib.js) and `zip` (the uploaded filename); these two keys must stay in sync with the PRODUCTS map in _deliver-lib.js.",
   "products": {
     "Filler-Word Killer Editor Pack": {
       "checkout_url": "https://buy.stripe.com/dRmbJ25E30XV486dm0bZe0w",
-      "blurb": "Flags all 50 filler words in your draft so you can strike them in one pass."
+      "blurb": "Flags all 50 filler words in your draft so you can strike them in one pass.",
+      "slug": "filler-word-pack",
+      "zip": "filler-word-editor-pack-v1.0.zip"
     },
     "How to Earn $3-5k Writing Online": {
       "checkout_url": "STRIPE_CHECKOUT_PENDING",
@@ -15,11 +17,15 @@
     },
     "Claude Code for Writers": {
       "checkout_url": "https://buy.stripe.com/7sY28seazeOL486gycbZe0x",
-      "blurb": "Go past templates and actually build with AI."
+      "blurb": "Go past templates and actually build with AI.",
+      "slug": "claude-code-for-writers",
+      "zip": "cc-for-writers-v1.0.zip"
     },
     "The Zettelkasten for Creators Kit": {
       "checkout_url": "https://buy.stripe.com/28EdRac2rgWT9sqa9ObZe0y",
-      "blurb": "The system for connecting scattered notes into essays, articles, and books."
+      "blurb": "The system for connecting scattered notes into essays, articles, and books.",
+      "slug": "zettelkasten-kit",
+      "zip": "zk-creators-kit-v1.0.zip"
     },
     "Writers' Deadline Database": {
       "checkout_url": "STRIPE_CHECKOUT_PENDING",
