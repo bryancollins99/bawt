@@ -28,13 +28,13 @@
       "zip": "zk-creators-kit-v1.0.zip"
     },
     "Writers' Deadline Database": {
-      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "checkout_url": "https://buy.stripe.com/5kQeVed6v7mjdIGfu8bZe0z",
       "blurb": "Every writing grant and contest deadline worth chasing, in one place.",
       "slug": "writers-deadline-database",
       "zip": "deadline-database-v1.0.zip"
     },
     "Prompt / Word-Bank Pack": {
-      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "checkout_url": "https://buy.stripe.com/3cIaEY4zZ7mj34281GbZe0A",
       "blurb": "A bank of prompts and words to break a blank page open.",
       "slug": "prompt-word-bank-pack",
       "zip": "prompt-word-bank-pack-v1.0.zip"
