@@ -227,10 +227,10 @@ async function generatePrompts(banks) {
   // ---- Flash fiction (constraint-driven, short) ----
   const flashTemplates = [
     (i) => `In under 500 words, show a character who is ${at(emos, i)} without using the word. End on the image of ${at(themes, i)}.`,
-    (i) => `Write a complete story in three ${at(desc, i)} sentences about ${at(themes, i + 2)}.`,
+    (i) => `Write a complete story about ${at(themes, i + 2)} in exactly three sentences. The middle one must feel ${at(desc, i)}.`,
     (i) => `Flash piece: a single moment in ${at(settings, i)}, told only through ${at(sens, i)} detail. No dialogue.`,
     (i) => `250 words. A character decides to ${at(verbs, i)}. Do not tell us why; let ${at(sens, i + 3)} detail imply it.`,
-    (i) => `Write a story that begins and ends with the same ${at(desc, i + 1)} sentence, changed only by what happened between.`,
+    (i) => `Write a story that begins and ends with the same sentence, changed only by one ${at(desc, i + 1)} detail and everything that happened between.`,
   ];
   // ---- Poetry (word-seeded) ----
   const poetryTemplates = [
