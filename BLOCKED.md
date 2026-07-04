@@ -36,6 +36,22 @@ actioned this session (no live sends, no merges).
    relying on the R4 empty-skip in production; the skip LOGIC is correct and
    tested, only the count source is stubbed.
 
+## Operational heads-up (not a blocker)
+
+- **Freshness guard expires the workflow in ~120 days.** `assertFresh()` runs
+  before the dry/live branch, so once `data/queue.json`'s `generatedAt` is more
+  than MAX_DATA_AGE_DAYS (120) old, the Mon/Wed/Fri Action starts FAILING even
+  in dry mode (fail-closed per R2). This is intentional, but for evergreen
+  letters it means bumping `generatedAt` (or raising the threshold) roughly
+  quarterly to keep the cron alive. Not a silent send of stale data, a loud
+  cron failure.
+- **All 9 letters ship base-only (`topic: null`), by choice.** "Genre topic
+  filter where implied" resolved to base-segment-only for every currently
+  drafted letter. If you want to narrow reach, letters 4 (Show Don't Tell) and
+  7 (How to Write a Short Story) are the fiction-leaning candidates: set their
+  `topic` to `"fiction"` in queue.json and the audience resolution + broadcast
+  filter kick in automatically.
+
 ## Gated OFF by design (do not flip without the above)
 - Repo var `NEWSLETTER_LIVE` (leave unset -> Action runs `--dry`).
 - Secret `RESEND_API_KEY` (unset -> send.js dry-runs even if invoked as live).

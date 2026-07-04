@@ -76,6 +76,8 @@ Confirmed: `npm run build` exits 0 and dist/ contains no send-engine files.
 `preview-*.html/.txt` and node_modules are gitignored.
 
 ## Netlify Blobs
-`vote.js` uses `@netlify/blobs`, which the Netlify Functions runtime provides
-automatically; it is intentionally NOT added to the root package.json (that
-would pull it into the Vite dependency tree).
+`vote.js` uses `@netlify/blobs`. It is listed in the root package.json
+`dependencies` so Netlify's function bundler resolves it deterministically
+(rather than relying on the runtime auto-providing it, which is version
+dependent). It does NOT enter the Vite build: Vite only bundles what `src/`
+imports, and nothing in `src/` imports it, so `dist/` stays clean (verified).
