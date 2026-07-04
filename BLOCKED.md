@@ -31,13 +31,17 @@ steps are done in Stripe and Netlify. Nothing here can be automated safely from 
    The sending domain `becomeawritertoday.com` must be verified in Resend so
    `bryan@becomeawritertoday.com` can send.
 
-6. **Upload the product zips to Blobs (one time).** With the Netlify env available:
+6. **Upload the product zips to Blobs (one time).** A bare `node` script has no injected
+   Blobs context, so pass the site id and a Netlify personal access token explicitly:
    ```
-   netlify env:exec -- node scripts/upload-products.mjs
+   NETLIFY_SITE_ID=<site-id> NETLIFY_AUTH_TOKEN=<netlify-PAT> \
+     node scripts/upload-products.mjs
    ```
-   Reads the three zips from `~/src` and writes them to the private `product-downloads`
-   Blobs store under slugs `filler-word-pack`, `claude-code-for-writers`, `zettelkasten-kit`.
-   Re-run any time a zip is updated (idempotent overwrite).
+   (Get the site id from Netlify → Site configuration; create a PAT under User settings →
+   Applications → Personal access tokens.) Reads the three zips from `~/src` and writes them
+   to the private `product-downloads` Blobs store under slugs `filler-word-pack`,
+   `claude-code-for-writers`, `zettelkasten-kit`. Re-run any time a zip is updated
+   (idempotent overwrite).
 
 7. **(Optional) `DELIVER_BASE_URL`** in Netlify env if the download links should use a
    custom domain instead of the site's default `URL`.

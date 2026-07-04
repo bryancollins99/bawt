@@ -5,12 +5,14 @@
 // The zips are never committed to git and never served from public/ or dist/;
 // they are only reachable through a valid download token (see download.js).
 //
-// Run once, with the Netlify environment available so @netlify/blobs can resolve
-// the site + token automatically. Either of:
+// Run once. A bare `node` script has no injected Blobs context, so supply the
+// site id + a Netlify personal access token explicitly (this always works):
 //
-//   netlify env:exec -- node scripts/upload-products.mjs
-//   # or, with an explicit context:
-//   NETLIFY_SITE_ID=<id> NETLIFY_AUTH_TOKEN=<token> node scripts/upload-products.mjs
+//   NETLIFY_SITE_ID=<site-id> NETLIFY_AUTH_TOKEN=<netlify-PAT> \
+//     node scripts/upload-products.mjs
+//
+// (If run inside a Netlify build/function context where a Blobs context is
+// already present, the explicit config is skipped automatically.)
 //
 // Re-running is idempotent (it overwrites each key with the current file).
 
@@ -39,13 +41,22 @@ for (const slug of mappedSlugs) {
 }
 
 async function main() {
+  // In a deployed Netlify context the Blobs context is injected and getStore(name)
+  // works. In a bare `node` script it is not, so pass siteID + token explicitly.
+  const siteID = process.env.NETLIFY_SITE_ID || process.env.SITE_ID;
+  const token = process.env.NETLIFY_AUTH_TOKEN || process.env.NETLIFY_API_TOKEN;
+
   let store;
   try {
-    store = getStore(BLOB_STORE_NAME);
+    store =
+      siteID && token
+        ? getStore({ name: BLOB_STORE_NAME, siteID, token })
+        : getStore(BLOB_STORE_NAME);
   } catch (e) {
     console.error(
-      "Could not open the Blobs store. Run this with the Netlify env available " +
-        "(e.g. `netlify env:exec -- node scripts/upload-products.mjs`).",
+      "Could not open the Blobs store. Run with an explicit context:\n" +
+        "  NETLIFY_SITE_ID=<site-id> NETLIFY_AUTH_TOKEN=<netlify-PAT> " +
+        "node scripts/upload-products.mjs",
     );
     console.error(e.message);
     process.exit(1);
