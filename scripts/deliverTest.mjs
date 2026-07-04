@@ -18,6 +18,7 @@
 import assert from "node:assert/strict";
 import { handler as webhookHandler } from "../netlify/functions/stripe-webhook.js";
 import { handler as downloadHandler } from "../netlify/functions/download.js";
+import { handler as salesStatsHandler } from "../netlify/functions/sales-stats.js";
 import {
   __setStoreFactory,
   __setLineItemFetcher,
@@ -26,6 +27,9 @@ import {
   mintToken,
   verifyToken,
   productForPrice,
+  productForSlug,
+  hashEmail,
+  SALES_STORE_NAME,
   PRODUCTS,
 } from "../netlify/functions/_deliver-lib.js";
 
@@ -35,6 +39,13 @@ const BASE = "https://tools.example.test";
 
 const PRICE_FILLER = "price_1TpaMeK36rW7SrJyzjpudFG3"; // -> filler-word-pack
 const EXPECTED = productForPrice(PRICE_FILLER);
+const ALL_SLUGS = [
+  "filler-word-pack",
+  "claude-code-for-writers",
+  "zettelkasten-kit",
+  "writers-deadline-database",
+  "prompt-word-bank-pack",
+];
 
 let passed = 0;
 function ok(name) {
@@ -62,7 +73,33 @@ function makeStubStore() {
     },
   };
 }
-__setStoreFactory(() => makeStubStore());
+// Two new products (plain-ASCII stub payloads; only distinctness matters here).
+BLOB_BYTES["writers-deadline-database"] = Buffer.from("stub deadline-database payload");
+BLOB_BYTES["prompt-word-bank-pack"] = Buffer.from("stub prompt-word-bank payload");
+
+// Sales store stub: append-only, JSON values, list()-able.
+function makeSalesStore() {
+  const map = new Map();
+  return {
+    async set(key, data) {
+      map.set(key, typeof data === "string" ? data : JSON.stringify(data));
+    },
+    async get(key, opts = {}) {
+      const v = map.get(key);
+      if (v == null) return null;
+      return opts.type === "json" ? JSON.parse(v) : v;
+    },
+    async list() {
+      return { blobs: [...map.keys()].map((key) => ({ key })) };
+    },
+    _map: map,
+  };
+}
+
+// Dispatch by store name: product-sales -> salesStore, else product-downloads.
+const productStore = makeStubStore();
+let salesStore = makeSalesStore();
+__setStoreFactory((name) => (name === SALES_STORE_NAME ? salesStore : productStore));
 
 // --- Resend capture via globalThis.fetch -----------------------------------
 const realFetch = globalThis.fetch;
@@ -81,12 +118,22 @@ function stubLineItems(priceId) {
 }
 
 // --- Helpers ---------------------------------------------------------------
-function sessionEvent({ email = "buyer@example.com", sessionId = "cs_test_123" } = {}) {
-  // Payment Link session: NO inline line_items / price (mirrors reality).
+function sessionEvent({
+  email = "buyer@example.com",
+  sessionId = "cs_test_123",
+  slug,
+  amount_total = 1900,
+  currency = "usd",
+} = {}) {
+  // Payment Link session: NO inline line_items / price (mirrors reality). When a
+  // slug is given it rides in metadata.slug (the PRIMARY, secret-key-free path);
+  // otherwise the webhook falls back to price-id resolution.
+  const object = { id: sessionId, customer_details: { email }, amount_total, currency };
+  if (slug) object.metadata = { slug };
   return JSON.stringify({
     id: "evt_test",
     type: "checkout.session.completed",
-    data: { object: { id: sessionId, customer_details: { email } } },
+    data: { object },
   });
 }
 
@@ -230,15 +277,118 @@ async function run() {
     ok("unset secrets / dry-run -> dry path, no live call");
   }
 
+  // ---- 7. metadata.slug is the PRIMARY path: all 5 slugs resolve + stream ----
+  // No line-item fetcher stub is armed, so resolution here CANNOT use the price
+  // path: it proves metadata.slug works without STRIPE_SECRET_KEY.
+  setLiveEnv();
+  __setLineItemFetcher(async () => {
+    throw new Error("line-item fetch must not be called on the metadata.slug path");
+  });
+  for (const slug of ALL_SLUGS) {
+    const expected = productForSlug(slug);
+    resendCalls = [];
+    const raw = sessionEvent({ email: `buyer-${slug}@example.com`, slug });
+    const res = await webhookHandler(webhookEvent(raw));
+    assert.equal(res.statusCode, 200, `${slug}: webhook 200`);
+    const b = JSON.parse(res.body);
+    assert.equal(b.mapped, true, `${slug}: mapped`);
+    assert.equal(b.slug, slug, `${slug}: resolved via metadata.slug`);
+    assert.equal(b.emailed, true, `${slug}: email queued`);
+    assert.equal(resendCalls.length, 1, `${slug}: exactly one Resend call`);
+
+    const token = tokenFromLastResend();
+    const dl = await downloadHandler({ httpMethod: "GET", queryStringParameters: { token } });
+    assert.equal(dl.statusCode, 200, `${slug}: download 200`);
+    assert.ok(
+      dl.headers["content-disposition"].includes(expected.filename),
+      `${slug}: attachment filename matches`,
+    );
+    assert.deepEqual(
+      Buffer.from(dl.body, "base64"),
+      BLOB_BYTES[slug],
+      `${slug}: streamed bytes match the right slug's blob`,
+    );
+  }
+  ok("all 5 slugs resolve via metadata.slug (no secret key) and stream the right zip");
+
+  // ---- 8. unknown slug -> 200, no send ----
+  {
+    resendCalls = [];
+    const raw = sessionEvent({ email: "nobody@example.com", slug: "does-not-exist" });
+    const res = await webhookHandler(webhookEvent(raw));
+    assert.equal(res.statusCode, 200, "unknown slug still 200");
+    const b = JSON.parse(res.body);
+    assert.equal(b.mapped, false, "unknown slug not mapped");
+    assert.equal(resendCalls.length, 0, "no email sent for unknown slug");
+    ok("unknown slug -> 200, no send");
+  }
+
+  // ---- 9. conversion tracking: sale record + /_sales aggregation ----
+  setLiveEnv();
+  salesStore = makeSalesStore(); // isolate: fresh sales log for a deterministic count
+  {
+    const buyerEmail = "Buyer.Nine@Example.com";
+    resendCalls = [];
+    const raw = sessionEvent({ email: buyerEmail, slug: "filler-word-pack", amount_total: 1900, currency: "usd" });
+    await webhookHandler(webhookEvent(raw));
+
+    const raw2 = sessionEvent({
+      email: "another@example.com",
+      sessionId: "cs_test_999",
+      slug: "prompt-word-bank-pack",
+      amount_total: 1200,
+      currency: "usd",
+    });
+    await webhookHandler(webhookEvent(raw2));
+
+    // Exactly two sale records written.
+    assert.equal(salesStore._map.size, 2, "one sale record per completed session");
+
+    // The filler record: right slug/amount/currency, hashed email, NO raw email.
+    const rawJson = [...salesStore._map.values()].join("\n");
+    assert.ok(!rawJson.includes(buyerEmail), "raw buyer email is never stored in the sales log");
+    assert.ok(!/@example\.com/i.test(rawJson), "no raw email address appears in any sale record");
+    const fillerRec = [...salesStore._map.values()].map((v) => JSON.parse(v)).find((r) => r.slug === "filler-word-pack");
+    assert.equal(fillerRec.amount_total, 1900, "sale amount recorded");
+    assert.equal(fillerRec.currency, "usd", "sale currency recorded");
+    assert.equal(fillerRec.email_hash, hashEmail(buyerEmail), "email stored only as sha256 hash");
+
+    // /_sales aggregates it.
+    const statsRes = await salesStatsHandler({ httpMethod: "GET" });
+    assert.equal(statsRes.statusCode, 200, "/_sales returns 200");
+    const stats = JSON.parse(statsRes.body);
+    assert.equal(stats.count, 2, "/_sales total count");
+    assert.equal(stats.gross, 3100, "/_sales gross revenue (cents)");
+    assert.equal(stats.gross_display, 31, "/_sales gross_display in major units");
+    const bySlug = Object.fromEntries(stats.products.map((p) => [p.slug, p]));
+    assert.equal(bySlug["filler-word-pack"].count, 1, "per-slug count (filler)");
+    assert.equal(bySlug["filler-word-pack"].gross, 1900, "per-slug gross (filler)");
+    assert.equal(bySlug["prompt-word-bank-pack"].gross, 1200, "per-slug gross (prompt pack)");
+    ok("completed session writes one hashed sale record; /_sales aggregates per-slug totals");
+  }
+
+  // ---- 10. dry-run records NO sale ----
+  setLiveEnv();
+  delete process.env.RESEND_API_KEY; // force dry-run
+  salesStore = makeSalesStore();
+  {
+    const raw = sessionEvent({ email: "dry@example.com", slug: "filler-word-pack" });
+    await webhookHandler(webhookEvent(raw, { sign: false }));
+    assert.equal(salesStore._map.size, 0, "dry-run writes zero sale records");
+    ok("dry-run path records no sale (write guard honoured)");
+  }
+
   // Sanity: every mapped product resolves to a distinct slug + filename.
   {
     const values = Object.values(PRODUCTS);
     const slugs = new Set(values.map((p) => p.slug));
-    assert.equal(slugs.size, values.length, "every mapped price id has a distinct slug");
-    assert.equal(slugs.size, 5, "five mapped product slugs (3 live + 2 pending)");
+    assert.equal(slugs.size, values.length, "every mapped product has a distinct slug");
+    assert.equal(slugs.size, 5, "five mapped product slugs (all live)");
+    const prices = new Set(values.map((p) => p.price_id));
+    assert.equal(prices.size, values.length, "every mapped product has a distinct live price id");
     const filenames = new Set(values.map((p) => p.filename));
-    assert.equal(filenames.size, values.length, "every mapped price id has a distinct filename");
-    ok("product mapping has five distinct product slugs");
+    assert.equal(filenames.size, values.length, "every mapped product has a distinct filename");
+    ok("product mapping has five distinct live product slugs + price ids");
   }
 
   globalThis.fetch = realFetch;

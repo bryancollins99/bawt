@@ -23,6 +23,12 @@
   to = "/.netlify/functions/download"
   status = 200
 
+# Conversion tracking read endpoint (per-slug sales totals + gross revenue)
+[[redirects]]
+  from = "/_sales"
+  to = "/.netlify/functions/sales-stats"
+  status = 200
+
 # Standalone tools (static files in public/)
 [[redirects]]
   from = "/plan"

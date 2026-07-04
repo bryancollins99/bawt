@@ -15,55 +15,70 @@ import crypto from "node:crypto";
 import { getStore } from "@netlify/blobs";
 
 // ---------------------------------------------------------------------------
-// Product mapping: Stripe price id -> product slug (== Blobs key) + metadata.
-// The slug is the stable Blobs key written by scripts/upload-products.mjs.
-// filename is what the buyer's browser saves the attachment as.
+// Product mapping: keyed by product SLUG (== Blobs key, == session.metadata.slug).
+//
+// Every live Stripe Payment Link carries metadata.slug, which Stripe copies onto
+// the checkout.session. That is the PRIMARY resolution path (see
+// resolveProductFromSession) and it needs NO STRIPE_SECRET_KEY. Each entry also
+// carries its live `price_id` so the legacy price-id path still works as a
+// fallback. `filename` is what the buyer's browser saves the attachment as; the
+// slug is the stable Blobs key written by scripts/upload-products.mjs.
 // ---------------------------------------------------------------------------
 export const PRODUCTS = {
-  price_1TpaMeK36rW7SrJyzjpudFG3: {
+  "filler-word-pack": {
     slug: "filler-word-pack",
     name: "Filler-Word Killer Editor Pack",
     filename: "filler-word-editor-pack-v1.0.zip",
+    price_id: "price_1TpaMeK36rW7SrJyzjpudFG3",
   },
-  price_1TpaMfK36rW7SrJyQmZG5Xwq: {
+  "claude-code-for-writers": {
     slug: "claude-code-for-writers",
     name: "Claude Code for Writers",
     filename: "cc-for-writers-v1.0.zip",
+    price_id: "price_1TpaMfK36rW7SrJyQmZG5Xwq",
   },
-  price_1TpaKnK36rW7SrJyhSy87BGw: {
+  "zettelkasten-kit": {
     slug: "zettelkasten-kit",
     name: "The Zettelkasten for Creators Kit",
     filename: "zk-creators-kit-v1.0.zip",
+    price_id: "price_1TpaKnK36rW7SrJyhSy87BGw",
   },
-  // --- PENDING: real Stripe price ids not yet created (see BLOCKED.md). ---
-  // These two placeholder keys wire the delivery path end to end now; swapping
-  // in each live price id later is a single find-and-replace of the key string.
-  PRICE_ID_PENDING_deadline_database: {
+  "writers-deadline-database": {
     slug: "writers-deadline-database",
     name: "Writers' Deadline Database",
     filename: "deadline-database-v1.0.zip",
+    price_id: "price_1Tpbn8K36rW7SrJylwizBYj6",
   },
-  PRICE_ID_PENDING_prompt_pack: {
+  "prompt-word-bank-pack": {
     slug: "prompt-word-bank-pack",
     name: "Prompt / Word-Bank Pack",
     filename: "prompt-word-bank-pack-v1.0.zip",
+    price_id: "price_1Tpbn9K36rW7SrJy6GIVghtt",
   },
 };
 
-// Reverse lookup by slug (used by download.js to resolve the streamed file).
-export const PRODUCTS_BY_SLUG = Object.fromEntries(
-  Object.values(PRODUCTS).map((p) => [p.slug, p]),
+// Backwards-compatible alias (download.js historically imported this name).
+export const PRODUCTS_BY_SLUG = PRODUCTS;
+
+// Fallback lookup: live Stripe price id -> slug. Only used when a session does
+// not carry metadata.slug (metadata.slug is the primary path).
+export const PRICE_TO_SLUG = Object.fromEntries(
+  Object.values(PRODUCTS)
+    .filter((p) => p.price_id)
+    .map((p) => [p.price_id, p.slug]),
 );
 
 export const BLOB_STORE_NAME = "product-downloads";
+export const SALES_STORE_NAME = "product-sales";
 export const TOKEN_TTL_SECONDS = 72 * 60 * 60; // ~72h
 
-export function productForPrice(priceId) {
-  return PRODUCTS[priceId] || null;
+export function productForSlug(slug) {
+  return (slug && PRODUCTS[slug]) || null;
 }
 
-export function productForSlug(slug) {
-  return PRODUCTS_BY_SLUG[slug] || null;
+export function productForPrice(priceId) {
+  const slug = priceId ? PRICE_TO_SLUG[priceId] : null;
+  return productForSlug(slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -188,6 +203,30 @@ export async function resolvePriceId(session, { secretKey } = {}) {
 }
 
 // ---------------------------------------------------------------------------
+// Resolve the purchased product from a checkout.session.
+//
+// PRIMARY: session.metadata.slug. Every live Payment Link sets metadata.slug and
+// Stripe copies it onto the session, so this path needs NO STRIPE_SECRET_KEY.
+// FALLBACK: the legacy price-id path (inline line_items / metadata.price_id /
+// live line-item retrieval), mapped to a slug via PRICE_TO_SLUG.
+//
+// Returns { slug, product, via }. `product` is null when the slug/price is
+// unknown (caller 200s with no send).
+// ---------------------------------------------------------------------------
+export async function resolveProductFromSession(session, { secretKey } = {}) {
+  const metaSlug = session?.metadata?.slug;
+  if (metaSlug) {
+    return { slug: metaSlug, product: productForSlug(metaSlug), via: "metadata.slug" };
+  }
+  const priceId = await resolvePriceId(session, { secretKey });
+  if (priceId) {
+    const product = productForPrice(priceId);
+    return { slug: product?.slug || null, product, via: "price_id", priceId };
+  }
+  return { slug: null, product: null, via: "none" };
+}
+
+// ---------------------------------------------------------------------------
 // Netlify Blobs store access (injectable factory for tests).
 // ---------------------------------------------------------------------------
 let _storeFactory = defaultStoreFactory;
@@ -199,6 +238,60 @@ function defaultStoreFactory(name) {
 }
 export function getProductStore() {
   return _storeFactory(BLOB_STORE_NAME);
+}
+export function getSalesStore() {
+  return _storeFactory(SALES_STORE_NAME);
+}
+
+// ---------------------------------------------------------------------------
+// Conversion tracking: append-only sale records in the private Netlify Blobs
+// store "product-sales". One record per completed checkout, keyed by
+// "<ISO timestamp>_<slug>". The buyer email is HASHED (sha256), never stored
+// raw. Reads are aggregated by sales-stats.js (/_sales).
+// ---------------------------------------------------------------------------
+export function hashEmail(email) {
+  if (!email) return null;
+  return crypto.createHash("sha256").update(String(email).trim().toLowerCase()).digest("hex");
+}
+
+// Write one sale record. Returns { key, record }. Throws only on a store error;
+// callers wrap this so a metrics failure never blocks fulfilment.
+export async function recordSale(store, { slug, amount_total, currency, email, ts } = {}) {
+  const stamp = Number.isFinite(ts) ? ts : Date.now();
+  const key = `${new Date(stamp).toISOString()}_${slug}`;
+  const record = {
+    slug: slug || null,
+    amount_total: Number.isFinite(amount_total) ? amount_total : null,
+    currency: currency ? String(currency).toLowerCase() : null,
+    email_hash: hashEmail(email),
+    ts: stamp,
+  };
+  await store.set(key, JSON.stringify(record));
+  return { key, record };
+}
+
+// Aggregate every sale record into per-slug totals + overall count + gross.
+// Amounts are Stripe minor units (cents); gross is returned in the same unit.
+export async function readSalesStats(store) {
+  const listing = (await store.list()) || {};
+  const blobs = listing.blobs || [];
+  const perSlug = {};
+  let count = 0;
+  let gross = 0;
+  let currency = null;
+  for (const b of blobs) {
+    const rec = await store.get(b.key, { type: "json" });
+    if (!rec) continue;
+    count += 1;
+    const amt = Number(rec.amount_total) || 0;
+    gross += amt;
+    if (!currency && rec.currency) currency = rec.currency;
+    const slug = rec.slug || "unknown";
+    const s = perSlug[slug] || (perSlug[slug] = { slug, count: 0, gross: 0, currency: rec.currency || null });
+    s.count += 1;
+    s.gross += amt;
+  }
+  return { count, gross, currency, perSlug };
 }
 
 // ---------------------------------------------------------------------------

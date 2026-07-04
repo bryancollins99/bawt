@@ -1,20 +1,23 @@
 // netlify/functions/stripe-webhook.js
 //
-// Stripe webhook: on checkout.session.completed, resolve the purchased price id
-// to a product slug, mint a ~72h HMAC download token, and email the buyer a
-// tokenised download link via Resend.
+// Stripe webhook: on checkout.session.completed, resolve the purchased product
+// (PRIMARY: session.metadata.slug, which every Payment Link sets and Stripe
+// copies onto the session, so NO STRIPE_SECRET_KEY is required), mint a ~72h
+// HMAC download token, email the buyer a tokenised download link via Resend, and
+// record the sale to the private Netlify Blobs store "product-sales".
 //
 // GUARD: if STRIPE_WEBHOOK_SECRET or RESEND_API_KEY is unset, or BAWT_DRY_RUN=1,
-// we do not verify/send live. We log what we WOULD do and return 200 so Stripe
-// does not retry. Unknown price ids are logged and 200'd (no send).
+// we do not verify/send/record live. We log what we WOULD do and return 200 so
+// Stripe does not retry. Unknown slugs/prices are logged and 200'd (no send).
 
 import {
   verifyStripeSignature,
-  resolvePriceId,
-  productForPrice,
+  resolveProductFromSession,
   mintToken,
   sendDownloadEmail,
   downloadBaseUrl,
+  getSalesStore,
+  recordSale,
   TOKEN_TTL_SECONDS,
 } from "./_deliver-lib.js";
 
@@ -86,18 +89,35 @@ export async function handler(event) {
   const email =
     session.customer_details?.email || session.customer_email || null;
 
-  let priceId = null;
+  // PRIMARY resolution is session.metadata.slug (no STRIPE_SECRET_KEY needed);
+  // the price-id path is a fallback used only when metadata.slug is absent.
+  let resolved = { slug: null, product: null, via: "none" };
   try {
-    priceId = await resolvePriceId(session, { secretKey: STRIPE_SECRET_KEY });
+    resolved = await resolveProductFromSession(session, { secretKey: STRIPE_SECRET_KEY });
   } catch (e) {
-    console.error(`[stripe-webhook] price resolution error: ${e.message}`);
-    // Fall through: unresolved price handled below.
+    console.error(`[stripe-webhook] product resolution error: ${e.message}`);
+    // Fall through: unresolved product handled below.
   }
 
-  const product = priceId ? productForPrice(priceId) : null;
+  const { product, slug, via } = resolved;
   if (!product) {
-    console.warn(`[stripe-webhook] unknown/unmapped price id: ${priceId} (session ${session.id})`);
-    return json(200, { received: true, mapped: false, priceId });
+    console.warn(`[stripe-webhook] unknown/unmapped product: slug=${slug} via=${via} (session ${session.id})`);
+    return json(200, { received: true, mapped: false, slug, via });
+  }
+
+  // Record the sale (guarded: never in dry-run). A metrics-store failure must
+  // not block fulfilment, so this is best-effort with its own try/catch.
+  if (!dryRun) {
+    try {
+      await recordSale(getSalesStore(), {
+        slug: product.slug,
+        amount_total: session.amount_total,
+        currency: session.currency,
+        email,
+      });
+    } catch (e) {
+      console.error(`[stripe-webhook] sale record failed for ${product.slug}: ${e.message}`);
+    }
   }
 
   if (!email) {
