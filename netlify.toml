@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Serverless functions (list-capture double opt-in: subscribe + confirm)
+[functions]
+  directory = "netlify/functions"
+
 # Standalone tools (static files in public/)
 [[redirects]]
   from = "/plan"
