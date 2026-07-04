@@ -23,6 +23,7 @@ import {
   renderAffiliatePS,
   renderProductPPS,
   resolveProductUrl,
+  brandWordmarkHtml,
   pollFooterHtml,
   pollFooterText,
 } from "./render.js";
@@ -213,7 +214,8 @@ export function renderDigest(selected, opts = {}) {
     now
   )} &middot; open calls, soonest first</div>`;
 
-  const inner = `${headerHtml}
+  const inner = `${brandWordmarkHtml()}
+${headerHtml}
 ${rowsHtml}
 ${ps.html}
 ${pps.html}

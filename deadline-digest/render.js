@@ -97,6 +97,21 @@ export function renderProductPPS(product) {
   return { html, text, url, missing: !url };
 }
 
+// ---- brand wordmark -------------------------------------------------------
+// A small letter-spaced red eyebrow at the very top of the email body. NOT a
+// masthead block: one line, matching the `.brand` style in bawt-email-formats.html
+// (11px, .18em tracking, uppercase, red, bold). Both the letter and the digest
+// carry it; the digest keeps its "The Deadline Digest" title below the wordmark.
+export const BRAND_WORDMARK = "Become a Writer Today";
+
+export function brandWordmarkHtml() {
+  return (
+    `<div style="font-family:${BRAND.serif};font-size:11px;letter-spacing:.18em;` +
+    `text-transform:uppercase;font-weight:bold;color:${BRAND.red};margin:0 0 16px;">` +
+    `${escapeHtml(BRAND_WORDMARK)}</div>`
+  );
+}
+
 // ---- body ----------------------------------------------------------------
 
 function splitParagraphs(body) {
@@ -172,7 +187,8 @@ export function renderLetter(letter, opts = {}) {
     .map((p) => `<p style="${paraStyle}">${escapeHtml(p).replace(/\n/g, "<br>")}</p>`)
     .join("\n");
 
-  const inner = `${bodyHtml}
+  const inner = `${brandWordmarkHtml()}
+${bodyHtml}
 ${ps.html}
 ${pps.html}
 ${pollFooterHtml(siteUrl, issueId)}`;
