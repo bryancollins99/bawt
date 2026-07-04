@@ -232,9 +232,13 @@ async function run() {
 
   // Sanity: every mapped product resolves to a distinct slug + filename.
   {
-    const slugs = new Set(Object.values(PRODUCTS).map((p) => p.slug));
-    assert.equal(slugs.size, 3, "three distinct product slugs");
-    ok("product mapping has three distinct slugs");
+    const values = Object.values(PRODUCTS);
+    const slugs = new Set(values.map((p) => p.slug));
+    assert.equal(slugs.size, values.length, "every mapped price id has a distinct slug");
+    assert.equal(slugs.size, 5, "five mapped product slugs (3 live + 2 pending)");
+    const filenames = new Set(values.map((p) => p.filename));
+    assert.equal(filenames.size, values.length, "every mapped price id has a distinct filename");
+    ok("product mapping has five distinct product slugs");
   }
 
   globalThis.fetch = realFetch;
