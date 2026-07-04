@@ -53,17 +53,18 @@ actioned this session (no live sends, no merges).
 
 ## Needs Bryan / external before a live send
 
-1. **Remaining Stripe checkout URLs.** Three products now have LIVE checkouts
-   (Filler-Word Killer Editor Pack, Claude Code for Writers, The Zettelkasten for
-   Creators Kit) and every drafted letter's P.P.S. links to one of them. Still
-   `STRIPE_CHECKOUT_PENDING`: How to Earn $3-5k Writing Online, The Fearless
-   Creative, Writers' Deadline Database, Prompt / Word-Bank Pack. Consequences:
-   - Letters 3 (freelance) and 6 (mindset) cross-sell the Filler-Word pack
-     because their natural products are still pending. Swap the P.P.S. once
-     "How to Earn $3-5k Writing Online" / "The Fearless Creative" go live.
-   - The Thursday digest cross-sells the Filler-Word pack; switch it to the
-     Writers' Deadline Database automatically the moment that product gets a real
-     checkout_url (the digest already prefers it when live).
+1. **Remaining Stripe checkout URLs.** All FIVE deliverable products now have LIVE
+   checkouts (Filler-Word Killer Editor Pack, Claude Code for Writers, The
+   Zettelkasten for Creators Kit, Writers' Deadline Database, Prompt / Word-Bank
+   Pack) and every drafted letter's P.P.S. links to one. Still
+   `STRIPE_CHECKOUT_PENDING` (no live product, no letter references them): How to
+   Earn $3-5k Writing Online, The Fearless Creative. Consequences:
+   - Letters 3 (freelance) and 6 (mindset) still cross-sell the Filler-Word pack
+     because their natural products (the two courses above) have no checkout yet.
+     Swap the P.P.S. once those go live.
+   - The Thursday digest now cross-sells the Writers' Deadline Database (its
+     `checkout_url` is live, and `digestProduct()` prefers it over the Filler-Word
+     pack automatically).
 
 2. **Affiliate program terms per slug.** The letters link grammarly, prowritingaid,
    masterclass, teachable via `go.becomeawritertoday.com/e/<slug>`. Confirm each
@@ -140,14 +141,13 @@ steps are done in Stripe and Netlify. Nothing here can be automated safely from 
 3. **Set `DELIVER_TOKEN_SECRET`** in Netlify env = a fresh random secret (32+ bytes),
    e.g. `openssl rand -hex 32`. This signs the download tokens.
 
-4. **Resolve the price id (REQUIRED — the stated env set is insufficient).**
-   A Payment-Link `checkout.session.completed` event has no price id inline, so pick ONE:
-   - **Recommended:** set **`STRIPE_SECRET_KEY`** in Netlify env. The webhook then retrieves
-     the session line items from the Stripe API and maps the price id -> product. Preserves
-     the exact `price_id -> slug` mapping already coded.
-   - **Or:** edit each of the three Stripe Payment Links to pass metadata `price_id` equal to
-     that product's price id. No new secret, but three manual link edits.
-   Without one of these, every purchase resolves to "unknown price" and no email is sent.
+4. **Product resolution — DONE, no secret key needed.**
+   Every live Payment Link already sets `metadata.slug`, and Stripe copies payment-link
+   metadata onto the `checkout.session`, so `checkout.session.completed` arrives with
+   `metadata.slug` set. `resolveProductFromSession()` maps that slug straight to the product.
+   **`STRIPE_SECRET_KEY` is NOT required.** It is only an OPTIONAL fallback: if a session ever
+   lacks `metadata.slug`, the webhook falls back to the price-id path (which needs
+   `STRIPE_SECRET_KEY` to retrieve line items). Setting it is belt-and-braces, not a blocker.
 
 5. **Set `RESEND_API_KEY`** in Netlify env = the Become a Writer Today Resend key.
    The sending domain `becomeawritertoday.com` must be verified in Resend so
@@ -179,30 +179,26 @@ steps are done in Stripe and Netlify. Nothing here can be automated safely from 
 
 # BLOCKED / GO-LIVE — Two new products (deadline database + prompt pack)
 
-The two products are built, wired, and tested, but they are **not purchasable** until the
-Stripe pieces exist. Each ships with placeholders that are designed to be swapped in one edit.
+Both products are built, wired, tested, and now have LIVE Stripe checkouts + price ids. The
+Stripe/products.json/_deliver-lib swaps below are **DONE**; the only remaining go-live step is
+building and uploading the two zips (Bryan, manual, needs a Netlify PAT).
 
-## For EACH of the two products, create in Stripe (Bryan, manual)
+## Stripe pieces (DONE)
 
 Products: **Writers' Deadline Database ($29)** and **Prompt / Word-Bank Pack ($12)**.
+Stripe product + price + Payment Link created for each; every link carries `metadata.slug`.
 
-1. **Create the Stripe product + price** (one price each: 29.00 and 12.00).
-2. **Create a Payment Link** for each price.
-3. **Copy the `price_...` id and the payment-link URL.**
+- Deadline Database: price `price_1Tpbn8K36rW7SrJylwizBYj6`,
+  checkout `https://buy.stripe.com/5kQeVed6v7mjdIGfu8bZe0z`, slug `writers-deadline-database`.
+- Prompt / Word-Bank Pack: price `price_1Tpbn9K36rW7SrJy6GIVghtt`,
+  checkout `https://buy.stripe.com/3cIaEY4zZ7mj34281GbZe0A`, slug `prompt-word-bank-pack`.
 
-## Then swap the placeholders (three edits per product)
+## Placeholder swaps (DONE)
 
-1. `deadline-digest/config/products.json` — replace `"checkout_url": "STRIPE_CHECKOUT_PENDING"`
-   with the live payment-link URL, under `"Writers' Deadline Database"` and
-   `"Prompt / Word-Bank Pack"` respectively.
-2. `netlify/functions/_deliver-lib.js` — in the `PRODUCTS` map, rename the placeholder key to
-   the real price id:
-   - `PRICE_ID_PENDING_deadline_database:` -> `price_<real id for the database>:`
-   - `PRICE_ID_PENDING_prompt_pack:` -> `price_<real id for the prompt pack>:`
-   (The `slug`, `name`, and `filename` under each key stay as-is.)
-3. If using the Payment-Link `metadata.price_id` route rather than `STRIPE_SECRET_KEY`
-   line-item retrieval (see the delivery go-live checklist above), set each link's metadata
-   `price_id` to match.
+1. `deadline-digest/config/products.json` — both `checkout_url`s are the live payment links.
+2. `netlify/functions/_deliver-lib.js` — the `PRODUCTS` map is keyed by slug and each entry
+   carries its live `price_id` (the old `PRICE_ID_PENDING_*` keys are gone). Delivery resolves
+   from `session.metadata.slug`, so no `metadata.price_id` link edit is needed.
 
 ## Build + upload the two zips (one time, and after any data refresh)
 
@@ -220,10 +216,12 @@ mapped slug has no source zip, so build both before uploading. Re-run the deadli
 build whenever `src/data/contests.json` changes so the shipped file stays current (its header
 shows the compile date and days-left is computed on the buyer's machine on every open).
 
-## Placeholders to grep for
+## Placeholders (all resolved)
 
-- `STRIPE_CHECKOUT_PENDING` (products.json — both new products)
-- `PRICE_ID_PENDING_deadline_database`, `PRICE_ID_PENDING_prompt_pack` (_deliver-lib.js)
+- `STRIPE_CHECKOUT_PENDING` no longer appears for the five deliverable products in
+  products.json (only the two non-deliverable course entries retain it, by design).
+- `PRICE_ID_PENDING_deadline_database` / `PRICE_ID_PENDING_prompt_pack` are gone from
+  `_deliver-lib.js` (replaced by live price ids under slug keys).
 
 ---
 

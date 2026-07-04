@@ -228,20 +228,23 @@ publicly fetchable.
 ## Key decisions
 
 1. **Storage = private Netlify Blobs store `product-downloads`.** Keys are stable slugs:
-   `filler-word-pack`, `claude-code-for-writers`, `zettelkasten-kit`. Zips live in `~/src`
-   (outside the repo), are `.gitignore`d (`*.zip`), and are never placed in `public/` or
-   `dist/`. There is no public route to the store; the only reachable path is `/download`
-   behind a valid token.
+   `filler-word-pack`, `claude-code-for-writers`, `zettelkasten-kit`,
+   `writers-deadline-database`, `prompt-word-bank-pack`. Zips live outside the repo (older
+   three in `~/src`, the two built-in-repo products in `build-output/`), are `.gitignore`d
+   (`*.zip`), and are never placed in `public/` or `dist/`. There is no public route to the
+   store; the only reachable path is `/download` behind a valid token.
 
-2. **Payment-Link price resolution.** A `checkout.session.completed` event for a Payment
-   Link does NOT carry `line_items` or a price id inline. `resolvePriceId()` tries, in
-   order: inline `line_items` (only if a caller expanded them), `session.metadata.price_id`
-   (link escape hatch), then a live retrieval of the session line items via the Stripe REST
-   API (`GET /v1/checkout/sessions/{id}/line_items`, needs `STRIPE_SECRET_KEY`). The test
-   exercises the SAME retrieval path via an injected stub — it does not stuff an inline
-   price the production path never sees. **This means the task's stated env set
-   (`STRIPE_WEBHOOK_SECRET` + `DELIVER_TOKEN_SECRET`) is not sufficient to resolve a live
-   purchase** — see BLOCKED.md go-live step 4.
+2. **Product resolution = `session.metadata.slug` (PRIMARY, no secret key).** Every live
+   Stripe Payment Link carries `metadata.slug`, and Stripe copies payment-link metadata onto
+   the `checkout.session`, so `checkout.session.completed` arrives with `metadata.slug` set.
+   `resolveProductFromSession()` reads that slug and maps it directly to the product via the
+   slug-keyed `PRODUCTS` map — **no `STRIPE_SECRET_KEY` is required**. The stated env set
+   (`STRIPE_WEBHOOK_SECRET` + `DELIVER_TOKEN_SECRET` + `RESEND_API_KEY`) is therefore
+   sufficient to fulfil a live purchase. The legacy price-id path (`resolvePriceId()`: inline
+   `line_items`, `metadata.price_id`, then a live line-item retrieval that needs
+   `STRIPE_SECRET_KEY`) is retained ONLY as a fallback for a session that somehow lacks
+   `metadata.slug`; each product also stores its live `price_id` so `PRICE_TO_SLUG` resolves
+   the fallback. `PRODUCTS` is keyed by slug; `productForPrice()` goes price -> slug -> product.
 
 3. **Token = HMAC-SHA256 over `base64url({slug,email,exp})`**, `~72h` expiry, secret
    `DELIVER_TOKEN_SECRET`. Format `payload.sig`. Verification is constant-time and
@@ -315,10 +318,48 @@ Adds two buildable, self-contained products that plug into the existing delivery
    any UI copy; en/em dashes in the source contest fields are cleaned before embedding
    (number ranges become "N to M", other uses collapse to a plain hyphen), and both build
    scripts + the self-test assert zero fancy dashes in output.
-5. **Wiring for one-edit go-live.** Both products are in `deadline-digest/config/products.json`
-   (with `slug` + `zip`, `checkout_url: STRIPE_CHECKOUT_PENDING`) and in the `_deliver-lib.js`
-   `PRODUCTS` map under placeholder price-id keys (`PRICE_ID_PENDING_deadline_database`,
-   `PRICE_ID_PENDING_prompt_pack`). `scripts/upload-products.mjs` gains both zips (sourced from
-   `build-output/`, a deliberate mix with the older `~/src` zips). `deliverTest.mjs`'s slug
-   assertion now checks distinctness generically and the count of 5. See BLOCKED.md for the
-   exact swap steps.
+5. **Wiring for go-live (now RESOLVED).** Both products have LIVE Stripe checkout links in
+   `deadline-digest/config/products.json` and LIVE `price_id`s in the slug-keyed
+   `_deliver-lib.js` `PRODUCTS` map (the old `PRICE_ID_PENDING_*` placeholder keys are gone).
+   `scripts/upload-products.mjs` carries both zips (sourced from `build-output/`, a deliberate
+   mix with the older `~/src` zips). `deliverTest.mjs` asserts all 5 slugs are distinct and
+   live. Delivery resolves each product from `session.metadata.slug`, so purchases fulfil
+   without `STRIPE_SECRET_KEY`.
+
+---
+
+# DECISIONS — Leadgen + newsletter integration (checkout wiring, slug delivery, sales tracking, wordmark)
+
+Branch: `integration/leadgen-newsletter` (PR #18). Ties the send engine, the five live
+Stripe products, and delivery together, and adds conversion tracking.
+
+## Checkout URLs wired
+All 5 products now carry LIVE Stripe checkout links in
+`deadline-digest/config/products.json`. Wiring the Writers' Deadline Database URL flips
+`digestProduct()` to cross-sell the database (its `dbUrl !== PENDING` branch) instead of the
+Filler-Word pack, as designed. The two non-deliverable course entries (How to Earn $3-5k,
+The Fearless Creative) stay `STRIPE_CHECKOUT_PENDING` — no live product exists for them and no
+drafted letter references them.
+
+## Delivery keyed by slug
+`_deliver-lib.js` `PRODUCTS` is keyed by SLUG (== Blobs key == `session.metadata.slug`), each
+entry carrying its live `price_id`. `resolveProductFromSession()` resolves `metadata.slug`
+first (secret-key-free), falling back to the price-id path via `PRICE_TO_SLUG`. The webhook and
+`download.js` both resolve by slug. This drops the `STRIPE_SECRET_KEY` requirement.
+
+## Conversion tracking
+On `checkout.session.completed`, after minting the download, the webhook writes ONE record to
+the private Netlify Blobs store `product-sales`, keyed `"<ISO ts>_<slug>"`, value
+`{ slug, amount_total, currency, email_hash, ts }`. The buyer email is SHA-256 hashed
+(`hashEmail`), never stored raw. Writes are guarded by the same dry-run/secret gating as the
+send (skipped in dry-run) and are best-effort (a metrics failure never blocks fulfilment).
+`netlify/functions/sales-stats.js` serves `GET /_sales` (wired in `netlify.toml`): per-slug
+count + gross, overall count + gross + `gross_display` (major units). The stats response
+exposes only slug/count/gross, never email hashes.
+
+## Brand wordmark
+`render.js` `brandWordmarkHtml()` emits a small red letter-spaced uppercase eyebrow
+("Become a Writer Today", 11px, .18em, matching the `.brand` style in
+`bawt-email-formats.html`). It sits at the very top of both the evergreen letter body and the
+digest (the digest keeps its "The Deadline Digest" title below the wordmark). It is a single
+wordmark line, not a masthead. Zero em dashes.
