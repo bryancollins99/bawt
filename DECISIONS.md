@@ -5,21 +5,57 @@ renders queued personal letters and sends them as Resend broadcasts. Nothing
 here live-sends. Branched off `main`, independent of the unmerged capture PR
 (#15, `leadgen/list-capture-foundation`).
 
+## Two templates
+1. **Evergreen letter** (Mon / Wed / Fri) - a pure personal letter from Bryan:
+   greeting, body in his voice, "Write on, Bryan", then a **P.S. carrying an
+   affiliate AND a P.P.S. carrying a product** (dual monetisation, every send).
+2. **Deadline Digest** (Thursday) - a second template rebuilt live from
+   `../src/data/contests.json`: a short title + a soonest-first list of open
+   calls, each linking to the organiser, with the same dual-monetisation footer.
+
+`send.js` routes by weekday automatically (UTC Thursday -> digest, else letter);
+`--digest` / `--letter` override.
+
 ## Format (locked, not redesigned)
-Each send is a pure personal letter from Bryan: greeting, body in his voice,
-"Write on, Bryan", then a P.S. carrying EITHER a product or an affiliate. No
-masthead, no section labels, no editorial links back to becomeawritertoday.com.
+No masthead, no section labels, no editorial links back to becomeawritertoday.com.
 The only outbound links are affiliate (merchant, via the go-domain), product
 checkout (Stripe), or a contest organiser, plus two footer utilities: the
-one-click poll and the Resend unsubscribe token.
+one-click poll and the Resend unsubscribe token. Matches
+`bawt-email-formats.html`.
+
+## Dual monetisation (every send)
+Each send carries BOTH an affiliate (P.S., with disclosure) and a product
+(P.P.S.). Affiliate rotates by thread: craft -> prowritingaid, ai -> grammarly,
+freelance -> teachable, mindset/notes/prompts -> masterclass, deadlines ->
+contest organiser. Product maps to one of the three LIVE Stripe products by
+relevance: ai -> Claude Code for Writers, notes -> The Zettelkasten for Creators
+Kit, everything else -> Filler-Word Killer Editor Pack. The product P.P.S. always
+links to a live `checkout_url` (never a placeholder).
+
+Awkward mappings (flagged for Bryan): letters 3 (freelance-income) and 6
+(mindset) have no live product that fits their subject, so both cross-sell the
+Filler-Word Killer Editor Pack. Their natural products (How to Earn $3-5k Writing
+Online; The Fearless Creative) are still `STRIPE_CHECKOUT_PENDING`; swap the
+P.P.S. once those have live checkouts.
+
+## Clean hyperlinks
+The HTML part shows anchor TEXT only (e.g. "ProWritingAid", "the Filler-Word
+Killer Editor Pack") - the URL lives only in the `href`, never in visible copy.
+The plain-text part shows "anchor (url)". Letter P.S./P.P.S. copy is stored in
+queue.json with a `{{LINK}}` token that render.js replaces with the anchor. The
+self-test strips tags and asserts no `http`/go-domain/stripe URL appears in the
+visible HTML.
 
 ## Data source
-`deadline-digest/data/queue.json` was extracted verbatim from the review HTML's
+`deadline-digest/data/queue.json` was extracted from the review HTML's
 `<script id="data">` block: a 36-slot `calendar` (weeks 1-12, 3 per week, which
 maps to the Mon/Wed/Fri cadence) and 9 drafted `letters`. Letter `n` maps to
 calendar slot `n` (1-based). Slots 10-36 have no drafted body yet, so they are
-not sendable until their letters are written. A `generatedAt` timestamp and a
-`topic` field (default `null`) were added; nothing else was changed.
+not sendable until their letters are written. Each letter now carries structured
+`affiliate` and `product` objects (slug/name, anchor, `{{LINK}}` text); a
+`generatedAt` timestamp and a nullable `topic` field are also present. The
+digest reads `src/data/contests.json` live (fields: name, genres[], fee,
+freeEntry, deadline, prize, url, region, stale).
 
 ## Real values wired
 - From: `Become a Writer Today <bryan@becomeawritertoday.com>` (Resend EU;
@@ -39,28 +75,29 @@ queue.json. Genre is deliberately NOT inferred from the thread label.
 
 ## Products
 `deadline-digest/config/products.json` maps product name -> { checkout_url,
-blurb }. Every `checkout_url` is the placeholder `STRIPE_CHECKOUT_PENDING`. The
-`[Get it]` marker in a product letter's P.S. is rewritten by render.js into a
-link to that product's checkout_url. Drop in the live Stripe Checkout URLs
-before enabling live sends.
+blurb }. Three now have LIVE Stripe checkouts: Filler-Word Killer Editor Pack,
+Claude Code for Writers, The Zettelkasten for Creators Kit. The rest stay
+`STRIPE_CHECKOUT_PENDING`. render.js rewrites the `{{LINK}}` token in a product
+P.P.S. into an anchor pointing at that product's `checkout_url`.
 
 ## Affiliate disclosure
-Affiliate letters get ONE standalone FTC / ASA disclosure line injected into
-both the HTML and plain-text parts, in addition to Bryan's own inline P.S.
-wording. Belt-and-braces on compliance; the injected line is what the self-test
-guarantees.
+Every affiliate P.S. carries one FTC / ASA disclosure line in both the HTML and
+plain-text parts (a styled small-print line under the P.S.).
 
 ## Risk fixes (from BUILD-PLAN risk table)
-- R2 freshness: staleness is computed from the queue's `generatedAt` field
-  (falling back to `git log -1 --format=%cI` on the file), NEVER filesystem
-  mtime, which git resets to "now" on every checkout. Fail-closed:
-  MAX_DATA_AGE_DAYS = 120 (generous because the letters are evergreen), and an
-  unknown timestamp counts as stale.
+- R2 freshness: for the letter queue, staleness is computed from the queue's
+  `generatedAt` field (falling back to `git log -1 --format=%cI`), NEVER
+  filesystem mtime. Fail-closed: MAX_DATA_AGE_DAYS = 120 (letters are evergreen).
+  For the digest, contests staleness is computed from the git commit time of
+  `src/data/contests.json` (CONTESTS_MAX_AGE_DAYS = 14, tighter because
+  deadlines are time-sensitive); unknown age counts as stale. The Action uses
+  `fetch-depth: 0` so `git log` on the file resolves in CI.
 - R4 empty targets: `partitionTargets` skips empty targets individually. The run
-  aborts (exit 1) only if EVERY resolved target for a letter is empty, never
-  because a single genre segment is empty.
-- R7 idempotency: keyed on the Resend broadcast name (`bawt-letter-<n>`), read
-  back via list-broadcasts, so a slot is never sent twice. No committed ledger.
+  aborts (exit 1) only if EVERY resolved target for a send is empty. The digest
+  additionally skips gracefully (exit 0) when no contest is in the window.
+- R7 idempotency: keyed on the Resend broadcast name (`bawt-letter-<n>` for
+  letters, `digest-<YYYY-MM-DD>` for the weekly digest), read back via
+  list-broadcasts, so a slot is never sent twice. No committed ledger.
 
 ## Safety / guards
 Dry run (writes `preview-<n>.html` + `.txt`, sends nothing) whenever `--dry` is

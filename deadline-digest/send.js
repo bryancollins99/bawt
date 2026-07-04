@@ -26,6 +26,14 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { renderLetter } from "./render.js";
+import {
+  loadContests,
+  contestsDataDate,
+  assertContestsFresh,
+  selectContests,
+  shouldSkipDigest,
+  renderDigest,
+} from "./render-digest.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -150,10 +158,19 @@ export function resolveDryRun(argv = process.argv, env = process.env) {
   return false;
 }
 
+// Which template to send: Thursday (UTC day 4) sends the Deadline Digest;
+// Mon/Wed/Fri send the next evergreen letter. Overridable with --digest/--letter.
+export function resolveKind(argv = process.argv, opts = {}) {
+  if (argv.includes("--digest")) return "digest";
+  if (argv.includes("--letter")) return "letter";
+  const d = opts.now ? new Date(opts.now) : new Date();
+  return d.getUTCDay() === 4 ? "digest" : "letter";
+}
+
 // ---- preview writing -----------------------------------------------------
 
-function writePreview(sendable, rendered) {
-  const base = path.join(__dirname, `preview-${sendable.n}`);
+function writePreview(slug, rendered) {
+  const base = path.join(__dirname, `preview-${slug}`);
   fs.writeFileSync(`${base}.html`, rendered.html);
   fs.writeFileSync(`${base}.txt`, rendered.text);
   return { html: `${base}.html`, text: `${base}.txt` };
@@ -161,7 +178,7 @@ function writePreview(sendable, rendered) {
 
 // ---- live send (guarded; never reached without RESEND_API_KEY) -----------
 
-async function liveSend(sendable, rendered, targets) {
+async function liveSend(name, rendered, targets) {
   const { Resend } = await import("resend");
   const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -177,7 +194,7 @@ async function liveSend(sendable, rendered, targets) {
     for (const t of empty) console.warn(`  skip empty target: ${t.label}`);
   }
   if (live.length === 0) {
-    console.warn(`  all targets empty for letter ${sendable.n}; skipping this letter`);
+    console.warn(`  all targets empty for ${name}; skipping this send`);
     return { sent: 0, skipped: empty.length };
   }
 
@@ -189,7 +206,7 @@ async function liveSend(sendable, rendered, targets) {
       // Resend before the first real send. See BLOCKED.md.
       audienceId: t.segmentId,
       from: FROM,
-      name: broadcastName(sendable.letter),
+      name,
       subject: rendered.subject,
       preview_text: rendered.preview,
       html: rendered.html,
@@ -198,7 +215,7 @@ async function liveSend(sendable, rendered, targets) {
     const id = created && created.data ? created.data.id : created && created.id;
     await resend.broadcasts.send({ broadcastId: id });
     sent += 1;
-    console.log(`  sent broadcast ${broadcastName(sendable.letter)} -> ${t.label}`);
+    console.log(`  sent broadcast ${name} -> ${t.label}`);
   }
   return { sent, skipped: empty.length };
 }
@@ -219,8 +236,7 @@ async function fetchSentNames() {
 
 // ---- main ----------------------------------------------------------------
 
-async function main() {
-  const dry = resolveDryRun();
+async function sendLetter(dry) {
   const queue = loadQueue();
 
   // R2: freshness from generatedAt / git, not mtime. Fail closed.
@@ -244,24 +260,73 @@ async function main() {
   const next = pending[0];
   const targets = resolveAudience(next.letter);
   const rendered = renderLetter(next.letter);
+  const name = broadcastName(next.letter);
 
   console.log(`Next letter: #${next.n} (week ${next.week}, ${next.thread}) "${rendered.subject}"`);
   console.log(`Targets: ${targets.map((t) => t.label).join(", ")}`);
 
   if (dry) {
-    const paths = writePreview(next, rendered);
+    const paths = writePreview(String(next.n), rendered);
     console.log(`DRY RUN. Wrote:\n  ${paths.html}\n  ${paths.text}`);
     console.log("No email was sent.");
     return;
   }
 
-  const result = await liveSend(next, rendered, targets);
+  const result = await liveSend(name, rendered, targets);
   if (result.sent === 0) {
     // R4: only fatal if the letter had no live target at all.
     console.error(`Letter #${next.n} had no live target. Aborting run.`);
     process.exit(1);
   }
   console.log(`Done. Sent ${result.sent} broadcast(s), skipped ${result.skipped} empty target(s).`);
+}
+
+async function sendDigest(dry) {
+  // R2: contests freshness from git commit time, not mtime. Fail closed.
+  assertContestsFresh(contestsDataDate());
+
+  const contests = loadContests();
+  const selected = selectContests(contests);
+
+  if (shouldSkipDigest(selected)) {
+    // Empty handling: no deadlines in the window is not an error, just no send.
+    console.log("No contest deadlines within the window. Skipping the digest (not an error).");
+    return;
+  }
+
+  const rendered = renderDigest(selected);
+  const name = rendered.issueId; // e.g. digest-2026-07-10 (weekly, idempotency key)
+  const targets = resolveAudience({ topic: null }); // digest goes to the base segment
+
+  console.log(`Deadline Digest: ${selected.length} contests. "${rendered.subject}"`);
+
+  if (dry) {
+    const paths = writePreview(name, rendered);
+    console.log(`DRY RUN. Wrote:\n  ${paths.html}\n  ${paths.text}`);
+    console.log("No email was sent.");
+    return;
+  }
+
+  const sentNames = await fetchSentNames();
+  if (sentNames.includes(name)) {
+    console.log(`Digest ${name} already sent. Nothing to do.`);
+    return;
+  }
+
+  const result = await liveSend(name, rendered, targets);
+  if (result.sent === 0) {
+    console.error(`Digest ${name} had no live target. Aborting run.`);
+    process.exit(1);
+  }
+  console.log(`Done. Sent digest ${name} to ${result.sent} target(s).`);
+}
+
+async function main() {
+  const dry = resolveDryRun();
+  const kind = resolveKind();
+  console.log(`Send kind: ${kind}${dry ? " (dry run)" : ""}`);
+  if (kind === "digest") return sendDigest(dry);
+  return sendLetter(dry);
 }
 
 // Only run main when invoked directly (not when imported by self-test).

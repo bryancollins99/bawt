@@ -6,22 +6,29 @@ actioned this session (no live sends, no merges).
 
 ## Needs Bryan / external before a live send
 
-1. **Stripe checkout URLs.** Every product in `deadline-digest/config/products.json`
-   has `checkout_url: "STRIPE_CHECKOUT_PENDING"`. Product-letter P.S. links point
-   at the placeholder until real Stripe Checkout links are dropped in. Products
-   awaiting a link: Filler-Word Killer Editor Pack, How to Earn $3-5k Writing
-   Online, The Fearless Creative, Claude Code for Writers, The Zettelkasten for
-   Creators Kit, Writers' Deadline Database, Prompt / Word-Bank Pack.
+1. **Remaining Stripe checkout URLs.** Three products now have LIVE checkouts
+   (Filler-Word Killer Editor Pack, Claude Code for Writers, The Zettelkasten for
+   Creators Kit) and every drafted letter's P.P.S. links to one of them. Still
+   `STRIPE_CHECKOUT_PENDING`: How to Earn $3-5k Writing Online, The Fearless
+   Creative, Writers' Deadline Database, Prompt / Word-Bank Pack. Consequences:
+   - Letters 3 (freelance) and 6 (mindset) cross-sell the Filler-Word pack
+     because their natural products are still pending. Swap the P.P.S. once
+     "How to Earn $3-5k Writing Online" / "The Fearless Creative" go live.
+   - The Thursday digest cross-sells the Filler-Word pack; switch it to the
+     Writers' Deadline Database automatically the moment that product gets a real
+     checkout_url (the digest already prefers it when live).
 
 2. **Affiliate program terms per slug.** The letters link grammarly, prowritingaid,
    masterclass, teachable via `go.becomeawritertoday.com/e/<slug>`. Confirm each
    program permits promotion by email, and that the go-domain redirector actually
    resolves those slugs, before the first live send.
 
-3. **Contest-organiser slot.** Calendar slot 12 (week 4, "15 Poetry Contests")
-   is `monetise: affiliate` with `detail: "contest organiser"`. No letter is
-   drafted for it yet and no organiser URL exists. When that letter is written,
-   its P.S. needs a direct organiser link (not a go-domain slug).
+3. **Contest-organiser affiliate slot.** The affiliate rotation maps the
+   `deadlines` thread to "contest organiser" rather than a go-domain slug. None
+   of the 9 drafted letters is a `deadlines` letter, so this is not yet exercised
+   in a letter. In the Thursday digest, organiser links come straight from each
+   contest's `c.url` (correct). When a `deadlines` LETTER is drafted, its P.S.
+   needs a direct organiser link, not a go-domain slug.
 
 4. **Resend broadcast audience field.** `send.js` sends one broadcast per resolved
    target using `audienceId: <base segment id>`. Whether Resend's broadcast API
@@ -51,6 +58,12 @@ actioned this session (no live sends, no merges).
   7 (How to Write a Short Story) are the fiction-leaning candidates: set their
   `topic` to `"fiction"` in queue.json and the audience resolution + broadcast
   filter kick in automatically.
+- **Digest freshness needs current contests data.** The Thursday digest fails
+  closed if `src/data/contests.json` was last committed more than 14 days ago
+  (deadlines go stale fast). Keep the contests feed current, or the digest cron
+  will loudly fail rather than send wrong dates. If no contest is within the
+  21-day window it skips gracefully (no send, exit 0), which is expected in quiet
+  weeks.
 
 ## Gated OFF by design (do not flip without the above)
 - Repo var `NEWSLETTER_LIVE` (leave unset -> Action runs `--dry`).
