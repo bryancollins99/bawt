@@ -1,0 +1,33 @@
+{
+  "_comment": "Maps a product name (the letter's `detail` when monetise === 'product') to its Stripe checkout and a short blurb. Seed checkout_url values are STRIPE_CHECKOUT_PENDING placeholders. Replace each with the live Stripe Checkout link before enabling live sends. The '[Get it]' marker in a letter P.S. is rewritten by render.js into a link to checkout_url.",
+  "products": {
+    "Filler-Word Killer Editor Pack": {
+      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "blurb": "Flags all 50 filler words in your draft so you can strike them in one pass."
+    },
+    "How to Earn $3-5k Writing Online": {
+      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "blurb": "A course that walks you through building a paid writing income, step by step."
+    },
+    "The Fearless Creative": {
+      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "blurb": "The nudge that gets you to pick one project and start."
+    },
+    "Claude Code for Writers": {
+      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "blurb": "Go past templates and actually build with AI."
+    },
+    "The Zettelkasten for Creators Kit": {
+      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "blurb": "The system for connecting scattered notes into essays, articles, and books."
+    },
+    "Writers' Deadline Database": {
+      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "blurb": "Every writing grant and contest deadline worth chasing, in one place."
+    },
+    "Prompt / Word-Bank Pack": {
+      "checkout_url": "STRIPE_CHECKOUT_PENDING",
+      "blurb": "A bank of prompts and words to break a blank page open."
+    }
+  }
+}
