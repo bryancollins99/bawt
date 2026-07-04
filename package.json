@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@netlify/blobs": "^8.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.30.1"
@@ -22,7 +23,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:embed": "vite build --mode embed",
-    "test": "node scripts/deviceDetectionTest.mjs && node scripts/resilienceTest.mjs"
+    "test": "node scripts/deviceDetectionTest.mjs && node scripts/resilienceTest.mjs && node scripts/deliverTest.mjs"
   },
   "browserslist": {
     "production": [

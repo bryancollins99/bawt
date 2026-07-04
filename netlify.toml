@@ -5,6 +5,21 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Serverless functions (digital-product delivery: stripe-webhook, download)
+[functions]
+  directory = "netlify/functions"
+
+# Digital-product delivery endpoints
+[[redirects]]
+  from = "/stripe-webhook"
+  to = "/.netlify/functions/stripe-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/download"
+  to = "/.netlify/functions/download"
+  status = 200
+
 # Standalone tools (static files in public/)
 [[redirects]]
   from = "/plan"

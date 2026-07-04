@@ -9,6 +9,9 @@ yarn-error.log*
 dist/
 build/
 
+# Product deliverables (never commit binaries; uploaded to Netlify Blobs)
+*.zip
+
 # Development
 .env
 .env.local
