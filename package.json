@@ -22,7 +22,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:embed": "vite build --mode embed",
-    "test": "node scripts/deviceDetectionTest.mjs && node scripts/resilienceTest.mjs"
+    "test": "node scripts/deviceDetectionTest.mjs && node scripts/resilienceTest.mjs && node scripts/subscribeTest.mjs"
   },
   "browserslist": {
     "production": [
