@@ -1,0 +1,58 @@
+name: Writing news gather
+
+# Refreshes the Thursday Deadline Digest's "In the news" data file
+# (deadline-digest/data/writing-news.json) from ToS-clean writing/publishing
+# feeds, verifies every URL, optionally runs an LLM refine pass, and commits the
+# result BEFORE the digest send.
+#
+# Schedule (UTC): Thursday 05:00, one hour ahead of the digest send
+# (newsletter.yml, 06:00 UTC Thursday). The send checks out fresh main and reads
+# the file this job just committed.
+#
+# Decoupled from the send on purpose:
+#   - a gather failure here can NEVER block the digest send (separate workflow;
+#     the send just reads whatever file is committed).
+#   - the send job keeps zero write permissions; only this job writes.
+#   - if gather produces < 1 verified item, the script leaves the file untouched
+#     (never clobbers good seed/prior data with an empty panel).
+
+on:
+  schedule:
+    - cron: "0 5 * * 4" # Thursday 05:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: writing-news-gather
+  cancel-in-progress: false
+
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Gather + verify writing news
+        # continue-on-error so a flaky feed / network hiccup is never fatal; the
+        # committed file is left as-is and the digest still sends.
+        continue-on-error: true
+        env:
+          # Optional: when present, the gather runs the LLM refine pass. Absent
+          # -> the script falls back to raw feed title + trimmed excerpt.
+          # ANTHROPIC_BASE_URL routes through the Netlify AI Gateway if set.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL }}
+        run: node scripts/gather-writing-news.mjs
+
+      - name: Commit refreshed writing-news.json if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add deadline-digest/data/writing-news.json
+          git diff --quiet --cached || (git commit -m "chore: refresh writing-news for the Thursday digest" && git push)
