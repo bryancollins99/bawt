@@ -50,6 +50,9 @@ import {
   contestsAgeDays,
   assertContestsFresh,
   CONTESTS_MAX_AGE_DAYS,
+  loadWritingNews,
+  selectWritingNews,
+  NEWS_MAX_AGE_DAYS,
 } from "./render-digest.js";
 
 const EM_DASH = /[—–]/; // em dash + en dash
@@ -275,5 +278,77 @@ ok("contests freshness guard fires on stale/unknown data (git commit time, not m
   assert.ok(!EM_DASH.test(r.subject), "full real dataset renders dash-free (subject)");
 }
 ok("full live contests.json renders the digest with zero em/en dashes");
+
+// --- 18. "In the news" panel: fresh renders, stale omits, clean + dash-free --
+{
+  const contests = [
+    {
+      name: "Alpha Prize",
+      genres: ["flash-fiction"],
+      deadline: "2026-07-10",
+      prize: "$1,000",
+      url: "https://alpha.example/prize",
+      region: "worldwide",
+    },
+  ];
+  const now = Date.parse("2026-07-07T12:00:00Z");
+  const selected = selectContests(contests, { now });
+
+  // 18a. the seeded data file yields real items, and they render when fresh.
+  const seed = loadWritingNews();
+  assert.ok(seed && Array.isArray(seed.items) && seed.items.length >= 3, "seed writing-news.json has >=3 items");
+  const freshNow = Date.parse(seed.generatedAt) + 2 * 86400000; // 2 days after generatedAt
+  const freshNews = selectWritingNews(seed, { now: freshNow });
+  assert.ok(freshNews.length >= 3 && freshNews.length <= 5, "fresh seed selection is 3-5 items");
+
+  const withNews = renderDigest(selected, { now, news: freshNews });
+  assert.ok(withNews.html.includes("In the news"), "digest renders the In the news panel when fresh");
+  for (const it of freshNews) {
+    assert.ok(withNews.html.includes(`href="${it.url}"`), `news item links to source url (${it.url})`);
+    assert.ok(withNews.html.includes(it.title), `news item title is visible anchor text (${it.title})`);
+    assert.ok(withNews.text.includes(it.url), "news item url present in plain-text part");
+  }
+  // source-name / anchor-text only: no raw URL in visible HTML copy.
+  const vis = withNews.html.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ");
+  assert.ok(!/https?:\/\//.test(vis), "no raw URL in the visible digest HTML (news anchors clean)");
+  assert.ok(!EM_DASH.test(withNews.html) && !EM_DASH.test(withNews.text), "digest with news has no em dashes");
+
+  // 18b. stale data (generatedAt older than NEWS_MAX_AGE_DAYS) -> section omitted.
+  const staleSeed = { generatedAt: "2026-06-01T00:00:00Z", items: seed.items };
+  const staleNews = selectWritingNews(staleSeed, { now });
+  assert.equal(staleNews.length, 0, "stale news selection is empty (age > 10 days)");
+  const withoutNews = renderDigest(selected, { now, news: staleNews });
+  assert.ok(!withoutNews.html.includes("In the news"), "digest omits the section when news is stale");
+  assert.ok(withoutNews.html.length > 200 && withoutNews.text.length > 100, "digest still renders without news");
+
+  // 18c. missing/invalid data never throws, yields empty selection.
+  assert.equal(selectWritingNews(null, { now }).length, 0, "null news -> empty (no throw)");
+  assert.equal(selectWritingNews({ items: [] }, { now }).length, 0, "no items -> empty");
+
+  // 18d. dash-laden news fields are sanitized (em/en dash -> hyphen).
+  const dashyNews = selectWritingNews(
+    {
+      generatedAt: new Date(now).toISOString(),
+      items: [
+        {
+          title: "Grants — Awards – Prizes",
+          url: "https://dashy.example/news",
+          source: "Poets — Writers",
+          blurb: "Open calls – deadlines this month.",
+        },
+      ],
+    },
+    { now }
+  );
+  assert.equal(dashyNews.length, 1, "dashy news item is selectable");
+  const rDashy = renderDigest(selected, { now, news: dashyNews });
+  assert.ok(!EM_DASH.test(rDashy.html), "news html sanitizes em/en dashes");
+  assert.ok(!EM_DASH.test(rDashy.text), "news text sanitizes em/en dashes");
+  assert.ok(rDashy.html.includes("Grants - Awards - Prizes"), "em/en dash in news title becomes a hyphen");
+
+  // 18e. freshness boundary uses NEWS_MAX_AGE_DAYS.
+  assert.ok(NEWS_MAX_AGE_DAYS === 10, "news freshness window is 10 days");
+}
+ok("in-the-news panel: fresh renders 3-5 linked items, stale omits, clean + dash-free");
 
 console.log(`\nAll self-test groups passed (${passed} groups).`);
