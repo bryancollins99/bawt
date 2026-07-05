@@ -33,6 +33,8 @@ import {
   selectContests,
   shouldSkipDigest,
   renderDigest,
+  loadWritingNews,
+  selectWritingNews,
 } from "./render-digest.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -294,7 +296,18 @@ async function sendDigest(dry) {
     return;
   }
 
-  const rendered = renderDigest(selected);
+  // "In the news" panel: read the committed data file only (never gather in the
+  // send). Freshness is enforced inside selectWritingNews (generatedAt within
+  // NEWS_MAX_AGE_DAYS); stale/missing -> [] -> the section is omitted and the
+  // digest still sends.
+  const news = selectWritingNews(loadWritingNews());
+  if (news.length > 0) {
+    console.log(`In the news: ${news.length} verified item(s).`);
+  } else {
+    console.log("In the news: no fresh news (section omitted).");
+  }
+
+  const rendered = renderDigest(selected, { news });
   const name = rendered.issueId; // e.g. digest-2026-07-10 (weekly, idempotency key)
   const targets = resolveAudience({ topic: null }); // digest goes to the base segment
 

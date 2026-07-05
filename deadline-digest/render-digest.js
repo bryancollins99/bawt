@@ -30,8 +30,10 @@ import {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const CONTESTS_PATH = path.resolve(__dirname, "..", "src", "data", "contests.json");
+export const WRITING_NEWS_PATH = path.resolve(__dirname, "data", "writing-news.json");
 export const DIGEST_WINDOW_DAYS = 21;
 export const CONTESTS_MAX_AGE_DAYS = 14; // deadlines are time-sensitive; tighter than the letters
+export const NEWS_MAX_AGE_DAYS = 10; // "In the news" section omitted if the data file is older
 const DEFAULT_SITE_URL = "https://becomeawritertoday.com";
 
 // ---- data loading + freshness (R2: never file mtime) ---------------------
@@ -101,6 +103,52 @@ export function shouldSkipDigest(selected) {
   return !selected || selected.length === 0;
 }
 
+// ---- writing-news "In the news" panel (data-file driven, freshness-gated) --
+//
+// The panel is filled from data/writing-news.json, refreshed upstream by
+// scripts/gather-writing-news.mjs (RSS gather + URL verification + optional LLM
+// refine). The SEND never gathers: it reads the committed file only. Freshness
+// is derived from the file's own `generatedAt` field (never file mtime, never
+// git time) and is capped at NEWS_MAX_AGE_DAYS. Stale/missing -> the section is
+// omitted entirely and the digest still sends.
+
+// Load the writing-news data file. Returns null (not throw) when absent/invalid
+// so a missing file never blocks the digest.
+export function loadWritingNews(file = WRITING_NEWS_PATH) {
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+// Age of the news data in days, from its `generatedAt` field. Unknown -> stale.
+export function newsAgeDays(generatedAtISO, opts = {}) {
+  const now = opts.now ? new Date(opts.now).getTime() : Date.now();
+  const stamp = generatedAtISO ? Date.parse(generatedAtISO) : NaN;
+  if (Number.isNaN(stamp)) return Infinity; // unknown -> stale (fail closed)
+  return (now - stamp) / 86400000;
+}
+
+// Fresh, valid, capped list of news items to feature (3-5 typical). Returns []
+// when the data is stale, missing, or has no valid items, so the caller can omit
+// the section. Each item must carry a title and an http(s) url.
+export function selectWritingNews(news, opts = {}) {
+  if (!news || !Array.isArray(news.items)) return [];
+  const maxDays = opts.maxDays ?? NEWS_MAX_AGE_DAYS;
+  const age = newsAgeDays(news.generatedAt, opts);
+  if (!(age <= maxDays)) return []; // stale or unknown-age -> omit the section
+  const valid = news.items.filter(
+    (it) =>
+      it &&
+      typeof it.title === "string" &&
+      it.title.trim() &&
+      typeof it.url === "string" &&
+      /^https?:\/\//.test(it.url)
+  );
+  return valid.slice(0, 5);
+}
+
 // ---- digest monetisation (affiliate P.S. + product P.P.S.) ---------------
 
 const DIGEST_AFFILIATE = {
@@ -168,6 +216,49 @@ export function digestSubject(selected) {
   return `${selected.length} writing deadline${selected.length === 1 ? "" : "s"} closing soon (${short} leads)`;
 }
 
+// Build the "In the news" panel (html + text) from an already-selected list of
+// news items. Returns null when there are none (section omitted). Every field is
+// dash-sanitized then escaped; the URL lives only in the href, never in visible
+// copy (anchor text is the title, and the source name is the attribution).
+export function renderNewsSection(newsItems) {
+  if (!Array.isArray(newsItems) || newsItems.length === 0) return null;
+
+  const panelStyle = `margin-top:18px;background:#f1efe9;border-radius:6px;padding:14px 16px;`;
+  const headStyle = `font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#a07c3a;font-weight:bold;margin-bottom:8px;font-family:${BRAND.serif};`;
+  const itemStyle = `font-size:13.5px;color:${BRAND.body};padding:3px 0;font-family:${BRAND.serif};`;
+  const linkStyle = `color:${BRAND.red};text-decoration:none;font-weight:bold;`;
+  const srcStyle = `font-size:11.5px;color:${BRAND.faint};font-style:italic;padding-bottom:4px;font-family:${BRAND.serif};`;
+
+  const itemsHtml = newsItems
+    .map((it) => {
+      const link = `<a href="${escapeHtml(it.url)}" style="${linkStyle}">${esc(it.title)}</a>`;
+      const src = it.source ? esc(it.source) : "";
+      const blurb = it.blurb ? esc(it.blurb) : "";
+      const sub = [src, blurb].filter(Boolean).join(" &middot; ");
+      return (
+        `<div style="${itemStyle}">&bull; ${link}</div>` +
+        (sub ? `<div style="${srcStyle}">${sub}</div>` : "")
+      );
+    })
+    .join("\n");
+
+  const html = `<div style="${panelStyle}">
+<div style="${headStyle}">In the news</div>
+${itemsHtml}
+</div>`;
+
+  const text =
+    "In the news\n" +
+    newsItems
+      .map((it) => {
+        const sub = [it.source, it.blurb].filter(Boolean).map(plain).join(" - ");
+        return `- ${plain(it.title)} (${it.url})` + (sub ? `\n  ${sub}` : "");
+      })
+      .join("\n");
+
+  return { html, text };
+}
+
 export function renderDigest(selected, opts = {}) {
   if (shouldSkipDigest(selected)) throw new Error("renderDigest called with no contests");
   const now = opts.now;
@@ -205,6 +296,11 @@ export function renderDigest(selected, opts = {}) {
     })
     .join("\n\n");
 
+  // "In the news" panel: rendered ONLY when the caller passes an already-gated
+  // list via opts.news (send.js selects + freshness-checks upstream). Pure:
+  // renderDigest never reads the data file itself.
+  const news = renderNewsSection(opts.news);
+
   const ps = renderAffiliatePS(DIGEST_AFFILIATE);
   const pps = renderProductPPS(digestProduct());
 
@@ -217,7 +313,7 @@ export function renderDigest(selected, opts = {}) {
   const inner = `${brandWordmarkHtml()}
 ${headerHtml}
 ${rowsHtml}
-${ps.html}
+${news ? news.html + "\n" : ""}${ps.html}
 ${pps.html}
 ${pollFooterHtml(siteUrl, issueId)}`;
 
@@ -228,6 +324,7 @@ ${pollFooterHtml(siteUrl, issueId)}`;
       `The Deadline Digest`,
       `Closing in the next ${windowDays} days, soonest first.`,
       rowsText,
+      ...(news ? [news.text] : []),
       ps.text,
       pps.text,
       pollFooterText(siteUrl, issueId),
