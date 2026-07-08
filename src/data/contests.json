@@ -880,5 +880,1586 @@
     "hasCashPrize": true,
     "region": "us",
     "audience": null
+  },
+  {
+    "name": "Poetry Open Book Contest",
+    "type": "contest",
+    "genres": [
+      "Poetry"
+    ],
+    "fee": "$30",
+    "freeEntry": false,
+    "deadline": "2026-06-01",
+    "projected": true,
+    "prize": "$3,000 cash prize",
+    "eligibility": "Open to poets worldwide",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Poetry Prize (Anthology Magazine)",
+    "type": "contest",
+    "genres": [
+      "Poetry"
+    ],
+    "fee": "$18",
+    "freeEntry": false,
+    "deadline": "2026-06-30",
+    "projected": true,
+    "prize": "$1,169 (€1,000) and publication in Anthology Magazine",
+    "eligibility": "Open to poets worldwide",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Poetry Prize (Autumn House Press)",
+    "type": "contest",
+    "genres": [
+      "Poetry"
+    ],
+    "fee": "$30",
+    "freeEntry": false,
+    "deadline": "2026-06-30",
+    "projected": true,
+    "prize": "$1,000 and publication by Autumn House Press for a poetry collection",
+    "eligibility": "Open to poets worldwide",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Prizes in Poetry and Prose (Bellevue Literary Review)",
+    "type": "contest",
+    "genres": [
+      "Poetry",
+      "Fiction",
+      "Creative Nonfiction"
+    ],
+    "fee": "$20",
+    "freeEntry": false,
+    "deadline": "2026-07-01",
+    "projected": true,
+    "prize": "$1,000 each for a poem, short story, and essay (three prizes total) and publication in Bellevue Literary Review",
+    "eligibility": "Open to poets, fiction writers, and creative nonfiction writers worldwide",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Poetry Prize (Editors' Choice)",
+    "type": "contest",
+    "genres": [
+      "Poetry"
+    ],
+    "fee": "$26",
+    "freeEntry": false,
+    "deadline": "2026-07-29",
+    "projected": true,
+    "prize": "$1,500 for a poem or group of poems",
+    "eligibility": "Open to poets worldwide",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Moonlit Getaway Poetry Contest",
+    "type": "contest",
+    "genres": [
+      "Poetry"
+    ],
+    "fee": "Not specified in source",
+    "freeEntry": false,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "Cash award and publication",
+    "eligibility": "Open to poets worldwide",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Northwest Review Poetry and Prose Contest",
+    "type": "contest",
+    "genres": [
+      "Poetry",
+      "Prose"
+    ],
+    "fee": "Not specified in source",
+    "freeEntry": false,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Cash award and publication",
+    "eligibility": "Open to poets and prose writers worldwide",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "St. Lawrence Book Award",
+    "type": "contest",
+    "genres": [
+      "Poetry",
+      "Prose"
+    ],
+    "fee": "Not specified in source",
+    "freeEntry": false,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Cash award and publication",
+    "eligibility": "Open to poets and prose writers worldwide",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "StoryBottle Fiction Chapbook Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story",
+      "Flash Fiction"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-15",
+    "projected": false,
+    "prize": "Publication of a fiction chapbook",
+    "eligibility": "Open to unpublished writers worldwide",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "2026 Gival Press Short Story Award",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-08",
+    "projected": false,
+    "prize": "$1,000 and publication",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Driftwood Press Fiction & Poetry Contests (Adrift)",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Poetry"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-15",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "The Dorothy Dunnett Society / HWA Short Story Award 2026",
+    "type": "contest",
+    "genres": [
+      "Fiction"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-01",
+    "projected": false,
+    "prize": "$1,000 and publication",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Ascent Children’s Book Prize",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Children's Literature"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-01",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Anthology Short Story Competition",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-11",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Write Catalyst Annual Short Story Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-16",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "The Letter Review Prize for Short Fiction, Poetry, and Books",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Poetry",
+      "Books"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-29",
+    "projected": false,
+    "prize": "$16,000 USD annual prize pool and publication",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Precocious Prize for Fantasy",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Fantasy"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-31",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "IRONCLAD CREATIVE SHORT STORY COMPETITION",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-07-31",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Bournemouth Writing Prize",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-15",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Clapham Writers: The McNeile Writing Competition",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-05",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to UK writers only",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "The Writers’ College Annual Short Story Competition",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-30",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Creative Writing Ink Short Story Competition 2026",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-30",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "SaveAs Writers’ Creative Writing competition",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-30",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Anthology Flash Fiction Competition",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Flash Fiction"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-30",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "EYELANDS BOOK AWARDS 2026",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Children's Literature"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-10-20",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "The Bedford Competition 2026",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-10-31",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Killer Shorts Horror Short Story Competition",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Horror"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-12-31",
+    "projected": false,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.thewriterscollege.com/short-story-writing-competitions/",
+    "source": "thewriterscollege.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "International 3-Day Novel Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "WOW! Women on Writing Flash Fiction and Creative Nonfiction Contest (Summer)",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Flash Fiction",
+      "Creative Nonfiction"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Publication and cash award",
+    "eligibility": "Open to writers worldwide",
+    "url": "https://www.wow-womenonwriting.com/contest.php",
+    "source": "wow-womenonwriting.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Nonfiction Contest for Emerging Writers - Boulevard",
+    "type": "contest",
+    "genres": [
+      "Literary journalism",
+      "Hybrid essays",
+      "Reported nonfiction",
+      "Creative nonfiction"
+    ],
+    "fee": "$18",
+    "freeEntry": false,
+    "deadline": "2026-09-30",
+    "projected": false,
+    "prize": "Publication and one-year subscription to Boulevard Magazine",
+    "eligibility": "Emerging writers (no prior publication required)",
+    "url": "https://www.boulevardmagazine.org/nonfiction-contest",
+    "source": "boulevardmagazine.org",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "International Voices in Creative Nonfiction Competition",
+    "type": "contest",
+    "genres": [
+      "Creative nonfiction",
+      "Memoir",
+      "Journalism",
+      "Essay",
+      "Personal essay"
+    ],
+    "fee": "$20",
+    "freeEntry": false,
+    "deadline": "2026-07-01",
+    "projected": true,
+    "prize": "$1,000 and publication",
+    "eligibility": "Open to all writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Letter Review Prizes for Non-Fiction",
+    "type": "contest",
+    "genres": [
+      "Creative nonfiction",
+      "Memoir",
+      "Essay",
+      "Personal essay",
+      "Travel",
+      "Nature",
+      "Opinion"
+    ],
+    "fee": "$20–$30",
+    "freeEntry": false,
+    "deadline": "2026-07-31",
+    "projected": true,
+    "prize": "Share of $3,000 USD prize pool (9–12 winners) and publication",
+    "eligibility": "Open to anyone in the world",
+    "url": "https://letterreview.com/information/",
+    "source": "letterreview.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Summer Creative Nonfiction Contest",
+    "type": "contest",
+    "genres": [
+      "Creative nonfiction"
+    ],
+    "fee": "$20",
+    "freeEntry": false,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "$1,000 cash prize",
+    "eligibility": "Open to all writers",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Short Story Competition (Poets & Writers)",
+    "type": "contest",
+    "genres": [
+      "Fiction"
+    ],
+    "fee": "$21",
+    "freeEntry": false,
+    "deadline": "2026-07-31",
+    "projected": true,
+    "prize": "$1,179",
+    "eligibility": "Open to anyone in the world",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "StoryBottle Co.'s Fiction Chapbook Contest",
+    "type": "contest",
+    "genres": [
+      "Weird Fiction",
+      "Fiction"
+    ],
+    "fee": "Not specified in search results",
+    "freeEntry": false,
+    "deadline": "2026-08-15",
+    "projected": false,
+    "prize": "Publication and prize (amount not specified in search results)",
+    "eligibility": "Open to all writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Constance Rooke Creative Nonfiction Prize",
+    "type": "contest",
+    "genres": [
+      "Creative Nonfiction",
+      "Personal Essays",
+      "Memoir",
+      "Narrative Nonfiction",
+      "Social Commentary",
+      "Travel Writing"
+    ],
+    "fee": "Entry Fee (amount not specified in snippet)",
+    "freeEntry": false,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "Cash Award + Publication",
+    "eligibility": "Canadian and international writers anywhere in the world",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "The Review of English Studies Essay Prize",
+    "type": "contest",
+    "genres": [
+      "Nonfiction",
+      "Essay"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "Publication + £500 worth of Oxford University Press books + One Year Subscription",
+    "eligibility": "Writers studying for a higher degree",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Key West Literary Seminar Workshop Fellowship Award",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Poetry"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "Full Tuition Waiver for Writers’ Workshop Program",
+    "eligibility": "Open to writers (priority deadline)",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Radar Poetry The Coniston Prize",
+    "type": "contest",
+    "genres": [
+      "Poetry"
+    ],
+    "fee": "Entry Fee (amount not specified in snippet)",
+    "freeEntry": false,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "Entry Fee only listed (prize not specified in snippet)",
+    "eligibility": "Open to writers (general)",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Other Futures Award",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Nonfiction",
+      "Poetry",
+      "Cross-Genre"
+    ],
+    "fee": "Entry Fee (amount not specified in snippet)",
+    "freeEntry": false,
+    "deadline": "2026-08-15",
+    "projected": false,
+    "prize": "Entry Fee only listed (prize not specified in snippet)",
+    "eligibility": "Open to writers (general)",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Key West Literary Essay Contest (implied from snippet)",
+    "type": "contest",
+    "genres": [
+      "Essay"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "Cash Prize (amount not specified in snippet)",
+    "eligibility": "Students grades 6-12 and undergraduate students",
+    "url": "https://www.beyondtheboxlearning.com/our-recommended-youth-story-essay-writing-contests/",
+    "source": "beyondtheboxlearning.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "WOW Summer 2026 Flash Fiction Contest",
+    "type": "contest",
+    "genres": [
+      "Flash Fiction"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "$1350 in cash",
+    "eligibility": "Open to writers (general)",
+    "url": "https://www.wow-womenonwriting.com/contest.php",
+    "source": "wow-womenonwriting.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "WOW! Women on Writing Q4 2026 Creative Nonfiction Essay Contest",
+    "type": "contest",
+    "genres": [
+      "Essay",
+      "Non-fiction",
+      "Creative Nonfiction"
+    ],
+    "fee": "$12",
+    "freeEntry": false,
+    "deadline": "2026-07-31",
+    "projected": true,
+    "prize": "$500 (1st), $300 (2nd), $200 (3rd), $25 Amazon Gift Card (7 runners-up); 1st place also receives essay publication on WOW!, an item from CreateWriteNow’s Store, and a blog interview",
+    "eligibility": "Open globally; entries must be in English, true to life, and can explore any subject creatively",
+    "url": "https://www.wow-womenonwriting.com/contest.php",
+    "source": "wow-womenonwriting.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Boulevard Nonfiction Contest for Emerging Writers 2026",
+    "type": "contest",
+    "genres": [
+      "Nonfiction",
+      "Literary Journalism",
+      "Hybrid Essays",
+      "Reported/Researched Nonfiction"
+    ],
+    "fee": "$18 per essay",
+    "freeEntry": false,
+    "deadline": "2026-09-30",
+    "projected": false,
+    "prize": "Publication in Boulevard magazine; includes one-year subscription to the magazine",
+    "eligibility": "Emerging writers; previously accepted or published work is ineligible; simultaneous submissions allowed",
+    "url": "https://www.boulevardmagazine.org/nonfiction-contest",
+    "source": "boulevardmagazine.org",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Adrift Creative Nonfiction Contest (Incoming Deadline)",
+    "type": "contest",
+    "genres": [
+      "Creative Nonfiction",
+      "Essay",
+      "Non-fiction"
+    ],
+    "fee": "$15",
+    "freeEntry": false,
+    "deadline": "2026-07-15",
+    "projected": false,
+    "prize": "Cash award and publication (specific prize amount not listed in source; Adrift contests typically offer cash prizes)",
+    "eligibility": "Open to all writers; no prior publication requirement specified",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Poets & Writers Writing Contest (July/August 2026)",
+    "type": "contest",
+    "genres": [
+      "Poetry",
+      "Fiction",
+      "Creative Nonfiction"
+    ],
+    "fee": "$20",
+    "freeEntry": false,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "$1,000 cash prize",
+    "eligibility": "Open to all writers; genre includes Creative Nonfiction",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "2026 Burnside Review Chapbook Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Short Story"
+    ],
+    "fee": "Not specified (likely free)",
+    "freeEntry": true,
+    "deadline": "2026-06-30",
+    "projected": true,
+    "prize": "Not specified (Chapbook Prize)",
+    "eligibility": "Authors aged 16 and above",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Orison Chapbook Prize",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Nonfiction",
+      "Poetry",
+      "Cross-Genre"
+    ],
+    "fee": "Not specified",
+    "freeEntry": false,
+    "deadline": "2026-07-01",
+    "projected": true,
+    "prize": "Cash Award and Publication",
+    "eligibility": "Manuscripts of 20–45 pages in any genre",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Orison Fiction Prize",
+    "type": "contest",
+    "genres": [
+      "Fiction"
+    ],
+    "fee": "Not specified",
+    "freeEntry": false,
+    "deadline": "2026-07-15",
+    "projected": false,
+    "prize": "Cash Award and Publication",
+    "eligibility": "Not specified (Fiction category)",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Pro Forma Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Poetry"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-01",
+    "projected": true,
+    "prize": "Full Tuition Waiver for Writers’ Workshop Program",
+    "eligibility": "Priority deadline for Writers' Workshop Program",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Annual Writing Contest (May 1 – Labor Day)",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Nonfiction",
+      "Poetry"
+    ],
+    "fee": "Not specified",
+    "freeEntry": false,
+    "deadline": "2026-09-07",
+    "projected": true,
+    "prize": "More than $4,000 in prizes awarded",
+    "eligibility": "U.S. Labor Day",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "INDIE GRANTS",
+    "type": "contest",
+    "genres": [
+      "Literary Criticism",
+      "Arts Writing",
+      "Political Analysis",
+      "Social Reportage"
+    ],
+    "fee": "Not specified",
+    "freeEntry": false,
+    "deadline": "2026-08-03",
+    "projected": false,
+    "prize": "$25,000 to $45,000",
+    "eligibility": "INDIE GRANTS applicants",
+    "url": "https://fundsforwriters.com/grants/",
+    "source": "fundsforwriters.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Flash Fiction and Creative Nonfiction Contest (Summer)",
+    "type": "contest",
+    "genres": [
+      "Flash Fiction",
+      "Creative Nonfiction"
+    ],
+    "fee": "$10.00",
+    "freeEntry": false,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Not specified in snippet",
+    "eligibility": "Writers worldwide",
+    "url": "https://www.wow-womenonwriting.com/contest.php",
+    "source": "wow-womenonwriting.com",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "2026 Orison Chapbook Prize",
+    "type": "contest",
+    "genres": [
+      "Poetry",
+      "Fiction",
+      "Nonfiction",
+      "Drama",
+      "Hybrid"
+    ],
+    "fee": "$15",
+    "freeEntry": false,
+    "deadline": "2026-07-01",
+    "projected": true,
+    "prize": "$300 and publication by Orison Books",
+    "eligibility": "All writers",
+    "url": "https://www.orisonbooks.com/submissions",
+    "source": "orisonbooks.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "FSG Writer’s Fellowship",
+    "type": "contest",
+    "genres": [
+      "Poetry",
+      "Fiction",
+      "Creative Nonfiction"
+    ],
+    "fee": "$0",
+    "freeEntry": true,
+    "deadline": "2026-07-03",
+    "projected": true,
+    "prize": "$15,000",
+    "eligibility": "Poets, Fiction writers, Creative Nonfiction writers",
+    "url": "https://www.pw.org/grants",
+    "source": "pw.org",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Adrift Contests",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Poetry",
+      "Nonfiction",
+      "Children's Novels"
+    ],
+    "fee": "Varies (check official site)",
+    "freeEntry": false,
+    "deadline": "2026-07-15",
+    "projected": false,
+    "prize": "Up to £10,000",
+    "eligibility": "All writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "George Dila Memorial Flash Fiction Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction"
+    ],
+    "fee": "Entry Fee (amount varies)",
+    "freeEntry": false,
+    "deadline": "2026-08-08",
+    "projected": false,
+    "prize": "Cash Award",
+    "eligibility": "All writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Fiction Chapbook Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction"
+    ],
+    "fee": "Entry Fee (amount varies)",
+    "freeEntry": false,
+    "deadline": "2026-08-15",
+    "projected": false,
+    "prize": "Cash Award and Publication",
+    "eligibility": "All writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Black Warrior Review Annual Writing Contest",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Nonfiction",
+      "Poetry"
+    ],
+    "fee": "Entry Fee (amount varies)",
+    "freeEntry": false,
+    "deadline": "2026-08-15",
+    "projected": false,
+    "prize": "Cash Award",
+    "eligibility": "All writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": false,
+    "lastVerified": "2026-07-08",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Aesthetica Magazine Creative Writing Award",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Poetry"
+    ],
+    "fee": "Entry Fee (amount varies)",
+    "freeEntry": false,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Cash Award and Anthology Publication",
+    "eligibility": "All writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Bob Hicok Fellowship for Poets",
+    "type": "contest",
+    "genres": [
+      "Poetry"
+    ],
+    "fee": "Entry Fee (amount varies)",
+    "freeEntry": false,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Cash Award",
+    "eligibility": "All writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Full Named Fellowships",
+    "type": "contest",
+    "genres": [
+      "Fiction",
+      "Nonfiction",
+      "Poetry",
+      "Journalism"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-08-31",
+    "projected": true,
+    "prize": "Tuition, Accommodation, & RT Transportation coverage",
+    "eligibility": "All writers",
+    "url": "https://www.newpages.com/guide-submission-opportunities/big-list-of-writing-contests/",
+    "source": "newpages.com",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "The Academy for Teachers – Stories Out of School Flash Fiction Contest",
+    "type": "contest",
+    "genres": [
+      "Flash Fiction"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-09",
+    "projected": true,
+    "prize": "$93,000 per year ($186,000 for the two-year fellowship), additional $7,000 per year for research and classroom expenses, residency at Princeton",
+    "eligibility": "All writers (whether or not they are a teacher); protagonist/narrator must be a K-12 teacher",
+    "url": "https://www.freedomwithwriting.com/freedom/uncategorized/36-writing-contests-fellowships-and-grants-for-writers-up-to-93000/",
+    "source": "freedomwithwriting.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Fund for Investigative Journalism Seed Grants",
+    "type": "contest",
+    "genres": [
+      "Investigative Journalism"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-15",
+    "projected": true,
+    "prize": "$1,000 to $2,500",
+    "eligibility": "U.S.-based journalists or those working on a story with a strong U.S. angle",
+    "url": "https://www.freedomwithwriting.com/freedom/uncategorized/36-writing-contests-fellowships-and-grants-for-writers-up-to-93000/",
+    "source": "freedomwithwriting.com",
+    "hasCashPrize": true,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
+  },
+  {
+    "name": "Writing Fellowship (US/Canadian)",
+    "type": "contest",
+    "genres": [
+      "Varies"
+    ],
+    "fee": "Free",
+    "freeEntry": true,
+    "deadline": "2026-09-16",
+    "projected": true,
+    "prize": "Varies",
+    "eligibility": "U.S. and Canadian citizens",
+    "url": "https://www.freedomwithwriting.com/freedom/uncategorized/36-writing-contests-fellowships-and-grants-for-writers-up-to-93000/",
+    "source": "freedomwithwriting.com",
+    "hasCashPrize": false,
+    "region": "worldwide",
+    "audience": [
+      "adult"
+    ],
+    "stale": true,
+    "staleReason": "discovered via Perplexity; deadline/fee unconfirmed on official source",
+    "firstSeen": "2026-07-08"
   }
 ]

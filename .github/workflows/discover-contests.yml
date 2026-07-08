@@ -1,0 +1,56 @@
+name: Discover Contests (weekly)
+
+# Dynamic discovery stage. Perplexity finds current contests; deterministic code
+# verifies each against its cited source and confirms deadlines on the official page.
+# Adds only verified, deduped records. Opens a PR for Bryan to ratify — never pushes
+# new contests to main directly (discovery adds data; verify-contests.yml maintains it).
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC (before the verify cron)
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Discover (Perplexity) across genres
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+        run: node scripts/discover-contests.mjs "poetry,fiction,nonfiction,short story,essay,grants,fellowships"
+
+      - name: Confirm deadlines on source (deterministic)
+        run: node scripts/confirm-contests.mjs
+
+      - name: Merge verified discoveries into contests.json
+        run: node scripts/merge-contests.mjs --write
+
+      - name: Maintain (roll deadlines, flag stale, self-test)
+        run: |
+          node scripts/verify-contests.mjs --self-test
+          node scripts/verify-contests.mjs || true
+
+      - name: Open PR for ratification
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: contest-discovery/weekly
+          commit-message: "data: weekly contest discovery (Perplexity + source-verify)"
+          title: "Weekly contest discovery"
+          body: |
+            Automated dynamic discovery run.
+            - Perplexity discovered candidates across genres
+            - Each name verified against its cited source (trust gate)
+            - Deadlines confirmed deterministically on the official page where possible
+            - `projected: true` = deadline not yet confirmed on source (shown as "deadline to confirm")
+
+            Review the diff to `src/data/contests.json` and merge to publish.
+          labels: contest-data
+          delete-branch: true
