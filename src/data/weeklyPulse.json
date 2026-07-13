@@ -1,126 +1,126 @@
 {
-  "generatedAt": "2026-07-06T07:33:34.193Z",
-  "weekOf": "2026-07-06",
+  "generatedAt": "2026-07-13T08:59:21.286Z",
+  "weekOf": "2026-07-13",
   "items": [
     {
-      "title": "Google Books (or similar) all book scans – $200k bounty (2025)",
-      "url": "https://software.annas-archive.gl/AnnaArchivist/annas-archive/-/work_items/234",
-      "points": 515,
-      "comments": 328,
-      "domain": "software.annas-archive.gl",
-      "createdAt": "2026-07-04T16:51:26.000Z"
+      "title": "Write code like a human will maintain it",
+      "url": "https://unstack.io/write-code-like-a-human-will-maintain-it",
+      "points": 350,
+      "comments": 304,
+      "domain": "unstack.io",
+      "createdAt": "2026-07-10T13:33:00.000Z"
     },
     {
-      "title": "Blogging can just be stating the obvious",
-      "url": "https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/",
-      "points": 466,
-      "comments": 133,
-      "domain": "blog.jim-nielsen.com",
-      "createdAt": "2026-06-24T23:46:37.000Z"
-    },
-    {
-      "title": "'Careless People' author claims Meta surveilled her for 12mos to enforce silence",
-      "url": "https://fortune.com/2026/06/26/meta-wynn-williams-surveillance-gag-order-lawsuit-2026/",
-      "points": 225,
-      "comments": 88,
-      "domain": "fortune.com",
-      "createdAt": "2026-06-27T21:14:19.000Z"
-    },
-    {
-      "title": "Mir Books – Books from the Soviet Era",
-      "url": "https://mirtitles.org",
-      "points": 180,
-      "comments": 83,
-      "domain": "mirtitles.org",
-      "createdAt": "2026-06-30T20:50:58.000Z"
+      "title": "How to read more books",
+      "url": "https://scotto.me/blog/2026-07-12-how-to-read-more-books/",
+      "points": 349,
+      "comments": 181,
+      "domain": "scotto.me",
+      "createdAt": "2026-07-12T15:47:16.000Z"
     },
     {
       "title": "The great blogging collapse: What happened to 100 successful blogs?",
       "url": "https://danielstanica.com/posts/Great-Blogging-Collapse",
-      "points": 170,
-      "comments": 132,
+      "points": 245,
+      "comments": 181,
       "domain": "danielstanica.com",
       "createdAt": "2026-07-02T09:36:04.000Z"
     },
     {
-      "title": "Show HN: DRM-Free Books",
-      "url": "https://frequal.com/Perspectives/DrmFreeAuthors.html",
-      "points": 118,
-      "comments": 48,
-      "domain": "frequal.com",
-      "createdAt": "2026-06-28T16:58:56.000Z"
+      "title": "GLM 5.2 is nearly as accurate as a human book keeper",
+      "url": "https://toot-books.com/blog/glm-5-2-vat-benchmark",
+      "points": 225,
+      "comments": 120,
+      "domain": "toot-books.com",
+      "createdAt": "2026-07-09T18:29:41.000Z"
     },
     {
-      "title": "Return of the Nigerian Prince Redux: Beware Book Club and Book Review Scams (2025)",
-      "url": "https://writerbeware.blog/2025/09/19/return-of-the-nigerian-prince-redux-beware-book-club-and-book-review-scams/",
-      "points": 75,
-      "comments": 26,
-      "domain": "writerbeware.blog",
-      "createdAt": "2026-07-05T00:22:25.000Z"
+      "title": "Book: RISC-V System-on-Chip Design",
+      "url": "https://www.amazon.com/RISC-V-Microprocessor-System-Chip-Design/dp/0323994989",
+      "points": 134,
+      "comments": 73,
+      "domain": "amazon.com",
+      "createdAt": "2026-07-09T05:28:42.000Z"
     },
     {
-      "title": "Gun Mistakes in Fiction Writing: Handgun Edition",
-      "url": "https://www.swiftsilentdeadly.com/blog/gun-mistakes-in-fiction-writing-handgun-edition",
-      "points": 65,
-      "comments": 109,
-      "domain": "swiftsilentdeadly.com",
-      "createdAt": "2026-07-03T11:14:54.000Z"
+      "title": "1k Words: A Writing Contest",
+      "url": "https://writingclub.world/1picture1000words",
+      "points": 96,
+      "comments": 38,
+      "domain": "writingclub.world",
+      "createdAt": "2026-07-06T15:30:08.000Z"
     },
     {
-      "title": "Claude's writing style has me on edge",
-      "url": "https://jerodsanto.net/2026/06/claudes-writing-style-has-me-on-edge/",
-      "points": 31,
-      "comments": 14,
-      "domain": "jerodsanto.net",
-      "createdAt": "2026-07-01T11:41:27.000Z"
+      "title": "Digital Deli, 1984 book by early PC hackers and enthusiasts",
+      "url": "https://www.atariarchives.org/deli/",
+      "points": 71,
+      "comments": 12,
+      "domain": "atariarchives.org",
+      "createdAt": "2026-07-08T10:35:37.000Z"
     },
     {
-      "title": "The Writers Who Wrote the Most in History",
-      "url": "https://brennan.day/compulsion-the-writers-who-wrote-the-most-in-history/",
-      "points": 31,
-      "comments": 16,
-      "domain": "brennan.day",
-      "createdAt": "2026-07-01T21:25:46.000Z"
+      "title": "TK, or the secret to effortless writing (2024)",
+      "url": "https://atthis.link/blog/2024/49629.html",
+      "points": 48,
+      "comments": 24,
+      "domain": "atthis.link",
+      "createdAt": "2026-07-12T15:58:42.000Z"
     },
     {
-      "title": "The C to Rust migration book",
-      "url": "https://mainmatter.com/c-to-rust-migration-book/",
-      "points": 24,
-      "comments": 26,
-      "domain": "mainmatter.com",
-      "createdAt": "2026-07-01T14:00:29.000Z"
+      "title": "You shouldn't trust Trusted Publishing",
+      "url": "https://blog.yossarian.net/2026/07/07/You-shouldnt-trust-trusted-publishing",
+      "points": 29,
+      "comments": 0,
+      "domain": "blog.yossarian.net",
+      "createdAt": "2026-07-07T13:33:47.000Z"
     },
     {
-      "title": "Show HN: Kiso, an open-source publishing engine for Open Knowledge Format",
-      "url": "https://oak-invest.github.io/kiso/",
-      "points": 21,
-      "comments": 3,
-      "domain": "oak-invest.github.io",
-      "createdAt": "2026-06-27T21:08:03.000Z"
+      "title": "LLMs for technical editing: The good, the bad, and the ugly",
+      "url": "https://techstackups.com/articles/llms-for-technical-editing-the-good-the-bad-and-the-ugly/",
+      "points": 19,
+      "comments": 0,
+      "domain": "techstackups.com",
+      "createdAt": "2026-07-09T13:10:48.000Z"
     },
     {
-      "title": "Show HN: I wrote a Rust book ending with a Redis clone",
-      "url": "https://shankhan3.gumroad.com/l/dnwmtp",
+      "title": "The Most Famous AI Writing Tic Is Also the Most Mysterious",
+      "url": "https://www.theatlantic.com/technology/2026/07/ai-chatbot-writing-tic-negative-parallelism/687892/",
       "points": 14,
-      "comments": 4,
-      "domain": "shankhan3.gumroad.com",
-      "createdAt": "2026-07-02T05:55:16.000Z"
+      "comments": 2,
+      "domain": "theatlantic.com",
+      "createdAt": "2026-07-12T17:49:53.000Z"
     },
     {
-      "title": "No AI Co-Authors. A Manifesto",
-      "url": "https://no-ai-coauthors.dev",
-      "points": 11,
-      "comments": 12,
-      "domain": "no-ai-coauthors.dev",
-      "createdAt": "2026-06-23T21:09:25.000Z"
+      "title": "Pearson's Anti-Piracy Vendor Takes Down Best-Selling Author's Own GitHub Repo",
+      "url": "https://torrentfreak.com/pearsons-anti-piracy-vendor-takes-down-best-selling-authors-own-github-repo/",
+      "points": 10,
+      "comments": 0,
+      "domain": "torrentfreak.com",
+      "createdAt": "2026-07-10T12:37:25.000Z"
     },
     {
-      "title": "Ask HN: I miss old days of blogging without promotions",
-      "url": "https://news.ycombinator.com/item?id=48663180",
-      "points": 8,
-      "comments": 12,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-06-24T17:36:18.000Z"
+      "title": "The Information Theory Behind Why AI Writing Sucks",
+      "url": "https://www.pangram.com/blog/joe-stech-information-theory-why-ai-writing-sucks",
+      "points": 6,
+      "comments": 0,
+      "domain": "pangram.com",
+      "createdAt": "2026-07-03T16:29:52.000Z"
+    },
+    {
+      "title": "Digital Signals Theory Book",
+      "url": "https://brianmcfee.net/dstbook-site/content/intro.html",
+      "points": 6,
+      "comments": 0,
+      "domain": "brianmcfee.net",
+      "createdAt": "2026-07-08T02:10:11.000Z"
+    },
+    {
+      "title": "The Side That Won the Civil War Is Now Banning Books About Why It Was Fought",
+      "url": "https://lithub.com/the-side-that-won-the-civil-war-is-now-banning-books-about-why-the-civil-war-was-fought/",
+      "points": 6,
+      "comments": 1,
+      "domain": "lithub.com",
+      "createdAt": "2026-07-10T15:16:55.000Z"
     }
   ]
 }
