@@ -1,70 +1,78 @@
 {
-  "generatedAt": "2026-07-13T08:59:21.286Z",
-  "weekOf": "2026-07-13",
+  "generatedAt": "2026-07-20T08:49:21.178Z",
+  "weekOf": "2026-07-20",
   "items": [
     {
-      "title": "Write code like a human will maintain it",
-      "url": "https://unstack.io/write-code-like-a-human-will-maintain-it",
-      "points": 350,
-      "comments": 304,
-      "domain": "unstack.io",
-      "createdAt": "2026-07-10T13:33:00.000Z"
+      "title": "Immersive Linear Algebra Book with Interactive Figures (2015)",
+      "url": "https://immersivemath.com/ila/",
+      "points": 290,
+      "comments": 30,
+      "domain": "immersivemath.com",
+      "createdAt": "2026-07-16T15:32:23.000Z"
     },
     {
-      "title": "How to read more books",
-      "url": "https://scotto.me/blog/2026-07-12-how-to-read-more-books/",
-      "points": 349,
-      "comments": 181,
-      "domain": "scotto.me",
-      "createdAt": "2026-07-12T15:47:16.000Z"
+      "title": "Ente – Opening Our Books",
+      "url": "https://ente.com/open/",
+      "points": 287,
+      "comments": 110,
+      "domain": "ente.com",
+      "createdAt": "2026-07-16T10:37:17.000Z"
     },
     {
-      "title": "The great blogging collapse: What happened to 100 successful blogs?",
-      "url": "https://danielstanica.com/posts/Great-Blogging-Collapse",
-      "points": 245,
-      "comments": 181,
-      "domain": "danielstanica.com",
-      "createdAt": "2026-07-02T09:36:04.000Z"
+      "title": "The Little Book of Reinforcement Learning",
+      "url": "https://github.com/alxndrTL/little-book-rl/",
+      "points": 210,
+      "comments": 26,
+      "domain": "github.com",
+      "createdAt": "2026-07-16T22:27:22.000Z"
     },
     {
-      "title": "GLM 5.2 is nearly as accurate as a human book keeper",
-      "url": "https://toot-books.com/blog/glm-5-2-vat-benchmark",
-      "points": 225,
-      "comments": 120,
-      "domain": "toot-books.com",
-      "createdAt": "2026-07-09T18:29:41.000Z"
+      "title": "Open Book Touch: open-source e-reader",
+      "url": "https://www.crowdsupply.com/oddly-specific-objects/open-book-touch",
+      "points": 170,
+      "comments": 58,
+      "domain": "crowdsupply.com",
+      "createdAt": "2026-07-17T20:47:57.000Z"
     },
     {
-      "title": "Book: RISC-V System-on-Chip Design",
-      "url": "https://www.amazon.com/RISC-V-Microprocessor-System-Chip-Design/dp/0323994989",
-      "points": 134,
-      "comments": 73,
-      "domain": "amazon.com",
-      "createdAt": "2026-07-09T05:28:42.000Z"
+      "title": "Book prizes don't work how you think",
+      "url": "https://rebeccamakkai.substack.com/p/book-prizes-dont-work-how-you-think",
+      "points": 125,
+      "comments": 92,
+      "domain": "rebeccamakkai.substack.com",
+      "createdAt": "2026-07-14T22:19:01.000Z"
     },
     {
-      "title": "1k Words: A Writing Contest",
-      "url": "https://writingclub.world/1picture1000words",
-      "points": 96,
-      "comments": 38,
-      "domain": "writingclub.world",
-      "createdAt": "2026-07-06T15:30:08.000Z"
+      "title": "Ask HN: What are your favorite blogs not about AI?",
+      "url": "https://news.ycombinator.com/item?id=48972858",
+      "points": 75,
+      "comments": 30,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-07-19T23:58:12.000Z"
     },
     {
-      "title": "Digital Deli, 1984 book by early PC hackers and enthusiasts",
-      "url": "https://www.atariarchives.org/deli/",
-      "points": 71,
-      "comments": 12,
-      "domain": "atariarchives.org",
-      "createdAt": "2026-07-08T10:35:37.000Z"
+      "title": "Judge a book by its first pages",
+      "url": "https://uncovered.ink",
+      "points": 69,
+      "comments": 43,
+      "domain": "uncovered.ink",
+      "createdAt": "2026-07-18T22:02:31.000Z"
     },
     {
-      "title": "TK, or the secret to effortless writing (2024)",
-      "url": "https://atthis.link/blog/2024/49629.html",
-      "points": 48,
-      "comments": 24,
-      "domain": "atthis.link",
-      "createdAt": "2026-07-12T15:58:42.000Z"
+      "title": "Half a Second – a book about the XZ backdoor",
+      "url": "https://www.half-second.com/",
+      "points": 45,
+      "comments": 46,
+      "domain": "half-second.com",
+      "createdAt": "2026-07-19T08:48:41.000Z"
+    },
+    {
+      "title": "Someone Used AI to Write an Unauthorized Biography of Me",
+      "url": "https://www.nytimes.com/2026/07/16/technology/ai-slop-books-biography-amazon.html",
+      "points": 44,
+      "comments": 66,
+      "domain": "nytimes.com",
+      "createdAt": "2026-07-16T16:51:20.000Z"
     },
     {
       "title": "You shouldn't trust Trusted Publishing",
@@ -75,17 +83,25 @@
       "createdAt": "2026-07-07T13:33:47.000Z"
     },
     {
-      "title": "LLMs for technical editing: The good, the bad, and the ugly",
-      "url": "https://techstackups.com/articles/llms-for-technical-editing-the-good-the-bad-and-the-ugly/",
-      "points": 19,
-      "comments": 0,
-      "domain": "techstackups.com",
-      "createdAt": "2026-07-09T13:10:48.000Z"
+      "title": "Purging George Orwell's books misses what drives the political right",
+      "url": "https://theloop.ecpr.eu/purging-the-books-of-george-orwell-will-not-halt-the-rise-of-the-political-right/",
+      "points": 26,
+      "comments": 35,
+      "domain": "theloop.ecpr.eu",
+      "createdAt": "2026-07-15T16:13:32.000Z"
+    },
+    {
+      "title": "Ask HN: Does it still make sense to write code by hand?",
+      "url": "https://news.ycombinator.com/item?id=48922717",
+      "points": 17,
+      "comments": 48,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-07-15T15:51:53.000Z"
     },
     {
       "title": "The Most Famous AI Writing Tic Is Also the Most Mysterious",
       "url": "https://www.theatlantic.com/technology/2026/07/ai-chatbot-writing-tic-negative-parallelism/687892/",
-      "points": 14,
+      "points": 15,
       "comments": 2,
       "domain": "theatlantic.com",
       "createdAt": "2026-07-12T17:49:53.000Z"
@@ -99,28 +115,12 @@
       "createdAt": "2026-07-10T12:37:25.000Z"
     },
     {
-      "title": "The Information Theory Behind Why AI Writing Sucks",
-      "url": "https://www.pangram.com/blog/joe-stech-information-theory-why-ai-writing-sucks",
-      "points": 6,
-      "comments": 0,
-      "domain": "pangram.com",
-      "createdAt": "2026-07-03T16:29:52.000Z"
-    },
-    {
-      "title": "Digital Signals Theory Book",
-      "url": "https://brianmcfee.net/dstbook-site/content/intro.html",
-      "points": 6,
-      "comments": 0,
-      "domain": "brianmcfee.net",
-      "createdAt": "2026-07-08T02:10:11.000Z"
-    },
-    {
-      "title": "The Side That Won the Civil War Is Now Banning Books About Why It Was Fought",
-      "url": "https://lithub.com/the-side-that-won-the-civil-war-is-now-banning-books-about-why-the-civil-war-was-fought/",
-      "points": 6,
-      "comments": 1,
-      "domain": "lithub.com",
-      "createdAt": "2026-07-10T15:16:55.000Z"
+      "title": "I tested 11 AI detectors on my pre-ChatGPT writing and I'm as little as 5% human",
+      "url": "https://originalseparation.substack.com/p/i-have-been-95-robotic-since-2019",
+      "points": 8,
+      "comments": 2,
+      "domain": "originalseparation.substack.com",
+      "createdAt": "2026-07-15T15:16:17.000Z"
     }
   ]
 }
