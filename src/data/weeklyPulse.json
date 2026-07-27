@@ -1,126 +1,126 @@
 {
-  "generatedAt": "2026-07-20T08:49:21.178Z",
-  "weekOf": "2026-07-20",
+  "generatedAt": "2026-07-27T09:40:41.049Z",
+  "weekOf": "2026-07-27",
   "items": [
     {
-      "title": "Immersive Linear Algebra Book with Interactive Figures (2015)",
-      "url": "https://immersivemath.com/ila/",
-      "points": 290,
-      "comments": 30,
-      "domain": "immersivemath.com",
-      "createdAt": "2026-07-16T15:32:23.000Z"
+      "title": "Writing by hand is good for your brain",
+      "url": "https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your",
+      "points": 1475,
+      "comments": 665,
+      "domain": "nealstephenson.substack.com",
+      "createdAt": "2026-07-23T14:24:43.000Z"
     },
     {
-      "title": "Ente – Opening Our Books",
-      "url": "https://ente.com/open/",
-      "points": 287,
-      "comments": 110,
-      "domain": "ente.com",
-      "createdAt": "2026-07-16T10:37:17.000Z"
+      "title": "Couple pay >$800k for a gene-editing therapy for their daughter. She died.",
+      "url": "https://www.science.org/content/article/exclusive-death-girl-chinese-gene-editing-trial-was-never-made-public",
+      "points": 364,
+      "comments": 228,
+      "domain": "science.org",
+      "createdAt": "2026-07-23T20:52:19.000Z"
     },
     {
-      "title": "The Little Book of Reinforcement Learning",
-      "url": "https://github.com/alxndrTL/little-book-rl/",
-      "points": 210,
-      "comments": 26,
+      "title": "How we measured AI writing across arXiv, and where the measurement breaks",
+      "url": "https://unslop.run/blog/measuring-ai-writing-on-arxiv",
+      "points": 243,
+      "comments": 171,
+      "domain": "unslop.run",
+      "createdAt": "2026-07-20T16:36:36.000Z"
+    },
+    {
+      "title": "Show HN: Palmier Pro – Open-source macOS video editor built for AI",
+      "url": "https://github.com/palmier-io/palmier-pro",
+      "points": 190,
+      "comments": 39,
       "domain": "github.com",
-      "createdAt": "2026-07-16T22:27:22.000Z"
-    },
-    {
-      "title": "Open Book Touch: open-source e-reader",
-      "url": "https://www.crowdsupply.com/oddly-specific-objects/open-book-touch",
-      "points": 170,
-      "comments": 58,
-      "domain": "crowdsupply.com",
-      "createdAt": "2026-07-17T20:47:57.000Z"
-    },
-    {
-      "title": "Book prizes don't work how you think",
-      "url": "https://rebeccamakkai.substack.com/p/book-prizes-dont-work-how-you-think",
-      "points": 125,
-      "comments": 92,
-      "domain": "rebeccamakkai.substack.com",
-      "createdAt": "2026-07-14T22:19:01.000Z"
+      "createdAt": "2026-07-23T15:11:37.000Z"
     },
     {
       "title": "Ask HN: What are your favorite blogs not about AI?",
       "url": "https://news.ycombinator.com/item?id=48972858",
-      "points": 75,
-      "comments": 30,
+      "points": 95,
+      "comments": 38,
       "domain": "news.ycombinator.com",
       "createdAt": "2026-07-19T23:58:12.000Z"
     },
     {
-      "title": "Judge a book by its first pages",
-      "url": "https://uncovered.ink",
-      "points": 69,
-      "comments": 43,
-      "domain": "uncovered.ink",
-      "createdAt": "2026-07-18T22:02:31.000Z"
+      "title": "Using sed to make indexes for books (1997)",
+      "url": "https://www.pement.org/sed/make_indexes.txt",
+      "points": 62,
+      "comments": 11,
+      "domain": "pement.org",
+      "createdAt": "2026-07-23T04:25:24.000Z"
     },
     {
-      "title": "Half a Second – a book about the XZ backdoor",
-      "url": "https://www.half-second.com/",
-      "points": 45,
-      "comments": 46,
-      "domain": "half-second.com",
-      "createdAt": "2026-07-19T08:48:41.000Z"
+      "title": "Writing a Debugger from Scratch",
+      "url": "https://www.timdbg.com/posts/writing-a-debugger-from-scratch-part-1/",
+      "points": 54,
+      "comments": 7,
+      "domain": "timdbg.com",
+      "createdAt": "2026-07-24T14:06:03.000Z"
     },
     {
-      "title": "Someone Used AI to Write an Unauthorized Biography of Me",
-      "url": "https://www.nytimes.com/2026/07/16/technology/ai-slop-books-biography-amazon.html",
-      "points": 44,
-      "comments": 66,
-      "domain": "nytimes.com",
-      "createdAt": "2026-07-16T16:51:20.000Z"
+      "title": "Book Corners: Community map of neighborhood book exchange spots",
+      "url": "https://www.bookcorners.org",
+      "points": 53,
+      "comments": 39,
+      "domain": "bookcorners.org",
+      "createdAt": "2026-07-22T20:03:32.000Z"
     },
     {
-      "title": "You shouldn't trust Trusted Publishing",
-      "url": "https://blog.yossarian.net/2026/07/07/You-shouldnt-trust-trusted-publishing",
-      "points": 29,
-      "comments": 0,
-      "domain": "blog.yossarian.net",
-      "createdAt": "2026-07-07T13:33:47.000Z"
+      "title": "The Book Prize Index",
+      "url": "https://book-prize-index.vercel.app",
+      "points": 52,
+      "comments": 6,
+      "domain": "book-prize-index.vercel.app",
+      "createdAt": "2026-07-24T08:29:11.000Z"
     },
     {
-      "title": "Purging George Orwell's books misses what drives the political right",
-      "url": "https://theloop.ecpr.eu/purging-the-books-of-george-orwell-will-not-halt-the-rise-of-the-political-right/",
-      "points": 26,
-      "comments": 35,
-      "domain": "theloop.ecpr.eu",
-      "createdAt": "2026-07-15T16:13:32.000Z"
-    },
-    {
-      "title": "Ask HN: Does it still make sense to write code by hand?",
-      "url": "https://news.ycombinator.com/item?id=48922717",
-      "points": 17,
-      "comments": 48,
+      "title": "Show HN: Writemark, a dependency free web component for inline Markdown editing",
+      "url": "https://news.ycombinator.com/item?id=49051130",
+      "points": 52,
+      "comments": 23,
       "domain": "news.ycombinator.com",
-      "createdAt": "2026-07-15T15:51:53.000Z"
+      "createdAt": "2026-07-25T20:18:54.000Z"
     },
     {
-      "title": "The Most Famous AI Writing Tic Is Also the Most Mysterious",
-      "url": "https://www.theatlantic.com/technology/2026/07/ai-chatbot-writing-tic-negative-parallelism/687892/",
-      "points": 15,
-      "comments": 2,
-      "domain": "theatlantic.com",
-      "createdAt": "2026-07-12T17:49:53.000Z"
+      "title": "Silicon Valley has a science fiction problem",
+      "url": "https://aeon.co/essays/silicon-valley-has-a-science-fiction-problem",
+      "points": 40,
+      "comments": 15,
+      "domain": "aeon.co",
+      "createdAt": "2026-07-25T18:22:15.000Z"
     },
     {
-      "title": "Pearson's Anti-Piracy Vendor Takes Down Best-Selling Author's Own GitHub Repo",
-      "url": "https://torrentfreak.com/pearsons-anti-piracy-vendor-takes-down-best-selling-authors-own-github-repo/",
-      "points": 10,
+      "title": "The whole premise of checking for human writing is daft",
+      "url": "https://mohammedshehu.com/checking-for-human-writing-is-daft/",
+      "points": 39,
+      "comments": 76,
+      "domain": "mohammedshehu.com",
+      "createdAt": "2026-07-25T15:46:11.000Z"
+    },
+    {
+      "title": "Writing fingerprint analysis of responses reveals Kimi's similarity to Claude",
+      "url": "https://typebulb.com/u/lab/you-re-relatively-right/full",
+      "points": 29,
+      "comments": 64,
+      "domain": "typebulb.com",
+      "createdAt": "2026-07-23T15:05:44.000Z"
+    },
+    {
+      "title": "Writing a (valid) C program without main()",
+      "url": "https://labs.iximiuz.com/tutorials/c-program-without-main-a1eea557",
+      "points": 21,
+      "comments": 8,
+      "domain": "labs.iximiuz.com",
+      "createdAt": "2026-07-25T16:21:13.000Z"
+    },
+    {
+      "title": "A privacy-first macOS meeting-notes and writing app that runs on-device",
+      "url": "https://github.com/bitwize-ai/Logue",
+      "points": 20,
       "comments": 0,
-      "domain": "torrentfreak.com",
-      "createdAt": "2026-07-10T12:37:25.000Z"
-    },
-    {
-      "title": "I tested 11 AI detectors on my pre-ChatGPT writing and I'm as little as 5% human",
-      "url": "https://originalseparation.substack.com/p/i-have-been-95-robotic-since-2019",
-      "points": 8,
-      "comments": 2,
-      "domain": "originalseparation.substack.com",
-      "createdAt": "2026-07-15T15:16:17.000Z"
+      "domain": "github.com",
+      "createdAt": "2026-07-22T14:55:39.000Z"
     }
   ]
 }
