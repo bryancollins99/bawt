@@ -1,118 +1,110 @@
 {
-  "generatedAt": "2026-07-27T09:40:41.049Z",
-  "weekOf": "2026-07-27",
+  "generatedAt": "2026-08-03T09:33:54.532Z",
+  "weekOf": "2026-08-03",
   "items": [
     {
-      "title": "Writing by hand is good for your brain",
-      "url": "https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your",
-      "points": 1475,
-      "comments": 665,
-      "domain": "nealstephenson.substack.com",
-      "createdAt": "2026-07-23T14:24:43.000Z"
+      "title": "AI's top startups are barely publishing their research",
+      "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
+      "points": 616,
+      "comments": 318,
+      "domain": "science.org",
+      "createdAt": "2026-07-29T21:25:40.000Z"
     },
     {
-      "title": "Couple pay >$800k for a gene-editing therapy for their daughter. She died.",
-      "url": "https://www.science.org/content/article/exclusive-death-girl-chinese-gene-editing-trial-was-never-made-public",
-      "points": 364,
-      "comments": 228,
-      "domain": "science.org",
-      "createdAt": "2026-07-23T20:52:19.000Z"
+      "title": "I flagged two research papers for fake authors and both were accepted as orals",
+      "url": "https://geospatialml.com/posts/reviewing-ai-slop/",
+      "points": 273,
+      "comments": 158,
+      "domain": "geospatialml.com",
+      "createdAt": "2026-07-30T22:33:11.000Z"
     },
     {
       "title": "How we measured AI writing across arXiv, and where the measurement breaks",
       "url": "https://unslop.run/blog/measuring-ai-writing-on-arxiv",
-      "points": 243,
+      "points": 244,
       "comments": 171,
       "domain": "unslop.run",
       "createdAt": "2026-07-20T16:36:36.000Z"
     },
     {
-      "title": "Show HN: Palmier Pro – Open-source macOS video editor built for AI",
-      "url": "https://github.com/palmier-io/palmier-pro",
-      "points": 190,
-      "comments": 39,
-      "domain": "github.com",
-      "createdAt": "2026-07-23T15:11:37.000Z"
+      "title": "On the non-use of AI in my writing process",
+      "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
+      "points": 130,
+      "comments": 134,
+      "domain": "antipope.org",
+      "createdAt": "2026-08-01T12:56:54.000Z"
     },
     {
-      "title": "Ask HN: What are your favorite blogs not about AI?",
-      "url": "https://news.ycombinator.com/item?id=48972858",
-      "points": 95,
-      "comments": 38,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-07-19T23:58:12.000Z"
+      "title": "Show HN: A Handwritten Blogging Platform",
+      "url": "https://handwritten.blog/",
+      "points": 102,
+      "comments": 50,
+      "domain": "handwritten.blog",
+      "createdAt": "2026-07-31T06:37:42.000Z"
     },
     {
-      "title": "Using sed to make indexes for books (1997)",
-      "url": "https://www.pement.org/sed/make_indexes.txt",
-      "points": 62,
-      "comments": 11,
-      "domain": "pement.org",
-      "createdAt": "2026-07-23T04:25:24.000Z"
+      "title": "Why Book Corners won't sync contributions back to OpenStreetMap",
+      "url": "https://www.andreagrandi.it/posts/why-book-corners-wont-sync-contributions-back-to-openstreetmap/",
+      "points": 92,
+      "comments": 58,
+      "domain": "andreagrandi.it",
+      "createdAt": "2026-08-03T00:12:16.000Z"
     },
     {
-      "title": "Writing a Debugger from Scratch",
-      "url": "https://www.timdbg.com/posts/writing-a-debugger-from-scratch-part-1/",
-      "points": 54,
-      "comments": 7,
-      "domain": "timdbg.com",
-      "createdAt": "2026-07-24T14:06:03.000Z"
-    },
-    {
-      "title": "Book Corners: Community map of neighborhood book exchange spots",
-      "url": "https://www.bookcorners.org",
-      "points": 53,
-      "comments": 39,
-      "domain": "bookcorners.org",
-      "createdAt": "2026-07-22T20:03:32.000Z"
-    },
-    {
-      "title": "The Book Prize Index",
-      "url": "https://book-prize-index.vercel.app",
-      "points": 52,
-      "comments": 6,
-      "domain": "book-prize-index.vercel.app",
-      "createdAt": "2026-07-24T08:29:11.000Z"
+      "title": "Man and the Computer by John G. Kemeny (1972 book by the co-creator of BASIC)",
+      "url": "https://archive.org/details/mancomputerbyjoh0000john",
+      "points": 58,
+      "comments": 13,
+      "domain": "archive.org",
+      "createdAt": "2026-07-29T22:53:44.000Z"
     },
     {
       "title": "Show HN: Writemark, a dependency free web component for inline Markdown editing",
       "url": "https://news.ycombinator.com/item?id=49051130",
-      "points": 52,
-      "comments": 23,
+      "points": 53,
+      "comments": 27,
       "domain": "news.ycombinator.com",
       "createdAt": "2026-07-25T20:18:54.000Z"
     },
     {
-      "title": "Silicon Valley has a science fiction problem",
-      "url": "https://aeon.co/essays/silicon-valley-has-a-science-fiction-problem",
-      "points": 40,
-      "comments": 15,
-      "domain": "aeon.co",
-      "createdAt": "2026-07-25T18:22:15.000Z"
+      "title": "The Vanishing Page: AI Firms Scan Then Destroy Rare Book Editions",
+      "url": "https://dallasexpress.com/national/the-vanishing-page-ai-firms-scan-then-destroy-rare-book-editions/",
+      "points": 49,
+      "comments": 74,
+      "domain": "dallasexpress.com",
+      "createdAt": "2026-07-29T10:54:07.000Z"
     },
     {
-      "title": "The whole premise of checking for human writing is daft",
-      "url": "https://mohammedshehu.com/checking-for-human-writing-is-daft/",
-      "points": 39,
-      "comments": 76,
-      "domain": "mohammedshehu.com",
-      "createdAt": "2026-07-25T15:46:11.000Z"
+      "title": "AI companies destroy rare and non recoverable physical books",
+      "url": "https://www.heraldscotland.com/opinion/26422014.library-alexandria-burns-ai-companies-destroying-books-bulk/",
+      "points": 47,
+      "comments": 79,
+      "domain": "heraldscotland.com",
+      "createdAt": "2026-07-31T19:01:52.000Z"
     },
     {
-      "title": "Writing fingerprint analysis of responses reveals Kimi's similarity to Claude",
-      "url": "https://typebulb.com/u/lab/you-re-relatively-right/full",
+      "title": "How to Spot AI Writing",
+      "url": "https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing",
+      "points": 36,
+      "comments": 74,
+      "domain": "economist.com",
+      "createdAt": "2026-08-01T13:35:26.000Z"
+    },
+    {
+      "title": "Generative AI floods and dilutes the market for books",
+      "url": "https://arxiv.org/abs/2607.20349",
+      "points": 36,
+      "comments": 102,
+      "domain": "arxiv.org",
+      "createdAt": "2026-08-02T11:06:07.000Z"
+    },
+    {
+      "title": "AI Firms Are Buying Up Old Books, Then Scanning and Destroying Them",
+      "url": "https://novaramedia.com/2026/07/29/ai-firms-are-buying-up-old-books-then-scanning-and-destroying-them/",
       "points": 29,
-      "comments": 64,
-      "domain": "typebulb.com",
-      "createdAt": "2026-07-23T15:05:44.000Z"
-    },
-    {
-      "title": "Writing a (valid) C program without main()",
-      "url": "https://labs.iximiuz.com/tutorials/c-program-without-main-a1eea557",
-      "points": 21,
-      "comments": 8,
-      "domain": "labs.iximiuz.com",
-      "createdAt": "2026-07-25T16:21:13.000Z"
+      "comments": 16,
+      "domain": "novaramedia.com",
+      "createdAt": "2026-07-31T11:00:37.000Z"
     },
     {
       "title": "A privacy-first macOS meeting-notes and writing app that runs on-device",
@@ -121,6 +113,14 @@
       "comments": 0,
       "domain": "github.com",
       "createdAt": "2026-07-22T14:55:39.000Z"
+    },
+    {
+      "title": "1,500 Curl Authors",
+      "url": "https://daniel.haxx.se/blog/2026/07/25/1500-curl-authors/",
+      "points": 16,
+      "comments": 0,
+      "domain": "daniel.haxx.se",
+      "createdAt": "2026-07-25T18:39:51.000Z"
     }
   ]
 }
