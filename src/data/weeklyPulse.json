@@ -1,86 +1,78 @@
 {
-  "generatedAt": "2026-08-03T09:33:54.532Z",
-  "weekOf": "2026-08-03",
+  "generatedAt": "2026-08-10T07:21:27.813Z",
+  "weekOf": "2026-08-10",
   "items": [
     {
       "title": "AI's top startups are barely publishing their research",
       "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
-      "points": 616,
+      "points": 618,
       "comments": 318,
       "domain": "science.org",
       "createdAt": "2026-07-29T21:25:40.000Z"
     },
     {
+      "title": "I am retiring from fulltime writing (& pseudonymity) to launch Guardian Angel",
+      "url": "https://twitter.com/gwern/status/2084739205071343837",
+      "points": 317,
+      "comments": 237,
+      "domain": "twitter.com",
+      "createdAt": "2026-08-04T20:48:17.000Z"
+    },
+    {
       "title": "I flagged two research papers for fake authors and both were accepted as orals",
       "url": "https://geospatialml.com/posts/reviewing-ai-slop/",
-      "points": 273,
-      "comments": 158,
+      "points": 276,
+      "comments": 162,
       "domain": "geospatialml.com",
       "createdAt": "2026-07-30T22:33:11.000Z"
     },
     {
-      "title": "How we measured AI writing across arXiv, and where the measurement breaks",
-      "url": "https://unslop.run/blog/measuring-ai-writing-on-arxiv",
-      "points": 244,
-      "comments": 171,
-      "domain": "unslop.run",
-      "createdAt": "2026-07-20T16:36:36.000Z"
+      "title": "Show HN: A Handwritten Blogging Platform",
+      "url": "https://handwritten.blog/",
+      "points": 192,
+      "comments": 92,
+      "domain": "handwritten.blog",
+      "createdAt": "2026-07-31T06:37:42.000Z"
     },
     {
       "title": "On the non-use of AI in my writing process",
       "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
       "points": 130,
-      "comments": 134,
+      "comments": 136,
       "domain": "antipope.org",
       "createdAt": "2026-08-01T12:56:54.000Z"
     },
     {
-      "title": "Show HN: A Handwritten Blogging Platform",
-      "url": "https://handwritten.blog/",
-      "points": 102,
-      "comments": 50,
-      "domain": "handwritten.blog",
-      "createdAt": "2026-07-31T06:37:42.000Z"
+      "title": "ChatGPT starts blocking direct requests to copy an author's style",
+      "url": "https://arstechnica.com/ai/2026/07/chatgpt-stops-cloning-famous-writers-voices-but-may-capture-a-similar-feeling/",
+      "points": 91,
+      "comments": 67,
+      "domain": "arstechnica.com",
+      "createdAt": "2026-08-09T02:01:38.000Z"
     },
     {
-      "title": "Why Book Corners won't sync contributions back to OpenStreetMap",
-      "url": "https://www.andreagrandi.it/posts/why-book-corners-wont-sync-contributions-back-to-openstreetmap/",
-      "points": 92,
-      "comments": 58,
-      "domain": "andreagrandi.it",
-      "createdAt": "2026-08-03T00:12:16.000Z"
+      "title": "I won't read LLM authored fiction",
+      "url": "https://mccormick.cx/news/entries/why-i-won-t-read-llm-authored-fiction",
+      "points": 72,
+      "comments": 112,
+      "domain": "mccormick.cx",
+      "createdAt": "2026-08-07T07:45:56.000Z"
     },
     {
-      "title": "Man and the Computer by John G. Kemeny (1972 book by the co-creator of BASIC)",
-      "url": "https://archive.org/details/mancomputerbyjoh0000john",
-      "points": 58,
-      "comments": 13,
-      "domain": "archive.org",
-      "createdAt": "2026-07-29T22:53:44.000Z"
+      "title": "\"The Persian MâR-Nâmeh Or, the Book for Taking Omens from Snakes\" (1892)",
+      "url": "https://publicdomainreview.org/collection/marnameh/",
+      "points": 50,
+      "comments": 6,
+      "domain": "publicdomainreview.org",
+      "createdAt": "2026-08-07T04:04:56.000Z"
     },
     {
-      "title": "Show HN: Writemark, a dependency free web component for inline Markdown editing",
-      "url": "https://news.ycombinator.com/item?id=49051130",
-      "points": 53,
-      "comments": 27,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-07-25T20:18:54.000Z"
-    },
-    {
-      "title": "The Vanishing Page: AI Firms Scan Then Destroy Rare Book Editions",
-      "url": "https://dallasexpress.com/national/the-vanishing-page-ai-firms-scan-then-destroy-rare-book-editions/",
-      "points": 49,
-      "comments": 74,
-      "domain": "dallasexpress.com",
-      "createdAt": "2026-07-29T10:54:07.000Z"
-    },
-    {
-      "title": "AI companies destroy rare and non recoverable physical books",
-      "url": "https://www.heraldscotland.com/opinion/26422014.library-alexandria-burns-ai-companies-destroying-books-bulk/",
-      "points": 47,
-      "comments": 79,
-      "domain": "heraldscotland.com",
-      "createdAt": "2026-07-31T19:01:52.000Z"
+      "title": "The phone book that led us to Assad's spy chief in hiding",
+      "url": "https://www.bbc.com/news/articles/c4gyrzn8p94o",
+      "points": 45,
+      "comments": 35,
+      "domain": "bbc.com",
+      "createdAt": "2026-08-09T01:55:53.000Z"
     },
     {
       "title": "How to Spot AI Writing",
@@ -91,36 +83,44 @@
       "createdAt": "2026-08-01T13:35:26.000Z"
     },
     {
-      "title": "Generative AI floods and dilutes the market for books",
-      "url": "https://arxiv.org/abs/2607.20349",
-      "points": 36,
-      "comments": 102,
-      "domain": "arxiv.org",
-      "createdAt": "2026-08-02T11:06:07.000Z"
-    },
-    {
-      "title": "AI Firms Are Buying Up Old Books, Then Scanning and Destroying Them",
-      "url": "https://novaramedia.com/2026/07/29/ai-firms-are-buying-up-old-books-then-scanning-and-destroying-them/",
-      "points": 29,
-      "comments": 16,
-      "domain": "novaramedia.com",
-      "createdAt": "2026-07-31T11:00:37.000Z"
-    },
-    {
-      "title": "A privacy-first macOS meeting-notes and writing app that runs on-device",
-      "url": "https://github.com/bitwize-ai/Logue",
-      "points": 20,
-      "comments": 0,
-      "domain": "github.com",
-      "createdAt": "2026-07-22T14:55:39.000Z"
-    },
-    {
-      "title": "1,500 Curl Authors",
-      "url": "https://daniel.haxx.se/blog/2026/07/25/1500-curl-authors/",
+      "title": "Why is Anthropic destroying books?",
+      "url": "https://www.theguardian.com/commentisfree/2026/aug/05/anthropic-ai-destroying-books",
       "points": 16,
+      "comments": 2,
+      "domain": "theguardian.com",
+      "createdAt": "2026-08-05T12:05:22.000Z"
+    },
+    {
+      "title": "Someone Is Mysteriously Snapping Up Used Books Around the World",
+      "url": "https://www.theatlantic.com/technology/2026/08/ai-companies-buying-used-books-for-data/688167/",
+      "points": 16,
+      "comments": 6,
+      "domain": "theatlantic.com",
+      "createdAt": "2026-08-06T09:18:20.000Z"
+    },
+    {
+      "title": "Another Reason Not to Use \"AI\" for Your Writing",
+      "url": "https://whatever.scalzi.com/2026/07/31/another-reason-not-to-use-ai-for-your-writing/",
+      "points": 14,
+      "comments": 5,
+      "domain": "whatever.scalzi.com",
+      "createdAt": "2026-07-31T13:19:46.000Z"
+    },
+    {
+      "title": "If you can't be bothered writing it, I can't be bothered reading it",
+      "url": "https://crookedtimber.org/2026/08/04/if-you-cant-be-bothered-writing-it-i-cant-be-bothered-reading-it/",
+      "points": 14,
+      "comments": 2,
+      "domain": "crookedtimber.org",
+      "createdAt": "2026-08-05T18:51:05.000Z"
+    },
+    {
+      "title": "I'm Begging You: Never Write with A.I",
+      "url": "https://www.nytimes.com/2026/08/04/opinion/artificial-intelligence-ai-writing.html",
+      "points": 12,
       "comments": 0,
-      "domain": "daniel.haxx.se",
-      "createdAt": "2026-07-25T18:39:51.000Z"
+      "domain": "nytimes.com",
+      "createdAt": "2026-08-05T16:45:55.000Z"
     }
   ]
 }
