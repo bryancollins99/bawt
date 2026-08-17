@@ -1,52 +1,44 @@
 {
-  "generatedAt": "2026-08-10T07:21:27.813Z",
-  "weekOf": "2026-08-10",
+  "generatedAt": "2026-08-17T06:42:26.823Z",
+  "weekOf": "2026-08-17",
   "items": [
     {
-      "title": "AI's top startups are barely publishing their research",
-      "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
-      "points": 618,
-      "comments": 318,
-      "domain": "science.org",
-      "createdAt": "2026-07-29T21:25:40.000Z"
+      "title": "Seven books I keep close because I love them",
+      "url": "https://blog.plover.com/2026/08/02/",
+      "points": 379,
+      "comments": 179,
+      "domain": "blog.plover.com",
+      "createdAt": "2026-08-14T15:03:26.000Z"
     },
     {
-      "title": "I am retiring from fulltime writing (& pseudonymity) to launch Guardian Angel",
-      "url": "https://twitter.com/gwern/status/2084739205071343837",
-      "points": 317,
-      "comments": 237,
-      "domain": "twitter.com",
-      "createdAt": "2026-08-04T20:48:17.000Z"
+      "title": "Anthropic's 'Watermark' Text Adulteration in Claude Is a Perversion of Writing",
+      "url": "https://daringfireball.net/2026/08/anthropics_watermark_text_adulteration_in_claude_is_a_perversion_of_writing",
+      "points": 175,
+      "comments": 174,
+      "domain": "daringfireball.net",
+      "createdAt": "2026-08-16T21:53:43.000Z"
     },
     {
-      "title": "I flagged two research papers for fake authors and both were accepted as orals",
-      "url": "https://geospatialml.com/posts/reviewing-ai-slop/",
-      "points": 276,
-      "comments": 162,
-      "domain": "geospatialml.com",
-      "createdAt": "2026-07-30T22:33:11.000Z"
+      "title": "Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet",
+      "url": "https://github.com/TheRealYT/git-knife",
+      "points": 166,
+      "comments": 101,
+      "domain": "github.com",
+      "createdAt": "2026-08-11T15:09:34.000Z"
     },
     {
-      "title": "Show HN: A Handwritten Blogging Platform",
-      "url": "https://handwritten.blog/",
-      "points": 192,
-      "comments": 92,
-      "domain": "handwritten.blog",
-      "createdAt": "2026-07-31T06:37:42.000Z"
-    },
-    {
-      "title": "On the non-use of AI in my writing process",
-      "url": "https://www.antipope.org/charlie/blog-static/2026/08/on-the-non-use-of-ai-in-my-wri.html",
-      "points": 130,
-      "comments": 136,
-      "domain": "antipope.org",
-      "createdAt": "2026-08-01T12:56:54.000Z"
+      "title": "Publishing Schematics Before “Open Source” Was a Word",
+      "url": "https://fabscene.medium.com/publishing-schematics-before-open-source-was-a-word-55-years-of-akizuki-denshi-japans-be7ca9629704",
+      "points": 117,
+      "comments": 29,
+      "domain": "fabscene.medium.com",
+      "createdAt": "2026-08-07T15:59:08.000Z"
     },
     {
       "title": "ChatGPT starts blocking direct requests to copy an author's style",
       "url": "https://arstechnica.com/ai/2026/07/chatgpt-stops-cloning-famous-writers-voices-but-may-capture-a-similar-feeling/",
-      "points": 91,
-      "comments": 67,
+      "points": 111,
+      "comments": 84,
       "domain": "arstechnica.com",
       "createdAt": "2026-08-09T02:01:38.000Z"
     },
@@ -54,65 +46,41 @@
       "title": "I won't read LLM authored fiction",
       "url": "https://mccormick.cx/news/entries/why-i-won-t-read-llm-authored-fiction",
       "points": 72,
-      "comments": 112,
+      "comments": 114,
       "domain": "mccormick.cx",
       "createdAt": "2026-08-07T07:45:56.000Z"
     },
     {
-      "title": "\"The Persian MâR-Nâmeh Or, the Book for Taking Omens from Snakes\" (1892)",
-      "url": "https://publicdomainreview.org/collection/marnameh/",
-      "points": 50,
-      "comments": 6,
-      "domain": "publicdomainreview.org",
-      "createdAt": "2026-08-07T04:04:56.000Z"
+      "title": "Secondhand book sales are booming. Is it because of AI?",
+      "url": "https://www.bbc.co.uk/news/articles/cp3rprx2wl4o",
+      "points": 69,
+      "comments": 72,
+      "domain": "bbc.co.uk",
+      "createdAt": "2026-08-15T14:08:55.000Z"
     },
     {
-      "title": "The phone book that led us to Assad's spy chief in hiding",
-      "url": "https://www.bbc.com/news/articles/c4gyrzn8p94o",
-      "points": 45,
-      "comments": 35,
-      "domain": "bbc.com",
-      "createdAt": "2026-08-09T01:55:53.000Z"
+      "title": "Five Programming Books That Changed How I Think",
+      "url": "https://adamtornhill.substack.com/p/five-programming-books-that-changed",
+      "points": 43,
+      "comments": 7,
+      "domain": "adamtornhill.substack.com",
+      "createdAt": "2026-08-11T19:10:06.000Z"
     },
     {
-      "title": "How to Spot AI Writing",
-      "url": "https://www.economist.com/culture/2026/07/30/how-to-spot-ai-writing",
-      "points": 36,
-      "comments": 74,
-      "domain": "economist.com",
-      "createdAt": "2026-08-01T13:35:26.000Z"
+      "title": "My favorite nonfiction animal books that make you go holy shit",
+      "url": "https://bookdna.com/best-books/nonfiction-animal-books-that-make-you-go-holy-sht",
+      "points": 21,
+      "comments": 4,
+      "domain": "bookdna.com",
+      "createdAt": "2026-08-12T10:03:55.000Z"
     },
     {
-      "title": "Why is Anthropic destroying books?",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/05/anthropic-ai-destroying-books",
-      "points": 16,
-      "comments": 2,
-      "domain": "theguardian.com",
-      "createdAt": "2026-08-05T12:05:22.000Z"
-    },
-    {
-      "title": "Someone Is Mysteriously Snapping Up Used Books Around the World",
-      "url": "https://www.theatlantic.com/technology/2026/08/ai-companies-buying-used-books-for-data/688167/",
-      "points": 16,
-      "comments": 6,
-      "domain": "theatlantic.com",
-      "createdAt": "2026-08-06T09:18:20.000Z"
-    },
-    {
-      "title": "Another Reason Not to Use \"AI\" for Your Writing",
-      "url": "https://whatever.scalzi.com/2026/07/31/another-reason-not-to-use-ai-for-your-writing/",
-      "points": 14,
-      "comments": 5,
-      "domain": "whatever.scalzi.com",
-      "createdAt": "2026-07-31T13:19:46.000Z"
-    },
-    {
-      "title": "If you can't be bothered writing it, I can't be bothered reading it",
-      "url": "https://crookedtimber.org/2026/08/04/if-you-cant-be-bothered-writing-it-i-cant-be-bothered-reading-it/",
-      "points": 14,
-      "comments": 2,
-      "domain": "crookedtimber.org",
-      "createdAt": "2026-08-05T18:51:05.000Z"
+      "title": "Eight Books to Read If You're Still Thinking About the Roman Empire",
+      "url": "https://lithub.com/eight-books-to-read-if-youre-still-thinking-about-the-roman-empire/",
+      "points": 19,
+      "comments": 3,
+      "domain": "lithub.com",
+      "createdAt": "2026-08-12T11:13:06.000Z"
     },
     {
       "title": "I'm Begging You: Never Write with A.I",
@@ -121,6 +89,38 @@
       "comments": 0,
       "domain": "nytimes.com",
       "createdAt": "2026-08-05T16:45:55.000Z"
+    },
+    {
+      "title": "Why Books Don't Work: Constructivism over Transmissionism (2021)",
+      "url": "https://www.masterhowtolearn.com/2021-01-30-why-books-dont-work-constructivism-over-transmissionism/",
+      "points": 11,
+      "comments": 7,
+      "domain": "masterhowtolearn.com",
+      "createdAt": "2026-08-14T07:31:01.000Z"
+    },
+    {
+      "title": "Xteink's tiny e-readers are getting access to free books through Libby",
+      "url": "https://www.theverge.com/tech/976390/xteink-x3-x4-x4-pro-e-reader-libby-plug-ins-drm-crosspoint-reader",
+      "points": 11,
+      "comments": 0,
+      "domain": "theverge.com",
+      "createdAt": "2026-08-15T22:23:30.000Z"
+    },
+    {
+      "title": "I've spent 4 years building an offline first FOSS novel writing app: Hammer",
+      "url": "https://hammer.ink/",
+      "points": 9,
+      "comments": 6,
+      "domain": "hammer.ink",
+      "createdAt": "2026-08-06T04:03:03.000Z"
+    },
+    {
+      "title": "Ask HN: My dev blog has 11k followers. I stopped writing it. What would you do?",
+      "url": "https://news.ycombinator.com/item?id=49231291",
+      "points": 9,
+      "comments": 10,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-08-09T13:35:28.000Z"
     }
   ]
 }
