@@ -1,22 +1,38 @@
 {
-  "generatedAt": "2026-08-17T06:42:26.823Z",
-  "weekOf": "2026-08-17",
+  "generatedAt": "2026-08-24T06:45:53.004Z",
+  "weekOf": "2026-08-24",
   "items": [
     {
-      "title": "Seven books I keep close because I love them",
-      "url": "https://blog.plover.com/2026/08/02/",
-      "points": 379,
-      "comments": 179,
-      "domain": "blog.plover.com",
-      "createdAt": "2026-08-14T15:03:26.000Z"
-    },
-    {
-      "title": "Anthropic's 'Watermark' Text Adulteration in Claude Is a Perversion of Writing",
+      "title": "Anthropic's ‘watermark’ text adulteration in Claude is a perversion of writing",
       "url": "https://daringfireball.net/2026/08/anthropics_watermark_text_adulteration_in_claude_is_a_perversion_of_writing",
-      "points": 175,
-      "comments": 174,
+      "points": 823,
+      "comments": 730,
       "domain": "daringfireball.net",
       "createdAt": "2026-08-16T21:53:43.000Z"
+    },
+    {
+      "title": "AI companies destroy physical books – let's scan rare books before it's too late",
+      "url": "https://annas-archive.gl/blog/physical-destruction.html",
+      "points": 623,
+      "comments": 898,
+      "domain": "annas-archive.gl",
+      "createdAt": "2026-08-21T02:37:47.000Z"
+    },
+    {
+      "title": "Show HN: Huzzah – a novel approach to coding with AI",
+      "url": "https://www.danielvaughn.dev/posts/huzzah/",
+      "points": 379,
+      "comments": 209,
+      "domain": "danielvaughn.dev",
+      "createdAt": "2026-08-20T19:05:36.000Z"
+    },
+    {
+      "title": "Claude writing a macOS driver for my obscure HP printer built only for Windows",
+      "url": "https://twitter.com/kuberwastaken/status/2089377982536388964",
+      "points": 347,
+      "comments": 226,
+      "domain": "twitter.com",
+      "createdAt": "2026-08-18T12:22:58.000Z"
     },
     {
       "title": "Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet",
@@ -27,100 +43,84 @@
       "createdAt": "2026-08-11T15:09:34.000Z"
     },
     {
-      "title": "Publishing Schematics Before “Open Source” Was a Word",
-      "url": "https://fabscene.medium.com/publishing-schematics-before-open-source-was-a-word-55-years-of-akizuki-denshi-japans-be7ca9629704",
-      "points": 117,
-      "comments": 29,
-      "domain": "fabscene.medium.com",
-      "createdAt": "2026-08-07T15:59:08.000Z"
+      "title": "I set a trap for a book-marketing scammer (2025)",
+      "url": "https://rwwgreene.substack.com/p/i-set-a-trap-for-a-book-marketing",
+      "points": 65,
+      "comments": 41,
+      "domain": "rwwgreene.substack.com",
+      "createdAt": "2026-08-22T18:08:25.000Z"
     },
     {
-      "title": "ChatGPT starts blocking direct requests to copy an author's style",
-      "url": "https://arstechnica.com/ai/2026/07/chatgpt-stops-cloning-famous-writers-voices-but-may-capture-a-similar-feeling/",
-      "points": 111,
-      "comments": 84,
-      "domain": "arstechnica.com",
-      "createdAt": "2026-08-09T02:01:38.000Z"
-    },
-    {
-      "title": "I won't read LLM authored fiction",
-      "url": "https://mccormick.cx/news/entries/why-i-won-t-read-llm-authored-fiction",
-      "points": 72,
-      "comments": 114,
-      "domain": "mccormick.cx",
-      "createdAt": "2026-08-07T07:45:56.000Z"
-    },
-    {
-      "title": "Secondhand book sales are booming. Is it because of AI?",
-      "url": "https://www.bbc.co.uk/news/articles/cp3rprx2wl4o",
-      "points": 69,
-      "comments": 72,
-      "domain": "bbc.co.uk",
-      "createdAt": "2026-08-15T14:08:55.000Z"
-    },
-    {
-      "title": "Five Programming Books That Changed How I Think",
-      "url": "https://adamtornhill.substack.com/p/five-programming-books-that-changed",
-      "points": 43,
-      "comments": 7,
-      "domain": "adamtornhill.substack.com",
-      "createdAt": "2026-08-11T19:10:06.000Z"
-    },
-    {
-      "title": "My favorite nonfiction animal books that make you go holy shit",
-      "url": "https://bookdna.com/best-books/nonfiction-animal-books-that-make-you-go-holy-sht",
-      "points": 21,
-      "comments": 4,
+      "title": "My favorite nonfiction books about cults, scams, and schemes",
+      "url": "https://bookdna.com/best-books/nonfiction-about-cults-scams-and-schemes",
+      "points": 48,
+      "comments": 13,
       "domain": "bookdna.com",
-      "createdAt": "2026-08-12T10:03:55.000Z"
+      "createdAt": "2026-08-23T13:51:10.000Z"
     },
     {
-      "title": "Eight Books to Read If You're Still Thinking About the Roman Empire",
-      "url": "https://lithub.com/eight-books-to-read-if-youre-still-thinking-about-the-roman-empire/",
-      "points": 19,
-      "comments": 3,
-      "domain": "lithub.com",
-      "createdAt": "2026-08-12T11:13:06.000Z"
+      "title": "Show HN: 1667, a terminal UI for writing fiction with language models",
+      "url": "https://1667.ai/",
+      "points": 37,
+      "comments": 94,
+      "domain": "1667.ai",
+      "createdAt": "2026-08-17T13:35:31.000Z"
     },
     {
-      "title": "I'm Begging You: Never Write with A.I",
-      "url": "https://www.nytimes.com/2026/08/04/opinion/artificial-intelligence-ai-writing.html",
-      "points": 12,
-      "comments": 0,
-      "domain": "nytimes.com",
-      "createdAt": "2026-08-05T16:45:55.000Z"
-    },
-    {
-      "title": "Why Books Don't Work: Constructivism over Transmissionism (2021)",
-      "url": "https://www.masterhowtolearn.com/2021-01-30-why-books-dont-work-constructivism-over-transmissionism/",
-      "points": 11,
-      "comments": 7,
-      "domain": "masterhowtolearn.com",
-      "createdAt": "2026-08-14T07:31:01.000Z"
-    },
-    {
-      "title": "Xteink's tiny e-readers are getting access to free books through Libby",
-      "url": "https://www.theverge.com/tech/976390/xteink-x3-x4-x4-pro-e-reader-libby-plug-ins-drm-crosspoint-reader",
-      "points": 11,
-      "comments": 0,
-      "domain": "theverge.com",
-      "createdAt": "2026-08-15T22:23:30.000Z"
-    },
-    {
-      "title": "I've spent 4 years building an offline first FOSS novel writing app: Hammer",
-      "url": "https://hammer.ink/",
-      "points": 9,
+      "title": "I own 28,000 books – here's what I've learned",
+      "url": "https://www.shelvd.org/blog/28000-books",
+      "points": 27,
       "comments": 6,
-      "domain": "hammer.ink",
-      "createdAt": "2026-08-06T04:03:03.000Z"
+      "domain": "shelvd.org",
+      "createdAt": "2026-08-21T22:59:27.000Z"
     },
     {
-      "title": "Ask HN: My dev blog has 11k followers. I stopped writing it. What would you do?",
-      "url": "https://news.ycombinator.com/item?id=49231291",
+      "title": "AI Has Plunged the Book Publishing Industry into Utter Chaos",
+      "url": "https://www.wsj.com/arts-culture/books/generative-ai-book-publishing-be79a287",
+      "points": 23,
+      "comments": 21,
+      "domain": "wsj.com",
+      "createdAt": "2026-08-19T13:28:44.000Z"
+    },
+    {
+      "title": "Neo: A distraction-free word processor for authors, by a wannabe author",
+      "url": "https://github.com/hughhowey/neo",
       "points": 9,
-      "comments": 10,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-08-09T13:35:28.000Z"
+      "comments": 2,
+      "domain": "github.com",
+      "createdAt": "2026-08-15T21:50:29.000Z"
+    },
+    {
+      "title": "Shadowy paper mills let you pay to be a published author of fraudulent research",
+      "url": "https://www.theguardian.com/science/2026/aug/16/science-or-fiction-shadowy-paper-mills-let-you-pay-to-be-a-published-author-of-fraudulent-research",
+      "points": 7,
+      "comments": 0,
+      "domain": "theguardian.com",
+      "createdAt": "2026-08-15T20:49:07.000Z"
+    },
+    {
+      "title": "Amazon scans and destroys books to comply with copyright law",
+      "url": "https://bsky.app/profile/steveklabnik.com/post/3mtejjs6s2c2y",
+      "points": 7,
+      "comments": 4,
+      "domain": "bsky.app",
+      "createdAt": "2026-08-19T01:40:19.000Z"
+    },
+    {
+      "title": "AI-generated writing: it's still bad",
+      "url": "https://greyenlightenment.com/2026/08/18/ai-generated-writing-its-still-bad/",
+      "points": 7,
+      "comments": 1,
+      "domain": "greyenlightenment.com",
+      "createdAt": "2026-08-19T21:02:46.000Z"
+    },
+    {
+      "title": "Show HN: A new way to read books, magnifying in and out",
+      "url": "https://book.curiora.space/",
+      "points": 7,
+      "comments": 5,
+      "domain": "book.curiora.space",
+      "createdAt": "2026-08-19T22:21:41.000Z"
     }
   ]
 }
