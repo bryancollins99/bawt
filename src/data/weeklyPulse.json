@@ -1,86 +1,54 @@
 {
-  "generatedAt": "2026-08-31T12:29:21.142Z",
-  "weekOf": "2026-08-31",
+  "generatedAt": "2026-09-07T11:23:41.449Z",
+  "weekOf": "2026-09-07",
   "items": [
     {
-      "title": "Show HN: Huzzah – a novel approach to coding with AI",
-      "url": "https://www.danielvaughn.dev/posts/huzzah/",
-      "points": 384,
-      "comments": 210,
-      "domain": "danielvaughn.dev",
-      "createdAt": "2026-08-20T19:05:36.000Z"
+      "title": "Your intellectual fly is open when you use an LLM to author a post (2025)",
+      "url": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/",
+      "points": 657,
+      "comments": 409,
+      "domain": "bcantrill.dtrace.org",
+      "createdAt": "2026-09-06T11:56:43.000Z"
+    },
+    {
+      "title": "The safest job from AI may be writing",
+      "url": "http://muratbuffalo.blogspot.com/2026/08/the-safest-job-from-ai-may-be-writing.html",
+      "points": 153,
+      "comments": 211,
+      "domain": "muratbuffalo.blogspot.com",
+      "createdAt": "2026-08-31T18:12:20.000Z"
     },
     {
       "title": "Show HN: Typebase – A single-folder back end you write in TypeScript",
       "url": "https://typebase.io",
       "points": 118,
-      "comments": 30,
+      "comments": 49,
       "domain": "typebase.io",
       "createdAt": "2026-08-26T11:33:31.000Z"
     },
     {
-      "title": "Why is Anthropic's public writing style so unlike Claude's?",
-      "url": "https://cmart.blog/claude-writing/",
-      "points": 75,
-      "comments": 76,
-      "domain": "cmart.blog",
-      "createdAt": "2026-08-24T03:32:42.000Z"
+      "title": "Ending my elixir exploratory writing",
+      "url": "https://lucassifoni.info/blog/the-end-of-this-elixir-log/",
+      "points": 74,
+      "comments": 46,
+      "domain": "lucassifoni.info",
+      "createdAt": "2026-09-02T11:52:48.000Z"
     },
     {
-      "title": "I'm the Guy Who Destroys Antique Books After We Scan Them into Our Company's AI",
-      "url": "https://www.mcsweeneys.net/articles/im-the-guy-who-destroys-antique-books-after-we-scan-them-into-our-companys-insatiable-ai-platform",
-      "points": 39,
-      "comments": 25,
-      "domain": "mcsweeneys.net",
-      "createdAt": "2026-08-29T02:58:12.000Z"
-    },
-    {
-      "title": "Show HN: 1667, a terminal UI for writing fiction with language models",
-      "url": "https://1667.ai/",
-      "points": 37,
-      "comments": 94,
-      "domain": "1667.ai",
-      "createdAt": "2026-08-17T13:35:31.000Z"
-    },
-    {
-      "title": "Technical Writing Style Guide",
-      "url": "https://pve.proxmox.com/wiki/Technical_Writing_Style_Guide",
-      "points": 34,
-      "comments": 6,
-      "domain": "pve.proxmox.com",
-      "createdAt": "2026-08-27T02:25:18.000Z"
-    },
-    {
-      "title": "Writing for Developers Book",
-      "url": "https://github.com/scynthiadunlop/WritingForDevelopersBook",
-      "points": 26,
-      "comments": 0,
-      "domain": "github.com",
-      "createdAt": "2026-08-27T16:23:30.000Z"
-    },
-    {
-      "title": "AI Has Plunged the Book Publishing Industry into Utter Chaos",
-      "url": "https://www.wsj.com/arts-culture/books/generative-ai-book-publishing-be79a287",
-      "points": 23,
-      "comments": 21,
-      "domain": "wsj.com",
-      "createdAt": "2026-08-19T13:28:44.000Z"
+      "title": "Poetry book that Anthropic tried to censor",
+      "url": "https://kk.org/cooltools/the-1930-poetry-book-that-anthropic-tried-to-censor/",
+      "points": 32,
+      "comments": 16,
+      "domain": "kk.org",
+      "createdAt": "2026-09-05T15:04:50.000Z"
     },
     {
       "title": "I am no longer letting Claude Code add itself as Co-author in my commits",
       "url": "https://igupta.in/blog/why-i-am-no-longer-letting-claude-code-add-itself-as-coauthor/",
-      "points": 20,
-      "comments": 41,
+      "points": 22,
+      "comments": 44,
       "domain": "igupta.in",
       "createdAt": "2026-08-30T19:47:53.000Z"
-    },
-    {
-      "title": "Seneca: On Anger, Book I",
-      "url": "https://stoacentral.com/library/on-anger-book-i",
-      "points": 19,
-      "comments": 3,
-      "domain": "stoacentral.com",
-      "createdAt": "2026-08-26T14:07:28.000Z"
     },
     {
       "title": "The New York Times is publishing AI slop",
@@ -91,20 +59,20 @@
       "createdAt": "2026-08-25T20:32:25.000Z"
     },
     {
-      "title": "Cherish your physical books and media",
-      "url": "https://www.dedoimedo.com/life/books-dvds.html",
+      "title": "Wendell Berry, Kentucky-born author who advocated a simpler life, has died at 92",
+      "url": "https://www.nbcnews.com/news/us-news/wendell-berry-kentucky-born-author-advocated-simpler-life-died-92-rcna595476",
       "points": 16,
       "comments": 1,
-      "domain": "dedoimedo.com",
-      "createdAt": "2026-08-28T16:18:46.000Z"
+      "domain": "nbcnews.com",
+      "createdAt": "2026-09-01T11:29:14.000Z"
     },
     {
-      "title": "Inside The Warehouse Where Amazon Scans and Destroys Books for AI Training",
-      "url": "https://www.404media.co/inside-the-warehouse-where-amazon-scans-and-destroys-books-for-ai-training/",
-      "points": 11,
-      "comments": 1,
-      "domain": "404media.co",
-      "createdAt": "2026-08-26T14:30:56.000Z"
+      "title": "Show HN: Texttile, a multiplayer blog engine for people who write together",
+      "url": "https://www.texttile.blog/",
+      "points": 13,
+      "comments": 2,
+      "domain": "texttile.blog",
+      "createdAt": "2026-08-28T11:52:11.000Z"
     },
     {
       "title": "Moscow Turned AI into a Ghostwriting Machine for Global Influence",
@@ -115,12 +83,44 @@
       "createdAt": "2026-08-26T17:47:17.000Z"
     },
     {
-      "title": "Wall Street Journal defends billionaire's use of AI to write op-ed",
-      "url": "https://www.washingtonpost.com/business/2026/08/25/wall-street-journal-says-ai-generated-op-ed-didnt-breach-its-standards/",
+      "title": "One Hundred Authors Against Einstein",
+      "url": "https://archive.org/details/HundertAutorenGegenEinstein",
       "points": 9,
-      "comments": 3,
+      "comments": 1,
+      "domain": "archive.org",
+      "createdAt": "2026-09-06T23:10:59.000Z"
+    },
+    {
+      "title": "Ask HN: Books Recommendations?",
+      "url": "https://news.ycombinator.com/item?id=49572562",
+      "points": 7,
+      "comments": 11,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-09-05T02:36:51.000Z"
+    },
+    {
+      "title": "Try to beat this AI writing detector",
+      "url": "https://www.washingtonpost.com/technology/interactive/2026/08/25/ai-detectors-like-pangram-are-everywhere-arent-always-accurate/",
+      "points": 6,
+      "comments": 1,
       "domain": "washingtonpost.com",
-      "createdAt": "2026-08-26T22:34:26.000Z"
+      "createdAt": "2026-08-25T21:02:00.000Z"
+    },
+    {
+      "title": "I keep getting flagged for AI, but I suck at writing. How can I solve this?",
+      "url": "https://news.ycombinator.com/item?id=49455449",
+      "points": 6,
+      "comments": 11,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-08-26T20:31:31.000Z"
+    },
+    {
+      "title": "Ask HN: Any blogs/personal notes from game devs who self-published a game?",
+      "url": "https://news.ycombinator.com/item?id=49477504",
+      "points": 6,
+      "comments": 1,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-08-28T12:23:50.000Z"
     }
   ]
 }
