@@ -1,62 +1,38 @@
 {
-  "generatedAt": "2026-09-14T11:33:36.987Z",
-  "weekOf": "2026-09-14",
+  "generatedAt": "2026-09-21T11:47:34.512Z",
+  "weekOf": "2026-09-21",
   "items": [
     {
-      "title": "Your intellectual fly is open when you use an LLM to author a post (2025)",
-      "url": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/",
-      "points": 729,
-      "comments": 432,
-      "domain": "bcantrill.dtrace.org",
-      "createdAt": "2026-09-06T11:56:43.000Z"
+      "title": "I think you should almost never use AI to write",
+      "url": "https://erichgrunewald.substack.com/p/why-you-should-almost-never-use-ai",
+      "points": 350,
+      "comments": 168,
+      "domain": "erichgrunewald.substack.com",
+      "createdAt": "2026-09-19T16:35:24.000Z"
     },
     {
-      "title": "The safest job from AI may be writing",
-      "url": "http://muratbuffalo.blogspot.com/2026/08/the-safest-job-from-ai-may-be-writing.html",
-      "points": 153,
-      "comments": 211,
-      "domain": "muratbuffalo.blogspot.com",
-      "createdAt": "2026-08-31T18:12:20.000Z"
-    },
-    {
-      "title": "A Topological Picture Book, Rendered",
-      "url": "https://e-infinity.space/picture-book/",
-      "points": 146,
-      "comments": 16,
-      "domain": "e-infinity.space",
-      "createdAt": "2026-09-08T22:28:14.000Z"
+      "title": "Asking authors about their own papers",
+      "url": "https://medium.com/@TmlrOrg/asking-authors-about-their-own-papers-3d2e04e5dee0",
+      "points": 227,
+      "comments": 119,
+      "domain": "medium.com",
+      "createdAt": "2026-09-16T23:31:31.000Z"
     },
     {
       "title": "Google stole open source code without crediting the authors (Artemis/Minitap)",
       "url": "https://www.minitap.ai/blog/i-expected-better-from-google",
-      "points": 137,
-      "comments": 27,
+      "points": 180,
+      "comments": 32,
       "domain": "minitap.ai",
       "createdAt": "2026-09-12T02:39:39.000Z"
     },
     {
-      "title": "Writing a better reality: The case for optimistic sci-fi (2022)",
-      "url": "https://honisoit.com/2022/03/writing-a-better-reality-the-case-for-optimistic-sci-fi/",
-      "points": 76,
-      "comments": 55,
-      "domain": "honisoit.com",
-      "createdAt": "2026-09-14T00:27:11.000Z"
-    },
-    {
-      "title": "The Nonfiction Book Market is Collapsing?",
-      "url": "https://dearheadofmine.substack.com/p/the-nonfiction-book-market-is-collapsing",
-      "points": 56,
-      "comments": 65,
-      "domain": "dearheadofmine.substack.com",
-      "createdAt": "2026-09-09T04:39:11.000Z"
-    },
-    {
-      "title": "Japan's book scene is quietly moving from bookstores to libraries",
-      "url": "https://untranslatedjp.substack.com/p/japans-book-scene-is-quietly-moving",
-      "points": 32,
-      "comments": 1,
-      "domain": "untranslatedjp.substack.com",
-      "createdAt": "2026-09-12T22:35:25.000Z"
+      "title": "ZK-JPEG: Zero-Knowledge Image Editing and Compression",
+      "url": "https://eprint.iacr.org/2026/2039",
+      "points": 106,
+      "comments": 30,
+      "domain": "eprint.iacr.org",
+      "createdAt": "2026-09-19T19:23:23.000Z"
     },
     {
       "title": "ChatGPT Was Built on Concealed 'Mass Piracy', Authors Tell Court",
@@ -67,14 +43,6 @@
       "createdAt": "2026-09-07T14:31:27.000Z"
     },
     {
-      "title": "Wendell Berry, Kentucky-born author who advocated a simpler life, has died at 92",
-      "url": "https://www.nbcnews.com/news/us-news/wendell-berry-kentucky-born-author-advocated-simpler-life-died-92-rcna595476",
-      "points": 16,
-      "comments": 1,
-      "domain": "nbcnews.com",
-      "createdAt": "2026-09-01T11:29:14.000Z"
-    },
-    {
       "title": "Nobody wrote the Matrix and AI code-writing will be dead by 2036",
       "url": "https://lufzle.dev/write/nobody-wrote-the-matrix/",
       "points": 16,
@@ -83,44 +51,76 @@
       "createdAt": "2026-09-12T23:59:22.000Z"
     },
     {
-      "title": "I recently went through a translation of Musashi's Book of Five Rings",
-      "url": "https://twitter.com/ID_AA_Carmack/status/2098443262214230095",
-      "points": 12,
-      "comments": 1,
-      "domain": "twitter.com",
-      "createdAt": "2026-09-11T16:11:26.000Z"
-    },
-    {
-      "title": "One Hundred Authors Against Einstein",
-      "url": "https://archive.org/details/HundertAutorenGegenEinstein",
-      "points": 10,
-      "comments": 1,
-      "domain": "archive.org",
-      "createdAt": "2026-09-06T23:10:59.000Z"
-    },
-    {
-      "title": "Japan's book scene is quietly moving from bookstores to libraries",
-      "url": "https://untranslatedjp.substack.com/p/japans-book-scene-is-quietly-moving",
-      "points": 9,
-      "comments": 2,
-      "domain": "untranslatedjp.substack.com",
-      "createdAt": "2026-09-09T14:10:44.000Z"
-    },
-    {
-      "title": "My favorite sci-fi books about how we build societies and keep justifying them",
-      "url": "https://bookdna.com/best-books/how-we-build-absurd-societies-and-keep-justifying",
-      "points": 9,
-      "comments": 3,
-      "domain": "bookdna.com",
-      "createdAt": "2026-09-12T17:07:33.000Z"
-    },
-    {
       "title": "Why This Author Doesn't Publish Technical Articles Anymore",
       "url": "https://galratner.substack.com/p/why-i-dont-publish-technical-articles",
       "points": 8,
       "comments": 3,
       "domain": "galratner.substack.com",
       "createdAt": "2026-09-12T08:15:56.000Z"
+    },
+    {
+      "title": "Show HN: Caveat, a self-hosted publishing and newsletter tool",
+      "url": "https://github.com/CaveatJS",
+      "points": 7,
+      "comments": 0,
+      "domain": "github.com",
+      "createdAt": "2026-09-08T02:28:23.000Z"
+    },
+    {
+      "title": "The Rise of Parasite Authors",
+      "url": "https://www.theatlantic.com/technology/2026/09/ai-authors-impersonating-writers-amazon/688709/",
+      "points": 7,
+      "comments": 1,
+      "domain": "theatlantic.com",
+      "createdAt": "2026-09-19T02:15:21.000Z"
+    },
+    {
+      "title": "The Next Gene-Editing Technology May Also Be the Oldest",
+      "url": "https://www.nytimes.com/2026/09/17/science/crispr-gene-editing-vipr.html",
+      "points": 6,
+      "comments": 0,
+      "domain": "nytimes.com",
+      "createdAt": "2026-09-17T21:51:20.000Z"
+    },
+    {
+      "title": "How Notion handles concurrent editing with CRDTs",
+      "url": "https://www.notion.com/blog/how-notion-handles-concurrent-editing-with-crdts",
+      "points": 6,
+      "comments": 0,
+      "domain": "notion.com",
+      "createdAt": "2026-09-19T09:51:21.000Z"
+    },
+    {
+      "title": "Love vs. Wiley Book Writers: A Publishing Scam Gets a Rare Comeuppance",
+      "url": "https://writerbeware.blog/2026/09/18/love-v-wiley-book-writers-a-publishing-scam-gets-a-rare-comeuppance/",
+      "points": 5,
+      "comments": 1,
+      "domain": "writerbeware.blog",
+      "createdAt": "2026-09-18T18:38:35.000Z"
+    },
+    {
+      "title": "Who's a Better Writer: A.I. Or Humans? NYTimes Quiz",
+      "url": "https://www.nytimes.com/interactive/2026/03/09/business/ai-writing-quiz.html",
+      "points": 5,
+      "comments": 3,
+      "domain": "nytimes.com",
+      "createdAt": "2026-09-18T18:47:12.000Z"
+    },
+    {
+      "title": "Do you separate the reviewer's window from the author's",
+      "url": "https://news.ycombinator.com/item?id=49771839",
+      "points": 5,
+      "comments": 1,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-09-20T01:54:06.000Z"
+    },
+    {
+      "title": "Claudisms – a living banlist of AI-writing tells",
+      "url": "https://claudisms.ai/",
+      "points": 4,
+      "comments": 0,
+      "domain": "claudisms.ai",
+      "createdAt": "2026-09-08T12:25:08.000Z"
     }
   ]
 }
