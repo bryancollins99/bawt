@@ -1,70 +1,110 @@
 {
-  "generatedAt": "2026-09-21T11:47:34.512Z",
-  "weekOf": "2026-09-21",
+  "generatedAt": "2026-09-28T12:42:37.369Z",
+  "weekOf": "2026-09-28",
   "items": [
     {
-      "title": "I think you should almost never use AI to write",
-      "url": "https://erichgrunewald.substack.com/p/why-you-should-almost-never-use-ai",
-      "points": 350,
-      "comments": 168,
-      "domain": "erichgrunewald.substack.com",
-      "createdAt": "2026-09-19T16:35:24.000Z"
+      "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
+      "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
+      "points": 618,
+      "comments": 606,
+      "domain": "authorsguild.org",
+      "createdAt": "2026-09-27T06:19:33.000Z"
     },
     {
       "title": "Asking authors about their own papers",
       "url": "https://medium.com/@TmlrOrg/asking-authors-about-their-own-papers-3d2e04e5dee0",
-      "points": 227,
+      "points": 234,
       "comments": 119,
       "domain": "medium.com",
       "createdAt": "2026-09-16T23:31:31.000Z"
     },
     {
-      "title": "Google stole open source code without crediting the authors (Artemis/Minitap)",
-      "url": "https://www.minitap.ai/blog/i-expected-better-from-google",
-      "points": 180,
+      "title": "Writing Efficient C++ Code (2013)",
+      "url": "https://asawicki.info/articles/writing_efficient_cpp_code.php",
+      "points": 165,
+      "comments": 130,
+      "domain": "asawicki.info",
+      "createdAt": "2026-09-25T20:20:27.000Z"
+    },
+    {
+      "title": "Don't Use AI to Write",
+      "url": "https://paulbakker.io/writing/no-ai-for-writing/",
+      "points": 148,
+      "comments": 85,
+      "domain": "paulbakker.io",
+      "createdAt": "2026-09-21T08:54:44.000Z"
+    },
+    {
+      "title": "Japanese used bookstores see 5x sales surge as books are being bought by the ton",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/japanese-used-bookstores-see-5x-sales-surge-as-books-are-being-bought-by-the-ton-one-50-ton-order-sent-to-the-us-for-ai-scanning-and-destruction-multitude-of-suspicious-bulk-buys-thought-to-end-up-in-foreign-ai-scan-and-shred-facilities",
+      "points": 93,
+      "comments": 129,
+      "domain": "tomshardware.com",
+      "createdAt": "2026-09-24T14:51:31.000Z"
+    },
+    {
+      "title": "Writing Parquet files using Haskell",
+      "url": "https://www.datahaskell.org/blog/2026/09/18/writing-parquet-files-using-haskell.html",
+      "points": 88,
       "comments": 32,
-      "domain": "minitap.ai",
-      "createdAt": "2026-09-12T02:39:39.000Z"
+      "domain": "datahaskell.org",
+      "createdAt": "2026-09-22T15:02:39.000Z"
     },
     {
-      "title": "ZK-JPEG: Zero-Knowledge Image Editing and Compression",
-      "url": "https://eprint.iacr.org/2026/2039",
-      "points": 106,
-      "comments": 30,
-      "domain": "eprint.iacr.org",
-      "createdAt": "2026-09-19T19:23:23.000Z"
+      "title": "Show HN: Building a Markdown editor for Mac, iOS and web",
+      "url": "https://www.markdown.beauty/",
+      "points": 68,
+      "comments": 50,
+      "domain": "markdown.beauty",
+      "createdAt": "2026-09-27T13:44:45.000Z"
     },
     {
-      "title": "ChatGPT Was Built on Concealed 'Mass Piracy', Authors Tell Court",
-      "url": "https://torrentfreak.com/openais-chatgpt-was-built-on-concealed-mass-piracy-authors-tell-court/",
-      "points": 22,
-      "comments": 9,
-      "domain": "torrentfreak.com",
-      "createdAt": "2026-09-07T14:31:27.000Z"
+      "title": "Experiencing writing at our recent Chinese calligraphy workshop",
+      "url": "https://viewsproject.wordpress.com/2026/09/06/chinese-calligraphy-workshop/",
+      "points": 38,
+      "comments": 1,
+      "domain": "viewsproject.wordpress.com",
+      "createdAt": "2026-09-24T15:40:03.000Z"
     },
     {
-      "title": "Nobody wrote the Matrix and AI code-writing will be dead by 2036",
-      "url": "https://lufzle.dev/write/nobody-wrote-the-matrix/",
-      "points": 16,
-      "comments": 7,
-      "domain": "lufzle.dev",
-      "createdAt": "2026-09-12T23:59:22.000Z"
+      "title": "Uproar in France over award-winning author accused of using AI",
+      "url": "https://www.bbc.com/news/articles/ck7v4y45893go",
+      "points": 36,
+      "comments": 87,
+      "domain": "bbc.com",
+      "createdAt": "2026-09-25T10:48:32.000Z"
     },
     {
-      "title": "Why This Author Doesn't Publish Technical Articles Anymore",
-      "url": "https://galratner.substack.com/p/why-i-dont-publish-technical-articles",
-      "points": 8,
-      "comments": 3,
-      "domain": "galratner.substack.com",
-      "createdAt": "2026-09-12T08:15:56.000Z"
+      "title": "Show HN: Vellum, the best diagram editor you'll ever use",
+      "url": "https://vellum.blueprintr.io",
+      "points": 25,
+      "comments": 16,
+      "domain": "vellum.blueprintr.io",
+      "createdAt": "2026-09-21T16:05:42.000Z"
     },
     {
-      "title": "Show HN: Caveat, a self-hosted publishing and newsletter tool",
-      "url": "https://github.com/CaveatJS",
-      "points": 7,
+      "title": "Ju Ju Tsu A book about jj / jujutstu",
+      "url": "https://arialdo.codeberg.page/ju-ju-tsu/",
+      "points": 19,
+      "comments": 8,
+      "domain": "arialdo.codeberg.page",
+      "createdAt": "2026-09-23T08:42:07.000Z"
+    },
+    {
+      "title": "If you start writing today, there's no way to know if you can write without AI",
+      "url": "https://www.ssp.sh/brain/ai-writing/",
+      "points": 17,
+      "comments": 25,
+      "domain": "ssp.sh",
+      "createdAt": "2026-09-22T15:09:45.000Z"
+    },
+    {
+      "title": "Show HN: A bookshelf of rare company documents and out-of-print tech books",
+      "url": "https://rare-books.vercel.app",
+      "points": 10,
       "comments": 0,
-      "domain": "github.com",
-      "createdAt": "2026-09-08T02:28:23.000Z"
+      "domain": "rare-books.vercel.app",
+      "createdAt": "2026-09-27T19:16:17.000Z"
     },
     {
       "title": "The Rise of Parasite Authors",
@@ -75,52 +115,12 @@
       "createdAt": "2026-09-19T02:15:21.000Z"
     },
     {
-      "title": "The Next Gene-Editing Technology May Also Be the Oldest",
-      "url": "https://www.nytimes.com/2026/09/17/science/crispr-gene-editing-vipr.html",
-      "points": 6,
-      "comments": 0,
-      "domain": "nytimes.com",
-      "createdAt": "2026-09-17T21:51:20.000Z"
-    },
-    {
-      "title": "How Notion handles concurrent editing with CRDTs",
-      "url": "https://www.notion.com/blog/how-notion-handles-concurrent-editing-with-crdts",
-      "points": 6,
-      "comments": 0,
-      "domain": "notion.com",
-      "createdAt": "2026-09-19T09:51:21.000Z"
-    },
-    {
-      "title": "Love vs. Wiley Book Writers: A Publishing Scam Gets a Rare Comeuppance",
-      "url": "https://writerbeware.blog/2026/09/18/love-v-wiley-book-writers-a-publishing-scam-gets-a-rare-comeuppance/",
-      "points": 5,
+      "title": "His Novel Had a Shot at a Top Book Prize. Then Someone Ran an A.I. Test.",
+      "url": "https://www.nytimes.com/2026/09/25/world/europe/thelyson-orelien-ai-canada-haiti-france.html",
+      "points": 7,
       "comments": 1,
-      "domain": "writerbeware.blog",
-      "createdAt": "2026-09-18T18:38:35.000Z"
-    },
-    {
-      "title": "Who's a Better Writer: A.I. Or Humans? NYTimes Quiz",
-      "url": "https://www.nytimes.com/interactive/2026/03/09/business/ai-writing-quiz.html",
-      "points": 5,
-      "comments": 3,
       "domain": "nytimes.com",
-      "createdAt": "2026-09-18T18:47:12.000Z"
-    },
-    {
-      "title": "Do you separate the reviewer's window from the author's",
-      "url": "https://news.ycombinator.com/item?id=49771839",
-      "points": 5,
-      "comments": 1,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-09-20T01:54:06.000Z"
-    },
-    {
-      "title": "Claudisms – a living banlist of AI-writing tells",
-      "url": "https://claudisms.ai/",
-      "points": 4,
-      "comments": 0,
-      "domain": "claudisms.ai",
-      "createdAt": "2026-09-08T12:25:08.000Z"
+      "createdAt": "2026-09-27T00:46:20.000Z"
     }
   ]
 }
