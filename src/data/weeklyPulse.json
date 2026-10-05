@@ -1,70 +1,54 @@
 {
-  "generatedAt": "2026-09-28T12:42:37.369Z",
-  "weekOf": "2026-09-28",
+  "generatedAt": "2026-10-05T13:23:35.456Z",
+  "weekOf": "2026-10-05",
   "items": [
     {
       "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
       "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-      "points": 618,
-      "comments": 606,
+      "points": 631,
+      "comments": 623,
       "domain": "authorsguild.org",
       "createdAt": "2026-09-27T06:19:33.000Z"
     },
     {
-      "title": "Asking authors about their own papers",
-      "url": "https://medium.com/@TmlrOrg/asking-authors-about-their-own-papers-3d2e04e5dee0",
-      "points": 234,
-      "comments": 119,
-      "domain": "medium.com",
-      "createdAt": "2026-09-16T23:31:31.000Z"
+      "title": "Nicholas Polson has authored 258 academic papers in 2026 so far",
+      "url": "https://statmodeling.stat.columbia.edu/2026/08/27/258/",
+      "points": 152,
+      "comments": 110,
+      "domain": "statmodeling.stat.columbia.edu",
+      "createdAt": "2026-09-29T19:15:58.000Z"
     },
     {
-      "title": "Writing Efficient C++ Code (2013)",
-      "url": "https://asawicki.info/articles/writing_efficient_cpp_code.php",
-      "points": 165,
-      "comments": 130,
-      "domain": "asawicki.info",
-      "createdAt": "2026-09-25T20:20:27.000Z"
+      "title": "Blogging with Gleam, Org-Mode and Pandoc",
+      "url": "https://byzantine-systems.github.io/blogging-with-gleam-org-mode-and-pandoc/",
+      "points": 95,
+      "comments": 20,
+      "domain": "byzantine-systems.github.io",
+      "createdAt": "2026-10-02T11:34:28.000Z"
     },
     {
-      "title": "Don't Use AI to Write",
-      "url": "https://paulbakker.io/writing/no-ai-for-writing/",
-      "points": 148,
-      "comments": 85,
-      "domain": "paulbakker.io",
-      "createdAt": "2026-09-21T08:54:44.000Z"
-    },
-    {
-      "title": "Japanese used bookstores see 5x sales surge as books are being bought by the ton",
-      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/japanese-used-bookstores-see-5x-sales-surge-as-books-are-being-bought-by-the-ton-one-50-ton-order-sent-to-the-us-for-ai-scanning-and-destruction-multitude-of-suspicious-bulk-buys-thought-to-end-up-in-foreign-ai-scan-and-shred-facilities",
-      "points": 93,
-      "comments": 129,
-      "domain": "tomshardware.com",
-      "createdAt": "2026-09-24T14:51:31.000Z"
-    },
-    {
-      "title": "Writing Parquet files using Haskell",
-      "url": "https://www.datahaskell.org/blog/2026/09/18/writing-parquet-files-using-haskell.html",
+      "title": "The first packet sent via RFC1149 avian carrier is up for auction at Christie's",
+      "url": "https://onlineonly.christies.com/s/fine-printed-books-manuscripts-science/carrier-pigeon-internet-protocol-150/325216",
       "points": 88,
-      "comments": 32,
-      "domain": "datahaskell.org",
-      "createdAt": "2026-09-22T15:02:39.000Z"
+      "comments": 18,
+      "domain": "onlineonly.christies.com",
+      "createdAt": "2026-10-02T12:46:50.000Z"
     },
     {
       "title": "Show HN: Building a Markdown editor for Mac, iOS and web",
       "url": "https://www.markdown.beauty/",
-      "points": 68,
-      "comments": 50,
+      "points": 69,
+      "comments": 53,
       "domain": "markdown.beauty",
       "createdAt": "2026-09-27T13:44:45.000Z"
     },
     {
-      "title": "Experiencing writing at our recent Chinese calligraphy workshop",
-      "url": "https://viewsproject.wordpress.com/2026/09/06/chinese-calligraphy-workshop/",
-      "points": 38,
-      "comments": 1,
-      "domain": "viewsproject.wordpress.com",
-      "createdAt": "2026-09-24T15:40:03.000Z"
+      "title": "Harvard particle physicist Matthew Schwartz drops 36 papers authored with Claude",
+      "url": "https://www.reddit.com/r/Physics/comments/1wvin77/harvard_particle_physicist_matthew_schwartz_drops/",
+      "points": 49,
+      "comments": 74,
+      "domain": "reddit.com",
+      "createdAt": "2026-10-02T12:12:38.000Z"
     },
     {
       "title": "Uproar in France over award-winning author accused of using AI",
@@ -83,14 +67,6 @@
       "createdAt": "2026-09-21T16:05:42.000Z"
     },
     {
-      "title": "Ju Ju Tsu A book about jj / jujutstu",
-      "url": "https://arialdo.codeberg.page/ju-ju-tsu/",
-      "points": 19,
-      "comments": 8,
-      "domain": "arialdo.codeberg.page",
-      "createdAt": "2026-09-23T08:42:07.000Z"
-    },
-    {
       "title": "If you start writing today, there's no way to know if you can write without AI",
       "url": "https://www.ssp.sh/brain/ai-writing/",
       "points": 17,
@@ -99,28 +75,52 @@
       "createdAt": "2026-09-22T15:09:45.000Z"
     },
     {
-      "title": "Show HN: A bookshelf of rare company documents and out-of-print tech books",
-      "url": "https://rare-books.vercel.app",
-      "points": 10,
+      "title": "The Cuckoo's Egg (Book)",
+      "url": "https://en.wikipedia.org/wiki/The_Cuckoo%27s_Egg_(book)",
+      "points": 11,
+      "comments": 1,
+      "domain": "en.wikipedia.org",
+      "createdAt": "2026-09-30T20:14:50.000Z"
+    },
+    {
+      "title": "Echo – A SOTA writing model for style imitation",
+      "url": "https://echo.fulcrum.inc/",
+      "points": 8,
       "comments": 0,
-      "domain": "rare-books.vercel.app",
-      "createdAt": "2026-09-27T19:16:17.000Z"
+      "domain": "echo.fulcrum.inc",
+      "createdAt": "2026-09-30T21:59:58.000Z"
     },
     {
-      "title": "The Rise of Parasite Authors",
-      "url": "https://www.theatlantic.com/technology/2026/09/ai-authors-impersonating-writers-amazon/688709/",
-      "points": 7,
-      "comments": 1,
-      "domain": "theatlantic.com",
-      "createdAt": "2026-09-19T02:15:21.000Z"
+      "title": "Don't let AI kill the author",
+      "url": "https://www.economist.com/leaders/2026/09/24/dont-let-ai-kill-the-author",
+      "points": 6,
+      "comments": 0,
+      "domain": "economist.com",
+      "createdAt": "2026-09-24T18:14:25.000Z"
     },
     {
-      "title": "His Novel Had a Shot at a Top Book Prize. Then Someone Ran an A.I. Test.",
-      "url": "https://www.nytimes.com/2026/09/25/world/europe/thelyson-orelien-ai-canada-haiti-france.html",
-      "points": 7,
-      "comments": 1,
-      "domain": "nytimes.com",
-      "createdAt": "2026-09-27T00:46:20.000Z"
+      "title": "Show HN: Datastory, Data storytelling with AI and an open knowledge graph",
+      "url": "https://www.datastory.tech",
+      "points": 6,
+      "comments": 0,
+      "domain": "datastory.tech",
+      "createdAt": "2026-09-30T16:52:41.000Z"
+    },
+    {
+      "title": "As a freelancer, what happens when the door won't open any more?",
+      "url": "https://lajosmoczar.substack.com/p/as-a-freelancer-what-happens-when",
+      "points": 6,
+      "comments": 7,
+      "domain": "lajosmoczar.substack.com",
+      "createdAt": "2026-10-02T13:47:17.000Z"
+    },
+    {
+      "title": "The Journal of Writing and Artificial Intelligence",
+      "url": "https://www.jwai.org",
+      "points": 6,
+      "comments": 0,
+      "domain": "jwai.org",
+      "createdAt": "2026-10-03T15:36:43.000Z"
     }
   ]
 }
