@@ -1,14 +1,22 @@
 {
-  "generatedAt": "2026-10-05T13:23:35.456Z",
-  "weekOf": "2026-10-05",
+  "generatedAt": "2026-10-12T14:13:08.253Z",
+  "weekOf": "2026-10-12",
   "items": [
     {
-      "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-      "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-      "points": 631,
-      "comments": 623,
-      "domain": "authorsguild.org",
-      "createdAt": "2026-09-27T06:19:33.000Z"
+      "title": "Anti-patterns in software blogging",
+      "url": "https://refactoringenglish.com/blog/anti-patterns-software-blogging/",
+      "points": 340,
+      "comments": 149,
+      "domain": "refactoringenglish.com",
+      "createdAt": "2026-10-07T13:08:26.000Z"
+    },
+    {
+      "title": "Show HN: The rarest tech books and docs you've probably never read",
+      "url": "https://readrare.com/",
+      "points": 184,
+      "comments": 66,
+      "domain": "readrare.com",
+      "createdAt": "2026-10-09T17:39:44.000Z"
     },
     {
       "title": "Nicholas Polson has authored 258 academic papers in 2026 so far",
@@ -27,76 +35,60 @@
       "createdAt": "2026-10-02T11:34:28.000Z"
     },
     {
-      "title": "The first packet sent via RFC1149 avian carrier is up for auction at Christie's",
-      "url": "https://onlineonly.christies.com/s/fine-printed-books-manuscripts-science/carrier-pigeon-internet-protocol-150/325216",
-      "points": 88,
-      "comments": 18,
-      "domain": "onlineonly.christies.com",
-      "createdAt": "2026-10-02T12:46:50.000Z"
-    },
-    {
-      "title": "Show HN: Building a Markdown editor for Mac, iOS and web",
-      "url": "https://www.markdown.beauty/",
-      "points": 69,
-      "comments": 53,
-      "domain": "markdown.beauty",
-      "createdAt": "2026-09-27T13:44:45.000Z"
-    },
-    {
       "title": "Harvard particle physicist Matthew Schwartz drops 36 papers authored with Claude",
       "url": "https://www.reddit.com/r/Physics/comments/1wvin77/harvard_particle_physicist_matthew_schwartz_drops/",
-      "points": 49,
+      "points": 50,
       "comments": 74,
       "domain": "reddit.com",
       "createdAt": "2026-10-02T12:12:38.000Z"
     },
     {
-      "title": "Uproar in France over award-winning author accused of using AI",
-      "url": "https://www.bbc.com/news/articles/ck7v4y45893go",
-      "points": 36,
-      "comments": 87,
-      "domain": "bbc.com",
-      "createdAt": "2026-09-25T10:48:32.000Z"
+      "title": "I'm still around.. I'm just not writing here",
+      "url": "https://rachelbythebay.com/w/2026/10/08/idle/",
+      "points": 50,
+      "comments": 38,
+      "domain": "rachelbythebay.com",
+      "createdAt": "2026-10-09T17:43:27.000Z"
     },
     {
-      "title": "Show HN: Vellum, the best diagram editor you'll ever use",
-      "url": "https://vellum.blueprintr.io",
-      "points": 25,
-      "comments": 16,
-      "domain": "vellum.blueprintr.io",
-      "createdAt": "2026-09-21T16:05:42.000Z"
+      "title": "Book recommendations from Hacker News?",
+      "url": "https://bookofjoe2.blogspot.com/2026/10/book-recommendations-from-hacker-news.html",
+      "points": 40,
+      "comments": 8,
+      "domain": "bookofjoe2.blogspot.com",
+      "createdAt": "2026-10-07T20:48:09.000Z"
     },
     {
-      "title": "If you start writing today, there's no way to know if you can write without AI",
-      "url": "https://www.ssp.sh/brain/ai-writing/",
-      "points": 17,
-      "comments": 25,
-      "domain": "ssp.sh",
-      "createdAt": "2026-09-22T15:09:45.000Z"
+      "title": "We solved SQLite's single-writer limitation",
+      "url": "https://marcobambini.substack.com/p/we-solved-sqlites-single-writer-limitation",
+      "points": 30,
+      "comments": 0,
+      "domain": "marcobambini.substack.com",
+      "createdAt": "2026-10-11T16:25:25.000Z"
     },
     {
-      "title": "The Cuckoo's Egg (Book)",
-      "url": "https://en.wikipedia.org/wiki/The_Cuckoo%27s_Egg_(book)",
+      "title": "Ask HN: What's your favorite children's books?",
+      "url": "https://news.ycombinator.com/item?id=50037859",
+      "points": 24,
+      "comments": 35,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-10-10T22:33:55.000Z"
+    },
+    {
+      "title": "Boredom is Life: a brief excerpt from the new book \"You Don't Need A Smartphone\"",
+      "url": "https://augustlamm.substack.com/p/boredom-is-life",
       "points": 11,
-      "comments": 1,
-      "domain": "en.wikipedia.org",
-      "createdAt": "2026-09-30T20:14:50.000Z"
+      "comments": 0,
+      "domain": "augustlamm.substack.com",
+      "createdAt": "2026-10-07T17:50:01.000Z"
     },
     {
-      "title": "Echo – A SOTA writing model for style imitation",
-      "url": "https://echo.fulcrum.inc/",
-      "points": 8,
-      "comments": 0,
-      "domain": "echo.fulcrum.inc",
-      "createdAt": "2026-09-30T21:59:58.000Z"
-    },
-    {
-      "title": "Don't let AI kill the author",
-      "url": "https://www.economist.com/leaders/2026/09/24/dont-let-ai-kill-the-author",
-      "points": 6,
-      "comments": 0,
-      "domain": "economist.com",
-      "createdAt": "2026-09-24T18:14:25.000Z"
+      "title": "Is AI Killing the Value of Human Writing?",
+      "url": "https://transitions.substack.com/p/is-ai-killing-the-value-of-human",
+      "points": 10,
+      "comments": 12,
+      "domain": "transitions.substack.com",
+      "createdAt": "2026-10-10T19:28:46.000Z"
     },
     {
       "title": "Show HN: Datastory, Data storytelling with AI and an open knowledge graph",
@@ -107,20 +99,28 @@
       "createdAt": "2026-09-30T16:52:41.000Z"
     },
     {
-      "title": "As a freelancer, what happens when the door won't open any more?",
-      "url": "https://lajosmoczar.substack.com/p/as-a-freelancer-what-happens-when",
-      "points": 6,
-      "comments": 7,
-      "domain": "lajosmoczar.substack.com",
-      "createdAt": "2026-10-02T13:47:17.000Z"
-    },
-    {
-      "title": "The Journal of Writing and Artificial Intelligence",
-      "url": "https://www.jwai.org",
+      "title": "Don't Write with AI, Say People Who Write with AI",
+      "url": "https://www.theatlantic.com/technology/2026/10/meet-the-ai-writing-hypocrites/688872/",
       "points": 6,
       "comments": 0,
-      "domain": "jwai.org",
-      "createdAt": "2026-10-03T15:36:43.000Z"
+      "domain": "theatlantic.com",
+      "createdAt": "2026-10-03T21:44:40.000Z"
+    },
+    {
+      "title": "We solved SQLite's single-writer limitation",
+      "url": "https://marcobambini.substack.com/p/we-solved-sqlites-single-writer-limitation",
+      "points": 6,
+      "comments": 1,
+      "domain": "marcobambini.substack.com",
+      "createdAt": "2026-10-10T02:55:11.000Z"
+    },
+    {
+      "title": "Ask HN: What is the most obscure book you own?",
+      "url": "https://news.ycombinator.com/item?id=50047998",
+      "points": 6,
+      "comments": 8,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-10-11T21:29:31.000Z"
     }
   ]
 }
