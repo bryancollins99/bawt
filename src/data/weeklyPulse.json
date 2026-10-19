@@ -1,86 +1,78 @@
 {
-  "generatedAt": "2026-10-12T14:13:08.253Z",
-  "weekOf": "2026-10-12",
+  "generatedAt": "2026-10-19T11:54:17.467Z",
+  "weekOf": "2026-10-19",
   "items": [
+    {
+      "title": "Krea 3 – An image model built for editing at scale",
+      "url": "https://www.krea.ai/krea-3",
+      "points": 352,
+      "comments": 109,
+      "domain": "krea.ai",
+      "createdAt": "2026-10-15T16:04:05.000Z"
+    },
     {
       "title": "Anti-patterns in software blogging",
       "url": "https://refactoringenglish.com/blog/anti-patterns-software-blogging/",
-      "points": 340,
+      "points": 343,
       "comments": 149,
       "domain": "refactoringenglish.com",
       "createdAt": "2026-10-07T13:08:26.000Z"
     },
     {
-      "title": "Show HN: The rarest tech books and docs you've probably never read",
-      "url": "https://readrare.com/",
-      "points": 184,
-      "comments": 66,
-      "domain": "readrare.com",
-      "createdAt": "2026-10-09T17:39:44.000Z"
+      "title": "Writing a Demoscene Intro for the ZX Spectrum",
+      "url": "https://www.markround.com/blog/2026/zx-spectrum-intro",
+      "points": 176,
+      "comments": 43,
+      "domain": "markround.com",
+      "createdAt": "2026-10-12T19:40:00.000Z"
     },
     {
-      "title": "Nicholas Polson has authored 258 academic papers in 2026 so far",
-      "url": "https://statmodeling.stat.columbia.edu/2026/08/27/258/",
-      "points": 152,
-      "comments": 110,
-      "domain": "statmodeling.stat.columbia.edu",
-      "createdAt": "2026-09-29T19:15:58.000Z"
+      "title": "Sally Rooney can no longer sell books in UK due to Palestine Action support",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/14/sally-rooney-says-she-can-no-longer-sell-books-in-the-uk-because-of-palestine-action-support",
+      "points": 63,
+      "comments": 17,
+      "domain": "theguardian.com",
+      "createdAt": "2026-10-14T20:51:39.000Z"
     },
     {
-      "title": "Blogging with Gleam, Org-Mode and Pandoc",
-      "url": "https://byzantine-systems.github.io/blogging-with-gleam-org-mode-and-pandoc/",
-      "points": 95,
-      "comments": 20,
-      "domain": "byzantine-systems.github.io",
-      "createdAt": "2026-10-02T11:34:28.000Z"
+      "title": "The Death of Amazon's Writing Culture",
+      "url": "https://alifeengineered.substack.com/p/on-the-death-of-amazons-writing-culture",
+      "points": 44,
+      "comments": 5,
+      "domain": "alifeengineered.substack.com",
+      "createdAt": "2026-10-14T17:52:44.000Z"
     },
     {
-      "title": "Harvard particle physicist Matthew Schwartz drops 36 papers authored with Claude",
-      "url": "https://www.reddit.com/r/Physics/comments/1wvin77/harvard_particle_physicist_matthew_schwartz_drops/",
-      "points": 50,
-      "comments": 74,
-      "domain": "reddit.com",
-      "createdAt": "2026-10-02T12:12:38.000Z"
+      "title": "Writing is no longer proof of work",
+      "url": "https://www.seangoedecke.com/writing-is-no-longer-proof-of-work/",
+      "points": 23,
+      "comments": 6,
+      "domain": "seangoedecke.com",
+      "createdAt": "2026-10-19T06:01:30.000Z"
     },
     {
-      "title": "I'm still around.. I'm just not writing here",
-      "url": "https://rachelbythebay.com/w/2026/10/08/idle/",
-      "points": 50,
-      "comments": 38,
-      "domain": "rachelbythebay.com",
-      "createdAt": "2026-10-09T17:43:27.000Z"
+      "title": "\"My Hands Are Shaking While Writing\" About IBM's Mass Layoffs at Red Hat",
+      "url": "https://techrights.org/n/2026/10/12/My_Hands_Are_Shaking_While_Writing_About_IBM_s_Mass_Layoffs_at_.shtml",
+      "points": 14,
+      "comments": 1,
+      "domain": "techrights.org",
+      "createdAt": "2026-10-12T17:47:01.000Z"
     },
     {
-      "title": "Book recommendations from Hacker News?",
-      "url": "https://bookofjoe2.blogspot.com/2026/10/book-recommendations-from-hacker-news.html",
-      "points": 40,
-      "comments": 8,
-      "domain": "bookofjoe2.blogspot.com",
-      "createdAt": "2026-10-07T20:48:09.000Z"
+      "title": "Apple, Please Stop Deleting My Books",
+      "url": "https://yakirhavin.com/blog/apple-please-stop-deleting-my-books/",
+      "points": 13,
+      "comments": 1,
+      "domain": "yakirhavin.com",
+      "createdAt": "2026-10-17T03:13:21.000Z"
     },
     {
-      "title": "We solved SQLite's single-writer limitation",
-      "url": "https://marcobambini.substack.com/p/we-solved-sqlites-single-writer-limitation",
-      "points": 30,
-      "comments": 0,
-      "domain": "marcobambini.substack.com",
-      "createdAt": "2026-10-11T16:25:25.000Z"
-    },
-    {
-      "title": "Ask HN: What's your favorite children's books?",
-      "url": "https://news.ycombinator.com/item?id=50037859",
-      "points": 24,
-      "comments": 35,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-10-10T22:33:55.000Z"
-    },
-    {
-      "title": "Boredom is Life: a brief excerpt from the new book \"You Don't Need A Smartphone\"",
-      "url": "https://augustlamm.substack.com/p/boredom-is-life",
+      "title": "The Book of Debugging",
+      "url": "https://nostarch.com/book-of-debugging",
       "points": 11,
-      "comments": 0,
-      "domain": "augustlamm.substack.com",
-      "createdAt": "2026-10-07T17:50:01.000Z"
+      "comments": 2,
+      "domain": "nostarch.com",
+      "createdAt": "2026-10-15T00:37:09.000Z"
     },
     {
       "title": "Is AI Killing the Value of Human Writing?",
@@ -91,36 +83,44 @@
       "createdAt": "2026-10-10T19:28:46.000Z"
     },
     {
-      "title": "Show HN: Datastory, Data storytelling with AI and an open knowledge graph",
-      "url": "https://www.datastory.tech",
-      "points": 6,
-      "comments": 0,
-      "domain": "datastory.tech",
-      "createdAt": "2026-09-30T16:52:41.000Z"
-    },
-    {
-      "title": "Don't Write with AI, Say People Who Write with AI",
-      "url": "https://www.theatlantic.com/technology/2026/10/meet-the-ai-writing-hypocrites/688872/",
-      "points": 6,
-      "comments": 0,
-      "domain": "theatlantic.com",
-      "createdAt": "2026-10-03T21:44:40.000Z"
-    },
-    {
-      "title": "We solved SQLite's single-writer limitation",
-      "url": "https://marcobambini.substack.com/p/we-solved-sqlites-single-writer-limitation",
-      "points": 6,
-      "comments": 1,
-      "domain": "marcobambini.substack.com",
-      "createdAt": "2026-10-10T02:55:11.000Z"
-    },
-    {
-      "title": "Ask HN: What is the most obscure book you own?",
-      "url": "https://news.ycombinator.com/item?id=50047998",
-      "points": 6,
-      "comments": 8,
+      "title": "Ask HN: Which books did you read at least twice?",
+      "url": "https://news.ycombinator.com/item?id=50115565",
+      "points": 9,
+      "comments": 22,
       "domain": "news.ycombinator.com",
-      "createdAt": "2026-10-11T21:29:31.000Z"
+      "createdAt": "2026-10-16T08:10:39.000Z"
+    },
+    {
+      "title": "Book Review: Storm of Steel",
+      "url": "https://www.astralcodexten.com/p/your-book-review-storm-of-steel",
+      "points": 9,
+      "comments": 1,
+      "domain": "astralcodexten.com",
+      "createdAt": "2026-10-17T00:10:29.000Z"
+    },
+    {
+      "title": "Show HN: EtherPK – an Obsidian and Logseq alternative with prose and blocks",
+      "url": "https://github.com/appsoftwareltd/etherpk-client",
+      "points": 5,
+      "comments": 0,
+      "domain": "github.com",
+      "createdAt": "2026-10-05T14:11:18.000Z"
+    },
+    {
+      "title": "Wiley agrees to 50-50 split with Dummies authors in Anthropic settlement",
+      "url": "https://bsky.app/profile/victoriastrauss.com/post/3mwwcap7os22x",
+      "points": 5,
+      "comments": 0,
+      "domain": "bsky.app",
+      "createdAt": "2026-10-07T18:02:12.000Z"
+    },
+    {
+      "title": "No AI. Just open a book, read it, and code whatever you want",
+      "url": "https://www.youtube.com/watch?v=kCVZWZzrBB4",
+      "points": 5,
+      "comments": 0,
+      "domain": "youtube.com",
+      "createdAt": "2026-10-16T00:54:57.000Z"
     }
   ]
 }
