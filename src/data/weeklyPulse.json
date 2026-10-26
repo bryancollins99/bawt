@@ -1,126 +1,126 @@
 {
-  "generatedAt": "2026-10-19T11:54:17.467Z",
-  "weekOf": "2026-10-19",
+  "generatedAt": "2026-10-26T12:07:11.210Z",
+  "weekOf": "2026-10-26",
   "items": [
     {
-      "title": "Krea 3 – An image model built for editing at scale",
-      "url": "https://www.krea.ai/krea-3",
-      "points": 352,
-      "comments": 109,
-      "domain": "krea.ai",
-      "createdAt": "2026-10-15T16:04:05.000Z"
+      "title": "Tool book of a Nuremberg knight from 1505",
+      "url": "https://loeffelholz-codex.org/en/",
+      "points": 165,
+      "comments": 84,
+      "domain": "loeffelholz-codex.org",
+      "createdAt": "2026-10-25T12:37:54.000Z"
     },
     {
-      "title": "Anti-patterns in software blogging",
-      "url": "https://refactoringenglish.com/blog/anti-patterns-software-blogging/",
-      "points": 343,
-      "comments": 149,
-      "domain": "refactoringenglish.com",
-      "createdAt": "2026-10-07T13:08:26.000Z"
+      "title": "Show HN: Qwen3-4B with the AI writing tics trained out",
+      "url": "https://100toolkit.com/blog/deslop-model/",
+      "points": 158,
+      "comments": 113,
+      "domain": "100toolkit.com",
+      "createdAt": "2026-10-19T13:00:47.000Z"
     },
     {
-      "title": "Writing a Demoscene Intro for the ZX Spectrum",
-      "url": "https://www.markround.com/blog/2026/zx-spectrum-intro",
-      "points": 176,
-      "comments": 43,
-      "domain": "markround.com",
-      "createdAt": "2026-10-12T19:40:00.000Z"
+      "title": "On AI writing",
+      "url": "https://www.bolkunov.com/p/on-ai-writing",
+      "points": 96,
+      "comments": 62,
+      "domain": "bolkunov.com",
+      "createdAt": "2026-10-20T19:55:11.000Z"
     },
     {
-      "title": "Sally Rooney can no longer sell books in UK due to Palestine Action support",
-      "url": "https://www.theguardian.com/uk-news/2026/oct/14/sally-rooney-says-she-can-no-longer-sell-books-in-the-uk-because-of-palestine-action-support",
-      "points": 63,
-      "comments": 17,
-      "domain": "theguardian.com",
-      "createdAt": "2026-10-14T20:51:39.000Z"
-    },
-    {
-      "title": "The Death of Amazon's Writing Culture",
-      "url": "https://alifeengineered.substack.com/p/on-the-death-of-amazons-writing-culture",
-      "points": 44,
-      "comments": 5,
-      "domain": "alifeengineered.substack.com",
-      "createdAt": "2026-10-14T17:52:44.000Z"
+      "title": "SCOTUS couldn't take up a copyright case because four justices have book deals",
+      "url": "https://news.bloomberglaw.com/ip-law/supreme-court-affirms-foreign-rights-ruling-after-lacking-quorum",
+      "points": 71,
+      "comments": 8,
+      "domain": "news.bloomberglaw.com",
+      "createdAt": "2026-10-20T23:05:39.000Z"
     },
     {
       "title": "Writing is no longer proof of work",
       "url": "https://www.seangoedecke.com/writing-is-no-longer-proof-of-work/",
-      "points": 23,
-      "comments": 6,
+      "points": 32,
+      "comments": 9,
       "domain": "seangoedecke.com",
       "createdAt": "2026-10-19T06:01:30.000Z"
     },
     {
-      "title": "\"My Hands Are Shaking While Writing\" About IBM's Mass Layoffs at Red Hat",
-      "url": "https://techrights.org/n/2026/10/12/My_Hands_Are_Shaking_While_Writing_About_IBM_s_Mass_Layoffs_at_.shtml",
-      "points": 14,
-      "comments": 1,
-      "domain": "techrights.org",
-      "createdAt": "2026-10-12T17:47:01.000Z"
-    },
-    {
-      "title": "Apple, Please Stop Deleting My Books",
-      "url": "https://yakirhavin.com/blog/apple-please-stop-deleting-my-books/",
-      "points": 13,
-      "comments": 1,
-      "domain": "yakirhavin.com",
-      "createdAt": "2026-10-17T03:13:21.000Z"
-    },
-    {
-      "title": "The Book of Debugging",
-      "url": "https://nostarch.com/book-of-debugging",
-      "points": 11,
-      "comments": 2,
-      "domain": "nostarch.com",
-      "createdAt": "2026-10-15T00:37:09.000Z"
-    },
-    {
-      "title": "Is AI Killing the Value of Human Writing?",
-      "url": "https://transitions.substack.com/p/is-ai-killing-the-value-of-human",
-      "points": 10,
-      "comments": 12,
-      "domain": "transitions.substack.com",
-      "createdAt": "2026-10-10T19:28:46.000Z"
+      "title": "Show HN: I built a Markdown and raw HTML blog platform scoring 99 on PageSpeed",
+      "url": "https://bloffy.co/en",
+      "points": 30,
+      "comments": 26,
+      "domain": "bloffy.co",
+      "createdAt": "2026-10-21T23:41:35.000Z"
     },
     {
       "title": "Ask HN: Which books did you read at least twice?",
       "url": "https://news.ycombinator.com/item?id=50115565",
       "points": 9,
-      "comments": 22,
+      "comments": 23,
       "domain": "news.ycombinator.com",
       "createdAt": "2026-10-16T08:10:39.000Z"
     },
     {
-      "title": "Book Review: Storm of Steel",
-      "url": "https://www.astralcodexten.com/p/your-book-review-storm-of-steel",
+      "title": "Show HN: Narro – Read web pages and Kindle books using local AI voices",
+      "url": "https://github.com/swrdfish/narro",
       "points": 9,
       "comments": 1,
-      "domain": "astralcodexten.com",
-      "createdAt": "2026-10-17T00:10:29.000Z"
-    },
-    {
-      "title": "Show HN: EtherPK – an Obsidian and Logseq alternative with prose and blocks",
-      "url": "https://github.com/appsoftwareltd/etherpk-client",
-      "points": 5,
-      "comments": 0,
       "domain": "github.com",
-      "createdAt": "2026-10-05T14:11:18.000Z"
+      "createdAt": "2026-10-24T19:37:32.000Z"
     },
     {
-      "title": "Wiley agrees to 50-50 split with Dummies authors in Anthropic settlement",
-      "url": "https://bsky.app/profile/victoriastrauss.com/post/3mwwcap7os22x",
-      "points": 5,
-      "comments": 0,
-      "domain": "bsky.app",
-      "createdAt": "2026-10-07T18:02:12.000Z"
+      "title": "Do web components have a future if nobody is writing them?",
+      "url": "https://nolanlawson.com/2026/10/19/do-web-components-have-a-future-if-nobody-is-writing-them/",
+      "points": 6,
+      "comments": 1,
+      "domain": "nolanlawson.com",
+      "createdAt": "2026-10-20T02:05:01.000Z"
     },
     {
-      "title": "No AI. Just open a book, read it, and code whatever you want",
-      "url": "https://www.youtube.com/watch?v=kCVZWZzrBB4",
+      "title": "Ask HN: Time to read those programming books?",
+      "url": "https://news.ycombinator.com/item?id=50170094",
+      "points": 6,
+      "comments": 13,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-10-20T17:53:36.000Z"
+    },
+    {
+      "title": "AI Keeps Getting Better. Why Is Its Writing Still So Bad?",
+      "url": "https://greyenlightenment.com/2026/10/21/ai-keeps-getting-better-why-is-its-writing-still-so-bad/",
+      "points": 6,
+      "comments": 0,
+      "domain": "greyenlightenment.com",
+      "createdAt": "2026-10-23T01:37:19.000Z"
+    },
+    {
+      "title": "Writing is no longer proof of work",
+      "url": "https://www.seangoedecke.com/writing-is-no-longer-proof-of-work/",
       "points": 5,
       "comments": 0,
-      "domain": "youtube.com",
-      "createdAt": "2026-10-16T00:54:57.000Z"
+      "domain": "seangoedecke.com",
+      "createdAt": "2026-10-18T00:38:04.000Z"
+    },
+    {
+      "title": "Scholars conclude 'beyond doubt' that Shakespeare was main author of Edward III",
+      "url": "https://www.theguardian.com/culture/2026/oct/18/scholars-conclude-beyond-doubt-that-shakespeare-was-main-author-of-edward-iii",
+      "points": 5,
+      "comments": 1,
+      "domain": "theguardian.com",
+      "createdAt": "2026-10-18T19:21:48.000Z"
+    },
+    {
+      "title": "Nobody Wants to Talk About Why the Ringer Is Pivoting to Substack",
+      "url": "https://defector.com/nobody-wants-to-talk-about-why-the-ringer-is-pivoting-to-substack",
+      "points": 5,
+      "comments": 1,
+      "domain": "defector.com",
+      "createdAt": "2026-10-21T18:45:11.000Z"
+    },
+    {
+      "title": "If you only read one Robert Caro book",
+      "url": "https://minhanhday.substack.com/p/robert-caro-on-power",
+      "points": 5,
+      "comments": 0,
+      "domain": "minhanhday.substack.com",
+      "createdAt": "2026-10-22T17:08:35.000Z"
     }
   ]
 }
