@@ -1,22 +1,30 @@
 {
-  "generatedAt": "2026-10-26T12:07:11.210Z",
-  "weekOf": "2026-10-26",
+  "generatedAt": "2026-11-02T14:35:02.568Z",
+  "weekOf": "2026-11-02",
   "items": [
     {
-      "title": "Tool book of a Nuremberg knight from 1505",
-      "url": "https://loeffelholz-codex.org/en/",
-      "points": 165,
-      "comments": 84,
-      "domain": "loeffelholz-codex.org",
-      "createdAt": "2026-10-25T12:37:54.000Z"
+      "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
+      "url": "https://hackerbooks.org",
+      "points": 1652,
+      "comments": 274,
+      "domain": "hackerbooks.org",
+      "createdAt": "2026-11-01T15:58:28.000Z"
     },
     {
-      "title": "Show HN: Qwen3-4B with the AI writing tics trained out",
-      "url": "https://100toolkit.com/blog/deslop-model/",
-      "points": 158,
-      "comments": 113,
-      "domain": "100toolkit.com",
-      "createdAt": "2026-10-19T13:00:47.000Z"
+      "title": "Reading and writing are less symmetric than you (probably) think",
+      "url": "https://fgiesen.wordpress.com/2015/10/25/reading-and-writing-are-less-symmetric-than-you-probably-think/",
+      "points": 134,
+      "comments": 30,
+      "domain": "fgiesen.wordpress.com",
+      "createdAt": "2026-10-28T09:38:07.000Z"
+    },
+    {
+      "title": "Ex-Meta Researcher Torrented Pirated Books, Deleted It 'Due to Litigation'",
+      "url": "https://torrentfreak.com/ex-meta-researcher-torrented-pirated-books-dataset-deleted-it-due-to-all-this-litigation/",
+      "points": 99,
+      "comments": 75,
+      "domain": "torrentfreak.com",
+      "createdAt": "2026-10-31T14:57:33.000Z"
     },
     {
       "title": "On AI writing",
@@ -27,20 +35,12 @@
       "createdAt": "2026-10-20T19:55:11.000Z"
     },
     {
-      "title": "SCOTUS couldn't take up a copyright case because four justices have book deals",
-      "url": "https://news.bloomberglaw.com/ip-law/supreme-court-affirms-foreign-rights-ruling-after-lacking-quorum",
-      "points": 71,
-      "comments": 8,
-      "domain": "news.bloomberglaw.com",
-      "createdAt": "2026-10-20T23:05:39.000Z"
-    },
-    {
-      "title": "Writing is no longer proof of work",
-      "url": "https://www.seangoedecke.com/writing-is-no-longer-proof-of-work/",
-      "points": 32,
+      "title": "Writing about pratt parsing so I remember it",
+      "url": "https://www.unix.dog/~yosh/blog/2026-10-25_pratt-parsing.html",
+      "points": 88,
       "comments": 9,
-      "domain": "seangoedecke.com",
-      "createdAt": "2026-10-19T06:01:30.000Z"
+      "domain": "unix.dog",
+      "createdAt": "2026-10-27T06:02:23.000Z"
     },
     {
       "title": "Show HN: I built a Markdown and raw HTML blog platform scoring 99 on PageSpeed",
@@ -51,36 +51,44 @@
       "createdAt": "2026-10-21T23:41:35.000Z"
     },
     {
-      "title": "Ask HN: Which books did you read at least twice?",
-      "url": "https://news.ycombinator.com/item?id=50115565",
-      "points": 9,
-      "comments": 23,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-10-16T08:10:39.000Z"
+      "title": "New book makes fiery claims about Jared Kushner's finances in Trump's first term",
+      "url": "https://www.theguardian.com/us-news/2026/oct/28/jared-kushner-book-claims",
+      "points": 20,
+      "comments": 0,
+      "domain": "theguardian.com",
+      "createdAt": "2026-10-30T21:59:09.000Z"
     },
     {
-      "title": "Show HN: Narro – Read web pages and Kindle books using local AI voices",
-      "url": "https://github.com/swrdfish/narro",
-      "points": 9,
+      "title": "Show HN: Typebook.lol read books by typing the letters only",
+      "url": "https://typebook.lol/",
+      "points": 11,
+      "comments": 12,
+      "domain": "typebook.lol",
+      "createdAt": "2026-10-29T19:24:36.000Z"
+    },
+    {
+      "title": "Readwise Books: An independent digital-first bookstore and app",
+      "url": "https://blog.readwise.io/readwise-books/",
+      "points": 10,
+      "comments": 5,
+      "domain": "blog.readwise.io",
+      "createdAt": "2026-10-30T19:09:42.000Z"
+    },
+    {
+      "title": "Wikipedia: Signs of AI Writing",
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
+      "points": 8,
+      "comments": 3,
+      "domain": "en.wikipedia.org",
+      "createdAt": "2026-10-28T02:48:51.000Z"
+    },
+    {
+      "title": "Dartmouth provost resigns following accusations he used AI for writing",
+      "url": "https://apnews.com/article/dartmouth-provost-ai-a9f71dc5e9e10461c7c2390febcd1b5a",
+      "points": 7,
       "comments": 1,
-      "domain": "github.com",
-      "createdAt": "2026-10-24T19:37:32.000Z"
-    },
-    {
-      "title": "Do web components have a future if nobody is writing them?",
-      "url": "https://nolanlawson.com/2026/10/19/do-web-components-have-a-future-if-nobody-is-writing-them/",
-      "points": 6,
-      "comments": 1,
-      "domain": "nolanlawson.com",
-      "createdAt": "2026-10-20T02:05:01.000Z"
-    },
-    {
-      "title": "Ask HN: Time to read those programming books?",
-      "url": "https://news.ycombinator.com/item?id=50170094",
-      "points": 6,
-      "comments": 13,
-      "domain": "news.ycombinator.com",
-      "createdAt": "2026-10-20T17:53:36.000Z"
+      "domain": "apnews.com",
+      "createdAt": "2026-10-29T22:35:31.000Z"
     },
     {
       "title": "AI Keeps Getting Better. Why Is Its Writing Still So Bad?",
@@ -91,36 +99,28 @@
       "createdAt": "2026-10-23T01:37:19.000Z"
     },
     {
-      "title": "Writing is no longer proof of work",
-      "url": "https://www.seangoedecke.com/writing-is-no-longer-proof-of-work/",
+      "title": "Writing Is Magic; Machine Writing Is Ash",
+      "url": "https://www.baldurbjarnason.com/2026/machine-writing-is-ash/",
       "points": 5,
       "comments": 0,
-      "domain": "seangoedecke.com",
-      "createdAt": "2026-10-18T00:38:04.000Z"
+      "domain": "baldurbjarnason.com",
+      "createdAt": "2026-11-01T19:56:00.000Z"
     },
     {
-      "title": "Scholars conclude 'beyond doubt' that Shakespeare was main author of Edward III",
-      "url": "https://www.theguardian.com/culture/2026/oct/18/scholars-conclude-beyond-doubt-that-shakespeare-was-main-author-of-edward-iii",
-      "points": 5,
+      "title": "The anti-AI writing police are everywhere. What are they looking for?",
+      "url": "https://www.cnn.com/2026/10/21/tech/ai-detectors-pangram-literary-prizes-cec",
+      "points": 4,
       "comments": 1,
-      "domain": "theguardian.com",
-      "createdAt": "2026-10-18T19:21:48.000Z"
+      "domain": "cnn.com",
+      "createdAt": "2026-10-24T01:31:06.000Z"
     },
     {
-      "title": "Nobody Wants to Talk About Why the Ringer Is Pivoting to Substack",
-      "url": "https://defector.com/nobody-wants-to-talk-about-why-the-ringer-is-pivoting-to-substack",
-      "points": 5,
-      "comments": 1,
-      "domain": "defector.com",
-      "createdAt": "2026-10-21T18:45:11.000Z"
-    },
-    {
-      "title": "If you only read one Robert Caro book",
-      "url": "https://minhanhday.substack.com/p/robert-caro-on-power",
-      "points": 5,
+      "title": "Show HN: Rising Hat – A community website for authors and readers",
+      "url": "https://risinghat.com",
+      "points": 4,
       "comments": 0,
-      "domain": "minhanhday.substack.com",
-      "createdAt": "2026-10-22T17:08:35.000Z"
+      "domain": "risinghat.com",
+      "createdAt": "2026-10-27T12:00:58.000Z"
     }
   ]
 }
