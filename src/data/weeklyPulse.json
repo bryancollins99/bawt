@@ -1,126 +1,126 @@
 {
-  "generatedAt": "2026-11-02T14:35:02.568Z",
-  "weekOf": "2026-11-02",
+  "generatedAt": "2026-11-09T14:57:33.791Z",
+  "weekOf": "2026-11-09",
   "items": [
     {
-      "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
-      "url": "https://hackerbooks.org",
-      "points": 1652,
-      "comments": 274,
-      "domain": "hackerbooks.org",
-      "createdAt": "2026-11-01T15:58:28.000Z"
+      "title": "Writing as a thinking tool",
+      "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
+      "points": 426,
+      "comments": 102,
+      "domain": "muratbuffalo.blogspot.com",
+      "createdAt": "2026-11-08T10:41:52.000Z"
     },
     {
-      "title": "Reading and writing are less symmetric than you (probably) think",
-      "url": "https://fgiesen.wordpress.com/2015/10/25/reading-and-writing-are-less-symmetric-than-you-probably-think/",
-      "points": 134,
-      "comments": 30,
-      "domain": "fgiesen.wordpress.com",
-      "createdAt": "2026-10-28T09:38:07.000Z"
+      "title": "LLMs are not superhuman at reading and writing neural network weights",
+      "url": "https://www.seangoedecke.com/llms-are-not-superhuman-at-reading-and-writing-neural-network-weights/",
+      "points": 151,
+      "comments": 23,
+      "domain": "seangoedecke.com",
+      "createdAt": "2026-11-02T22:26:53.000Z"
     },
     {
-      "title": "Ex-Meta Researcher Torrented Pirated Books, Deleted It 'Due to Litigation'",
-      "url": "https://torrentfreak.com/ex-meta-researcher-torrented-pirated-books-dataset-deleted-it-due-to-all-this-litigation/",
-      "points": 99,
-      "comments": 75,
-      "domain": "torrentfreak.com",
-      "createdAt": "2026-10-31T14:57:33.000Z"
+      "title": "We're training a Figma-fluent editing model",
+      "url": "https://www.figma.com/blog/training-a-figma-fluent-editing-model/",
+      "points": 150,
+      "comments": 70,
+      "domain": "figma.com",
+      "createdAt": "2026-11-01T04:05:23.000Z"
     },
     {
-      "title": "On AI writing",
-      "url": "https://www.bolkunov.com/p/on-ai-writing",
-      "points": 96,
-      "comments": 62,
-      "domain": "bolkunov.com",
-      "createdAt": "2026-10-20T19:55:11.000Z"
+      "title": "Writing seen in PHerc. 306B, for the first time in 2000 years",
+      "url": "https://scrollprize.substack.com/p/writing-seen-in-pherc-306b-for-the",
+      "points": 145,
+      "comments": 21,
+      "domain": "scrollprize.substack.com",
+      "createdAt": "2026-11-02T19:18:46.000Z"
     },
     {
-      "title": "Writing about pratt parsing so I remember it",
-      "url": "https://www.unix.dog/~yosh/blog/2026-10-25_pratt-parsing.html",
-      "points": 88,
-      "comments": 9,
-      "domain": "unix.dog",
-      "createdAt": "2026-10-27T06:02:23.000Z"
+      "title": "Five memorable books about programming (2008)",
+      "url": "https://prog21.dadgum.com/19.html",
+      "points": 140,
+      "comments": 91,
+      "domain": "prog21.dadgum.com",
+      "createdAt": "2026-11-07T17:30:49.000Z"
     },
     {
-      "title": "Show HN: I built a Markdown and raw HTML blog platform scoring 99 on PageSpeed",
-      "url": "https://bloffy.co/en",
-      "points": 30,
-      "comments": 26,
-      "domain": "bloffy.co",
-      "createdAt": "2026-10-21T23:41:35.000Z"
+      "title": "Launch HN: Kino AI (YC S23) – AI media manager and video editor",
+      "url": "https://news.ycombinator.com/item?id=50368804",
+      "points": 111,
+      "comments": 36,
+      "domain": "news.ycombinator.com",
+      "createdAt": "2026-11-04T17:31:53.000Z"
     },
     {
-      "title": "New book makes fiery claims about Jared Kushner's finances in Trump's first term",
-      "url": "https://www.theguardian.com/us-news/2026/oct/28/jared-kushner-book-claims",
-      "points": 20,
-      "comments": 0,
-      "domain": "theguardian.com",
-      "createdAt": "2026-10-30T21:59:09.000Z"
+      "title": "The Cost of Blogging",
+      "url": "https://onlinegoddess.net/2026/11/the-cost-of-blogging/",
+      "points": 56,
+      "comments": 57,
+      "domain": "onlinegoddess.net",
+      "createdAt": "2026-11-05T20:14:25.000Z"
     },
     {
-      "title": "Show HN: Typebook.lol read books by typing the letters only",
-      "url": "https://typebook.lol/",
-      "points": 11,
-      "comments": 12,
-      "domain": "typebook.lol",
-      "createdAt": "2026-10-29T19:24:36.000Z"
+      "title": "A lack of male protagonists is making it harder to get young boys into books",
+      "url": "https://www.theatlantic.com/culture/2026/11/middle-grade-reading-male-protagonists/689285/",
+      "points": 46,
+      "comments": 114,
+      "domain": "theatlantic.com",
+      "createdAt": "2026-11-08T13:07:37.000Z"
     },
     {
-      "title": "Readwise Books: An independent digital-first bookstore and app",
-      "url": "https://blog.readwise.io/readwise-books/",
-      "points": 10,
+      "title": "370 Books in 20 months: South African author defends her use of AI",
+      "url": "https://www.enca.com/lifestyle/370-books-20-months-sa-author-defends-her-use-ai",
+      "points": 38,
+      "comments": 79,
+      "domain": "enca.com",
+      "createdAt": "2026-11-09T07:21:33.000Z"
+    },
+    {
+      "title": "AI triggers PCB shortage for PC makers as order books full until 2030, costs 12x",
+      "url": "https://www.tomshardware.com/pc-components/ai-demand-triggers-massive-pcb-shortage-for-pc-makers-as-order-books-full-until-2030-lead-times-stretch-to-30-months-as-material-costs-surge-12x",
+      "points": 21,
+      "comments": 7,
+      "domain": "tomshardware.com",
+      "createdAt": "2026-11-04T23:05:24.000Z"
+    },
+    {
+      "title": "Pliny – Letters – Book 7 Letter 27 (On Ghosts)",
+      "url": "https://vroma.org/vromans/hwalker/Pliny/Pliny07-27-E.html?utm",
+      "points": 14,
+      "comments": 1,
+      "domain": "vroma.org",
+      "createdAt": "2026-11-06T17:57:40.000Z"
+    },
+    {
+      "title": "Show HN: LLM weight editing tool made by a 15-year-old",
+      "url": "https://github.com/Miyamoto-Renya/LaplacesScissors",
+      "points": 14,
+      "comments": 2,
+      "domain": "github.com",
+      "createdAt": "2026-11-08T02:37:10.000Z"
+    },
+    {
+      "title": "I turned 100 old science fiction books into a database of 6,222 startup ideas",
+      "url": "https://www.reddit.com/r/SideProject/comments/1xly9r8/i_turned_100_old_science_fiction_books_into_a/",
+      "points": 12,
       "comments": 5,
-      "domain": "blog.readwise.io",
-      "createdAt": "2026-10-30T19:09:42.000Z"
+      "domain": "reddit.com",
+      "createdAt": "2026-11-05T20:22:58.000Z"
     },
     {
-      "title": "Wikipedia: Signs of AI Writing",
-      "url": "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
-      "points": 8,
-      "comments": 3,
-      "domain": "en.wikipedia.org",
-      "createdAt": "2026-10-28T02:48:51.000Z"
-    },
-    {
-      "title": "Dartmouth provost resigns following accusations he used AI for writing",
-      "url": "https://apnews.com/article/dartmouth-provost-ai-a9f71dc5e9e10461c7c2390febcd1b5a",
-      "points": 7,
-      "comments": 1,
-      "domain": "apnews.com",
-      "createdAt": "2026-10-29T22:35:31.000Z"
-    },
-    {
-      "title": "AI Keeps Getting Better. Why Is Its Writing Still So Bad?",
-      "url": "https://greyenlightenment.com/2026/10/21/ai-keeps-getting-better-why-is-its-writing-still-so-bad/",
-      "points": 6,
+      "title": "Firefox Security and Privacy Newsletter 2026 Q3",
+      "url": "https://attackanddefense.dev/2026/11/02/firefox-security-and-privacy-newsletter-q3.html",
+      "points": 10,
       "comments": 0,
-      "domain": "greyenlightenment.com",
-      "createdAt": "2026-10-23T01:37:19.000Z"
+      "domain": "attackanddefense.dev",
+      "createdAt": "2026-11-03T15:11:04.000Z"
     },
     {
-      "title": "Writing Is Magic; Machine Writing Is Ash",
-      "url": "https://www.baldurbjarnason.com/2026/machine-writing-is-ash/",
-      "points": 5,
-      "comments": 0,
-      "domain": "baldurbjarnason.com",
-      "createdAt": "2026-11-01T19:56:00.000Z"
-    },
-    {
-      "title": "The anti-AI writing police are everywhere. What are they looking for?",
-      "url": "https://www.cnn.com/2026/10/21/tech/ai-detectors-pangram-literary-prizes-cec",
-      "points": 4,
-      "comments": 1,
-      "domain": "cnn.com",
-      "createdAt": "2026-10-24T01:31:06.000Z"
-    },
-    {
-      "title": "Show HN: Rising Hat – A community website for authors and readers",
-      "url": "https://risinghat.com",
-      "points": 4,
-      "comments": 0,
-      "domain": "risinghat.com",
-      "createdAt": "2026-10-27T12:00:58.000Z"
+      "title": "Writing as an act of rebellion (Despite the AI psychosis)",
+      "url": "https://charlesfonseca.substack.com/p/writing-as-an-act-of-rebellion",
+      "points": 10,
+      "comments": 2,
+      "domain": "charlesfonseca.substack.com",
+      "createdAt": "2026-11-04T01:21:28.000Z"
     }
   ]
 }
